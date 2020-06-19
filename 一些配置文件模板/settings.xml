@@ -170,12 +170,12 @@ under the License.
         <name>aliyun maven</name>
         <url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
     </mirror>
-		<mirror>
+		<!-- <mirror>
 			<id>nexus</id>
 			<name>aliyun Maven</name>
 			<mirrorOf>*</mirrorOf>
 			<url>http://192.168.100.251:8081/nexus/content/groups/public/</url>
-		</mirror>
+		</mirror> -->
   </mirrors>
 
   <!-- profiles
