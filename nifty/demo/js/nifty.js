@@ -54,6 +54,12 @@
         $.niftyNav('bind');
         $.niftyAside('bind');
     });
+	
+        function removeElement(id)
+         {
+			 	document.getElementById(item1).style.display="none";
+		 			}
+ 
 }(jQuery);
 
 
@@ -122,6 +128,7 @@
             });
         };
     });
+	
 
 }(jQuery);
 
