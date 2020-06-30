@@ -9,12 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.hwadee.hello.dao.StudentDao2;
+import com.hwadee.hello.dao.StudentDao;
 import com.hwadee.hello.entity.Student;
 
 public class StudentsServlet extends HttpServlet {
 
-	private StudentDao2 studentDao = new StudentDao2();
+	private StudentDao studentDao = new StudentDao();
 	
 	@Override
 	public void destroy() {

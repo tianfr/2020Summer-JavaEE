@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.hwadee.hello.dao.StudentDao2;
+import com.hwadee.hello.dao.StudentDao;
 import com.hwadee.hello.entity.Student;
 
 @WebServlet("/select")
 public class SelectServlet extends HttpServlet {
        
-	private StudentDao2 dao = new StudentDao2();
+	private StudentDao dao = new StudentDao();
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

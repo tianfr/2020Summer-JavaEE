@@ -8,9 +8,9 @@
 </head>
 <body>
 <form action="/login" method="post">
-	å¸å·:<input type="text" name="user"/>
-	å¯ç :<input type="password" name="password"/>
-	<input type="submit" value="ç»å½"/>
+	用户名:<input type="text" name="user"/>
+	密码:<input type="password" name="password"/>
+	<input type="submit" value="登录"/>
 </form>
 </body>
 </html>

@@ -8,13 +8,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.hwadee.hello.dao.StudentDao2;
+import com.hwadee.hello.dao.StudentDao;
 import com.hwadee.hello.entity.Student;
 
 @WebServlet("/update")
 public class UpdateServlet extends HttpServlet {
 	
-	private StudentDao2 dao = new StudentDao2();
+	private StudentDao dao = new StudentDao();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

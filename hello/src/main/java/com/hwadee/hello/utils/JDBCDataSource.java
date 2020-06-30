@@ -10,18 +10,6 @@ import com.zaxxer.hikari.HikariDataSource;
 
 public class JDBCDataSource {
 	
-	/*
-	 * private static DataSource dataSource;
-	 * 
-	 * static { HikariConfig config = new HikariConfig();
-	 * config.setMaximumPoolSize(100);
-	 * config.setJdbcUrl("jdbc:mysql://127.0.0.1:3306/test");
-	 * config.setDriverClassName("com.mysql.jdbc.Driver");
-	 * config.setUsername("root"); config.setPassword("123456");
-	 * 
-	 * dataSource = new HikariDataSource(config); }
-	 */
-	
 	private static ComboPooledDataSource dataSource;
 	
 	static {
@@ -32,7 +20,6 @@ public class JDBCDataSource {
 			dataSource.setPassword("javaee");
 			dataSource.setDriverClass("com.mysql.jdbc.Driver");
 		} catch (PropertyVetoException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -40,5 +27,4 @@ public class JDBCDataSource {
 	public static DataSource getDataSource() {
 		return dataSource;
 	}
-
 }
