@@ -1,34 +1,56 @@
 // JavaScript Document
-!function ($) {
-    "use strict";
-
-    $(document).ready(function(){
-        $(document).trigger('nifty.ready');
-    });
 
 
-    $(document).on('nifty.ready', function(){
-        //Activate the Bootstrap tooltips
-        var tooltip = $('.add-tooltip');
-        if (tooltip.length)tooltip.tooltip();
+	function sign_in() {
+			alert("已点击按钮");
+			let Username = $.trim($("#Username").val());
+			let Password = $.trim($("#Password").val());
+			
+          	
 
-        var popover = $('.add-popover');
-        if (popover.length)popover.popover();
+
+		$.ajax({
+			type:"POST", // 使用post方式
+
+			// 志愿者报名
+			url:"http://192.168.14.240:8888/login",
+			contentType:"application/json",
 
 
-        // Update nancoscroller
-        $('#navbar-container .navbar-top-links').on('shown.bs.dropdown', '.dropdown', function () {
-            $(this).find('.nano').nanoScroller({preventPageScrolling: true});
-        });
+			data: JSON.stringify({
+				"status": "0",
+				"message": "volunteerSend",
+					"content": [
+						{
+							"id": "UserName",
+							"value":Username
+						},
+						{
+							"id": "Password",
+							"value":Password
+						},
+						
+					]
+				
+			}),
 
-        $.niftyNav('bind');
-        $.niftyAside('bind');
-    });
-	
-        function removeElement(id)
-         {
-			 	document.getElementById(item1).style.display="none";
-		 			}
- 
-}(jQuery);
 
+			dataType:"json",
+
+			success: function(result){
+				// 请求成功后的操作
+				if (result.successValue == "1"){
+					alert("登陆成功");
+					location.href = "http://xjtumun2020.xjtupsa.com/homepage/index.html";
+				}
+				else{
+					alert("用户名或密码错误");
+				}
+			},
+
+			error: function(XMLHttpRequest, textStatus, errorThrown) {
+				alert("插入数据失败");
+				alert(textStatus);
+			}
+		});
+	}
