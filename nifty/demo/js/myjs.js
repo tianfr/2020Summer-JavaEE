@@ -14,10 +14,10 @@
 
 			// 志愿者报名
 			url:"http://192.168.14.240:8888/login",
-			contentType:"application/json",
+			//contentType:"application/json",
 
 
-			data: JSON.stringify({
+			data: {data:JSON.stringify({
 				"status": "0",
 				"message": "volunteerSend",
 					"content": [
@@ -32,7 +32,7 @@
 						
 					]
 				
-			}),
+			})},
 
 
 			dataType:"json",
@@ -41,7 +41,7 @@
 				// 请求成功后的操作
 				if (result.successValue == "1"){
 					alert("登陆成功");
-					location.href = "http://xjtumun2020.xjtupsa.com/homepage/index.html";
+					location.href = "/index.html";
 				}
 				else{
 					alert("用户名或密码错误");
@@ -49,8 +49,8 @@
 			},
 
 			error: function(XMLHttpRequest, textStatus, errorThrown) {
-				alert("插入数据失败");
-				alert(textStatus);
+				alert("插入数据失败,请检查数据库链接");
+				//alert(textStatus);
 			}
 		});
 	}
