@@ -5,19 +5,19 @@
 			alert("已点击按钮");
 			let Username = $.trim($("#Username").val());
 			let Password = $.trim($("#Password").val());
-			
-          	
+
+
 
 
 		$.ajax({
 			type:"POST", // 使用post方式
 
 			// 志愿者报名
-			url:"http://192.168.14.240:8888/login",
-			//contentType:"application/json",
+			url:"/login",
+			contentType:"application/json",
 
 
-			data: {data:JSON.stringify({
+			data:JSON.stringify({
 				"status": "0",
 				"message": "volunteerSend",
 					"content": [
@@ -29,22 +29,23 @@
 							"id": "Password",
 							"value":Password
 						},
-						
+
 					]
-				
-			})},
+
+			}),
 
 
 			dataType:"json",
-
+			async:false,
 			success: function(result){
 				// 请求成功后的操作
-				if (result.successValue == "1"){
+				if (result.successvalue == "1"){
 					alert("登陆成功");
-					location.href = "/index.html";
+					location.href = "index.html";
 				}
 				else{
 					alert("用户名或密码错误");
+					location.href = "pages-login.html";
 				}
 			},
 
