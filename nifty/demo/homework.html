@@ -259,6 +259,7 @@
                                             <!-- Dropdown list-->
                                             <li class="bg-gray">
                                                 <a class="media" href="#">
+
                                                     <div class="media-left">
                                                         <img class="img-circle img-sm" alt="Profile Picture" src="img/profile-photos/3.png">
                                                     </div>
@@ -562,7 +563,7 @@
 					            </div>
 					
 					            <p class="pad-hor mar-top text-main text-bold">Folders</p>
-					            <div class="list-group bg-trans pad-btm bord-btm"><div href="#" class="list-group-item text-semibold text-main" id="item1" onclick="removeElement('item1')"> <span class="badge badge-success pull-right">7</span> <span class="text-main"><em class="demo-pli-inbox-full icon-lg icon-fw"></em> 公告</span> </div> <a href="#" class="list-group-item text-semibold text-main">  <em class="demo-pli-file icon-lg icon-fw"></em> 作业 </a> <a href="#" class="list-group-item"> <em class="demo-pli-mail-send icon-lg icon-fw"></em> 讨论版 </a> <a href="#" class="list-group-item text-semibold"> <span class="badge badge-danger pull-right">3</span> <span class="text-main"><em class="demo-pli-fire-flame-2 icon-lg icon-fw"></em> 考试</span> </a> <a href="#" class="list-group-item"> <em class="demo-pli-recycling icon-lg icon-fw"></em> 资源 </a></div>
+					            <div class="list-group bg-trans pad-btm bord-btm"><a href="#" class="list-group-item text-semibold text-main" > <span class="badge badge-success pull-right">7</span> <span class="text-main"><em class="demo-pli-inbox-full icon-lg icon-fw"></em> 公告</span> </a> <a href="#" class="list-group-item text-semibold text-main"> <span class="badge badge-success pull-right">6</span> <span class="text-main"><em class="demo-pli-file icon-lg icon-fw"></em> 作业 </span></a> <a href="#" class="list-group-item"> <em class="demo-pli-mail-send icon-lg icon-fw"></em> 讨论版 </a> <a href="#" class="list-group-item text-semibold"> <span class="badge badge-danger pull-right">3</span> <span class="text-main"><em class="demo-pli-fire-flame-2 icon-lg icon-fw"></em> 考试</span> </a> <a href="#" class="list-group-item"> <em class="demo-pli-recycling icon-lg icon-fw"></em> 资源 </a></div>
 					
 					            <div class="list-group bg-trans pad-ver">
 					                <a href="#" class="list-group-item"><i class="demo-pli-male-female icon-lg icon-fw"></i> Address Book</a>
@@ -621,137 +622,6 @@
 					    </div>
 					    <div class="fluid">
 					        <div class="panel">
-					            <div id="demo-email-list" class="panel-body">
-					                <h1 class="page-header text-overflow pad-btm">Inbox (17)</h1>
-					
-					                <div class="row">
-					                    <div class="col-sm-7">
-					
-					                        <!-- Mail toolbar -->
-					                        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-					
-					                        <!--Split button dropdowns-->
-					                        <div class="btn-group">
-					                            <div id="demo-checked-all-mail" class="btn btn-sm btn-default">
-					                                <input id="select-all-mail" class="magic-checkbox" type="checkbox">
-					                                <label for="select-all-mail"></label>
-					                            </div>
-					                            <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"><i class="dropdown-caret"></i></button>
-					                            <ul class="dropdown-menu">
-					                                <li><a href="javascript:void(0)" id="demo-select-all-list">All</a></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-none-list">None</a></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-toggle-list">Toggle</a></li>
-					                                <li class="divider"></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-read-list">Read</a></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-unread-list">Unread</a></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-starred-list">Starred</a></li>
-					                            </ul>
-					                        </div>
-					
-					                        <!--Refresh button-->
-					                        <button id="demo-mail-ref-btn" data-toggle="panel-overlay" data-target="#demo-email-list" class="btn btn-default btn-sm" type="button">
-					                            <i class="demo-psi-repeat-2"></i>
-					                        </button>
-					
-					                        <!--Dropdown button (More Action)-->
-					                        <div class="btn-group">
-					                            <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle" type="button">
-					                                More <i class="dropdown-caret"></i>
-					                            </button>
-					                            <ul class="dropdown-menu">
-					                                <li><a href="#">Mark as read</a></li>
-					                                <li><a href="#">Mark as unread</a></li>
-					                                <li class="divider"></li>
-					                                <li><a href="#">Star</a></li>
-					                                <li><a href="#">Clear Star</a></li>
-					                            </ul>
-					                        </div>
-					                    </div>
-					                    <hr class="hr-sm visible-xs">
-					                    <div class="col-sm-5 clearfix">
-					                        <div class="pull-right">
-					
-					                            <!--Pager buttons-->
-					                            <span class="text-muted">
-					                                <strong>1-50</strong>
-					                                of
-					                                <strong>160</strong>
-					                            </span>
-					                            <div class="btn-group btn-group">
-					                                <button class="btn btn-sm btn-default" type="button">
-					                                    <i class="demo-psi-arrow-left"></i>
-					                                </button>
-					                                <button class="btn btn-sm btn-default" type="button">
-					                                    <i class="demo-psi-arrow-right"></i>
-					                                </button>
-					                            </div>
-					                        </div>
-					                    </div>
-					                </div>
-					                <hr class="hr-sm">
-									<div class="panel">
-					            <div class="panel-heading">
-					                <h3 class="panel-title">Paragraph 1</h3>
-					            </div>
-					            <div class="panel-body">
-					
-					                <!--Paragraph-->
-					                <!--===================================================-->
-					                <p class="text-main text-semibold">Paragraph Text</p>
-					                <p>Of on affixed civilly moments promise explain
-					                fertile in. Assurance advantage belonging happiness
-					                departure so of. Now improving and one sincerity
-					                intention allowance commanded not. Oh an am frankness
-					                be necessary earnestly advantage estimable extensive.
-					                Five he wife gone ye. Mrs suffering sportsmen earnestly
-					                any. In am do giving to afford parish settle easily
-					                garret.</p>
-					                <!--===================================================-->
-					
-					            </div>
-					        </div>
-									<div class="panel">
-					            <div class="panel-heading">
-					                <h3 class="panel-title">Paragraph 2</h3>
-					            </div>
-					            <div class="panel-body">
-					
-					                <!--Paragraph-->
-					                <!--===================================================-->
-					                <p class="text-main text-semibold">Paragraph Text</p>
-					                <p>Of on affixed civilly moments promise explain
-					                fertile in. Assurance advantage belonging happiness
-					                departure so of. Now improving and one sincerity
-					                intention allowance commanded not. Oh an am frankness
-					                be necessary earnestly advantage estimable extensive.
-					                Five he wife gone ye. Mrs suffering sportsmen earnestly
-					                any. In am do giving to afford parish settle easily
-					                garret.</p>
-					                <!--===================================================-->
-					
-					            </div>
-					        </div>
-									<div class="panel-footer clearfix">
-					                <div class="pull-right">
-					                    <span class="text-muted"><strong>1-50</strong> of <strong>160</strong></span>
-					                    <div class="btn-group btn-group">
-					                        <button type="button" class="btn btn-default">
-					                            <i class="demo-psi-arrow-left"></i>
-					                        </button>
-					                        <button type="button" class="btn btn-default">
-					                            <i class="demo-psi-arrow-right"></i>
-					                        </button>
-					                    </div>
-					                </div>
-					            </div>
-
-					            </div>
-					
-					
-					            <!--Mail footer-->
-					            
-					        </div>
-							<div class="panel">
 <div id="demo-email-list2" class="panel-body">
                 <h1 class="page-header text-overflow pad-btm">作业列表</h1>
 				                <div class="row">
@@ -1019,8 +889,6 @@
 					            <!--Mail footer-->
 					            
 				          </div>
-							
-							
 					    </div>
 					</div>
 					
@@ -1556,6 +1424,7 @@
 						                    <li class="active-link"><a href="mailbox.html">Inbox</a></li>
 											<li><a href="mailbox-message.html">View Message</a></li>
 											<li><a href="mailbox-compose.html">Compose Message</a></li>
+
 											<li><a href="mailbox-templates.html">Email Templates<span class="label label-info pull-right">New</span></a></li>
 											
 						                </ul>
@@ -2217,3 +2086,4 @@
 
 </body>
 </html>
+
