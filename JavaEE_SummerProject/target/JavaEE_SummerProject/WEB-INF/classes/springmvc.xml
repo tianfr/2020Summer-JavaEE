@@ -20,9 +20,9 @@
     </bean>
 
     <!--前端控制器，哪些静态资源不拦截-->
-<!--    <mvc:resources mapping="/html/js/**" location="/html/js/"/>-->
-<!--    <mvc:resources mapping="/html/css/**" location="/html/css/"/>-->
-<!--    <mvc:resources mapping="/html/img/**" location="/html/img/"/>-->
+    <mvc:resources location="/html/js/" mapping="/html/js/**" />
+    <mvc:resources location="/html/css/" mapping="/html/css/**" />
+    <mvc:resources location="/html/img/" mapping="/html/img/**" />
     <mvc:resources location="/html/" mapping="/html/**" />
 
 
