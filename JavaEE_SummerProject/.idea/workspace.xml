@@ -46,14 +46,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43adc165-a0c1-45b6-b342-859af66343f0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/entity/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/mapper/StudentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SqlMapConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/summerproject/mapper/StudentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/jdbcConfig.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/xjtuse/summerproject/StudentMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/entity/KeyValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/entity/KeyValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/entity/LoginInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/entity/LoginInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/entity/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/entity/LoginResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/springmvc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/myjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages-login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/entity/KeyValue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/entity/LoginInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/entity/LoginResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/springmvc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/js/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/js/myjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/pages-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/pages-login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/entity/KeyValue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/entity/LoginInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/entity/LoginResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springmvc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +84,7 @@
       <list>
         <option value="spring-beans.schema" />
         <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -96,7 +116,9 @@
     <option name="vmOptions" value="-Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true" />
   </component>
   <component name="ProjectId" id="1e69CbmkBR6i7BCPXorEvmFJiaZ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -129,8 +151,58 @@
       <recent name="D:\idea-workspace\JavaEE_SummerProject\src\main\webapp" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Tomcat 8.0.24" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.24" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.StudentMapperTest.testFindAll">
+    <configuration name="StudentMapperTest.testDeleteStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaEE_SummerProject" />
+      <option name="PACKAGE_NAME" value="com.xjtuse.summerproject" />
+      <option name="MAIN_CLASS_NAME" value="com.xjtuse.summerproject.StudentMapperTest" />
+      <option name="METHOD_NAME" value="testDeleteStudent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentMapperTest.testFindAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaEE_SummerProject" />
+      <option name="PACKAGE_NAME" value="com.xjtuse.summerproject" />
+      <option name="MAIN_CLASS_NAME" value="com.xjtuse.summerproject.StudentMapperTest" />
+      <option name="METHOD_NAME" value="testFindAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentMapperTest.testFindById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaEE_SummerProject" />
+      <option name="PACKAGE_NAME" value="com.xjtuse.summerproject" />
+      <option name="MAIN_CLASS_NAME" value="com.xjtuse.summerproject.StudentMapperTest" />
+      <option name="METHOD_NAME" value="testFindById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentMapperTest.testFindByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaEE_SummerProject" />
+      <option name="PACKAGE_NAME" value="com.xjtuse.summerproject" />
+      <option name="MAIN_CLASS_NAME" value="com.xjtuse.summerproject.StudentMapperTest" />
+      <option name="METHOD_NAME" value="testFindByName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentMapperTest.testUpdateStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaEE_SummerProject" />
+      <option name="PACKAGE_NAME" value="com.xjtuse.summerproject" />
+      <option name="MAIN_CLASS_NAME" value="com.xjtuse.summerproject.StudentMapperTest" />
+      <option name="METHOD_NAME" value="testUpdateStudent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.36" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.36" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="JavaEE_SummerProject:war">
@@ -260,6 +332,23 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.StudentMapperTest.testFindAll" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.36" />
+      <item itemvalue="JUnit.StudentMapperTest.testUpdateStudent" />
+      <item itemvalue="JUnit.StudentMapperTest.testDeleteStudent" />
+      <item itemvalue="JUnit.StudentMapperTest.testFindById" />
+      <item itemvalue="JUnit.StudentMapperTest.testFindByName" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.StudentMapperTest.testFindAll" />
+        <item itemvalue="JUnit.StudentMapperTest.testFindByName" />
+        <item itemvalue="JUnit.StudentMapperTest.testFindById" />
+        <item itemvalue="JUnit.StudentMapperTest.testDeleteStudent" />
+        <item itemvalue="JUnit.StudentMapperTest.testUpdateStudent" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -273,6 +362,8 @@
       <updated>1593631048204</updated>
       <workItem from="1593631052183" duration="8932000" />
       <workItem from="1593626480643" duration="4904000" />
+      <workItem from="1593715805342" duration="11508000" />
+      <workItem from="1593729149874" duration="2528000" />
     </task>
     <servers />
   </component>
@@ -289,76 +380,85 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="249" y="0" key="#Project_Structure" timestamp="1593627049890">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1593627049890" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593626973883">
+    <state x="449" y="0" width="651" height="824" key="#Tomcat_8.0.24" timestamp="1593715905680">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1593626973883" />
-    <state x="902" y="116" key="#com.intellij.ide.util.MemberChooser" timestamp="1593634297142">
+    <state x="449" y="0" width="651" height="824" key="#Tomcat_8.0.24/0.0.1536.824@0.0.1536.824" timestamp="1593715905680" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593718801272">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="902" y="116" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1593634297142" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1593718801272" />
+    <state x="902" y="116" key="#com.intellij.ide.util.MemberChooser" timestamp="1593728193494">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="902" y="116" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1593728193494" />
     <state x="599" y="129" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1593626745317">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="599" y="129" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1536.824@0.0.1536.824" timestamp="1593626745317" />
+    <state x="78" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593721926668">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="78" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1593721926668" />
     <state x="445" y="156" key="FileChooserDialogImpl" timestamp="1593626549653">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="445" y="156" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1593626549653" />
-    <state width="1024" height="261" key="GridCell.Tab.0.bottom" timestamp="1593656223894">
+    <state width="1493" height="207" key="GridCell.Tab.0.bottom" timestamp="1593731681822">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593656223894" />
-    <state width="1024" height="261" key="GridCell.Tab.0.center" timestamp="1593656223893">
+    <state width="1493" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593731681822" />
+    <state width="1493" height="207" key="GridCell.Tab.0.center" timestamp="1593731681822">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593656223893" />
-    <state width="1024" height="261" key="GridCell.Tab.0.left" timestamp="1593656223893">
+    <state width="1493" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593731681822" />
+    <state width="1493" height="207" key="GridCell.Tab.0.left" timestamp="1593731681822">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593656223893" />
-    <state width="1024" height="261" key="GridCell.Tab.0.right" timestamp="1593656223893">
+    <state width="1493" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593731681822" />
+    <state width="1493" height="207" key="GridCell.Tab.0.right" timestamp="1593731681822">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593656223893" />
-    <state width="1024" height="261" key="GridCell.Tab.1.bottom" timestamp="1593656223894">
+    <state width="1493" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593731681822" />
+    <state width="485" height="210" key="GridCell.Tab.1.bottom" timestamp="1593728292617">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593656223894" />
-    <state width="1024" height="261" key="GridCell.Tab.1.center" timestamp="1593656223894">
+    <state width="485" height="210" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593728292617" />
+    <state width="485" height="210" key="GridCell.Tab.1.center" timestamp="1593728292617">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1593656223894" />
-    <state width="1024" height="261" key="GridCell.Tab.1.left" timestamp="1593656223894">
+    <state width="485" height="210" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1593728292617" />
+    <state width="485" height="210" key="GridCell.Tab.1.left" timestamp="1593728292616">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1593656223894" />
-    <state width="1024" height="261" key="GridCell.Tab.1.right" timestamp="1593656223894">
+    <state width="485" height="210" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1593728292616" />
+    <state width="485" height="210" key="GridCell.Tab.1.right" timestamp="1593728292617">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1593656223894" />
-    <state width="1024" height="261" key="GridCell.Tab.2.bottom" timestamp="1593656223894">
+    <state width="485" height="210" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1593728292617" />
+    <state width="485" height="210" key="GridCell.Tab.2.bottom" timestamp="1593728292617">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593656223894" />
-    <state width="1024" height="261" key="GridCell.Tab.2.center" timestamp="1593656223894">
+    <state width="485" height="210" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593728292617" />
+    <state width="485" height="210" key="GridCell.Tab.2.center" timestamp="1593728292617">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1593656223894" />
-    <state width="1024" height="261" key="GridCell.Tab.2.left" timestamp="1593656223894">
+    <state width="485" height="210" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1593728292617" />
+    <state width="485" height="210" key="GridCell.Tab.2.left" timestamp="1593728292617">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1593656223894" />
-    <state width="1024" height="261" key="GridCell.Tab.2.right" timestamp="1593656223894">
+    <state width="485" height="210" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1593728292617" />
+    <state width="485" height="210" key="GridCell.Tab.2.right" timestamp="1593728292617">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1593656223894" />
+    <state width="485" height="210" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1593728292617" />
     <state width="1024" height="210" key="GridCell.Tab.3.bottom" timestamp="1593632350814">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -391,10 +491,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1024" height="210" key="GridCell.Tab.4.right/0.0.1536.824@0.0.1536.824" timestamp="1593632185412" />
-    <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1593633225284">
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1593716076833">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1593633225284" />
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1593716076833" />
     <state x="249" y="0" key="SettingsEditor" timestamp="1593653698132">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

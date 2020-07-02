@@ -42,9 +42,7 @@ function sign_in() {
 		success: function(result){
 			// 请求成功后的操作
 			if (result.successvalue == "1"){
-				alert("登陆成功");
-				alert(rootPath);
-				alert("2");
+				alert("登录成功");
 				window.location.href = "index.html";
 			}
 			else{
