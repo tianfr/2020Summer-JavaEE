@@ -14,7 +14,7 @@ public class GetCoursePannel {
 
     @RequestMapping("/GetCoursePanel")
     public @ResponseBody
-    GetCoursePanelResponse login(@RequestBody GetCoursePanelInfo getCoursePanelInfo) {
+    GetCoursePanelResponse getCoursePanel(@RequestBody GetCoursePanelInfo getCoursePanelInfo) {
         GetCoursePanelResponse getCoursePanelResponse = new GetCoursePanelResponse();
         System.out.println("getCoursePanelResponse = " + getCoursePanelResponse);
         //模拟查数据库

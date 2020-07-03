@@ -12,7 +12,7 @@ import java.util.List;
 @Controller
 public class DashBoardMenuController {
     @RequestMapping("/DashBoardMenu")
-    public @ResponseBody DashBoardMenuResponse login(@RequestBody DashBoardMenuInfo dashBoardMenuInfo) {
+    public @ResponseBody DashBoardMenuResponse dashBoardMenu(@RequestBody DashBoardMenuInfo dashBoardMenuInfo) {
         DashBoardMenuResponse dashBoardMenuResponse = new DashBoardMenuResponse();
         System.out.println("dashBoardMenuInfo = " + dashBoardMenuInfo);
         //模拟查数据库

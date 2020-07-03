@@ -13,7 +13,7 @@ import java.util.List;
 public class UpcomingIssueController {
     @RequestMapping("/UpcomingIssue")
     public @ResponseBody
-    UpcomingIssueResponse login(@RequestBody Info info) {
+    UpcomingIssueResponse upcomingIssue(@RequestBody Info info) {
         UpcomingIssueResponse upcomingIssueResponse = new UpcomingIssueResponse();
         System.out.println("Info = " + info);
         //模拟查数据库
