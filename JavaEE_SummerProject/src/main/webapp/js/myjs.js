@@ -60,12 +60,8 @@
 
 		$.ajax({
 			type:"POST", // 使用post方式
-
-			// 志愿者报名
 			url:"/Register",
 			contentType:"application/json",
-
-
 			data:JSON.stringify({
 				"status": "0",
 				"message": "register",
@@ -75,8 +71,6 @@
 				"full_name":full_name,
                
 			}),
-
-
 			dataType:"json",
 			async:false,
 			success: function(result){
@@ -98,3 +92,39 @@
 		});
 	}
 
+	function recent_info(){
+
+	$.ajax({
+		type:"POST", // 使用post方式
+		url:"/RecentInfo",
+		contentType:"application/json",
+		data: JSON.stringify({
+			"status": "0",
+			"message": "recent_info",
+		}),
+		dataType:"json",
+		async:false,
+		success: function(result){
+			alert(result.id);
+			if (result.id == "recent_info"){
+				// 请求成功后的操作
+				var dataObj = result.value;
+				var info_data = "";
+					$.each(dataObj, function(index, item){
+						var rec_info="";
+						rec_info += "<td>"+item.id+"</td>";
+						rec_info += "<td>"+item.course+"</td>";
+						rec_info += "<td>"+item.value+"</td>";
+						rec_info += "<td>"+item.datetime+"</td>";
+						info_data += "<tr>"+rec_info+"</tr>" ;
+					});
+				$("#recent-info-data").html(info_data);
+			}
+			// else{
+			// 	alert(result.fail_content);
+			// 	//location.href = "pages-login.html";
+			// }
+		},
+
+	});
+}
