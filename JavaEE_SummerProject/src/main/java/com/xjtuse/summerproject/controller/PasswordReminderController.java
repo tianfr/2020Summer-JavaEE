@@ -14,6 +14,7 @@ public class PasswordReminderController {
     public @ResponseBody ResponseInfo passwordReminder(@RequestBody PasswordReminderInfo passwordReminderInfo) {
         ResponseInfo responseInfo = new ResponseInfo();
         if(true) {
+            System.out.println("ok");
             responseInfo.setSuccess_value("1");
             responseInfo.setFail_content("成功");
         }

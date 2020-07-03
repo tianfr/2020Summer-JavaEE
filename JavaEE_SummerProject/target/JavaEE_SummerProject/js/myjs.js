@@ -92,6 +92,45 @@
 		});
 	}
 
+function reset_pw() {
+	alert("已点击按钮");
+	let email_pwreminder = $.trim($("#email_pwreminder").val());
+
+	$.ajax({
+		type:"POST", // 使用post方式
+
+		url:"/PasswordReminder",
+		contentType:"application/json",
+
+
+		data: JSON.stringify({
+			"status": "0",
+			"message": "password_reminder",
+			"email":email_pwreminder,
+
+		}),
+
+		dataType:"json",
+		async:false,
+		success: function(result){
+			// 请求成功后的操作
+			if (result.success_value == "1"){
+				alert("已将密码发送至对应邮箱");
+				location.href = "pages-login.html";
+				//发邮件
+			}
+			else{
+				alert("邮箱不存在");
+			}
+		},
+
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			alert("查找失败,请检查数据库链接");
+			//alert(textStatus);
+		}
+	});
+}
+
 	function recent_info(){
 
 	$.ajax({
@@ -105,7 +144,6 @@
 		dataType:"json",
 		async:false,
 		success: function(result){
-			alert(result.id);
 			if (result.id == "recent_info"){
 				// 请求成功后的操作
 				var dataObj = result.value;
@@ -116,10 +154,6 @@
 						rec_info += "<td>"+item.course+"</td>";
 						rec_info += "<td>"+item.value+"</td>";
 						rec_info += "<td>"+item.datetime+"</td>";
-
-
-
-
 						info_data += "<tr>"+rec_info+"</tr>" ;
 					});
 				$("#recent-info-data").html(info_data);
@@ -130,5 +164,36 @@
 			// }
 		},
 
+	});
+}
+
+function upcoming_issue(){
+	$.ajax({
+		type:"POST", // 使用post方式
+
+		url:"/UpcomingIssue",
+		contentType:"application/json",
+
+
+		data: JSON.stringify({
+			"status": "0",
+			"message": "upcoming_issue",
+		}),
+
+		dataType:"json",
+		async:false,
+		success: function(result){
+			var dataObj = result.value,con1="";
+			$.each(dataObj,function(index,item){
+				con1+= "<tr>"+
+					"<td>"+item.value+"</td>" +
+					"<td>"+item.course+"</td>" +
+					"<td>"+item.datetime+"</td>" +
+					"<td>"+item.content+"</td>" +
+					"<td>"+item.status+"</td>" +
+					"</tr>";
+			});
+			$("#con1").html(con1);
+		}
 	});
 }

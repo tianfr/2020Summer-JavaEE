@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -25,7 +26,7 @@ public class DashBoardMenuController {
         course2.setCourse_name("计算机网络");
         course1.setCourse_path("This is course1's path");
         course2.setCourse_path("This is course2's path");
-        List<Course> list = null;
+        List<Course> list = new ArrayList<Course>();
         list.add(course1);
         list.add(course2);
         dashBoardMenuResponse.setValue(list);
