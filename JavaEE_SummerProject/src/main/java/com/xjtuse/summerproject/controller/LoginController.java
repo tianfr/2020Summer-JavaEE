@@ -1,7 +1,7 @@
 package com.xjtuse.summerproject.controller;
 
 import com.xjtuse.summerproject.entity.LoginInfo;
-import com.xjtuse.summerproject.entity.LoginResponse;
+import com.xjtuse.summerproject.entity.ResponseInfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,24 +9,23 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class LoginController {
-    @RequestMapping("/login")
-    public @ResponseBody LoginResponse login(@RequestBody LoginInfo loginInfo) {
-        System.out.println("login方法执行了");
+    @RequestMapping("/Login")
+    public @ResponseBody
+    ResponseInfo login(@RequestBody LoginInfo loginInfo) {
+        ResponseInfo responseInfo = new ResponseInfo();
         System.out.println("loginInfo = " + loginInfo);
-        LoginResponse loginResponse = new LoginResponse();
-        System.out.println(loginInfo.getContent().get(0).getValue());
-        System.out.println(loginInfo.getContent().get(1).getValue());
-        if(loginInfo.getContent().get(0).getValue().equals("cdh") && loginInfo.getContent().get(1).getValue().equals("123")) {//判断用户名密码是否正确
-            loginResponse.setSuccessvalue("1");
-            loginResponse.setFailcontent("成功");
-            System.out.println("loginResponse = " + loginResponse);
-            return loginResponse;
+        if(loginInfo.getUser_name().equals("cdh") && loginInfo.getPass_word().equals("123")) {//判断用户名密码是否正确
+            responseInfo.setSuccess_value("1");
+            responseInfo.setFail_content("成功");
         }
-        else {
-            loginResponse.setSuccessvalue("0");
-            loginResponse.setFailcontent("失败");
-            System.out.println("loginResponse = " + loginResponse);
-            return loginResponse;
+        else if(true){ //密码错误
+            responseInfo.setSuccess_value("0");
+            responseInfo.setFail_content("密码错误");
         }
+        else {  //用户名不存在
+            responseInfo.setSuccess_value("0");
+            responseInfo.setFail_content("用户名不存在");
+        }
+        return responseInfo;
     }
 }

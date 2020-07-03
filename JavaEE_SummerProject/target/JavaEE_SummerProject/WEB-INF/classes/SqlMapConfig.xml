@@ -8,6 +8,16 @@
 <!--        <setting name="mapUnderscoreToCamelCase" value="true"/>-->
 <!--        <setting name="useGeneratedKeys" value="true"/>-->
 <!--    </settings>-->
+
+    <!--配置properties-->
+    <properties resource="jdbcConfig.properties" />
+
+    <!--别名，指定了别名后，不区分大小写-->
+    <typeAliases>
+        <!--<typeAlias type="com.xjtuse.summerproject.entity.Student" alias="student"/>-->
+        <package name="com.xjtuse.summerproject.entity"/>
+    </typeAliases>
+
     <!--配置环境-->
     <environments default="mysql">
         <!--配置mysql的环境-->
@@ -17,15 +27,16 @@
             <!--配置数据源（连接池）-->
             <dataSource type="POOLED">
                 <!--配置连接数据库的4个基本信息-->
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://47.94.249.153:3306/SummerProject"/>
-                <property name="username" value="javaee"/>
-                <property name="password" value="javaee"/>
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
             </dataSource>
         </environment>
     </environments>
     <!--指定映射配置文件的位置，映射配置文件指的是每个mapper独立的配置文件-->
     <mappers>
-        <mapper resource="com/xjtuse/summerproject/mapper/StudentsMapper.xml"/>
+<!--        <mapper resource="com/xjtuse/summerproject/mapper/StudentMapper.xml"/>-->
+        <package name="com.xjtuse.summerproject.mapper"/>
     </mappers>
 </configuration>
