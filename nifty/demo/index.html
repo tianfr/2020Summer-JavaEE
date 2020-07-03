@@ -84,6 +84,7 @@
 
     <!--Specify page [ SAMPLE ]-->
     <script src="js/demo/dashboard.js"></script>
+	<script src="/js/myjs.js"></script>
 
 
 
@@ -772,7 +773,13 @@
 					    <div class="panel-body">
 					        <div class="bootstrap-table"><div class="fixed-table-toolbar"><div class="columns columns-right btn-group pull-right"><button class="btn btn-default" type="button" name="paginationSwitch" title="Hide/Show pagination"><i class="glyphicon demo-pli-arrow-down"></i></button><button class="btn btn-default" type="button" name="refresh" title="Refresh"><i class="glyphicon demo-pli-repeat-2"></i></button><button class="btn btn-default" type="button" name="toggle" title="Toggle"><i class="glyphicon demo-pli-layout-grid"></i></button><div class="keep-open btn-group" title="Columns"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="glyphicon demo-pli-check"></i> <span class="caret"></span></button><ul class="dropdown-menu" role="menu"><li><label><input type="checkbox" data-field="id" value="0" checked="checked"> ID</label></li><li><label><input type="checkbox" data-field="name" value="1" checked="checked"> Name</label></li><li><label><input type="checkbox" data-field="date" value="2" checked="checked"> Order date</label></li><li><label><input type="checkbox" data-field="amount" value="3" checked="checked"> Balance</label></li><li><label><input type="checkbox" data-field="status" value="4" checked="checked"> Status</label></li><li><label><input type="checkbox" data-field="track" value="5" checked="checked"> Tracking Number</label></li></ul></div></div><div class="pull-right search"><input class="form-control" type="text" placeholder="Search"></div></div><div class="fixed-table-container" style="padding-bottom: 0px;"><div class="fixed-table-header" style="display: none;"><table></table></div><div class="fixed-table-body"><div class="fixed-table-loading" style="top: 42px; display: none;">Loading, please wait...</div><table data-toggle="table" data-url="data/bs-table.json" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-sort-name="id" data-page-list="[5, 10, 20]" data-page-size="5" data-pagination="true" data-show-pagination-switch="true" class="table table-hover">
 					            <thead><tr><th style="" data-field="id" tabindex="0"><div class="th-inner sortable both">ID</div><div class="fht-cell"></div></th><th style="" data-field="name" tabindex="0"><div class="th-inner sortable both desc">Name</div><div class="fht-cell"></div></th><th style="" data-field="date" tabindex="0"><div class="th-inner sortable both">Order date</div><div class="fht-cell"></div></th><th style="text-align: center; " data-field="amount" tabindex="0"><div class="th-inner sortable both">Balance</div><div class="fht-cell"></div></th><th style="text-align: center; " data-field="status" tabindex="0"><div class="th-inner sortable both">Status</div><div class="fht-cell"></div></th><th style="text-align: center; " data-field="track" tabindex="0"><div class="th-inner sortable both">Tracking Number</div><div class="fht-cell"></div></th></tr></thead>
-					        <tbody><tr class="no-records-found"><td colspan="6">No matching records found</td></tr></tbody></table></div><div class="fixed-table-footer" style="display: none;"><table><tbody><tr></tr></tbody></table></div><div class="fixed-table-pagination" style="display: none;"><div class="pull-left pagination-detail"><span class="pagination-info">Showing 1 to 0 of 0 rows</span><span class="page-list" style="display: none;"><span class="btn-group dropup"><button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown"><span class="page-size">5</span> <span class="caret"></span></button><ul class="dropdown-menu" role="menu"><li class="active"><a href="javascript:void(0)">5</a></li></ul></span> records per page</span></div><div class="pull-right pagination" style="display: none;"><ul class="pagination"><li class="page-pre"><a href="javascript:void(0)">‹</a></li><li class="page-next"><a href="javascript:void(0)">›</a></li></ul></div></div></div></div><div class="clearfix"></div>
+					        <tbody id="recent-info-data">
+								
+								
+								</tbody>
+							</table>
+						</div>
+								<div class="fixed-table-footer" style="display: none;"><table><tbody><tr></tr></tbody></table></div><div class="fixed-table-pagination" style="display: none;"><div class="pull-left pagination-detail"><span class="pagination-info">Showing 1 to 0 of 0 rows</span><span class="page-list" style="display: none;"><span class="btn-group dropup"><button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown"><span class="page-size">5</span> <span class="caret"></span></button><ul class="dropdown-menu" role="menu"><li class="active"><a href="javascript:void(0)">5</a></li></ul></span> records per page</span></div><div class="pull-right pagination" style="display: none;"><ul class="pagination"><li class="page-pre"><a href="javascript:void(0)">‹</a></li><li class="page-next"><a href="javascript:void(0)">›</a></li></ul></div></div></div></div><div class="clearfix"></div>
 					    </div>
 					</div>
 
@@ -1305,21 +1312,19 @@
 						            <li class="list-header">Navigation</li>
 						
 						            <!--Menu list item-->
-						            <li class="active-link">
-						                <a href="index.html">
-						                    <i class="demo-psi-home"></i>
-						                    <span class="menu-title">
-												<strong>Dashboard</strong>
-											</span>
-						                </a>
-						            </li>
-						
+						            <li class="active-link"> 
+										<a href="course-dashboard.html" target="_self"> 
+											<em class="demo-psi-home"></em> 
+											<span class="menu-title"> <strong>Dashboard</strong>
+											</span> 
+										</a> 
+									</li>
 						            <!--Menu list item-->
 						            <li>
 						                <a href="#">
 						                    <i class="demo-psi-split-vertical-2"></i>
 						                    <span class="menu-title">
-												<strong>Courses</strong>
+												<strong>Prev</strong>
 												<strong>Courses</strong>
 		</span>
 											<i class="arrow"></i>
@@ -1356,7 +1361,7 @@
 						            <li class="list-divider"></li>
 						
 						            <!--Category name-->
-						            <li class="list-header">Components</li>
+						            <li class="list-header">Courses</li>
 						
 						            <!--Menu list item-->
 						            <li>
