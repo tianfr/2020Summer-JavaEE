@@ -118,8 +118,8 @@
 			data: JSON.stringify({
     		"status": "0",
     		"message": "get_announcement",
-    		"course": course,
-    		"announcement_path": announcement_path //注意：这个变量在get_course_announcement中出现过。
+    		"course_id": course,
+    		"announcement_id": announcement_path //注意：这个变量在get_course_announcement中出现过。
 			}),
 			
 			dataType:"json",
