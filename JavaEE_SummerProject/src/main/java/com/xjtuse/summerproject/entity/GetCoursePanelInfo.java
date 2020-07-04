@@ -5,16 +5,14 @@ import java.io.Serializable;
 public class GetCoursePanelInfo implements Serializable {
     private String status;
     private String message;
-    private String course;
-    private String teacher_user_name;
+    private String course_id;
 
     @Override
     public String toString() {
         return "GetCoursePanelInfo{" +
                 "status='" + status + '\'' +
                 ", message='" + message + '\'' +
-                ", course='" + course + '\'' +
-                ", teacher_user_name='" + teacher_user_name + '\'' +
+                ", course_id='" + course_id + '\'' +
                 '}';
     }
 
@@ -34,19 +32,11 @@ public class GetCoursePanelInfo implements Serializable {
         this.message = message;
     }
 
-    public String getCourse() {
-        return course;
+    public String getCourse_id() {
+        return course_id;
     }
 
-    public void setCourse(String course) {
-        this.course = course;
-    }
-
-    public String getTeacher_user_name() {
-        return teacher_user_name;
-    }
-
-    public void setTeacher_user_name(String teacher_user_name) {
-        this.teacher_user_name = teacher_user_name;
+    public void setCourse_id(String course_id) {
+        this.course_id = course_id;
     }
 }

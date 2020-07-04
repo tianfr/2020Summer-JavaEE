@@ -10,14 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class DashBoardMenuController {
-    @RequestMapping("/DashBoardMenu")
-    public @ResponseBody DashBoardMenuResponse dashBoardMenu(@RequestBody DashBoardMenuInfo dashBoardMenuInfo) {
-        DashBoardMenuResponse dashBoardMenuResponse = new DashBoardMenuResponse();
-        System.out.println("dashBoardMenuInfo = " + dashBoardMenuInfo);
+public class DashboardMenuController {
+    @RequestMapping("/DashboardMenu")
+    public @ResponseBody
+    DashboardMenuResponse dashBoardMenu(@RequestBody DashboardMenuInfo dashboardMenuInfo) {
+        DashboardMenuResponse dashboardMenuResponse = new DashboardMenuResponse();
+        System.out.println("dashBoardMenuInfo = " + dashboardMenuInfo);
         //模拟查数据库
-        dashBoardMenuResponse.setAvater("This is an avatar_path");
-        dashBoardMenuResponse.setUser_name("cdh");
+        dashboardMenuResponse.setAvater("This is an avatar_path");
+        dashboardMenuResponse.setUser_name("cdh");
         Course course1 = new Course();
         Course course2 = new Course();
         course1.setId("course1");
@@ -29,7 +30,7 @@ public class DashBoardMenuController {
         List<Course> list = new ArrayList<Course>();
         list.add(course1);
         list.add(course2);
-        dashBoardMenuResponse.setValue(list);
-        return dashBoardMenuResponse;
+        dashboardMenuResponse.setValue(list);
+        return dashboardMenuResponse;
     }
 }

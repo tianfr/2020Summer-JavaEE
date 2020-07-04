@@ -38,10 +38,6 @@ public class RecentInfoController {
         list.add(recentInfo1);
         list.add(recentInfo2);
         recentInfoResponse.setValue(list);
-        System.out.println("recentInfo1 = " + recentInfo1);
-        System.out.println("recentInfo2 = " + recentInfo2);
-        System.out.println("list = " + list);
-        System.out.println("recentInfoResponse = " + recentInfoResponse);
         return recentInfoResponse;
     }
 }

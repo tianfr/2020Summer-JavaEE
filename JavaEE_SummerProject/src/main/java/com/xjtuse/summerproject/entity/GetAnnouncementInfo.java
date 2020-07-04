@@ -5,16 +5,16 @@ import java.io.Serializable;
 public class GetAnnouncementInfo implements Serializable {
     private String status;
     private String message;
-    private String course;
-    private String announcement_path;
+    private String course_id;
+    private String announcement_id;
 
     @Override
     public String toString() {
         return "GetAnnouncementInfo{" +
                 "status='" + status + '\'' +
                 ", message='" + message + '\'' +
-                ", course='" + course + '\'' +
-                ", announcement_path='" + announcement_path + '\'' +
+                ", course_id='" + course_id + '\'' +
+                ", announcement_id='" + announcement_id + '\'' +
                 '}';
     }
 
@@ -34,19 +34,19 @@ public class GetAnnouncementInfo implements Serializable {
         this.message = message;
     }
 
-    public String getCourse() {
-        return course;
+    public String getCourse_id() {
+        return course_id;
     }
 
-    public void setCourse(String course) {
-        this.course = course;
+    public void setCourse_id(String course_id) {
+        this.course_id = course_id;
     }
 
-    public String getAnnouncement_path() {
-        return announcement_path;
+    public String getAnnouncement_id() {
+        return announcement_id;
     }
 
-    public void setAnnouncement_path(String announcement_path) {
-        this.announcement_path = announcement_path;
+    public void setAnnouncement_id(String announcement_id) {
+        this.announcement_id = announcement_id;
     }
 }

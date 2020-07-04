@@ -3,7 +3,7 @@ package com.xjtuse.summerproject.entity;
 import java.io.Serializable;
 import java.util.List;
 
-public class DashBoardMenuResponse implements Serializable {
+public class DashboardMenuResponse implements Serializable {
     private String avater;
     private String user_name;
     private String id;

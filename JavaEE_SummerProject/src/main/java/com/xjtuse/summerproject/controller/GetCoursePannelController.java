@@ -10,14 +10,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class GetCoursePannel {
+public class GetCoursePannelController {
 
     @RequestMapping("/GetCoursePanel")
     public @ResponseBody
     GetCoursePanelResponse getCoursePanel(@RequestBody GetCoursePanelInfo getCoursePanelInfo) {
         GetCoursePanelResponse getCoursePanelResponse = new GetCoursePanelResponse();
-        System.out.println("getCoursePanelResponse = " + getCoursePanelResponse);
+        System.out.println("getCoursePanelInfo = " + getCoursePanelInfo);
         //模拟查数据库
+        String courseid = getCoursePanelInfo.getCourse_id();
+        System.out.println("courseid = " + courseid);
         getCoursePanelResponse.setId("course_panel");
         CoursePanel coursePanel1 = new CoursePanel();
         CoursePanel coursePanel2 = new CoursePanel();
@@ -29,6 +31,7 @@ public class GetCoursePannel {
         list.add(coursePanel1);
         list.add(coursePanel2);
         getCoursePanelResponse.setValue(list);
+        System.out.println("getCoursePanelResponse = " + getCoursePanelResponse);
         return getCoursePanelResponse;
     }
 }

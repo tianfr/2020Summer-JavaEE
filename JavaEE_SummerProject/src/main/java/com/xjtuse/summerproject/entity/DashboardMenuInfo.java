@@ -2,14 +2,14 @@ package com.xjtuse.summerproject.entity;
 
 import java.io.Serializable;
 
-public class DashBoardMenuInfo  implements Serializable {
+public class DashboardMenuInfo implements Serializable {
     private String status;
     private String message;
     private String user_id;
 
     @Override
     public String toString() {
-        return "DashBoardMenuInfo{" +
+        return "DashboardMenuInfo{" +
                 "status='" + status + '\'' +
                 ", message='" + message + '\'' +
                 ", user_id='" + user_id + '\'' +

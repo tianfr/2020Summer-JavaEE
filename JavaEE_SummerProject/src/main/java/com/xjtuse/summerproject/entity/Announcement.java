@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Announcement implements Serializable {
     private String announcement_title;
     private String author;
-    private String teacher_email;
+    private String author_email;
     private String author_avatar;
     private String announcement_content;
     private String datetime;
@@ -15,7 +15,7 @@ public class Announcement implements Serializable {
         return "Announcement{" +
                 "announcement_title='" + announcement_title + '\'' +
                 ", author='" + author + '\'' +
-                ", teacher_email='" + teacher_email + '\'' +
+                ", author_email='" + author_email + '\'' +
                 ", author_avatar='" + author_avatar + '\'' +
                 ", announcement_content='" + announcement_content + '\'' +
                 ", datetime='" + datetime + '\'' +
@@ -38,12 +38,12 @@ public class Announcement implements Serializable {
         this.author = author;
     }
 
-    public String getTeacher_email() {
-        return teacher_email;
+    public String getAuthor_email() {
+        return author_email;
     }
 
-    public void setTeacher_email(String teacher_email) {
-        this.teacher_email = teacher_email;
+    public void setAuthor_email(String author_email) {
+        this.author_email = author_email;
     }
 
     public String getAuthor_avatar() {
