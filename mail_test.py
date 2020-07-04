@@ -11,7 +11,7 @@ from_addr = 'passwordreminder@xjtuse.club'
 password = 'k4Ef5ciddG74efPV'
  
 # 收信方邮箱
-to_addr = '747458467@qq.com'
+to_addr = '940141567@qq.com'
  
 # 发信服务器
 smtp_server = 'smtp.exmail.qq.com'
