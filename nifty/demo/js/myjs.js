@@ -47,6 +47,7 @@
 		});
 	}
 
+
 	function Register() {
 			alert("已点击按钮");
 			let full_name = $.trim($("#full_name").val());
@@ -71,10 +72,12 @@
 				"full_name":full_name,
                
 			}),
+
 			dataType:"json",
 			async:false,
 			success: function(result){
 				// 请求成功后的操作
+
 				if (result.success_value == "1"){
 					alert("注册成功");
 					location.href = "pages-login.html";
@@ -82,6 +85,7 @@
 				else{ 
 					alert(result.fail_content);
 					//location.href = "pages-login.html";
+
 				}
 			},
 
