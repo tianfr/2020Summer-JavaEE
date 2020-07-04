@@ -73,12 +73,12 @@
 		$.ajax({
 			type:"POST", // 使用post方式
 
-			url:"/UpcomingIssue",
+			url:"/RecentInfo",
 			contentType:"application/json",
 			
 			data: JSON.stringify({
                 "status": "0",
-                "message": "upcoming_issue",
+                "message": "recent_info",
                 
             }),
 			
@@ -86,32 +86,55 @@
 			dataType:"json",
 			async:false,
 			success: function(result){
-				if (result.success_value == "1"){
+				if (result.id == "recent_info"){
 				
 				// 请求成功后的操作
-					var dataObj = result,
+					var dataObj = result.value,
 					var info_data = "",
                 	$.each(dataObj, function(index, item){
 						var rec_info="";
-						rec_info += "<td>"+item.id+"</td>";
-                    	rec_info += "<td>"+item.value+"</td>";
-						rec_info += "<td>"+item.info_id_path+"</td>";
+						rec_info += "<td>"+"<a href="item.info_id_path"  target="_self">"+item.id+"</a>"+"</td>";
   						rec_info += "<td>"+item.course+"</td>";
-						rec_info += "<td>"+item.datetime+"</td>";
 						rec_info += "<td>"+item.content+"</td>";
+						rec_info += "<td>"+item.datetime+"</td>";
 						info_data += "<tr>"+rec_info+"</tr>" ;
 				});
 					$("#recent-info-data").html(info_data);
 	 				
 	
 			}
-				else{
-					alert(fail_content);
-					//location.href = "pages-login.html";
-				}
 		  },
 
 		});
 		}
+
+	function get_announcement(){
+		$.ajax({
+			type:"POST", // 使用post方式
+
+			url:"/GetAnnouncement",
+			contentType:"application/json",
+			
+			data: JSON.stringify({
+    		"status": "0",
+    		"message": "get_announcement",
+    		"course": course,
+    		"announcement_path": announcement_path //注意：这个变量在get_course_announcement中出现过。
+			}),
+			
+			dataType:"json",
+			async:false,
+			success: function(result){
+				$("#headline").html(result.announcement_title);
+				$("#teacher_name").html(result.author);
+				$("#teacher_email").html(result.author_email);
+				$("#teacher_pic").attr('src','result.author_avatar');
+				$("#datetime").html(result.datetime);
+				$("#annou_content").html(result.announcement_content);
+			}
+			
+			
+		});
+	}
 		
 
