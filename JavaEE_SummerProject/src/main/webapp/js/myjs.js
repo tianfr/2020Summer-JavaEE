@@ -195,7 +195,7 @@ function get_course_panel() {
     let urlparam = location.search;
     let course_id = "";
     if (urlparam.substr(1, 9) == "courseid=")
-        course_id = urlparam.substr(10, 7);
+        course_id = urlparam.substr(10, 14);
 
     $.ajax({
         type: "POST", // 使用post方式
@@ -227,6 +227,11 @@ function get_course_panel() {
 }
 
 function course_announcement() {
+    let urlparam = location.search;
+    let course_id = "";
+    if (urlparam.substr(1, 9) == "courseid=")
+        course_id = urlparam.substr(10, 14);
+
     $.ajax({
         type: "POST", // 使用post方式
 
@@ -237,7 +242,7 @@ function course_announcement() {
         data: JSON.stringify({
             "status": "0",
             "message": "get_course_announcement",
-            //"course": course,
+            "course_id": course_id,
 
         }),
 
@@ -250,7 +255,15 @@ function course_announcement() {
                 con +=
                     "<div class=\"panel\">" +
                     "<div class=\"panel-heading\">" +
-                    "<h3 class=\"panel-title\">" + item.announcement_title + "</h3>" +
+                    "<h3 class=\"panel-title\">" +
+                    "<a href=\"announcement.html?" +
+                    course_id +
+                    "&announcementid="+
+                    item.announcement_id +
+                    "\" onclick=\"get_announcement()\">" +
+                    item.announcement_title +
+                    "</a>" +
+                    "</h3>" +
                     "</div> " +
                     "<div class=\"panel-body1\">" +
                     "<div class=\"show-r3\" style=\"overflow: hidden;text-overflow: ellipsis;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;\">" +
@@ -261,5 +274,42 @@ function course_announcement() {
             });
             $("#course_an").html(con);
         }
+    });
+}
+
+function get_announcement(){
+    let urlparam = location.search;
+    let course_id = "";
+    let announcement_id = "";
+    if (urlparam.substr(1, 9) == "courseid=" && urlparam.substr(25, 15) == "announcementid=") {
+        course_id = urlparam.substr(10, 14);
+        announcement_id = urlparam.substr(40);
+    }
+
+    $.ajax({
+        type:"POST", // 使用post方式
+
+        url:"/GetAnnouncement",
+        contentType:"application/json",
+
+        data: JSON.stringify({
+            "status": "0",
+            "message": "get_announcement",
+            "course_id": course_id,
+            "announcement_id": announcement_id //注意：这个变量在get_course_announcement中出现过。
+        }),
+
+        dataType:"json",
+        async:false,
+        success: function(result){
+            $("#headline").html("<span class=\"label label-normal label-info\">公告</span>"+result.annoyncement_title);
+            $("#teacher_name").html(result.author);
+            $("#teacher_email").html(result.author_email);
+            $("#teacher_pic").attr('src',result.author_avatar);
+            $("#datetime").html(result.datetime);
+            $("#annou_content").html(result.announcement_content);
+        }
+
+
     });
 }
