@@ -8,6 +8,7 @@ public class GetHomeworkResponse implements Serializable {
     private String author;
     private String author_email;
     private String author_avatar;
+    private String deadline;
     private String homework_content;
     private List<Attachment> homework_attachment;
     private String datetime;
@@ -19,10 +20,19 @@ public class GetHomeworkResponse implements Serializable {
                 ", author='" + author + '\'' +
                 ", author_email='" + author_email + '\'' +
                 ", author_avatar='" + author_avatar + '\'' +
+                ", deadline='" + deadline + '\'' +
                 ", homework_content='" + homework_content + '\'' +
                 ", homework_attachment=" + homework_attachment +
                 ", datetime='" + datetime + '\'' +
                 '}';
+    }
+
+    public String getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(String deadline) {
+        this.deadline = deadline;
     }
 
     public String getHomework_title() {
