@@ -93,7 +93,9 @@
 					var info_data = "",
                 	$.each(dataObj, function(index, item){
 						var rec_info="";
-						rec_info += "<td>"+"<a href="index.html?course_id=item.info_id_path" target="_self">"+item.id+"</a>"+"</td>";
+						rec_info += "<td>"+'<a href="index.html?course_id='+
+						            item.info_id_path
+									'"  target="_self">'+item.id+"</a></td>";
   						rec_info += "<td>"+item.course+"</td>";
 						rec_info += "<td>"+item.content+"</td>";
 						rec_info += "<td>"+item.datetime+"</td>";
@@ -151,7 +153,7 @@
 			data:JSON.stringify({
                 "status": "0",
                 "message": "get_course_homeworks", 
- 				"course_id": course_id,
+ 				"course_id": "course_id",
             }),
 			
 			dataType:"json",
@@ -164,33 +166,33 @@
 					var page_size = Math.ceil(num/page_num);//页数
 					var homeworkObj = result.value;
 					var current_page = 1 ;
-					var current_num = 1 ;
 					
 					document.getElementById("demo-mail-list").innerHTML = "";
 					$.each(homeworkObj, function(index, item){
 						if(index<page_num){//静态显示第一页
 							var li = "";
-							li += " <li class="mail-list-unread mail-attach">
-				                    <div class="mail-control">
-				                    <input id="email-list-1" class="magic-checkbox" type="checkbox">
-				                    <label for="email-list-1"></label>
-			                        </div>
-				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <strong class="mail-from"> "
+							li += ' <li class="mail-list-unread mail-attach">
+				                    '<div class="mail-control">'
+				                    '<input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                    '<label for="email-list-1"></label>
+			                        '</div>
+				                    '<div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>'
+				                    '<strong class="mail-from"> '
 							
-									+"<a href="course-dashboard.html?course_id=item.homework_id" target="_self">"
+									'<a href="mailbox-meaasge.html" target="_self" id=" '
+								    +item.homework_id+
+								    '" onclick="get_homework(this.id)">'
 							
 									+item.homework_title
-									+"<br>
-			                        </strong>
-				                    <div class="mail-time">";
+									+'</a><br></strong>
+				                    '<div class="mail-time">';
 							li += item.homework_deadline
 							      + "</div>
-				                   <div class="mail-attach-icon"></div>
-				                   <div class="mail-subject"> <a href="mailbox-message.html">";
+				                   '<div class="mail-attach-icon"></div>
+				                   '<div class="mail-subject"> <a href="mailbox-message.html">";
 							li += item.homework_content
 							      + "</a> </div> </li>" ;
-							$("#demo-mail-list").html(current_page);
+							$("#demo-mail-list").html(li);
 							$("#page_id").html(current_page);
 							$("#page_total").html(page_size);
 						}
@@ -237,27 +239,28 @@
 							if(current_page-1*page_num<=index
 							   &&index<current_page*page_num){
 								var li = "";
-							li += " <li class="mail-list-unread mail-attach">
-				                    <div class="mail-control">
-				                    <input id="email-list-1" class="magic-checkbox" type="checkbox">
-				                    <label for="email-list-1"></label>
-			                        </div>
-				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <strong class="mail-from"> "
+							li += ' <li class="mail-list-unread mail-attach">
+				                    '<div class="mail-control">'
+				                    '<input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                    '<label for="email-list-1"></label>
+			                        '</div>
+				                    '<div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>'
+				                    '<strong class="mail-from"> '
 							
-									+"<a href="course-dashboard.html?course_id=item.homework_id" target="_self">"
+									'<a href="mailbox-meaasge.html" target="_self" id=" '
+								    +item.homework_id+
+								    '" onclick="get_homework(this.id)">'
 							
 									+item.homework_title
-									+"<br>
-			                        </strong>
-				                    <div class="mail-time">";
+									+'</a><br></strong>
+				                    '<div class="mail-time">';
 							li += item.homework_deadline
 							      + "</div>
-				                   <div class="mail-attach-icon"></div>
-				                   <div class="mail-subject"> <a href="mailbox-message.html">";
+				                   '<div class="mail-attach-icon"></div>
+				                   '<div class="mail-subject"> <a href="mailbox-message.html">";
 							li += item.homework_content
 							      + "</a> </div> </li>" ;
-							$("#demo-mail-list").html(current_page);
+							$("#demo-mail-list").html(li);
 							$("#page_id").html(current_page);
 							$("#page_total").html(page_size);
 							}
@@ -301,27 +304,28 @@
 							if(current_page-1*page_num<=index
 							   &&index<current_page*page_num){
 								var li = "";
-							li += " <li class="mail-list-unread mail-attach">
-				                    <div class="mail-control">
-				                    <input id="email-list-1" class="magic-checkbox" type="checkbox">
-				                    <label for="email-list-1"></label>
-			                        </div>
-				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <strong class="mail-from"> "
+							li += ' <li class="mail-list-unread mail-attach">
+				                    '<div class="mail-control">'
+				                    '<input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                    '<label for="email-list-1"></label>
+			                        '</div>
+				                    '<div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>'
+				                    '<strong class="mail-from"> '
 							
-									+"<a href="item.homework_id" target="_self">"
+									'<a href="mailbox-meaasge.html" target="_self" id=" '
+								    +item.homework_id+
+								    '" onclick="get_homework(this.id)">'
 							
 									+item.homework_title
-									+"<br>
-			                        </strong>
-				                    <div class="mail-time">";
+									+'</a><br></strong>'
+				                    '<div class="mail-time">';
 							li += item.homework_deadline
 							      + "</div>
-				                   <div class="mail-attach-icon"></div>
-				                   <div class="mail-subject"> <a href="mailbox-message.html">";
+				                   '<div class="mail-attach-icon"></div>
+				                   '<div class="mail-subject"> <a href="mailbox-message.html">";
 							li += item.homework_content
 							      + "</a> </div> </li>" ;
-							$("#demo-mail-list").html(current_page);
+							$("#demo-mail-list").html(li);
 							$("#page_id").html(current_page);
 							$("#page_total").html(page_size);
 							}
@@ -333,5 +337,34 @@
 		}
 		
 	}
-		
+			   
 
+
+    function get_homework(this.id){
+			var homework_id = this.id;
+			$.ajax({
+				type:"POST", // 使用post方式
+
+				url:"/GetHomework",
+				contentType:"application/json",
+
+
+				data:JSON.stringify({
+                	"status": "0",
+                	"message": "get_homework", 
+ 					"course_id": course_id,
+					"homework_id": homework_id,
+            }),
+				
+				
+				
+				
+			});
+			
+		}
+		
+		
+		
+		
+		
+		
