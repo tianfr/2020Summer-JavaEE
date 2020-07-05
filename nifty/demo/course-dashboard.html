@@ -747,7 +747,7 @@
 
 					            </div>
 								<div id="tab-2" class="panel-body">
-                <h1 class="page-header text-overflow pad-btm">作业列表</h1>
+                       <h1 class="page-header text-overflow pad-btm">作业列表</h1>
 				                <div class="row">
 				                  <div class="col-sm-7">
 				                    <!-- Mail toolbar -->
@@ -787,10 +787,14 @@
 				                  <div class="col-sm-5 clearfix">
 				                    <div class="pull-right">
 				                      <!--Pager buttons-->
-				                      <span class="text-muted"> <strong>1-50</strong> of <strong>160</strong> </span>
+				                      <span class="text-muted" > <strong id="page_id">1-50</strong> of <strong id="page_total">160</strong> </span>
 				                      <div class="btn-group btn-group">
-				                        <button class="btn btn-sm btn-default" type="button"> <i class="demo-psi-arrow-left"></i> </button>
-				                        <button class="btn btn-sm btn-default" type="button"> <i class="demo-psi-arrow-right"></i> </button>
+				                        <button class="btn btn-sm btn-default" type="button" onclick="homework_flip_left()"> 
+											<i class="demo-psi-arrow-left"></i> 
+										</button>
+				                        <button class="btn btn-sm btn-default" type="button" onclick="homework_flip_right()"> 
+											<i class="demo-psi-arrow-right"></i> 
+										</button>
 			                          </div>
 			                        </div>
 			                      </div>
@@ -805,8 +809,8 @@
 				                      <label for="email-list-1"></label>
 			                        </div>
 				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <div class="mail-from">作业一<br>
-			                        </div>
+				                    <strong class="mail-from">作业一<br>
+			                        </strong>
 				                    <div class="mail-time">05:55 PM</div>
 				                    <div class="mail-attach-icon"></div>
 				                    <div class="mail-subject"> <a href="mailbox-message.html">This is an example if there is a really really long text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </a> </div>
