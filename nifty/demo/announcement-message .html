@@ -564,7 +564,7 @@
 					
 					            <p class="pad-hor mar-top text-main text-bold">Folders</p>
 					            <div class="list-group bg-trans pad-btm bord-btm">
-									<a href="#tab-1" class="list-group-item text-semibold text-main selected"> 
+									<a href="#tab-1" class="list-group-item text-semibold text-main selected" onclick="location='course-dashboard.html'"> 
 										<span class="badge badge-success pull-right">7</span> 
 										<span class="text-main"><em class="demo-pli-inbox-full icon-lg icon-fw"></em> 公告</span> 
 									</a> <a href="#tab-2" class="list-group-item"> <em class="demo-pli-file icon-lg icon-fw"></em> 作业 </a> 
@@ -632,123 +632,159 @@
 					    <div class="fluid">
 					        <div class="panel">
 					            <div id="tab-1" class="panel-body testing">
-					                <h1 class="page-header text-overflow pad-btm">Inbox (17)</h1>
+					                <div class="mar-btm pad-btm bord-btm">
+					                    <h1 class="page-header text-overflow" id="headline">
+					                        <span class="label label-normal label-info">公告</span>
+					                        Hi John! How are you ?
+					                    </h1>
+					                </div>
 					
 					                <div class="row">
 					                    <div class="col-sm-7">
 					
-					                        <!-- Mail toolbar -->
-					                        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-					
-					                        <!--Split button dropdowns-->
-					                        <div class="btn-group">
-					                            <div id="demo-checked-all-mail" class="btn btn-sm btn-default">
-					                                <input id="select-all-mail" class="magic-checkbox" type="checkbox">
-					                                <label for="select-all-mail"></label>
+					                        <!--Sender Information-->
+					                        <div class="media">
+					                            <span class="media-left">
+					                                <img src="img/profile-photos/8.png" id="teacher_pic" class="img-circle img-sm" alt="Profile Picture">
+					                            </span>
+					                            <div class="media-body">
+					                                <div class="text-bold" id="teacher_name">Lisa D. Smith</div>
+					                                <small class="text-muted" id ="teacher_email">lisa.aqua@themeon.net</small>
 					                            </div>
-					                            <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"><i class="dropdown-caret"></i></button>
-					                            <ul class="dropdown-menu">
-					                                <li><a href="javascript:void(0)" id="demo-select-all-list">All</a></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-none-list">None</a></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-toggle-list">Toggle</a></li>
-					                                <li class="divider"></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-read-list">Read</a></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-unread-list">Unread</a></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-starred-list">Starred</a></li>
-					                            </ul>
-					                        </div>
-					
-					                        <!--Refresh button-->
-					                        <button id="demo-mail-ref-btn" data-toggle="panel-overlay" data-target="#demo-email-list" class="btn btn-default btn-sm" type="button">
-					                            <i class="demo-psi-repeat-2"></i>
-					                        </button>
-					
-					                        <!--Dropdown button (More Action)-->
-					                        <div class="btn-group">
-					                            <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle" type="button">
-					                                More <i class="dropdown-caret"></i>
-					                            </button>
-					                            <ul class="dropdown-menu">
-					                                <li><a href="#">Mark as read</a></li>
-					                                <li><a href="#">Mark as unread</a></li>
-					                                <li class="divider"></li>
-					                                <li><a href="#">Star</a></li>
-					                                <li><a href="#">Clear Star</a></li>
-					                            </ul>
 					                        </div>
 					                    </div>
 					                    <hr class="hr-sm visible-xs">
 					                    <div class="col-sm-5 clearfix">
+					
+					                        <!--Details Information-->
+					                        <div class="pull-right text-right">
+					                            <p class="mar-no"><small class="text-muted" id="datetime">Monday 12, May 2016</small></p>
+					                            <a href="#">
+					                                <strong>Holiday.zip</strong>
+					                                <i class="demo-psi-paperclip icon-fw"></i>
+					                            </a>
+					                        </div>
+					                    </div>
+					                </div>
+					                <div class="row pad-ver">
+					                    <div class="col-xs-7">
+					
+					                        <!--Mail toolbar-->
+					                        <button class="btn btn-sm btn-default"><i class="demo-pli-printer"></i></button>
+					                        <div class="btn-group btn-group">
+					                            <button class="btn btn-sm btn-default"><i class="demo-pli-information"></i></button>
+					                            <button class="btn btn-sm btn-default"><i class="demo-pli-recycling"></i> Remove</button>
+					                        </div>
+					                    </div>
+					                    <div class="col-xs-5 clearfix">
 					                        <div class="pull-right">
 					
-					                            <!--Pager buttons-->
-					                            <span class="text-muted">
-					                                <strong>1-50</strong>
-					                                of
-					                                <strong>160</strong>
-					                            </span>
+					                            <!--Reply & forward buttons-->
 					                            <div class="btn-group btn-group">
-					                                <button class="btn btn-sm btn-default" type="button" onclick="homework_flip_left()">
-					                                    <i class="demo-psi-arrow-left"></i>
-					                                </button>
-					                                <button class="btn btn-sm btn-default" type="button"
-													>
-					                                    <i class="demo-psi-arrow-right"></i>
-					                                </button>
+					                                <a class="btn btn-sm btn-default" href="#">
+					                                <i class="demo-psi-left-4"></i>
+					                                </a>
+					                                <a class="btn btn-sm btn-default" href="#">
+					                                <i class="demo-psi-right-4"></i>
+					                                </a>
 					                            </div>
 					                        </div>
 					                    </div>
 					                </div>
-					                <hr class="hr-sm">
-									<div class="panel">
-					            <div class="panel-heading">
-					              <h3 class="panel-title"> 
-									  <a href="announcement-message .html" target="_self" onclick= "get_announcement()">Paragraph 1
-									  </a> 
-									</h3>
-					            </div>
-					            <div class="panel-body1">
 					
-					                <!--Paragraph-->
+					                <!--Message-->
 					                <!--===================================================-->
-					                <p class="text-main text-semibold">Paragraph Text</p>
-					                <p>Of on affixed civilly moments promise explain
-					                fertile in. Assurance advantage belonging happiness
-					                departure so of. Now improving and one sincerity
-					                intention allowance commanded not. Oh an am frankness
-					                be necessary earnestly advantage estimable extensive.
-					                Five he wife gone ye. Mrs suffering sportsmen earnestly
-					                any. In am do giving to afford parish settle easily
-					                garret.</p>
+					                <div class="pad-ver bord-ver" id="annou_content">
+					                    Hey John,
+					                    <br><br>
+					                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>
+					                    <blockquote class="text-muted">
+					                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					                    </blockquote>
+					                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+					                    <br><br>
+					                    Regards,
+					                    <br><br>
+					                    <strong>Lisa D. Smith</strong><br>
+					                    2834 Street Name<br>
+					                    San Francisco, CA<br>
+					                </div>
 					                <!--===================================================-->
+					                <!--End Message-->
 					
-					            </div>
-					        </div>
-									<div class="panel">
-					            <div class="panel-heading">
-					                <h3 class="panel-title">Paragraph 2</h3>
-					            </div>
-					            <div class="panel-body1">
-					
-					                <!--Paragraph-->
+					                <!-- Attach Files-->
 					                <!--===================================================-->
-					                <p class="text-main text-semibold">Paragraph Text</p>
-					                <p>Of on affixed civilly moments promise explain
-					                fertile in. Assurance advantage belonging happiness
-					                departure so of. Now improving and one sincerity
-					                intention allowance commanded not. Oh an am frankness
-					                be necessary earnestly advantage estimable extensive.
-					                Five he wife gone ye. Mrs suffering sportsmen earnestly
-					                any. In am do giving to afford parish settle easily
-					                garret.</p>
-					                <!--===================================================-->
+					                <div class="pad-ver mar-ver bord-btm">
+					                    <p class="text-main text-bold box-inline"><i class="demo-psi-paperclip icon-fw"></i> Attachments <span>(2) - </span></p>
+					                    <a href="#" class="btn-link">Download all</a> | <a href="#" class="btn-link">View all images</a>
 					
-					            </div>
-					        </div>
+					                    <ul class="mail-attach-list list-ov">
+					                        <li>
+					                            <a href="#" class="thumbnail">
+					                                <div class="mail-file-img">
+					                                    <img class="image-responsive" src="img/bg-img/bg-img-4.jpg" alt="image">
+					                                </div>
+					                                <div class="caption">
+					                                    <p class="text-primary mar-no">Nature.jpg</p>
+					                                    <small class="text-muted">Added: May 01, 2016</small>
+					                                </div>
+					                            </a>
+					                        </li>
+					                        <li>
+					                            <a href="#" class="thumbnail">
+					                                <div class="mail-file-img">
+					                                    <img class="image-responsive" src="img/bg-img/bg-img-3.jpg" alt="image">
+					                                </div>
+					                                <div class="caption">
+					                                    <p class="text-primary mar-no">Forest.png</p>
+					                                    <small class="text-muted">Added: May 07, 2016</small>
+					                                </div>
+					                            </a>
+					                        </li>
+					                        <li>
+					                            <a href="#" class="thumbnail">
+					                                <div class="mail-file-icon">
+					                                    <i class="demo-pli-file-csv"></i>
+					                                </div>
+					                                <div class="caption">
+					                                    <p class="text-primary mar-no">Reports.csv</p>
+					                                    <small class="text-muted">Added: May 10, 2016</small>
+					                                </div>
+					                            </a>
+					                        </li>
+					                        <li>
+					                            <a href="#" class="thumbnail">
+					                                <div class="mail-file-icon">
+					                                    <i class="demo-pli-file-zip"></i>
+					                                </div>
+					                                <div class="caption">
+					                                    <p class="text-primary mar-no">Project.zip</p>
+					                                    <small class="text-muted">Added: May 10, 2016</small>
+					                                </div>
+					                            </a>
+					                        </li>
+					                    </ul>
+					                </div>
+					                <!--===================================================-->
+					                <!-- End Attach Files-->
+					
+					
+					                <!--Quick reply : Summernote Placeholder -->
+					                <div id="demo-mail-textarea" class="mail-message-reply bg-gray-light">
+					                    <strong>Reply</strong> or <strong>Forward</strong> this message...
+					                </div>
+					
+					                <!--Send button-->
+					                <div class="pad-ver">
+					                    <button id="demo-mail-send-btn" type="button" class="btn btn-primary hide">
+					                        <span class="demo-psi-mail-send icon-lg icon-fw"></span>
+					                        Send Message
+					                    </button>
+					                </div>
 
 					            </div>
 								<div id="tab-2" class="panel-body">
-                       <h1 class="page-header text-overflow pad-btm">作业列表</h1>
+                <h1 class="page-header text-overflow pad-btm">作业列表</h1>
 				                <div class="row">
 				                  <div class="col-sm-7">
 				                    <!-- Mail toolbar -->
@@ -788,14 +824,10 @@
 				                  <div class="col-sm-5 clearfix">
 				                    <div class="pull-right">
 				                      <!--Pager buttons-->
-				                      <span class="text-muted" > <strong id="page_id">1-50</strong> of <strong id="page_total">160</strong> </span>
+				                      <span class="text-muted"> <strong>1-50</strong> of <strong>160</strong> </span>
 				                      <div class="btn-group btn-group">
-				                        <button class="btn btn-sm btn-default" type="button" onclick="homework_flip_left()"> 
-											<i class="demo-psi-arrow-left"></i> 
-										</button>
-				                        <button class="btn btn-sm btn-default" type="button" onclick="homework_flip_right()"> 
-											<i class="demo-psi-arrow-right"></i> 
-										</button>
+				                        <button class="btn btn-sm btn-default" type="button"> <i class="demo-psi-arrow-left"></i> </button>
+				                        <button class="btn btn-sm btn-default" type="button"> <i class="demo-psi-arrow-right"></i> </button>
 			                          </div>
 			                        </div>
 			                      </div>
@@ -810,8 +842,8 @@
 				                      <label for="email-list-1"></label>
 			                        </div>
 				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <strong class="mail-from">作业一<br>
-			                        </strong>
+				                    <div class="mail-from">作业一<br>
+			                        </div>
 				                    <div class="mail-time">05:55 PM</div>
 				                    <div class="mail-attach-icon"></div>
 				                    <div class="mail-subject"> <a href="mailbox-message.html">This is an example if there is a really really long text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </a> </div>
