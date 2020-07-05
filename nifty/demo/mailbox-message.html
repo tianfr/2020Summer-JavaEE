@@ -634,7 +634,7 @@
 					            <div id="tab-1" class="panel-body testing">
 					                <div class="mar-btm pad-btm bord-btm">
 					                    <h1 class="page-header text-overflow" id="headline">
-					                        <span class="label label-normal label-info">公告</span>
+					                        <span class="label label-normal label-info">作业</span>
 					                        Hi John! How are you ?
 					                    </h1>
 					                </div>
@@ -670,11 +670,8 @@
 					                    <div class="col-xs-7">
 					
 					                        <!--Mail toolbar-->
-					                        <button class="btn btn-sm btn-default"><i class="demo-pli-printer"></i></button>
-					                        <div class="btn-group btn-group">
-					                            <button class="btn btn-sm btn-default"><i class="demo-pli-information"></i></button>
-					                            <button class="btn btn-sm btn-default"><i class="demo-pli-recycling"></i> Remove</button>
-					                        </div>
+					                        <button class="btn btn-purple" 
+													id="homework_submit">作业提交</button>
 					                    </div>
 					                    <div class="col-xs-5 clearfix">
 					                        <div class="pull-right">
@@ -691,10 +688,13 @@
 					                        </div>
 					                    </div>
 					                </div>
+									<div id="homework_ddl">
+										
+									</div>
 					
 					                <!--Message-->
 					                <!--===================================================-->
-					                <div class="pad-ver bord-ver" id="annou_content">
+					                <div class="pad-ver bord-ver" id="homework_content">
 					                    Hey John,
 					                    <br><br>
 					                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>
@@ -715,7 +715,7 @@
 					                <!-- Attach Files-->
 					                <!--===================================================-->
 					                <div class="pad-ver mar-ver bord-btm">
-					                    <p class="text-main text-bold box-inline"><i class="demo-psi-paperclip icon-fw"></i> Attachments <span>(2) - </span></p>
+					                    <p class="text-main text-bold box-inline"><i class="demo-psi-paperclip icon-fw"></i> 附件 </p>
 					                    <a href="#" class="btn-link">Download all</a> | <a href="#" class="btn-link">View all images</a>
 					
 					                    <ul class="mail-attach-list list-ov">
@@ -725,8 +725,8 @@
 					                                    <img class="image-responsive" src="img/bg-img/bg-img-4.jpg" alt="image">
 					                                </div>
 					                                <div class="caption">
-					                                    <p class="text-primary mar-no">Nature.jpg</p>
-					                                    <small class="text-muted">Added: May 01, 2016</small>
+					                                    <p class="text-primary mar-no" id="attachment_name">Nature.jpg</p>
+					                                    
 					                                </div>
 					                            </a>
 					                        </li>
@@ -736,8 +736,8 @@
 					                                    <img class="image-responsive" src="img/bg-img/bg-img-3.jpg" alt="image">
 					                                </div>
 					                                <div class="caption">
-					                                    <p class="text-primary mar-no">Forest.png</p>
-					                                    <small class="text-muted">Added: May 07, 2016</small>
+					                                    <p class="text-primary mar-no" id="attachment_name">Forest.png</p>
+					                                    
 					                                </div>
 					                            </a>
 					                        </li>
@@ -747,8 +747,8 @@
 					                                    <i class="demo-pli-file-csv"></i>
 					                                </div>
 					                                <div class="caption">
-					                                    <p class="text-primary mar-no">Reports.csv</p>
-					                                    <small class="text-muted">Added: May 10, 2016</small>
+					                                    <p class="text-primary mar-no" id="attachment_name">Reports.csv</p>
+					                                    
 					                                </div>
 					                            </a>
 					                        </li>
@@ -758,7 +758,7 @@
 					                                    <i class="demo-pli-file-zip"></i>
 					                                </div>
 					                                <div class="caption">
-					                                    <p class="text-primary mar-no">Project.zip</p>
+					                                    <p class="text-primary mar-no" id="attachment_name">Project.zip</p>
 					                                    <small class="text-muted">Added: May 10, 2016</small>
 					                                </div>
 					                            </a>

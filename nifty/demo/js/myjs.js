@@ -356,7 +356,48 @@
 					"homework_id": homework_id,
             }),
 				
-				
+				dataType:"json",
+				async:false,
+				success: function(result){
+					var attachmentObj = result.homework_attachment;
+					var li = "";
+					var string_ddl = result.homework_deadline+":00";//string类型
+					var ddl_day = new Date(string_ddl);//ddl转化为date类型
+					var today = new Date(); //当前时间
+					var days_diff = (ddl_day.getTime() - today.getTime())/(1*24*60*60*1000);
+					//ddl与当前日期天数差
+					var alert = "";
+					$("#headline").html(result.homework_title);
+					$("#teacher_name").html(result.author);
+					$("#teacher_email").html(result.author_email);
+					$("#teacher_pic").attr('src','result.author_avatar');
+					$("#datetime").html(result.datetime);
+					$("#homework_content").html(result.homework_content);
+					//还没有判断作业有没有提交过
+					if(days_diff<0){
+						alert += '<div class="alert alert-danger"> <strong>';
+					}
+					else if(days_diff<1){
+						alert += '<div class="alert alert-warning"> <strong>';
+					}
+					else{
+						alert += '<div class="alert alert-primary"> <strong>';
+					}
+					alert += result.homework_deadline+
+						     '</strong> </div>';
+					$("#homework_ddl").html(alert);
+					
+					$.each(attachmentObj, function(index, item){						
+						li += '<li> <a href="#" class="thumbnail"><div class="mail-file-          img"><a href=" '
+						     +item.attachment_path+
+						     ' " target="_self">'
+					         '<img class="image-responsive" src="img/bg-img/bg-img-4.jpg"   alt="image"></a></div><div class="caption"> '
+					         '<p class="text-primary mar-no" id="attachment_name">'
+							 +item.attachment_name+
+							 '</p></div></a></li>'
+					}); 
+					$("#mail-attach-list").html(li);
+			}
 				
 				
 			});
