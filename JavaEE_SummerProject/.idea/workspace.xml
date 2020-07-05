@@ -25,30 +25,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43adc165-a0c1-45b6-b342-859af66343f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/GetCourseResourcesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/GetExistedHomeworkController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/SubmitHomeworkController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/entity/CourseResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/entity/File.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/entity/GetExistedHomeworkInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/entity/GetExistedHomeworkResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/entity/SubmitHomeworkInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/entity/SubmitHomeworkResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/announcement.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/GetAnnouncementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/GetAnnouncementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/entity/GetHomeworkResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/entity/GetHomeworkResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/GetCourseHomeworksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/GetCourseHomeworksController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/course-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/homework.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/homework.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/myjs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xjtuse/summerproject/StudentMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xjtuse/summerproject/StudentMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controller/GetAnnouncementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controller/GetAnnouncementController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/course-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/course-dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/homework.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/homework.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/js/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/js/myjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controller/GetAnnouncementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controller/GetAnnouncementController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,16 +102,16 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\2020Summer-JavaEE\JavaEE_SummerProject\src\main\webapp" />
+      <recent name="D:\GitProject\2020Summer-JavaEE\JavaEE_SummerProject\src\main\resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\2020Summer-JavaEE\JavaEE_SummerProject\src\main\webapp" />
       <recent name="E:\2020Summer-JavaEE\JavaEE_SummerProject\src\main\webapp\js" />
       <recent name="E:\2020Summer-JavaEE\JavaEE_SummerProject\src\main\webapp\WEB-INF" />
       <recent name="D:\idea-workspace\JavaEE_SummerProject\src\main\webapp\WEB-INF" />
       <recent name="D:\idea-workspace\JavaEE_SummerProject\src\main\webapp\html" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\2020Summer-JavaEE\JavaEE_SummerProject\src\main\webapp" />
-      <recent name="D:\GitProject\2020Summer-JavaEE\JavaEE_SummerProject\src\main\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.36">
@@ -354,6 +338,7 @@
       <workItem from="1593839291710" duration="7039000" />
       <workItem from="1593851491012" duration="7635000" />
       <workItem from="1593919776939" duration="12438000" />
+      <workItem from="1593934760718" duration="13941000" />
     </task>
     <servers />
   </component>
@@ -397,62 +382,62 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="78" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1593854287027" />
-    <state x="883" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593854304368">
+    <state x="883" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593942832838">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="883" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1593854304368" />
+    <state x="883" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1593942832838" />
     <state x="445" y="156" key="FileChooserDialogImpl" timestamp="1593626549653">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="445" y="156" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1593626549653" />
-    <state width="1024" height="187" key="GridCell.Tab.0.bottom" timestamp="1593933477025">
+    <state width="1024" height="187" key="GridCell.Tab.0.bottom" timestamp="1593950192138">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593933477025" />
-    <state width="1024" height="187" key="GridCell.Tab.0.center" timestamp="1593933477025">
+    <state width="1024" height="187" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593950192138" />
+    <state width="1024" height="187" key="GridCell.Tab.0.center" timestamp="1593950192137">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593933477025" />
-    <state width="1024" height="187" key="GridCell.Tab.0.left" timestamp="1593933477024">
+    <state width="1024" height="187" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593950192137" />
+    <state width="1024" height="187" key="GridCell.Tab.0.left" timestamp="1593950192137">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593933477024" />
-    <state width="1024" height="187" key="GridCell.Tab.0.right" timestamp="1593933477025">
+    <state width="1024" height="187" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593950192137" />
+    <state width="1024" height="187" key="GridCell.Tab.0.right" timestamp="1593950192137">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593933477025" />
-    <state width="1024" height="187" key="GridCell.Tab.1.bottom" timestamp="1593933477025">
+    <state width="1024" height="187" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593950192137" />
+    <state width="1024" height="187" key="GridCell.Tab.1.bottom" timestamp="1593950192138">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593933477025" />
-    <state width="1024" height="187" key="GridCell.Tab.1.center" timestamp="1593933477025">
+    <state width="1024" height="187" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593950192138" />
+    <state width="1024" height="187" key="GridCell.Tab.1.center" timestamp="1593950192138">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1593933477025" />
-    <state width="1024" height="187" key="GridCell.Tab.1.left" timestamp="1593933477025">
+    <state width="1024" height="187" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1593950192138" />
+    <state width="1024" height="187" key="GridCell.Tab.1.left" timestamp="1593950192138">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1593933477025" />
-    <state width="1024" height="187" key="GridCell.Tab.1.right" timestamp="1593933477025">
+    <state width="1024" height="187" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1593950192138" />
+    <state width="1024" height="187" key="GridCell.Tab.1.right" timestamp="1593950192138">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1593933477025" />
-    <state width="1024" height="187" key="GridCell.Tab.2.bottom" timestamp="1593933477025">
+    <state width="1024" height="187" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1593950192138" />
+    <state width="1024" height="187" key="GridCell.Tab.2.bottom" timestamp="1593950192138">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593933477025" />
-    <state width="1024" height="187" key="GridCell.Tab.2.center" timestamp="1593933477025">
+    <state width="1024" height="187" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593950192138" />
+    <state width="1024" height="187" key="GridCell.Tab.2.center" timestamp="1593950192138">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1593933477025" />
-    <state width="1024" height="187" key="GridCell.Tab.2.left" timestamp="1593933477025">
+    <state width="1024" height="187" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1593950192138" />
+    <state width="1024" height="187" key="GridCell.Tab.2.left" timestamp="1593950192138">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1593933477025" />
-    <state width="1024" height="187" key="GridCell.Tab.2.right" timestamp="1593933477025">
+    <state width="1024" height="187" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1593950192138" />
+    <state width="1024" height="187" key="GridCell.Tab.2.right" timestamp="1593950192138">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1593933477025" />
+    <state width="1024" height="187" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1593950192138" />
     <state width="1024" height="210" key="GridCell.Tab.3.bottom" timestamp="1593632350814">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

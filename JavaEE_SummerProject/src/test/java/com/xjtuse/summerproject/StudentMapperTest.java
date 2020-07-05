@@ -22,6 +22,7 @@ public class StudentMapperTest {
 
     @Before
     public void init() throws Exception{
+
         //1.读取配置文件，生成字节输入流
         in = Resources.getResourceAsStream("SqlMapConfig.xml");
         //2.创建SqlSessionFactory工厂
