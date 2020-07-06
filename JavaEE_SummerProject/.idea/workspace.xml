@@ -25,28 +25,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43adc165-a0c1-45b6-b342-859af66343f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/homework-message.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/PasswordResetController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controllerEntity/PasswordResetInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/encrytion/DESUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/entity/Teacher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/mail/MailSenderInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/mail/MyAuthenticator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/mail/SimpleMailSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/mail/TestSendEmail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/mapper/TeacherMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resetPassword.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/xjtuse/summerproject/TeacherMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/GetExistedHomeworkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/GetExistedHomeworkController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/GetHomeworkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/GetHomeworkController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/UpcomingIssueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/UpcomingIssueController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/DashboardMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/DashboardMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/PasswordReminderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/PasswordReminderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controllerEntity/PasswordReminderInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controllerEntity/PasswordReminderInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controllerEntity/RegisterInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controllerEntity/RegisterInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controllerEntity/ResponseInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controllerEntity/ResponseInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/mapper/StudentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/mapper/StudentMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/announcement.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/announcement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/nifty.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/nifty.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/homework-message.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/homework-message.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/myjs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages-password-reminder.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages-password-reminder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages-register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xjtuse/summerproject/StudentMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xjtuse/summerproject/StudentMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controller/GetExistedHomeworkController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controller/GetExistedHomeworkController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controller/GetHomeworkController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controller/GetHomeworkController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controller/UpcomingIssueController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controller/UpcomingIssueController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controller/DashBoardMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controller/DashBoardMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controller/PasswordReminderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controller/PasswordReminderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controller/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controllerEntity/PasswordReminderInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controllerEntity/PasswordReminderInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controllerEntity/RegisterInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controllerEntity/RegisterInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controllerEntity/ResponseInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controllerEntity/ResponseInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/mapper/StudentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/mapper/StudentMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/announcement.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/announcement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/js/demo/form-file-upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/js/demo/form-file-upload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/course-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/course-dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/homework-message.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/homework-message.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/js/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/js/myjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/plugins/dropzone/dropzone.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/plugins/dropzone/dropzone.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/JavaEE_SummerProject.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controller/GetExistedHomeworkController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controller/GetExistedHomeworkController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controller/GetHomeworkController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controller/GetHomeworkController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controller/UpcomingIssueController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controller/UpcomingIssueController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/JavaEE_SummerProject.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/pages-password-reminder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/pages-password-reminder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/pages-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/pages-register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controller/DashBoardMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controller/DashBoardMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controller/PasswordReminderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controller/PasswordReminderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controller/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controllerEntity/PasswordReminderInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controllerEntity/PasswordReminderInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controllerEntity/RegisterInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controllerEntity/RegisterInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controllerEntity/ResponseInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controllerEntity/ResponseInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/mapper/StudentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/mapper/StudentMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/xjtuse/summerproject/StudentMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/xjtuse/summerproject/StudentMapperTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,9 +90,10 @@
       <list>
         <option value="spring-beans.schema" />
         <option value="Jsp File" />
+        <option value="HTML File" />
+        <option value="FxmlFile" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -119,10 +152,6 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\2020Summer-JavaEE\JavaEE_SummerProject\src\main\webapp" />
-      <recent name="D:\GitProject\2020Summer-JavaEE\JavaEE_SummerProject\src\main\resources" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\2020Summer-JavaEE\JavaEE_SummerProject\src\main\webapp" />
       <recent name="E:\2020Summer-JavaEE\JavaEE_SummerProject\src\main\webapp\js" />
@@ -130,53 +159,55 @@
       <recent name="D:\idea-workspace\JavaEE_SummerProject\src\main\webapp\WEB-INF" />
       <recent name="D:\idea-workspace\JavaEE_SummerProject\src\main\webapp\html" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.xjtuse.summerproject.encrytion" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\2020Summer-JavaEE\JavaEE_SummerProject\src\main\webapp" />
+      <recent name="E:\2020Summer-JavaEE\JavaEE_SummerProject\src\main\java\com\xjtuse\summerproject" />
+      <recent name="D:\GitProject\2020Summer-JavaEE\JavaEE_SummerProject\src\main\resources" />
+    </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.36">
-    <configuration name="StudentMapperTest.testDeleteStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DESUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xjtuse.summerproject.encrytion.DESUtil" />
+      <module name="JavaEE_SummerProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSendEmail" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xjtuse.summerproject.mail.TestSendEmail" />
+      <module name="JavaEE_SummerProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentMapperTest.testFindMaxId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaEE_SummerProject" />
       <option name="PACKAGE_NAME" value="com.xjtuse.summerproject" />
       <option name="MAIN_CLASS_NAME" value="com.xjtuse.summerproject.StudentMapperTest" />
-      <option name="METHOD_NAME" value="testDeleteStudent" />
+      <option name="METHOD_NAME" value="testFindMaxId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StudentMapperTest.testFindById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TeacherMapperTest.testFindById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaEE_SummerProject" />
       <option name="PACKAGE_NAME" value="com.xjtuse.summerproject" />
-      <option name="MAIN_CLASS_NAME" value="com.xjtuse.summerproject.StudentMapperTest" />
+      <option name="MAIN_CLASS_NAME" value="com.xjtuse.summerproject.TeacherMapperTest" />
       <option name="METHOD_NAME" value="testFindById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StudentMapperTest.testFindByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TeacherMapperTest.testUpdateTeacherPasswordByUsername" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaEE_SummerProject" />
       <option name="PACKAGE_NAME" value="com.xjtuse.summerproject" />
-      <option name="MAIN_CLASS_NAME" value="com.xjtuse.summerproject.StudentMapperTest" />
-      <option name="METHOD_NAME" value="testFindByName" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StudentMapperTest.testFindTotal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaEE_SummerProject" />
-      <option name="PACKAGE_NAME" value="com.xjtuse.summerproject" />
-      <option name="MAIN_CLASS_NAME" value="com.xjtuse.summerproject.StudentMapperTest" />
-      <option name="METHOD_NAME" value="testFindTotal" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StudentMapperTest.testUpdateStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaEE_SummerProject" />
-      <option name="PACKAGE_NAME" value="com.xjtuse.summerproject" />
-      <option name="MAIN_CLASS_NAME" value="com.xjtuse.summerproject.StudentMapperTest" />
-      <option name="METHOD_NAME" value="testUpdateStudent" />
+      <option name="MAIN_CLASS_NAME" value="com.xjtuse.summerproject.TeacherMapperTest" />
+      <option name="METHOD_NAME" value="testUpdateTeacherPasswordByUsername" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -313,20 +344,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.StudentMapperTest.testUpdateStudent" />
-      <item itemvalue="JUnit.StudentMapperTest.testDeleteStudent" />
-      <item itemvalue="JUnit.StudentMapperTest.testFindById" />
-      <item itemvalue="JUnit.StudentMapperTest.testFindByName" />
-      <item itemvalue="JUnit.StudentMapperTest.testFindTotal" />
+      <item itemvalue="Application.DESUtil" />
+      <item itemvalue="Application.TestSendEmail" />
+      <item itemvalue="JUnit.StudentMapperTest.testFindMaxId" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.36" />
+      <item itemvalue="JUnit.TeacherMapperTest.testFindById" />
+      <item itemvalue="JUnit.TeacherMapperTest.testUpdateTeacherPasswordByUsername" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StudentMapperTest.testFindTotal" />
-        <item itemvalue="JUnit.StudentMapperTest.testFindByName" />
-        <item itemvalue="JUnit.StudentMapperTest.testFindById" />
-        <item itemvalue="JUnit.StudentMapperTest.testDeleteStudent" />
-        <item itemvalue="JUnit.StudentMapperTest.testUpdateStudent" />
+        <item itemvalue="JUnit.TeacherMapperTest.testUpdateTeacherPasswordByUsername" />
+        <item itemvalue="JUnit.TeacherMapperTest.testFindById" />
+        <item itemvalue="Application.DESUtil" />
+        <item itemvalue="Application.TestSendEmail" />
+        <item itemvalue="JUnit.StudentMapperTest.testFindMaxId" />
       </list>
     </recent_temporary>
   </component>
@@ -358,7 +389,8 @@
       <workItem from="1593934760718" duration="13941000" />
       <workItem from="1593951174583" duration="15908000" />
       <workItem from="1594001510779" duration="4241000" />
-      <workItem from="1594006263360" duration="11268000" />
+      <workItem from="1594006263360" duration="35948000" />
+      <workItem from="1594049538861" duration="7411000" />
     </task>
     <servers />
   </component>
@@ -393,10 +425,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1593718801272" />
-    <state x="902" y="116" key="#com.intellij.ide.util.MemberChooser" timestamp="1593973244519">
+    <state x="902" y="116" key="#com.intellij.ide.util.MemberChooser" timestamp="1594054208273">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="902" y="116" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1593973244519" />
+    <state x="902" y="116" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1594054208273" />
     <state x="466" y="336" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath" timestamp="1594002597143">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -409,78 +441,78 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="78" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1593854287027" />
-    <state x="883" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593973955810">
+    <state x="883" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594018941331">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="883" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1593973955810" />
-    <state x="445" y="156" key="FileChooserDialogImpl" timestamp="1593626549653">
+    <state x="883" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1594018941331" />
+    <state x="445" y="156" key="FileChooserDialogImpl" timestamp="1594043125938">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="445" y="156" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1593626549653" />
-    <state width="1024" height="184" key="GridCell.Tab.0.bottom" timestamp="1594018161423">
+    <state x="445" y="156" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594043125938" />
+    <state width="1024" height="184" key="GridCell.Tab.0.bottom" timestamp="1594056962550">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="184" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594018161423" />
-    <state width="1024" height="184" key="GridCell.Tab.0.center" timestamp="1594018161423">
+    <state width="1024" height="184" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594056962550" />
+    <state width="1024" height="184" key="GridCell.Tab.0.center" timestamp="1594056962550">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="184" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594018161423" />
-    <state width="1024" height="184" key="GridCell.Tab.0.left" timestamp="1594018161423">
+    <state width="1024" height="184" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594056962550" />
+    <state width="1024" height="184" key="GridCell.Tab.0.left" timestamp="1594056962550">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="184" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594018161423" />
-    <state width="1024" height="184" key="GridCell.Tab.0.right" timestamp="1594018161423">
+    <state width="1024" height="184" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594056962550" />
+    <state width="1024" height="184" key="GridCell.Tab.0.right" timestamp="1594056962550">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="184" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594018161423" />
-    <state width="1024" height="184" key="GridCell.Tab.1.bottom" timestamp="1594018161340">
+    <state width="1024" height="184" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594056962550" />
+    <state width="1024" height="184" key="GridCell.Tab.1.bottom" timestamp="1594056962550">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="184" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594018161340" />
-    <state width="1024" height="184" key="GridCell.Tab.1.center" timestamp="1594018161340">
+    <state width="1024" height="184" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594056962550" />
+    <state width="1024" height="184" key="GridCell.Tab.1.center" timestamp="1594056962550">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="184" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1594018161340" />
-    <state width="1024" height="184" key="GridCell.Tab.1.left" timestamp="1594018161340">
+    <state width="1024" height="184" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1594056962550" />
+    <state width="1024" height="184" key="GridCell.Tab.1.left" timestamp="1594056962550">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="184" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1594018161340" />
-    <state width="1024" height="184" key="GridCell.Tab.1.right" timestamp="1594018161340">
+    <state width="1024" height="184" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1594056962550" />
+    <state width="1024" height="184" key="GridCell.Tab.1.right" timestamp="1594056962550">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="184" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594018161340" />
-    <state width="1024" height="184" key="GridCell.Tab.2.bottom" timestamp="1594018161340">
+    <state width="1024" height="184" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594056962550" />
+    <state width="1024" height="184" key="GridCell.Tab.2.bottom" timestamp="1594056962550">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="184" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594018161340" />
-    <state width="1024" height="184" key="GridCell.Tab.2.center" timestamp="1594018161340">
+    <state width="1024" height="184" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594056962550" />
+    <state width="1024" height="184" key="GridCell.Tab.2.center" timestamp="1594056962550">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="184" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1594018161340" />
-    <state width="1024" height="184" key="GridCell.Tab.2.left" timestamp="1594018161340">
+    <state width="1024" height="184" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1594056962550" />
+    <state width="1024" height="184" key="GridCell.Tab.2.left" timestamp="1594056962550">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="184" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1594018161340" />
-    <state width="1024" height="184" key="GridCell.Tab.2.right" timestamp="1594018161340">
+    <state width="1024" height="184" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1594056962550" />
+    <state width="1024" height="184" key="GridCell.Tab.2.right" timestamp="1594056962550">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="184" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1594018161340" />
-    <state width="1024" height="184" key="GridCell.Tab.3.bottom" timestamp="1594002916495">
+    <state width="1024" height="184" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1594056962550" />
+    <state width="1024" height="184" key="GridCell.Tab.3.bottom" timestamp="1594056158011">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="184" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594002916495" />
-    <state width="1024" height="184" key="GridCell.Tab.3.center" timestamp="1594002916495">
+    <state width="1024" height="184" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594056158011" />
+    <state width="1024" height="184" key="GridCell.Tab.3.center" timestamp="1594056158010">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="184" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1594002916495" />
-    <state width="1024" height="184" key="GridCell.Tab.3.left" timestamp="1594002916495">
+    <state width="1024" height="184" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1594056158010" />
+    <state width="1024" height="184" key="GridCell.Tab.3.left" timestamp="1594056158010">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="184" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1594002916495" />
-    <state width="1024" height="184" key="GridCell.Tab.3.right" timestamp="1594002916495">
+    <state width="1024" height="184" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1594056158010" />
+    <state width="1024" height="184" key="GridCell.Tab.3.right" timestamp="1594056158011">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="184" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1594002916495" />
+    <state width="1024" height="184" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1594056158011" />
     <state width="1024" height="210" key="GridCell.Tab.4.bottom" timestamp="1593632185412">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

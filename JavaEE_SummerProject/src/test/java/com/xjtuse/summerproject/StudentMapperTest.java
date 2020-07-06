@@ -54,6 +54,13 @@ public class StudentMapperTest {
     }
 
     @Test
+    public void testFindMaxId() {
+        //5.执行findMaxId方法
+        String maxid = studentMapper.findMaxId();
+        System.out.println("maxid = " + maxid);
+    }
+
+    @Test
     public void testInsertStudent() throws Exception{
         Student student = new Student();
         student.setStudent_id("2176112631");

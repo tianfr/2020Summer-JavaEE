@@ -104,7 +104,7 @@
 
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
-<body onload="get_course_homeworks();get_course_panel();get_homework();">
+<body onload="db_menu();get_course_homeworks();get_course_panel();get_homework();">
     <div id="container" class="effect aside-float aside-bright mainnav-lg">
         
         <!--NAVBAR-->
@@ -564,10 +564,10 @@
 					
 					            <p class="pad-hor mar-top text-main text-bold">Folders</p>
 					            <div class="list-group bg-trans pad-btm bord-btm">
-									<a href="#tab-1" class="list-group-item text-semibold text-main selected" onclick="location='course-dashboard.html'"> 
+									<a href="#tab-1" class="list-group-item text-semibold text-main selected" onclick="tab1Location()">
 										<span class="badge badge-success pull-right">7</span> 
-										<span class="text-main"><em class="demo-pli-inbox-full icon-lg icon-fw"></em> 公告</span> 
-									</a> <a href="#tab-2" class="list-group-item"> <em class="demo-pli-file icon-lg icon-fw"></em> 作业 </a> 
+										<span class="text-main"><em class="demo-pli-inbox-full icon-lg icon-fw"></em> 公告</span></a>
+                                    <a href="#tab-2" class="list-group-item"> <em class="demo-pli-file icon-lg icon-fw"></em> 作业 </a>
 									<a href="#tab-3" class="list-group-item"> <em class="demo-pli-mail-send icon-lg icon-fw"></em> 讨论版 </a> 
 									<a href="#tab-4" class="list-group-item text-semibold"> 
 										<span class="badge badge-danger pull-right">3</span> <span class="text-main">
@@ -580,31 +580,7 @@
 					            </div>
 					
 					            <!-- Friends -->
-					            <div class="list-group bg-trans pad-ver bord-ver">
-					                <p class="pad-hor text-main text-bold"><span class="pull-right label label-info">New</span>Friends</p>
-					
-					                <!-- Menu list item -->
-					                <a href="#" class="list-group-item list-item-sm">
-					                    <span class="badge badge-purple badge-icon badge-fw pull-left"></span>
-					                    Joey K. Greyson
-					                </a>
-					                <a href="#" class="list-group-item list-item-sm">
-					                    <span class="badge badge-info badge-icon badge-fw pull-left"></span>
-					                    Andrea Branden
-					                </a>
-					                <a href="#" class="list-group-item list-item-sm">
-					                    <span class="badge badge-pink badge-icon badge-fw pull-left"></span>
-					                    Lucy Moon
-					                </a>
-					                <a href="#" class="list-group-item list-item-sm">
-					                    <span class="badge badge-success badge-icon badge-fw pull-left"></span>
-					                    Johny Juan
-					                </a>
-					                <a href="#" class="list-group-item list-item-sm">
-					                    <span class="badge badge-danger badge-icon badge-fw pull-left"></span>
-					                    Susan Sun
-					                </a>
-					            </div>
+					            <div class="list-group bg-trans pad-ver bord-ver" id="coursePanel"></div>
 					
 					            <p class="pad-hor text-main text-bold">Labels</p>
 					            <ul class="list-inline mar-hor">
@@ -1811,76 +1787,16 @@
 						
 						            <!--Category name-->
 						            <li class="list-header">Components</li>
-						
+                                    <div id="db_index"></div>
 						            <!--Menu list item-->
-						            <li>
-						                <a href="#">
-						                    <i class="demo-psi-boot-2"></i>
-						                    <span class="menu-title">UI Elements</span>
-											<i class="arrow"></i>
-						                </a>
-						
-						                <!--Submenu-->
-						                <ul class="collapse">
-						                    <li><a href="ui-buttons.html">Buttons</a></li>
-											<li><a href="ui-panels.html">Panels</a></li>
-											<li><a href="ui-modals.html">Modals</a></li>
-											<li><a href="ui-progress-bars.html">Progress bars</a></li>
-											<li><a href="ui-components.html">Components</a></li>
-											<li><a href="ui-typography.html">Typography</a></li>
-											<li><a href="ui-list-group.html">List Group</a></li>
-											<li><a href="ui-tabs-accordions.html">Tabs &amp; Accordions</a></li>
-											<li><a href="ui-alerts-tooltips.html">Alerts &amp; Tooltips</a></li>
-											
-						                </ul>
-						            </li>
-						
-						            <!--Menu list item-->
-						            <li>
-						                <a href="#">
-						                    <i class="demo-psi-pen-5"></i>
-						                    <span class="menu-title">Forms</span>
-											<i class="arrow"></i>
-						                </a>
-						
-						                <!--Submenu-->
-						                <ul class="collapse">
-						                    <li><a href="forms-general.html">General</a></li>
-											<li><a href="forms-components.html">Advanced Components</a></li>
-											<li><a href="forms-validation.html">Validation</a></li>
-											<li><a href="forms-wizard.html">Wizard</a></li>
-											<li><a href="forms-file-upload.html">File Upload</a></li>
-											<li><a href="forms-text-editor.html">Text Editor</a></li>
-											<li><a href="forms-markdown.html">Markdown</a></li>
-											
-						                </ul>
-						            </li>
-						
-						            <!--Menu list item-->
-						            <li>
-						                <a href="#">
-						                    <i class="demo-psi-receipt-4"></i>
-						                    <span class="menu-title">Tables</span>
-											<i class="arrow"></i>
-						                </a>
-						
-						                <!--Submenu-->
-						                <ul class="collapse">
-						                    <li><a href="tables-static.html">Static Tables</a></li>
-											<li><a href="tables-bootstrap.html">Bootstrap Tables</a></li>
-											<li><a href="tables-datatable.html">Data Tables</a></li>
-											<li><a href="tables-footable.html">Foo Tables</a></li>
-											
-						                </ul>
-						            </li>
-						
-						            <!--Menu list item-->
-						            <li>
-						                <a href="charts.html">
-						                    <i class="demo-psi-bar-chart"></i>
-						                    <span class="menu-title">Charts</span>
-						                </a>
-						            </li>
+<!--						            <li>-->
+<!--						                <a href="#">-->
+<!--						                    <i class="demo-psi-boot-2"></i>-->
+<!--						                    <span class="menu-title">UI Elements</span>-->
+<!--											<i class="arrow"></i>-->
+<!--						                </a>-->
+<!--                                    </li>-->
+
 						
 						            <li class="list-divider"></li>
 						

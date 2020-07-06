@@ -9,6 +9,7 @@ public class RegisterInfo implements Serializable {
     private String pass_word;
     private String email;
     private String full_name;
+    private String role;
 
     @Override
     public String toString() {
@@ -19,7 +20,16 @@ public class RegisterInfo implements Serializable {
                 ", pass_word='" + pass_word + '\'' +
                 ", email='" + email + '\'' +
                 ", full_name='" + full_name + '\'' +
+                ", role='" + role + '\'' +
                 '}';
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getStatus() {

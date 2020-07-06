@@ -21,8 +21,8 @@ public class DashboardMenuController {
         dashboardMenuResponse.setUser_name("cdh");
         Course course1 = new Course();
         Course course2 = new Course();
-        course1.setId("course1");
-        course2.setId("course2");
+        course1.setId("course20000001");
+        course2.setId("course20000002");
         course1.setCourse_name("编译原理");
         course2.setCourse_name("计算机网络");
         course1.setCourse_path("This is course1's path");

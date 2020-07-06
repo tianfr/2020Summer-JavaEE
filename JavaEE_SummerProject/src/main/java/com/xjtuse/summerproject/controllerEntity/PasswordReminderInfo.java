@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class PasswordReminderInfo implements Serializable {
     private String status;
     private String message;
+    private String username;
     private String email;
 
     @Override
@@ -12,8 +13,17 @@ public class PasswordReminderInfo implements Serializable {
         return "PasswordReminderInfo{" +
                 "status='" + status + '\'' +
                 ", message='" + message + '\'' +
+                ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getStatus() {

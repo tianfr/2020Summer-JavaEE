@@ -1,29 +1,18 @@
 // JavaScript Document
 
-
 function sign_in() {
-    alert("已点击按钮");
     let user_name = $.trim($("#user_name").val());
     let pass_word = $.trim($("#pass_word").val());
-
-
     $.ajax({
         type: "POST", // 使用post方式
-
-        // 志愿者报名
         url: "/Login",
         contentType: "application/json",
-
-
         data: JSON.stringify({
             "status": "0",
             "message": "volunteerSend",
             "user_name": user_name,
             "pass_word": pass_word,
-
         }),
-
-
         dataType: "json",
         async: false,
         success: function (result) {
@@ -33,24 +22,25 @@ function sign_in() {
                 location.href = "index.html";
             } else {
                 alert(result.fail_content);
-                //location.href = "pages-login.html";
             }
         },
-
         error: function (XMLHttpRequest, textStatus, errorThrown) {
-            alert("插入数据失败,请检查数据库链接");
-            //alert(textStatus);
+            alert("请求失败，请重新尝试");
         }
     });
 }
 
 function Register() {
-    alert("已点击按钮");
     let full_name = $.trim($("#full_name").val());
     let email = $.trim($("#email").val());
     let user_name = $.trim($("#user_name").val());
     let pass_word = $.trim($("#pass_word").val());
-
+    let pass_word_again = $.trim($("#pass_word_agian").val());
+    let role = $.trim($("#role").val());
+    if (pass_word != pass_word_again) {
+        alert("两次密码不一致，请重新输入");
+        return;
+    }
 
     $.ajax({
         type: "POST", // 使用post方式
@@ -63,32 +53,27 @@ function Register() {
             "pass_word": pass_word,
             "email": email,
             "full_name": full_name,
-
+            "role": role,
         }),
         dataType: "json",
         async: false,
         success: function (result) {
-            // 请求成功后的操作
             if (result.success_value == "1") {
-                alert("注册成功");
+                alert("注册成功，id是" + result.role_id);
                 location.href = "pages-login.html";
             } else {
                 alert(result.fail_content);
-                //location.href = "pages-login.html";
             }
         },
-
         error: function (XMLHttpRequest, textStatus, errorThrown) {
-            alert("插入数据失败,请检查数据库链接");
-            //alert(textStatus);
+            alert("连接失败,请重新尝试");
         }
     });
 }
 
-function reset_pw() {
-    alert("已点击按钮");
+function find_pw() {
     let email_pwreminder = $.trim($("#email_pwreminder").val());
-
+    let user_name = $.trim($("#user_name").val());
     $.ajax({
         type: "POST", // 使用post方式
 
@@ -100,7 +85,7 @@ function reset_pw() {
             "status": "0",
             "message": "password_reminder",
             "email": email_pwreminder,
-
+            "username": user_name,
         }),
 
         dataType: "json",
@@ -112,13 +97,55 @@ function reset_pw() {
                 location.href = "pages-login.html";
                 //发邮件
             } else {
-                alert("邮箱不存在");
+                alert(result.fail_content);
             }
         },
 
         error: function (XMLHttpRequest, textStatus, errorThrown) {
-            alert("查找失败,请检查数据库链接");
+            alert("连接失败,请重新尝试");
             //alert(textStatus);
+        }
+    });
+}
+
+function reset_pw() {
+    let pass_word = $.trim($("#password_reset").val());
+    let pass_word_again = $.trim($("#password_reset2").val());
+    alert(pass_word);
+    alert(pass_word_again);
+    if(pass_word != pass_word_again) {
+        alert("两次输入密码不一致，请重新输入");
+        return;
+    }
+    let urlparam = location.search;
+    if(urlparam.substr(0,5) != "?key=") {
+        alert("链接有误，请重试");
+        return;
+    }
+    let key = urlparam.substr(5);
+    $.ajax({
+        type: "POST", // 使用post方式
+        url: "/PasswordReset",
+        contentType: "application/json",
+        data: JSON.stringify({
+            "password": pass_word,
+            "key": key,
+        }),
+        dataType: "json",
+        async: false,
+        success: function (result) {
+            // 请求成功后的操作
+            if (result.success_value == "1") {
+                alert("密码修改成功");
+                location.href = "pages-login.html";
+                //发邮件
+            } else {
+                alert(result.fail_content);
+            }
+        },
+
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert("连接失败,请重试");
         }
     });
 }
@@ -196,8 +223,8 @@ function upcoming_issue() {
 function get_course_panel() {
     let urlparam = location.search;
     let course_id = "";
-    if (urlparam.substr(1, 9) == "courseid=")
-        course_id = urlparam.substr(10, 14);
+    if (urlparam.substr(1, 4) == "cid=")
+        course_id = urlparam.substr(5, 14);
 
     $.ajax({
         type: "POST", // 使用post方式
@@ -231,8 +258,8 @@ function get_course_panel() {
 function course_announcement() {
     let urlparam = location.search;
     let course_id = "";
-    if (urlparam.substr(1, 9) == "courseid=")
-        course_id = urlparam.substr(10, 14);
+    if (urlparam.substr(1, 4) == "cid=")
+        course_id = urlparam.substr(5, 14);
 
     $.ajax({
         type: "POST", // 使用post方式
@@ -258,11 +285,11 @@ function course_announcement() {
                     "<div class=\"panel\">" +
                     "<div class=\"panel-heading\">" +
                     "<h3 class=\"panel-title\">" +
-                    "<a href=\"announcement.html?" +
+                    "<a href=\"announcement.html?cid=" +
                     course_id +
-                    "&announcementid="+
+                    "&aid="+
                     item.announcement_id +
-                    "\" onclick=\"get_announcement()\">" +
+                    "\">" +
                     item.announcement_title +
                     "</a>" +
                     "</h3>" +
@@ -283,9 +310,9 @@ function get_announcement(){
     let urlparam = location.search;
     let course_id = "";
     let announcement_id = "";
-    if (urlparam.substr(1, 9) == "courseid=" && urlparam.substr(25, 15) == "announcementid=") {
-        course_id = urlparam.substr(10, 14);
-        announcement_id = urlparam.substr(40);
+    if (urlparam.substr(1, 4) == "cid=" && urlparam.substr(19, 5) == "&aid=") {
+        course_id = urlparam.substr(5, 14);
+        announcement_id = urlparam.substr(24);
     }
 
     $.ajax({
@@ -319,8 +346,8 @@ function get_announcement(){
 function get_course_homeworks(){
     let urlparam = location.search;
     let course_id = "";
-    if (urlparam.substr(1, 9) == "courseid=")
-        course_id = urlparam.substr(10, 14);
+    if (urlparam.substr(1, 4) == "cid=")
+        course_id = urlparam.substr(5, 14);
 
     $.ajax({
         type:"POST", // 使用post方式
@@ -583,3 +610,41 @@ function get_homework(){
 
 }
 
+
+function db_menu(){
+    $.ajax({
+        type:"POST", // 使用post方式
+
+        url:"/DashboardMenu",
+        contentType:"application/json",
+
+
+        data: JSON.stringify({
+            "status": "0",
+            "message": "dashboard_menu",
+            //"user_id": user_id,
+
+        }),
+
+        dataType:"json",
+        async:false,
+        success: function(result){
+            var dataObj = result.value,con="";
+            $.each(dataObj,function(index,item){
+                con+=
+                    '<li><a href="course-dashboard.html?cid='+item.id+'" target="_self"><i class="demo-psi-pen-5"></i><span class="menu-title">'
+                    +item.course_name+
+                    "</span></a></li>"
+            });
+            $("#db_index").html(con);
+        }
+    });
+}
+
+function tab1Location() {
+    let course_id = "";
+    let urlparam = location.search;
+    if (urlparam.substr(1, 4) == "cid=")
+        course_id = urlparam.substr(5, 14);
+    location = "course-dashboard.html?cid=" +course_id;
+}

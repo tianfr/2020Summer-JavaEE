@@ -12,6 +12,10 @@ public interface StudentMapper {
     @Select("select * from students")
     List<Student> findAll();
 
+    //修改密码
+    @Update("update students set student_password=#{student_password} where student_username=#{student_username}")
+    void updateStudentPasswordByUsername(Student student);
+
 
     //插入学生
     @Insert("insert into students(student_id, student_name, student_age, student_gender, student_class, student_email, student_username, student_password, insert_date) values(#{student_id}, #{student_name}, #{student_age}, #{student_gender}, #{student_class}, #{student_email}, #{student_username}, #{student_password}, #{insert_date}) ")
@@ -29,6 +33,10 @@ public interface StudentMapper {
     @Select("select * from students where student_id=#{student_id}")
     Student findById(String student_id);
 
+    //根据学号查找学生
+    @Select("select * from students where student_username=#{student_username}")
+    Student findByUsername(String student_username);
+
     //根据姓名模糊查询
     @Select("select * from students where student_name like #{name}")
     List<Student> findByName(String name);
@@ -36,6 +44,13 @@ public interface StudentMapper {
     //查询学生总数
     @Select("select count(*) from students")
     Integer findTotal();
+
+    //查询最大学号
+    @Select("select max(student_id) from students")
+    String findMaxId();
+
+
+
 
     //entity中实体的属性名和数据库列名不一致时的配置样例
 //    @Select("select * from students")
