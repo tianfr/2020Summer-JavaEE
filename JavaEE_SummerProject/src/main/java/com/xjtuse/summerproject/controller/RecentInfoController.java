@@ -1,9 +1,8 @@
 package com.xjtuse.summerproject.controller;
 
-import com.xjtuse.summerproject.entity.Issue;
-import com.xjtuse.summerproject.entity.Info;
-import com.xjtuse.summerproject.entity.RecentInfo;
-import com.xjtuse.summerproject.entity.RecentInfoResponse;
+import com.xjtuse.summerproject.controllerEntity.Info;
+import com.xjtuse.summerproject.controllerEntity.RecentInfo;
+import com.xjtuse.summerproject.controllerEntity.RecentInfoResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

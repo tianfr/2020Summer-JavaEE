@@ -14,7 +14,7 @@
 
     <!--别名，指定了别名后，不区分大小写-->
     <typeAliases>
-        <!--<typeAlias type="com.xjtuse.summerproject.entity.Student" alias="student"/>-->
+        <!--<typeAlias type="com.xjtuse.summerproject.controllerEntityllerEntity.Student" alias="student"/>-->
         <package name="com.xjtuse.summerproject.entity"/>
     </typeAliases>
 

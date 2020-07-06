@@ -1,7 +1,7 @@
 package com.xjtuse.summerproject.controller;
 
-import com.xjtuse.summerproject.entity.Announcement;
-import com.xjtuse.summerproject.entity.GetAnnouncementInfo;
+import com.xjtuse.summerproject.controllerEntity.Announcement;
+import com.xjtuse.summerproject.controllerEntity.GetAnnouncementInfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

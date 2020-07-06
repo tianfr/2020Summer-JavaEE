@@ -14,6 +14,7 @@ import java.io.InputStream;
 import java.sql.Date;
 import java.util.List;
 
+
 public class StudentMapperTest {
 
     private InputStream in;
@@ -55,16 +56,16 @@ public class StudentMapperTest {
     @Test
     public void testInsertStudent() throws Exception{
         Student student = new Student();
-        student.setStuId("2176112631");
-        student.setStuName("曹大华");
-        student.setStuAge("21");
-        student.setStuGender("男");
-        student.setStuClass("软件73");
-        student.setStuEmail("940141567@qq.com");
-        student.setStuUsername("cdh");
-        student.setStuPassword("123");
+        student.setStudent_id("2176112631");
+        student.setStudent_name("曹大华");
+        student.setStudent_age("21");
+        student.setStudent_gender("男");
+        student.setStudent_class("软件73");
+        student.setStudent_email("940141567@qq.com");
+        student.setStudent_username("cdh");
+        student.setStudent_password("123");
         Date now = new Date(System.currentTimeMillis());
-        student.setInsertDate(now);
+        student.setInsert_date(now);
         //5.执行insertStudent方法
         studentMapper.insertStudent(student);
     }
@@ -72,16 +73,16 @@ public class StudentMapperTest {
     @Test
     public void testUpdateStudent() throws Exception{
         Student student = new Student();
-        student.setStuId("2176112631");
-        student.setStuName("曹大华");
-        student.setStuAge("20");
-        student.setStuGender("男");
-        student.setStuClass("信计71");
-        student.setStuEmail("940141567@qq.com");
-        student.setStuUsername("cdh");
-        student.setStuPassword("123");
+        student.setStudent_id("2176112631");
+        student.setStudent_name("曹大华");
+        student.setStudent_age("20");
+        student.setStudent_gender("男");
+        student.setStudent_class("信计71");
+        student.setStudent_email("940141567@qq.com");
+        student.setStudent_username("cdh");
+        student.setStudent_password("123");
         Date now = new Date(System.currentTimeMillis());
-        student.setInsertDate(now);
+        student.setInsert_date(now);
         //5.执行updateStudent方法
         studentMapper.updateStudent(student);
     }
@@ -95,7 +96,7 @@ public class StudentMapperTest {
     @Test
     public void testFindById() throws Exception{
         //5.执行findById方法
-        Student student = studentMapper.findById("2171311001");
+        Student student = studentMapper.findById("stu20200101");
         System.out.println("student = " + student);
     }
 

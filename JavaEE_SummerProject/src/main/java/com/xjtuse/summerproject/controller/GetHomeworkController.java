@@ -1,8 +1,8 @@
 package com.xjtuse.summerproject.controller;
 
-import com.xjtuse.summerproject.entity.Attachment;
-import com.xjtuse.summerproject.entity.GetHomeworkInfo;
-import com.xjtuse.summerproject.entity.GetHomeworkResponse;
+import com.xjtuse.summerproject.controllerEntity.Attachment;
+import com.xjtuse.summerproject.controllerEntity.GetHomeworkInfo;
+import com.xjtuse.summerproject.controllerEntity.GetHomeworkResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,7 +1,7 @@
 package com.xjtuse.summerproject.controller;
 
-import com.xjtuse.summerproject.entity.LoginInfo;
-import com.xjtuse.summerproject.entity.ResponseInfo;
+import com.xjtuse.summerproject.controllerEntity.LoginInfo;
+import com.xjtuse.summerproject.controllerEntity.ResponseInfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
