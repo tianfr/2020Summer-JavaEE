@@ -167,7 +167,7 @@
 					var homeworkObj = result.value;
 					var current_page = 1 ;
 					
-					document.getElementById("demo-mail-list").innerHTML = "";
+					document.getElementById("tab-2>demo-mail-list").innerHTML = "";
 					$.each(homeworkObj, function(index, item){
 						if(index<page_num){//静态显示第一页
 							var li = "";
@@ -179,7 +179,7 @@
 				                    '<div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>'
 				                    '<strong class="mail-from"> '
 							
-									'<a href="mailbox-meaasge.html" target="_self" id=" '
+									'<a href="homework-meaasge.html" target="_self" id=" '
 								    +item.homework_id+
 								    '" onclick="get_homework(this.id)">'
 							
@@ -192,9 +192,9 @@
 				                   '<div class="mail-subject"> <a href="mailbox-message.html">";
 							li += item.homework_content
 							      + "</a> </div> </li>" ;
-							$("#demo-mail-list").html(li);
-							$("#page_id").html(current_page);
-							$("#page_total").html(page_size);
+							$("#tab-2>#demo-mail-list").html(li);
+							$("#tab-2>#page_id").html(current_page);
+							$("#tab-2>#page_total").html(page_size);
 						}
 							
 						
@@ -234,7 +234,7 @@
 					var homeworkObj = result.value;
 					if(current_page>1){
 						current_page--;
-						document.getElementById("demo-mail-list").innerHTML = "";
+						document.getElementById("tab-2>demo-mail-list").innerHTML = "";
 						$.each(homeworkObj, function(index, item){
 							if(current_page-1*page_num<=index
 							   &&index<current_page*page_num){
@@ -247,7 +247,7 @@
 				                    '<div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>'
 				                    '<strong class="mail-from"> '
 							
-									'<a href="mailbox-meaasge.html" target="_self" id=" '
+									'<a href="homework-meaasge.html" target="_self" id=" '
 								    +item.homework_id+
 								    '" onclick="get_homework(this.id)">'
 							
@@ -260,9 +260,9 @@
 				                   '<div class="mail-subject"> <a href="mailbox-message.html">";
 							li += item.homework_content
 							      + "</a> </div> </li>" ;
-							$("#demo-mail-list").html(li);
-							$("#page_id").html(current_page);
-							$("#page_total").html(page_size);
+							$("#tab-2>#demo-mail-list").html(li);
+							$("#tab-2>#page_id").html(current_page);
+							$("#tab-2>#page_total").html(page_size);
 							}
 						});
 						
@@ -299,7 +299,7 @@
 					var homeworkObj = result.value;
 					if(current_page<page_size){
 						current_page++;
-						document.getElementById("demo-mail-list").innerHTML = "";
+						document.getElementById("tab-2>demo-mail-list").innerHTML = "";
 						$.each(homeworkObj, function(index, item){
 							if(current_page-1*page_num<=index
 							   &&index<current_page*page_num){
@@ -312,7 +312,7 @@
 				                    '<div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>'
 				                    '<strong class="mail-from"> '
 							
-									'<a href="mailbox-meaasge.html" target="_self" id=" '
+									'<a href="homework-meaasge.html" target="_self" id=" '
 								    +item.homework_id+
 								    '" onclick="get_homework(this.id)">'
 							
@@ -325,9 +325,9 @@
 				                   '<div class="mail-subject"> <a href="mailbox-message.html">";
 							li += item.homework_content
 							      + "</a> </div> </li>" ;
-							$("#demo-mail-list").html(li);
-							$("#page_id").html(current_page);
-							$("#page_total").html(page_size);
+							$("#tab-2>#demo-mail-list").html(li);
+							$("#tab-2>#page_id").html(current_page);
+							$("#tab-2>#page_total").html(page_size);
 							}
 						});
 						
@@ -340,7 +340,7 @@
 			   
 
 
-    function get_homework(this.id){
+    function get_homework(this.id,course_id){
 			var homework_id = this.id;
 			$.ajax({
 				type:"POST", // 使用post方式
@@ -405,7 +405,53 @@
 		}
 		
 		
-		
-		
+    function get_course_resources(course_id){
+		$.ajax({
+				type:"POST", // 使用post方式
+
+				url:"/GetCourseResources",
+				contentType:"application/json",
+
+
+				data:JSON.stringify({
+                	"status": "0",
+                	"message": "get_course_resources", 
+ 					"course_id": course_id,
+                }),
+			    
+				dataType:"json",
+				async:false,
+				success: function(result){
+					if(result.id == "course_resources"){
+						var num = result.total_num;
+						var resourcesObj = result.value;
+						var page_num = 16;//每页16条记录
+						document.getElementById("tab-5>demo-mail-list").innerHTML = "";
+					    $.each(resourcesObj, function(index, item){
+							var li = "";
+							if(index<page_num){//静态显示第一页
+								li +=' <li class="mail-list-unread mail-attach">
+				                    '<div class="mail-control">'
+				                    '<input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                    '<label for="email-list-1"></label>
+			                        '</div>
+				                    '<div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>'
+				                    '<strong class="mail-from"> '
+							
+									'<a href="src-download.html" target="_self" id=" '
+								    +item.resource_path+
+									
+							
+							
+							}
+						});
+						
+						
+					}
+				}
+			
+			
+		});
+	} 	
 		
 		
