@@ -178,11 +178,13 @@ function upcoming_issue() {
             var dataObj = result.value, con1 = "";
             $.each(dataObj, function (index, item) {
                 con1 += "<tr>" +
-                    "<td>" + item.value + "</td>" +
-                    "<td>" + item.course + "</td>" +
-                    "<td>" + item.datetime + "</td>" +
-                    "<td>" + item.content + "</td>" +
-                    "<td>" + item.status + "</td>" +
+                    '<td><a href="'+item.issue_id_path+'" target="_self">'+item.value+"</a></td>" +
+                    "<td>"+item.course+"</td>" +
+                    "<td>"+item.datetime+"</td>" +
+                    "<td>"+item.content+"</td>" +
+                    '<td ><div class="label label-table label-'
+                    +item.status+'">'+item.status+
+                    "</div></td>" +
                     "</tr>";
             });
             $("#con1").html(con1);
@@ -355,14 +357,14 @@ function get_course_homeworks(){
                                 "</div>" +
                                 "<div class=\"mail-star\"><a href=\"#\"><i class=\"demo-psi-star\"></i></a></div>" +
                                 "<strong class=\"mail-from\">" +
-                                    "<a href=\"mailbox-meaasge.html\" target=\"_self\" id=\"" + item.homework_id + "\" onclick=\"get_homework(this.id)\">" +
+                                    "<a href=\"homework-message.html?cid=" + course_id + "&hid=" + item.homework_id + "\" target=\"_self\" "  + ">" +
                                         item.homework_title +
                                     "</a><br>" +
                                 "</strong>" +
                                 "<div class=\"mail-time\">" + item.homework_deadline + "</div>" +
                                 "<div class=\"mail-attach-icon\"></div>" +
                                 "<div class=\"mail-subject\">" +
-                                    "<a href=\"mailbox-message.html\">" + item.homework_content + "</a> " +
+                                    "<a href=\"homework-message.html?cid=" + course_id + "&hid=" + item.homework_id + "\">" + item.homework_content + "</a> " +
                                 "</div>"+
                             "</li>";
                     }
@@ -422,14 +424,14 @@ function homework_flip_left(){
                                     "</div>" +
                                     "<div class=\"mail-star\"><a href=\"#\"><i class=\"demo-psi-star\"></i></a></div>" +
                                         "<strong class=\"mail-from\">" +
-                                            "<a href=\"mailbox-meaasge.html\" target=\"_self\" id=\" " + item.homework_id + "\" onclick=\"get_homework(this.id)\">" +
+                                            "<a href=\"homework-message.html\" target=\"_self\" id=\" " + course_id + ":" + item.homework_id + "\" onclick=\"get_homework(this.id)\">" +
                                                 item.homework_title +
                                             "</a>" +
                                             "<br>" +
                                         "</strong>" +
                                     "<div class=\"mail-time\">" + item.homework_deadline + "</div>" +
                                     "<div class=\"mail-attach-icon\"></div>" +
-                                    "<div class=\"mail-subject\"> <a href=\"mailbox-message.html\">" + item.homework_content + "</a> </div> " +
+                                    "<div class=\"mail-subject\"> <a href=\"homework-message.html\">" + item.homework_content + "</a> </div> " +
                                 "</li>" ;
                         }
                     });
@@ -481,20 +483,20 @@ function homework_flip_right(){
                         if((current_page-1)*page_num<=index
                             &&index<current_page*page_num){
                             li +=
-                                "<li class=\"mail-list-unread mail-attach\">" +
+                                "<li class=\"mail-list-unread mail-attach\" value=\"" + item.homework_id + "\">" +
                                     "<div class=\"mail-control\">" +
                                         "<input id=\"email-list-1\" class=\"magic-checkbox\" type=\"checkbox\">" +
                                         "<label for=\"email-list-1\"></label>" +
                                     "</div>" +
                                     "<div class=\"mail-star\"><a href=\"#\"><i class=\"demo-psi-star\"></i></a></div>" +
                                     "<strong class=\"mail-from\"> " +
-                                        "<a href=\"mailbox-meaasge.html\" target=\"_self\" id=\"" + item.homework_id + "\" onclick=\"get_homework(this.id)\">" +
+                                        "<a href=\"homework-message.html\" target=\"_self\" id=\"" + course_id + ":" + item.homework_id + "\" onclick=\"get_homework(this.id)\">" +
                                             item.homework_title +
                                         "</a><br>" +
                                     "</strong>" +
                                     "<div class=\"mail-time\">" + item.homework_deadline + "</div>" +
                                     "<div class=\"mail-attach-icon\"></div>" +
-                                    "<div class=\"mail-subject\"> <a href=\"mailbox-message.html\">" + item.homework_content + "</a> </div>" +
+                                    "<div class=\"mail-subject\"> <a href=\"homework-message.html\">" + item.homework_content + "</a> </div>" +
                                 "</li>" ;
                         }
                     });
@@ -508,3 +510,76 @@ function homework_flip_right(){
 
     })
 }
+
+function get_homework(){
+
+    let urlparam = location.search;
+    let course_id = "";
+    let homework_id = "";
+    if (urlparam.substr(1, 4) == "cid=" && urlparam.substr(19, 5) == "&hid=") {
+        course_id = urlparam.substr(5, 14);
+        homework_id = urlparam.substr(24);
+    }
+    $.ajax({
+        type:"POST", // 使用post方式
+
+        url:"/GetHomework",
+        contentType:"application/json",
+
+
+        data:JSON.stringify({
+            "status": "0",
+            "message": "get_homework",
+            "course_id": course_id,
+            "homework_id": homework_id,
+        }),
+
+        dataType:"json",
+        async:false,
+        success: function(result){
+            var attachmentObj = result.homework_attachment;
+            var li = "";
+            var string_ddl = result.homework_deadline+":00";//string类型
+            var ddl_day = new Date(string_ddl);//ddl转化为date类型
+            var today = new Date(); //当前时间
+            var days_diff = (ddl_day.getTime() - today.getTime())/(1*24*60*60*1000);
+            //ddl与当前日期天数差
+            var alert_content = "";
+            var headline_content = "<span class=\"label label-normal label-info\">作业</span>" + result.homework_title;
+            $("#headline").html(headline_content);
+            $("#teacher_name").html(result.author);
+            $("#teacher_email").html(result.author_email);
+            $("#teacher_pic").attr('src',result.author_avatar);
+            $("#datetime").html(result.datetime);
+            $("#homework_content").html(result.homework_content);
+            //还没有判断作业有没有提交过
+            if(days_diff<0){
+                alert_content += '<div class="alert alert-danger"> <strong>';
+            }
+            else if(days_diff<1){
+                alert_content += '<div class="alert alert-warning"> <strong>';
+            }
+            else{
+                alert_content += '<div class="alert alert-primary"> <strong>';
+            }
+            alert_content += result.homework_deadline+
+                '</strong> </div>';
+            $("#homework_ddl").html(alert_content);
+
+            $.each(attachmentObj, function(index, item){
+                li += '<li> <a href="#" class="thumbnail"><div class="mail-file-img"><a href=" '
+                    +item.attachment_path+
+                    ' " target="_self">' +
+                '<img class="image-responsive" src="img/bg-img/bg-img-4.jpg"   alt="image"></a></div><div class="caption"> ' +
+                '<p class="text-primary mar-no" id="attachment_name">'
+                +item.attachment_name+
+                '</p></div></a></li>'
+            });
+            $("#mail-attach-list").html(li);
+        }
+
+
+    });
+
+}
+

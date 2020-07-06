@@ -25,9 +25,9 @@ public class GetExistedHomeworkController {
         File file1 = new File();
         File file2 = new File();
         file1.setFile_name("file1");
-        file1.setFile_path("xxx");
+        file1.setFile_path("test.html");
         file2.setFile_name("file2");
-        file2.setFile_path("xxx");
+        file2.setFile_path("test.html");
         List<File> list = new ArrayList<File>();
         list.add(file1);
         list.add(file2);
