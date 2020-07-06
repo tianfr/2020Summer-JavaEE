@@ -1,8 +1,8 @@
 package com.xjtuse.summerproject.controller;
 
-import com.xjtuse.summerproject.entity.File;
-import com.xjtuse.summerproject.entity.GetExistedHomeworkInfo;
-import com.xjtuse.summerproject.entity.GetExistedHomeworkResponse;
+import com.xjtuse.summerproject.controllerEntity.File;
+import com.xjtuse.summerproject.controllerEntity.GetExistedHomeworkInfo;
+import com.xjtuse.summerproject.controllerEntity.GetExistedHomeworkResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,30 +1,49 @@
 package com.xjtuse.summerproject.mapper;
 
 import com.xjtuse.summerproject.entity.Student;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
 //用户的持久层接口
 public interface StudentMapper {
 
-    //查询所有
+    //查询所有学生
+    @Select("select * from students")
     List<Student> findAll();
 
-    //插入
+
+    //插入学生
+    @Insert("insert into students(student_id, student_name, student_age, student_gender, student_class, student_email, student_username, student_password, insert_date) values(#{student_id}, #{student_name}, #{student_age}, #{student_gender}, #{student_class}, #{student_email}, #{student_username}, #{student_password}, #{insert_date}) ")
     void insertStudent(Student student);
 
-    //修改
+    //更新学生信息
+    @Update("update students set student_name=#{student_name}, student_age=#{student_age}, student_gender=#{student_gender}, student_class=#{student_class}, student_email=#{student_email}, student_username=#{student_username}, student_password=#{student_password}, insert_date=#{insert_date} where student_id=#{student_id}")
     void updateStudent(Student student);
 
-    //删除
-    void deleteStudent(String stuId);
+    //删除学生
+    @Delete("delete from students where student_id=#{student_id}")
+    void deleteStudent(String student_id);
 
-    //根据id查询学生
-    Student findById(String stuId);
+    //根据学号查找学生
+    @Select("select * from students where student_id=#{student_id}")
+    Student findById(String student_id);
 
-    //根据名称模糊查询学生
+    //根据姓名模糊查询
+    @Select("select * from students where student_name like #{name}")
     List<Student> findByName(String name);
 
     //查询学生总数
+    @Select("select count(*) from students")
     Integer findTotal();
+
+    //entity中实体的属性名和数据库列名不一致时的配置样例
+//    @Select("select * from students")
+//    @Results(value = {        //column是数据库中的列名，property是entity实体中的属性名
+//            @Result(id = true, column = "", property = ""),   //主键加上id=true
+//            @Result(column = "", property = ""),              //非主键不用假id=true
+//            @Result(column = "", property = ""),
+//            ...
+//    })
+//    List<Student> findAll2();
 }
