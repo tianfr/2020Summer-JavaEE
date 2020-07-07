@@ -27,6 +27,7 @@ public class UpcomingIssueController {
     public @ResponseBody
     UpcomingIssueResponse upcomingIssue(@RequestBody Info info, HttpSession session) throws IOException {
         UpcomingIssueResponse upcomingIssueResponse = new UpcomingIssueResponse();
+        upcomingIssueResponse.setTotal_num(0);
         System.out.println("Info = " + info);
 
         InputStream in = Resources.getResourceAsStream("SqlMapConfig.xml");
@@ -61,6 +62,7 @@ public class UpcomingIssueController {
                 }
                 issue.setCourse(course.getCourse_name());
                 list.add(issue);
+                upcomingIssueResponse.setTotal_num(upcomingIssueResponse.getTotal_num()+1);
             }
         }
         sqlSession.close();

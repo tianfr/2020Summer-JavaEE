@@ -1,7 +1,6 @@
 package com.xjtuse.summerproject.mapper;
 
-import com.xjtuse.summerproject.entity.Course;
-import com.xjtuse.summerproject.entity.Student;
+import com.xjtuse.summerproject.entity.*;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
