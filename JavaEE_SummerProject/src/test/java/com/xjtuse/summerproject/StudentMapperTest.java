@@ -2,6 +2,8 @@ package com.xjtuse.summerproject;
 
 import com.xjtuse.summerproject.entity.Course;
 import com.xjtuse.summerproject.entity.Student;
+import com.xjtuse.summerproject.controllerEntity.CourseAnnouncement;
+import com.xjtuse.summerproject.entity.*;
 import com.xjtuse.summerproject.mapper.StudentMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -132,5 +134,40 @@ public class StudentMapperTest {
         //5.执行findByName方法
         Integer count = studentMapper.findTotal();
         System.out.println("count = " + count);
+    }
+    @Test
+    public void testGetCourseAnnouncement() throws Exception{
+        //5.执行findByName方法
+        List<CourseContent> courseAnnouncements = studentMapper.getCourseAnnouncements("demo001");
+        System.out.println(courseAnnouncements);
+    }
+
+    @Test
+    public void testGetAnnouncement() throws Exception{
+
+        SendAnnouncement sendAnnouncement = new SendAnnouncement();
+        sendAnnouncement.setAnnouncement_id("tch20200101_content_announcement001");
+        sendAnnouncement.setCourse_id("demo001");
+        CourseContent courseContent = studentMapper.getAnnouncement(sendAnnouncement);
+        System.out.println(courseContent);
+        Teacher teacher = studentMapper.getAnnouncementTeacher("tch20200101");
+        System.out.println(teacher);
+    }
+    @Test
+    public void testGetCourseHomework() throws Exception{
+        List<CourseContent> courseHomeworks = studentMapper.getCourseHomeworks("demo001");
+        System.out.println(courseHomeworks);
+    }
+
+    @Test
+    public void testGetHomework() throws Exception{
+        SendHomework sendHomework = new SendHomework();
+        sendHomework.setCourse_id("demo001");
+        sendHomework.setHomework_id("tch20200101_content_homework001");
+        CourseContent courseHomework = studentMapper.getHomework(sendHomework);
+        System.out.println(courseHomework);
+        Teacher teacher = studentMapper.getAnnouncementTeacher("tch20200101");
+        System.out.println(teacher);
+
     }
 }
