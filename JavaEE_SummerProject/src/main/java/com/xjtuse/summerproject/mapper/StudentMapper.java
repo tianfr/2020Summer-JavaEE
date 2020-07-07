@@ -1,6 +1,6 @@
 package com.xjtuse.summerproject.mapper;
 
-import com.xjtuse.summerproject.entity.Student;
+import com.xjtuse.summerproject.entity.*;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -49,6 +49,30 @@ public interface StudentMapper {
     @Select("select max(student_id) from students")
     String findMaxId();
 
+    // 6.9接口
+    @Select("SELECT * FROM course_${course_id}_content WHERE issue_type = 'announcement'  AND issue_belong = 'announcement' ")
+    List<CourseContent> getCourseAnnouncements(String course_id);
+
+    // 6.10接口第一步
+    @Select("SELECT * FROM course_${course_id}_content WHERE issue_id = #{announcement_id}")
+    CourseContent getAnnouncement(SendAnnouncement annc);
+
+    // 6.10接口第二步
+    @Select("SELECT * FROM teachers WHERE teacher_id = #{teacher_id}")
+    Teacher getAnnouncementTeacher(String teacher_id);
+
+    // 6.11
+    @Select("SELECT * FROM course_${course_id}_content WHERE issue_type = 'homework' AND issue_belong ='homework'")
+    List<CourseContent> getCourseHomeworks(String course_id);
+
+    //6.12接口第一步
+    @Select("SELECT * FROM course_${course_id}_content WHERE issue_id = #{homework_id}")
+    CourseContent getHomework(SendHomework sendHomework);
+
+    //6.12接口第二部
+    //对于作业的id，前11位是老师的编号
+    @Select("SELECT * FROM teachers WHERE teacher_id = #{teacher_id}")
+    Teacher getHomeworkTeacher(String teacher_id);
 
 
 
