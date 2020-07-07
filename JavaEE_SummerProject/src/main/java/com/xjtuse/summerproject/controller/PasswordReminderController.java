@@ -57,7 +57,7 @@ public class PasswordReminderController {
                 long time = date.getTime();
                 String plainText = "" + time + "@" + passwordReminderInfo.getUsername(); // 组装时间和用户名
                 String c = com.xjtuse.summerproject.encrytion.DESUtil.encrypt(seed, plainText); // 加密参数
-                String link = "http://localhost:8080/resetPassword.html?key=" + c;
+                String link = "http://localhost:8080/login/resetPassword.html?key=" + c;
                 System.out.println("-----------加密后的链接为---------------------");
                 System.out.println(link);
                 MailSenderInfo mailInfo = new MailSenderInfo();
