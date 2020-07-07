@@ -470,3 +470,37 @@ FROM
 	@STSQL;
 
 EXECUTE stmt;
+
+/* 6.15 */
+
+SELECT resource_id, resource_type, resource_name, resource_path, insert_date FROM 
+course_demo001_resource
+WHERE
+resource_belong = "resources";
+
+
+
+/* 6.16 */
+
+SELECT max(issue_id) FROM course_demo001_content WHERE issue_type = 'homework';
+
+INSERT INTO course_demo001_content(issue_id, issue_type, issue_title, issue_content, issue_attachment_name, issue_attachment_path, issue_deadline, issue_table, issue_belong, insert_date)
+VALUES
+(
+	issue_id,
+	issue_type,
+	issue_title,
+	issue_content,
+	issue_attachment_name,
+	issue_attachment_path,
+	issue_deadline,
+	issue_table,
+	issue_belong,
+	LOCALTIME()
+)
+
+/* 6.17 */
+SELECT courses.course_id, courses.course_name, courses.course_hierarchy, courses.course_semester FROM courses, students_courses 
+WHERE students_courses.student_id = "stu20200201" 
+AND
+students_courses.course_id = courses.course_id ;
