@@ -695,6 +695,6 @@ function tab1Location() {
     let course_id = "";
     let urlparam = location.search;
     if (urlparam.substr(1, 4) == "cid=")
-        course_id = urlparam.substr(5, 14);
+        course_id = urlparam.substr(5).split("&")[0];
     location = "course-dashboard.html?cid=" +course_id;
 }
