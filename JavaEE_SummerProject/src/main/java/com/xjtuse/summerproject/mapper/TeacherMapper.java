@@ -20,4 +20,6 @@ public interface TeacherMapper {
     //修改密码
     @Update("update teachers set teacher_password=#{teacher_password} where teacher_username=#{teacher_username}")
     void updateTeacherPasswordByUsername(Teacher teacher);
+
+
 }
