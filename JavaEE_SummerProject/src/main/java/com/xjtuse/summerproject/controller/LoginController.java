@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -22,7 +23,7 @@ import java.io.InputStream;
 public class LoginController {
     @RequestMapping("/Login")
     public @ResponseBody
-    ResponseInfo login(@RequestBody LoginInfo loginInfo) throws IOException {
+    ResponseInfo login(@RequestBody LoginInfo loginInfo, HttpSession session) throws IOException {
         ResponseInfo responseInfo = new ResponseInfo();
         InputStream in = Resources.getResourceAsStream("SqlMapConfig.xml");
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
@@ -44,6 +45,11 @@ public class LoginController {
                 responseInfo.setRole("student");
                 responseInfo.setRole_id(student.getStudent_id());
                 responseInfo.setFail_content("密码正确");
+                session.setAttribute("role", "student");
+                session.setAttribute("username", student.getStudent_username());
+                session.setAttribute("id", student.getStudent_id());
+                session.setAttribute("email", student.getStudent_email());
+                session.setAttribute("name", student.getStudent_name());
             }
             else {
                 responseInfo.setSuccess_value("0");
@@ -56,6 +62,11 @@ public class LoginController {
                 responseInfo.setRole("student");
                 responseInfo.setRole_id(teacher.getTeacher_id());
                 responseInfo.setFail_content("密码正确");
+                session.setAttribute("role", "teacher");
+                session.setAttribute("username", teacher.getTeacher_username());
+                session.setAttribute("id", teacher.getTeacher_id());
+                session.setAttribute("email", teacher.getTeacher_email());
+                session.setAttribute("name", teacher.getTeacher_name());
             }
             else {
                 responseInfo.setSuccess_value("0");

@@ -7,16 +7,26 @@ public class DashboardMenuResponse implements Serializable {
     private String avater;
     private String user_name;
     private String id;
+    private String email;
     private List<Course> value;
 
     @Override
     public String toString() {
-        return "DashBoardMenuResponse{" +
+        return "DashboardMenuResponse{" +
                 "avater='" + avater + '\'' +
                 ", user_name='" + user_name + '\'' +
                 ", id='" + id + '\'' +
+                ", email='" + email + '\'' +
                 ", value=" + value +
                 '}';
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getAvater() {

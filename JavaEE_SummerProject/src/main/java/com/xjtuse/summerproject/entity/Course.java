@@ -7,10 +7,23 @@ public class Course implements Serializable {
     private String course_id;
     private String course_name;
     private String course_hierarchy;
-    private String semester;
+    private String course_semester;
     private String course_design_table;
     private String course_content_table;
     private Date insert_date;
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "course_id='" + course_id + '\'' +
+                ", course_name='" + course_name + '\'' +
+                ", course_hierarchy='" + course_hierarchy + '\'' +
+                ", course_semester='" + course_semester + '\'' +
+                ", course_design_table='" + course_design_table + '\'' +
+                ", course_content_table='" + course_content_table + '\'' +
+                ", insert_date=" + insert_date +
+                '}';
+    }
 
     public String getCourse_id() {
         return course_id;
@@ -36,12 +49,12 @@ public class Course implements Serializable {
         this.course_hierarchy = course_hierarchy;
     }
 
-    public String getSemester() {
-        return semester;
+    public String getCourse_semester() {
+        return course_semester;
     }
 
-    public void setSemester(String semester) {
-        this.semester = semester;
+    public void setCourse_semester(String course_semester) {
+        this.course_semester = course_semester;
     }
 
     public String getCourse_design_table() {
@@ -66,18 +79,5 @@ public class Course implements Serializable {
 
     public void setInsert_date(Date insert_date) {
         this.insert_date = insert_date;
-    }
-
-    @Override
-    public String toString() {
-        return "Course{" +
-                "course_id='" + course_id + '\'' +
-                ", course_name='" + course_name + '\'' +
-                ", course_hierarchy='" + course_hierarchy + '\'' +
-                ", semester='" + semester + '\'' +
-                ", course_design_table='" + course_design_table + '\'' +
-                ", course_content_table='" + course_content_table + '\'' +
-                ", insert_date=" + insert_date +
-                '}';
     }
 }

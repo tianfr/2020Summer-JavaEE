@@ -28,8 +28,29 @@
     <!--配置文件解析器对象-->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="maxUploadSize" value="10485760" />
-
     </bean>
+
+    <!--配置拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!-- 拦截所有请求，不包括二级以上项目 -->
+            <mvc:mapping path="/*"/>
+            <mvc:exclude-mapping path="/Login"/>
+            <mvc:exclude-mapping path="/css/**"/>
+            <!-- 配置不拦截 -->
+<!--            <mvc:exclude-mapping path="/login/**"/>-->
+<!--            <mvc:exclude-mapping path="/css/**"/>-->
+<!--            <mvc:exclude-mapping path="/css-preprocessors/**"/>-->
+<!--            <mvc:exclude-mapping path="/data/**"/>-->
+<!--            <mvc:exclude-mapping path="/fonts/**"/>-->
+<!--            <mvc:exclude-mapping path="/img/**"/>-->
+<!--            <mvc:exclude-mapping path="/js/**"/>-->
+<!--            <mvc:exclude-mapping path="/plugins/**"/>-->
+<!--            <mvc:exclude-mapping path="/premium/**"/>-->
+            <bean class="com.xjtuse.summerproject.interceptor.LoginInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
+
 
     <!--开启SpringMVC框架注解的支持-->
     <mvc:annotation-driven/>

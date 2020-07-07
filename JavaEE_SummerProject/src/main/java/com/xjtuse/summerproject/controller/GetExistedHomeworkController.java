@@ -17,11 +17,11 @@ public class GetExistedHomeworkController {
     public @ResponseBody
     GetExistedHomeworkResponse getExistedHomework(@RequestBody GetExistedHomeworkInfo getExistedHomeworkInfo) {
         GetExistedHomeworkResponse getExistedHomeworkResponse = new GetExistedHomeworkResponse();
-        getExistedHomeworkResponse.setHomework_status("submitted");
-        getExistedHomeworkResponse.setHomework_content("Homework_content");
-        getExistedHomeworkResponse.setSubmitted_time("2020-7-3");
-        getExistedHomeworkResponse.setHomework_deadline("2020-7-10");
-        getExistedHomeworkResponse.setHave_attachments("yes");
+        getExistedHomeworkResponse.setHomework_status("drafted");
+        getExistedHomeworkResponse.setHomework_content("<div>Homework_content</div>");
+        getExistedHomeworkResponse.setSubmitted_time("2020-6-3");
+        getExistedHomeworkResponse.setHomework_deadline("2020-8-10");
+        getExistedHomeworkResponse.setHave_attachments("no");
         File file1 = new File();
         File file2 = new File();
         file1.setFile_name("file1");

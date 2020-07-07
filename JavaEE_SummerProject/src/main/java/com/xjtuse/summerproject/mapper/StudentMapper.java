@@ -1,5 +1,6 @@
 package com.xjtuse.summerproject.mapper;
 
+import com.xjtuse.summerproject.entity.Course;
 import com.xjtuse.summerproject.entity.Student;
 import org.apache.ibatis.annotations.*;
 
@@ -11,6 +12,18 @@ public interface StudentMapper {
     //查询所有学生
     @Select("select * from students")
     List<Student> findAll();
+
+    //查询学生的课程
+    @Select("select *  from courses where courses.course_id IN ( \n" +
+            "        SELECT \n" +
+            "            students_courses.course_id \n" +
+            "        FROM \n" +
+            "            students_courses \n" +
+            "        WHERE \n" +
+            "            student_id = #{student_id} \n" +
+            "    )")
+    List<Course> findAllCourseById(String student_id);
+
 
     //修改密码
     @Update("update students set student_password=#{student_password} where student_username=#{student_username}")

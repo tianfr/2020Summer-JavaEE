@@ -1,11 +1,22 @@
 package com.xjtuse.summerproject.controller;
 
 import com.xjtuse.summerproject.controllerEntity.*;
+import com.xjtuse.summerproject.entity.Student;
+import com.xjtuse.summerproject.entity.Teacher;
+import com.xjtuse.summerproject.mapper.StudentMapper;
+import com.xjtuse.summerproject.mapper.TeacherMapper;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,24 +24,29 @@ import java.util.List;
 public class DashboardMenuController {
     @RequestMapping("/DashboardMenu")
     public @ResponseBody
-    DashboardMenuResponse dashBoardMenu(@RequestBody DashboardMenuInfo dashboardMenuInfo) {
+    DashboardMenuResponse dashBoardMenu(@RequestBody DashboardMenuInfo dashboardMenuInfo, HttpSession session) throws IOException {
         DashboardMenuResponse dashboardMenuResponse = new DashboardMenuResponse();
-        System.out.println("dashBoardMenuInfo = " + dashboardMenuInfo);
-        //模拟查数据库
+        System.out.println("session.getAttribute(\"id\") = " + session.getAttribute("id"));
+        InputStream in = Resources.getResourceAsStream("SqlMapConfig.xml");
+        SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
+        SqlSession sqlSession = factory.openSession();
+        StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
+        List<com.xjtuse.summerproject.entity.Course> courses = studentMapper.findAllCourseById((String) session.getAttribute("id"));
+        sqlSession.close();
+        in.close();
         dashboardMenuResponse.setAvater("This is an avatar_path");
-        dashboardMenuResponse.setUser_name("cdh");
-        Course course1 = new Course();
-        Course course2 = new Course();
-        course1.setId("course20000001");
-        course2.setId("course20000002");
-        course1.setCourse_name("编译原理");
-        course2.setCourse_name("计算机网络");
-        course1.setCourse_path("This is course1's path");
-        course2.setCourse_path("This is course2's path");
+        dashboardMenuResponse.setUser_name((String) session.getAttribute("name"));
+        dashboardMenuResponse.setEmail((String) session.getAttribute("email"));
         List<Course> list = new ArrayList<Course>();
-        list.add(course1);
-        list.add(course2);
+        for(com.xjtuse.summerproject.entity.Course course : courses ) {
+            Course course1 = new Course();
+            course1.setCourse_name(course.getCourse_name());
+            course1.setId(course.getCourse_id());
+            course1.setCourse_path("");
+            list.add(course1);
+        }
         dashboardMenuResponse.setValue(list);
+        System.out.println("list = " + list);
         return dashboardMenuResponse;
     }
 }

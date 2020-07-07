@@ -1,13 +1,14 @@
 package com.xjtuse.summerproject.controllerEntity;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 public class Issue implements Serializable {
     private String id;
     private String value;
     private String issue_id_path;
     private String course;
-    private String deadline;
+    private Date deadline;
     private String content;
     private String status;
 
@@ -18,7 +19,7 @@ public class Issue implements Serializable {
                 ", value='" + value + '\'' +
                 ", issue_id_path='" + issue_id_path + '\'' +
                 ", course='" + course + '\'' +
-                ", deadline='" + deadline + '\'' +
+                ", deadline=" + deadline +
                 ", content='" + content + '\'' +
                 ", status='" + status + '\'' +
                 '}';
@@ -56,11 +57,11 @@ public class Issue implements Serializable {
         this.course = course;
     }
 
-    public String getDeadline() {
+    public Date getDeadline() {
         return deadline;
     }
 
-    public void setDeadline(String deadline) {
+    public void setDeadline(Date deadline) {
         this.deadline = deadline;
     }
 

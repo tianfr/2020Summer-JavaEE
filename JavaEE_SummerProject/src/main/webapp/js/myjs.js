@@ -19,7 +19,7 @@ function sign_in() {
             // 请求成功后的操作
             if (result.success_value == "1") {
                 alert("登录成功");
-                location.href = "index.html";
+                location.href = "/index.html";
             } else {
                 alert(result.fail_content);
             }
@@ -60,7 +60,7 @@ function Register() {
         success: function (result) {
             if (result.success_value == "1") {
                 alert("注册成功，id是" + result.role_id);
-                location.href = "pages-login.html";
+                location.href = "/login/pages-login.html";
             } else {
                 alert(result.fail_content);
             }
@@ -94,7 +94,7 @@ function find_pw() {
             // 请求成功后的操作
             if (result.success_value == "1") {
                 alert("已将密码发送至对应邮箱");
-                location.href = "pages-login.html";
+                location.href = "/login/pages-login.html";
                 //发邮件
             } else {
                 alert(result.fail_content);
@@ -135,7 +135,7 @@ function reset_pw() {
             // 请求成功后的操作
             if (result.success_value == "1") {
                 alert("密码修改成功");
-                location.href = "pages-login.html";
+                location.href = "/login/pages-login.html";
                 //发邮件
             } else {
                 alert(result.fail_content);
@@ -144,6 +144,33 @@ function reset_pw() {
 
         error: function (XMLHttpRequest, textStatus, errorThrown) {
             alert("连接失败,请重试");
+        }
+    });
+}
+
+function db_menu(){
+    $.ajax({
+        type:"POST", // 使用post方式
+        url:"/DashboardMenu",
+        contentType:"application/json",
+        data: JSON.stringify({
+            "status": "0",
+            "message": "dashboard_menu",
+            //"user_id": user_id,
+        }),
+        dataType:"json",
+        async:false,
+        success: function(result){
+            $("#header_name").html(result.user_name);
+            $("#header_email").html(result.email);
+            var dataObj = result.value,con="";
+            $.each(dataObj,function(index,item){
+                con+=
+                    '<li><a href="course-dashboard.html?cid='+item.id+'" target="_self"><i class="demo-psi-pen-5"></i><span class="menu-title">'
+                    +item.course_name+
+                    "</span></a></li>"
+            });
+            $("#db_index").html(con);
         }
     });
 }
@@ -175,12 +202,7 @@ function recent_info() {
                 });
                 $("#recent-info-data").html(info_data);
             }
-            // else{
-            // 	alert(result.fail_content);
-            // 	//location.href = "pages-login.html";
-            // }
         },
-
     });
 }
 
@@ -609,35 +631,59 @@ function get_homework(){
 }
 
 
-function db_menu(){
+function load_homework(){
+
+    let urlparam = location.search;
+    let course_id = "";
+    let homework_id = "";
+    if (urlparam.substr(1, 4) == "cid=" && urlparam.substr(19, 5) == "&hid=") {
+        course_id = urlparam.substr(5, 14);
+        homework_id = urlparam.substr(24);
+    }
+
     $.ajax({
         type:"POST", // 使用post方式
 
-        url:"/DashboardMenu",
+        url:"/GetExistedHomework",
         contentType:"application/json",
 
 
         data: JSON.stringify({
             "status": "0",
-            "message": "dashboard_menu",
-            //"user_id": user_id,
+            "message": "get_existed_homework",
+            "course_id": course_id,
+            "homework_id": homework_id,
 
         }),
 
         dataType:"json",
         async:false,
         success: function(result){
-            var dataObj = result.value,con="";
-            $.each(dataObj,function(index,item){
-                con+=
-                    '<li><a href="course-dashboard.html?cid='+item.id+'" target="_self"><i class="demo-psi-pen-5"></i><span class="menu-title">'
-                    +item.course_name+
-                    "</span></a></li>"
-            });
-            $("#db_index").html(con);
+            var con="";
+            var string_ddl = result.homework_deadline+":00";
+            var ddl_day = new Date(string_ddl);
+            var today = new Date();
+            var days_diff = (ddl_day.getTime() - today.getTime())/(1*24*60*60*1000);
+            if(result.homework_status=="drafted"){
+                // $(".note-editable .p").html(result.homework_content);
+                $(".demo-mail-compose").summernote("code",result.homework_content);
+            }
+            if(result.homework_status=="submitted"){
+                con+='<div class="alert alert-mint"><strong>Well done!</strong>Your homework has been submitted, SUBMITTED TIME: '+result.submitted_time+"</div>";
+            }
+            if((result.homework_status=="drafted"||result.homework_status=="null")&&days_diff>0){
+                con+='<div class="alert alert-warning">Deadline of this homework is '+result.homework_deadline+"</div>";
+            }
+            if((result.homework_status=="drafted"||result.homework_status=="null")&&days_diff<0){
+                con+='<div class="alert alert-danger">This homework has been expired.</div>';
+            }
+            $("#hw_status").html(con);
+
         }
     });
 }
+
+
 
 function tab1Location() {
     let course_id = "";

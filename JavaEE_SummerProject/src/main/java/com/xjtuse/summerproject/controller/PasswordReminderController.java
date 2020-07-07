@@ -60,13 +60,12 @@ public class PasswordReminderController {
                 String link = "http://localhost:8080/resetPassword.html?key=" + c;
                 System.out.println("-----------加密后的链接为---------------------");
                 System.out.println(link);
-
                 MailSenderInfo mailInfo = new MailSenderInfo();
                 mailInfo.setMailServerHost("smtp.qq.com");
                 mailInfo.setMailServerPort("25");
                 mailInfo.setValidate(true);
                 mailInfo.setUserName("940141567@qq.com");
-                mailInfo.setPassword("qmpumzqiinbbbbib");// 邮箱密授权码！！！
+                mailInfo.setPassword("uzxdvenwqymmbbib");// 邮箱密授权码！！！
                 mailInfo.setFromAddress("940141567@qq.com");
                 mailInfo.setToAddress(passwordReminderInfo.getEmail());
                 mailInfo.setSubject("找回密码");
@@ -76,6 +75,7 @@ public class PasswordReminderController {
                 mailInfo.setContent(content);
                 //发邮件
                 SimpleMailSender sms = new SimpleMailSender();
+
                 sms.sendHtmlMail(mailInfo);// 发送html格式 一般用这个
                 responseInfo.setSuccess_value("1");
                 responseInfo.setFail_content("邮件发送成功，请检查邮箱");

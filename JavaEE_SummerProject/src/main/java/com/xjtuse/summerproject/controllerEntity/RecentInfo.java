@@ -12,7 +12,7 @@ public class RecentInfo implements Serializable {
 
     @Override
     public String toString() {
-        return "RecentInfo{" +
+        return "CourseContent{" +
                 "id='" + id + '\'' +
                 ", value='" + value + '\'' +
                 ", info_id_path='" + info_id_path + '\'' +

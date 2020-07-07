@@ -1,5 +1,6 @@
 package com.xjtuse.summerproject;
 
+import com.xjtuse.summerproject.entity.Course;
 import com.xjtuse.summerproject.entity.Student;
 import com.xjtuse.summerproject.mapper.StudentMapper;
 import org.apache.ibatis.io.Resources;
@@ -50,6 +51,15 @@ public class StudentMapperTest {
         List<Student> students = studentMapper.findAll();
         for (Student student : students) {
             System.out.println(student);
+        }
+    }
+
+    @Test
+    public void testFindAllCourseById() {
+        //5.执行findAll方法
+        List<Course> courses = studentMapper.findAllCourseById("stu20200202");
+        for (Course course : courses) {
+            System.out.println(course);
         }
     }
 
