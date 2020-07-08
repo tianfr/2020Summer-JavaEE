@@ -1,7 +1,9 @@
 package com.xjtuse.summerproject;
 
+import com.xjtuse.summerproject.controllerEntity.Course;
 import com.xjtuse.summerproject.controllerEntity.Issue;
 import com.xjtuse.summerproject.entity.CourseContent;
+import com.xjtuse.summerproject.entity.CoursePanel;
 import com.xjtuse.summerproject.entity.Temp;
 import com.xjtuse.summerproject.mapper.CourseMapper;
 import com.xjtuse.summerproject.mapper.IssueMapper;
@@ -53,5 +55,13 @@ public class CourseMapperTest {
         }
         Date date = new Date(System.currentTimeMillis());
         System.out.println("date = " + date);
+    }
+
+    @Test
+    public void testGetCoursePanel() throws Exception{
+        List<CoursePanel> coursePanelList = courseMapper.getCoursePanel("demo001");
+        for (CoursePanel coursePanel: coursePanelList){
+            System.out.println(coursePanel);
+        }
     }
 }
