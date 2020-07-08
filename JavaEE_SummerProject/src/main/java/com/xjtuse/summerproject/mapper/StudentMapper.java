@@ -105,8 +105,8 @@ public interface StudentMapper {
     CourseHomework getHomeworkDraft(SendHomework sendHomework);
 
     //6.15 查找课程resource栏下信息
-    @Select("SELECT resource_id, resource_type, resource_name, resource_path, insert_date FROM course_${course_id}_resource WHERE resource_belong = 'resources'")
-    CourseResource getCourseResource(String course_id);
+    @Select("SELECT * FROM course_${course_id}_resource WHERE resource_belong = 'resources'")
+    List<CourseResource> getCourseResource(String course_id);
 
     //6.16 教师发布新课程content
     //第一步 获取课程content最大id

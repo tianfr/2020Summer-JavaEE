@@ -201,8 +201,8 @@ public class StudentMapperTest {
 
     @Test
     public void testGetCourseResourse() throws Exception{
-        CourseResource courseResource = studentMapper.getCourseResource("demo001");
-        System.out.println(courseResource);
+        List<CourseResource> courseResourceList = studentMapper.getCourseResource("demo001");
+        System.out.println(courseResourceList);
     }
     @Test
     public void testInsertIssue() throws Exception{
