@@ -170,4 +170,19 @@ public class StudentMapperTest {
         System.out.println(teacher);
 
     }
+
+    @Test
+    public void testInsertHomework() throws Exception{
+        SubmitHomework submitHomework = new SubmitHomework();
+        submitHomework.setCourse_id("demo001");
+        submitHomework.setHomework_id("tch20200101_content_homework001");
+        submitHomework.setStudent_id("stu20200204");
+        submitHomework.setHomework_attachments_name("name1;name2;");
+        submitHomework.setHomework_attachments_path("path1;path2;");
+        submitHomework.setHomework_content("newnewneweenewenwenwewndsjflskdfjslkdfjaslk");
+        submitHomework.setIs_draft("no");
+        studentMapper.insertStudentHomework(submitHomework);
+
+
+    }
 }

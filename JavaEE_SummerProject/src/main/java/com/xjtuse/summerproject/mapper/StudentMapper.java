@@ -86,6 +86,17 @@ public interface StudentMapper {
     @Select("SELECT * FROM teachers WHERE teacher_id = #{teacher_id}")
     Teacher getHomeworkTeacher(String teacher_id);
 
+    //6.13接口第一步
+    @Insert("INSERT INTO course_${course_id}_homework(homework_id, student_id, content, homework_file_path, homework_file_name, is_draft, insert_date)" +
+            "VALUES ( #{homework_id}, #{student_id}, #{homework_content}, #{homework_attachments_path}, #{homework_attachments_name}, #{is_draft}, LOCALTIME ()) " +
+            "ON DUPLICATE KEY UPDATE " +
+            "content=#{homework_content}, "+
+            "homework_file_path=#{homework_attachments_path}, " +
+            "homework_file_name=#{homework_attachments_name}, " +
+            "is_draft=#{is_draft}, " +
+            "insert_date=LOCALTIME ()")
+    void insertStudentHomework(SubmitHomework submitHomework);
+
 
 
     //entity中实体的属性名和数据库列名不一致时的配置样例
