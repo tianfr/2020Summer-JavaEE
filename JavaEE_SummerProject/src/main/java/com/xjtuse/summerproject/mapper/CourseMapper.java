@@ -15,6 +15,7 @@ public interface CourseMapper {
     //6.7
     @Select("select * from ${str} where issue_type != 'homework' and issue_type != 'examination'")
     List<CourseContent> findRecentInfo(String str);
+
     @Select("SELECT * FROM course_${course_id}_design WHERE design_id NOT IN (\"announcement\", \"discussion\", \"examination\", \"homework\", \"resource\")")
     List<CoursePanel> getCoursePanel(String course_id);
 
