@@ -10,7 +10,7 @@ public class Course implements Serializable {
     private String course_semester;
     private String course_design_table;
     private String course_content_table;
-    private Date insert_date;
+    private String course_college;
 
     @Override
     public String toString() {
@@ -21,9 +21,20 @@ public class Course implements Serializable {
                 ", course_semester='" + course_semester + '\'' +
                 ", course_design_table='" + course_design_table + '\'' +
                 ", course_content_table='" + course_content_table + '\'' +
+                ", course_college='" + course_college + '\'' +
                 ", insert_date=" + insert_date +
                 '}';
     }
+
+    public String getCourse_college() {
+        return course_college;
+    }
+
+    public void setCourse_college(String course_college) {
+        this.course_college = course_college;
+    }
+
+    private Date insert_date;
 
     public String getCourse_id() {
         return course_id;

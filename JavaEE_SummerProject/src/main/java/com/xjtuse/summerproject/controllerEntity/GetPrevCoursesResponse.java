@@ -5,14 +5,14 @@ import java.util.List;
 public class GetPrevCoursesResponse {
     private String id = "prev_courses";
     private Integer total_num = 0;
-    private List<GetPrevCoursesSubResponse> getPrevCoursesSubResponseList;
+    private List<GetPrevCoursesSubResponse> value;
 
     @Override
     public String toString() {
         return "GetPrevCoursesResponse{" +
                 "id='" + id + '\'' +
                 ", total_num=" + total_num +
-                ", getPrevCoursesSubResponseList=" + getPrevCoursesSubResponseList +
+                ", value=" + value +
                 '}';
     }
 
@@ -32,11 +32,11 @@ public class GetPrevCoursesResponse {
         this.total_num = total_num;
     }
 
-    public List<GetPrevCoursesSubResponse> getGetPrevCoursesSubResponseList() {
-        return getPrevCoursesSubResponseList;
+    public List<GetPrevCoursesSubResponse> getValue() {
+        return value;
     }
 
-    public void setGetPrevCoursesSubResponseList(List<GetPrevCoursesSubResponse> getPrevCoursesSubResponseList) {
-        this.getPrevCoursesSubResponseList = getPrevCoursesSubResponseList;
+    public void setValue(List<GetPrevCoursesSubResponse> value) {
+        this.value = value;
     }
 }

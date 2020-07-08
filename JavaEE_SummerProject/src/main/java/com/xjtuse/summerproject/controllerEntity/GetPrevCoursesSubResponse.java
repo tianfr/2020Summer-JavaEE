@@ -5,6 +5,7 @@ public class GetPrevCoursesSubResponse {
     private String course_teacher;
     private String course_hierarchy;
     private String course_college;
+    private String course_id;
 
     @Override
     public String toString() {
@@ -13,7 +14,16 @@ public class GetPrevCoursesSubResponse {
                 ", course_teacher='" + course_teacher + '\'' +
                 ", course_hierarchy='" + course_hierarchy + '\'' +
                 ", course_college='" + course_college + '\'' +
+                ", course_id='" + course_id + '\'' +
                 '}';
+    }
+
+    public String getCourse_id() {
+        return course_id;
+    }
+
+    public void setCourse_id(String course_id) {
+        this.course_id = course_id;
     }
 
     public String getCourse_title() {

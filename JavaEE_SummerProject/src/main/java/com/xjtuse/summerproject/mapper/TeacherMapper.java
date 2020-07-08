@@ -1,9 +1,6 @@
 package com.xjtuse.summerproject.mapper;
 
-import com.xjtuse.summerproject.entity.CourseHomework;
-import com.xjtuse.summerproject.entity.SendHomework;
-import com.xjtuse.summerproject.entity.Student;
-import com.xjtuse.summerproject.entity.Teacher;
+import com.xjtuse.summerproject.entity.*;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -28,5 +25,10 @@ public interface TeacherMapper {
     //6.18 老师查看所有已提交作业
     @Select("SELECT * FROM course_${course_id}_homework WHERE homework_id = #{homework_id} AND is_draft = 'no';")
     List<CourseHomework> getStudentHomeworks(SendHomework sendHomework);
+
+    //6.17 教师getPrevCourses
+    @Select("SELECT courses.* FROM courses, teachers_courses WHERE " +
+            "teachers_courses.teacher_id=#{teacher_id} AND teachers_courses.course_id = courses.course_id")
+    List<Course> getprevCourses(String teacher_id);
 
 }

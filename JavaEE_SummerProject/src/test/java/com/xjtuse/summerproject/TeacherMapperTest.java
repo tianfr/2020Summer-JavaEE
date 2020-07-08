@@ -1,9 +1,6 @@
 package com.xjtuse.summerproject;
 
-import com.xjtuse.summerproject.entity.CourseHomework;
-import com.xjtuse.summerproject.entity.SendHomework;
-import com.xjtuse.summerproject.entity.Student;
-import com.xjtuse.summerproject.entity.Teacher;
+import com.xjtuse.summerproject.entity.*;
 import com.xjtuse.summerproject.mapper.StudentMapper;
 import com.xjtuse.summerproject.mapper.TeacherMapper;
 import org.apache.ibatis.io.Resources;
@@ -70,6 +67,14 @@ public class TeacherMapperTest {
         List<CourseHomework> courseHomeworkList = teacherMapper.getStudentHomeworks(sendHomework);
         for (CourseHomework courseHomework: courseHomeworkList){
             System.out.println(courseHomework);
+        }
+    }
+
+    @Test
+    public void testGetPrevCourses() throws Exception{
+        List<Course> courseList = teacherMapper.getprevCourses("tch20200101");
+        for (Course course: courseList){
+            System.out.println(course);
         }
     }
 
