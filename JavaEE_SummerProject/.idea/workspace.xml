@@ -26,15 +26,10 @@
   <component name="ChangeListManager">
     <list default="true" id="43adc165-a0c1-45b6-b342-859af66343f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/GetAnnouncementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/GetAnnouncementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/GetCourseAnnouncementsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/GetCourseAnnouncementsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/GetCourseHomeworksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/GetCourseHomeworksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/GetHomeworkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/GetHomeworkController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/entity/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/entity/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/demo/form-file-upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/demo/form-file-upload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/myjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xjtuse/summerproject/StudentMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xjtuse/summerproject/StudentMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/mapper/CourseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/mapper/CourseMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/mapper/StudentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/mapper/StudentMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../计网实验报告.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -325,9 +320,9 @@
       <item itemvalue="JUnit.CourseMapperTest.testFindUpcomingIssue" />
       <item itemvalue="JUnit.StudentMapperTest.testGetCourseAnnouncement" />
       <item itemvalue="JUnit.StudentMapperTest.testGetAnnouncement" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.36" />
       <item itemvalue="JUnit.StudentMapperTest.testFindAll" />
       <item itemvalue="JUnit.StudentMapperTest.testGetHomework" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.36" />
     </list>
     <recent_temporary>
       <list>
@@ -382,6 +377,7 @@
       <workItem from="1594155776720" duration="6092000" />
       <workItem from="1594165627911" duration="595000" />
       <workItem from="1594173685129" duration="11454000" />
+      <workItem from="1594190773418" duration="879000" />
     </task>
     <servers />
   </component>

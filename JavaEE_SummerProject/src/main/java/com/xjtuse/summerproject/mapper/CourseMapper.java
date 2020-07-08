@@ -10,4 +10,7 @@ public interface CourseMapper {
     @Select("SELECT * FROM ${str} WHERE issue_type != 'homework' AND issue_type != 'examination'" )
     List<CourseContent> findUpcomingIssue(String str);
 
+    //6.7
+    @Select("select * from ${str} where issue_type != 'homework' and issue_type != 'examination'")
+    List<CourseContent> findRecentInfo(String str);
 }

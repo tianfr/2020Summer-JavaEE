@@ -61,6 +61,9 @@ public interface StudentMapper {
     @Select("select max(student_id) from students")
     String findMaxId();
 
+
+
+
     // 6.9接口
     @Select("SELECT * FROM course_${course_id}_content WHERE issue_type = 'announcement'  AND issue_belong = 'announcement' ")
     List<CourseContent> getCourseAnnouncements(String course_id);
