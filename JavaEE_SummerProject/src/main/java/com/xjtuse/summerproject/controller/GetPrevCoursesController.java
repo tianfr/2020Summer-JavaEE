@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -26,7 +27,8 @@ public class GetPrevCoursesController {
     // 6.17 接口
     @RequestMapping("/GetPrevCourses")
     public @ResponseBody
-    GetPrevCoursesResponse getPrevCourses(@RequestBody GetPrevCoursesInfo getPrevCoursesInfo) throws IOException {
+    GetPrevCoursesResponse getPrevCourses(@RequestBody GetPrevCoursesInfo getPrevCoursesInfo, HttpSession session) throws IOException {
+        System.out.println("ok");
         GetPrevCoursesResponse getPrevCoursesResponse = new GetPrevCoursesResponse();
         //1.读取配置文件，生成字节输入流
         InputStream in = Resources.getResourceAsStream("SqlMapConfig.xml");
@@ -35,15 +37,15 @@ public class GetPrevCoursesController {
         //3.使用工厂生产SqlSession对象
         SqlSession sqlSession = factory.openSession();
         //4.使用SqlSession创建Mapper接口的代理对象
-        String person_role = getPrevCoursesInfo.getRole();
+        String person_role = session.getAttribute("role").toString();
         TeacherMapper teacherMapper = sqlSession.getMapper(TeacherMapper.class);
         StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
         List<Course> courseList = null;
-        if (person_role == "student"){
-            courseList = studentMapper.getStudentAttendedCourses(getPrevCoursesInfo.getPerson_id());
+        if (person_role.equals("student") ){
+            courseList = studentMapper.getStudentAttendedCourses((String) session.getAttribute("id"));
         }
-        else if (person_role == "teacher"){
-            courseList = teacherMapper.getprevCourses(getPrevCoursesInfo.getPerson_id());
+        else if (person_role.equals("teacher")){
+            courseList = teacherMapper.getprevCourses((String) session.getAttribute("id"));
         }
         sqlSession.close();
         in.close();
@@ -55,7 +57,7 @@ public class GetPrevCoursesController {
             entityCourse.setCourse_title(course.getCourse_name());
             entityCourse.setCourse_id(course.getCourse_id());
             entityCourse.setCourse_college(course.getCourse_college());
-            entityCourse.setCourse_id(course.getCourse_id());
+            entityCourse.setCourse_hierarchy(course.getCourse_hierarchy());
             getPrevCoursesResponse.setTotal_num(getPrevCoursesResponse.getTotal_num() + 1);
             list.add(entityCourse);
         }
@@ -64,7 +66,9 @@ public class GetPrevCoursesController {
         //提交事务
 //        sqlSession.commit();
         //6.释放资源
-
+        sqlSession.close();
+        in.close();
+        System.out.println("getPrevCoursesResponse = " + getPrevCoursesResponse);
         return getPrevCoursesResponse;
     }
 

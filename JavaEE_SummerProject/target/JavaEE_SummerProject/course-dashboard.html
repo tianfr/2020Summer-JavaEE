@@ -508,7 +508,7 @@
 
                             <!-- Dropdown footer -->
                             <div class="pad-all text-right">
-                                <a href="../pages-login.html" class="btn btn-primary">
+                                <a href="../pages-login.html" class="btn btn-primary" onclick="sign_out()">
                                     <i class="demo-pli-unlock"></i> Logout
                                 </a>
                             </div>
@@ -1717,7 +1717,7 @@
                                     <a href="#" class="list-group-item">
                                         <i class="demo-pli-information icon-lg icon-fw"></i> Help
                                     </a>
-                                    <a href="#" class="list-group-item">
+                                    <a href="#" class="list-group-item" onclick="sign_out()">
                                         <i class="demo-pli-unlock icon-lg icon-fw"></i> Logout
                                     </a>
                                 </div>
@@ -1760,7 +1760,7 @@
                                 <li class="list-header">Navigation</li>
 
                                 <!--Menu list item-->
-                                <li>
+                                <li class="active-link">
                                     <a href="index.html">
                                         <i class="demo-psi-home"></i>
                                         <span class="menu-title">
@@ -1774,40 +1774,11 @@
                                     <a href="#">
                                         <i class="demo-psi-split-vertical-2"></i>
                                         <span class="menu-title">
-												<strong>Layouts</strong>
-											</span>
-                                        <i class="arrow"></i>
-                                    </a>
-
-                                    <!--Submenu-->
-                                    <ul class="collapse">
-                                        <li><a href="layouts-collapsed-navigation.html">Collapsed Navigation</a></li>
-                                        <li><a href="layouts-offcanvas-navigation.html">Off-Canvas Navigation</a></li>
-                                        <li><a href="layouts-offcanvas-slide-in-navigation.html">Slide-in Navigation</a>
-                                        </li>
-                                        <li><a href="layouts-offcanvas-revealing-navigation.html">Revealing
-                                            Navigation</a></li>
-                                        <li class="list-divider"></li>
-                                        <li><a href="layouts-aside-right-side.html">Aside on the right side</a></li>
-                                        <li><a href="layouts-aside-left-side.html">Aside on the left side</a></li>
-                                        <li><a href="layouts-aside-dark-theme.html">Dark version of aside</a></li>
-                                        <li class="list-divider"></li>
-                                        <li><a href="layouts-fixed-navbar.html">Fixed Navbar</a></li>
-                                        <li><a href="layouts-fixed-footer.html">Fixed Footer</a></li>
-
-                                    </ul>
-                                </li>
-
-                                <!--Menu list item-->
-                                <li>
-                                    <a href="widgets.html">
-                                        <i class="demo-psi-gear-2"></i>
-                                        <span class="menu-title">
-												<strong>Widgets</strong>
-												<span class="pull-right badge badge-warning">24</span>
-											</span>
+												<strong>Prev Courses</strong>
+                                        </span>
                                     </a>
                                 </li>
+
 
                                 <li class="list-divider"></li>
 
@@ -1847,7 +1818,7 @@
                                 </li>
 
                                 <!--Menu list item-->
-                                <li class="active-sub">
+                                <li>
                                     <a href="#">
                                         <i class="demo-psi-mail"></i>
                                         <span class="menu-title">Email</span>
@@ -1855,8 +1826,8 @@
                                     </a>
 
                                     <!--Submenu-->
-                                    <ul class="collapse in">
-                                        <li class="active-link"><a href="mailbox.html">Inbox</a></li>
+                                    <ul class="collapse">
+                                        <li><a href="mailbox.html">Inbox</a></li>
                                         <li><a href="announcement.html">View Message</a></li>
                                         <li><a href="mailbox-compose.html">Compose Message</a></li>
                                         <li><a href="mailbox-templates.html">Email Templates<span

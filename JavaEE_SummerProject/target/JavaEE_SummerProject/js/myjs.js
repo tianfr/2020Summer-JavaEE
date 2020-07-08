@@ -716,6 +716,52 @@ function load_homework(){
 }
 
 
+function get_prev_course() {
+
+    $.ajax({
+        type: "POST", // 使用post方式
+
+        // 获取course数据
+        url: "/GetPrevCourses",
+        contentType: "application/json",
+
+
+        data: JSON.stringify({
+            "status": "0",
+            "message": "get_prev_courses",
+        }),
+
+        dataType: "json",
+        async: false,
+        success: function (result) {
+            if (result.id == "prev_courses") {
+                var dataObj = result.value;
+                var prev_course = "";
+                $.each(dataObj, function (index, item) {
+                    alert(item.course_title);
+                    alert(item.course_college);
+                    alert(item.course_id);
+                    alert(item.course_title);
+                        prev_course  += '<div class=\"panel panel-colorful panel-primary" >';
+                        prev_course  += '<div class=\"panel-heading">';
+                        prev_course  += '<h3 class="panel-title">' + item.course_title + '</h3>';
+                        prev_course  += '</div>';
+                        prev_course  += '<div class="panel-body">';
+                        prev_course  += '<p >' + item.course_college + '</p>';
+                        prev_course  += '<p >' + item.course_id+'</p>';
+                        prev_course  += '<p >' + item.course_hierarchy+'</p>';
+                        prev_course  += '</div>';
+                        prev_course  += '</div>';
+                    },
+                )
+                $("#prev_course").html(prev_course);
+            }
+        }
+    });
+}
+
+
+
 
 function tab1Location() {
     let course_id = "";
