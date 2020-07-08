@@ -190,9 +190,9 @@
 									+item.homework_title+
 									'</a><br></strong> <div class="mail-time">';
 							li += item.homework_deadline
-							      + "</div>
-				                   '<div class="mail-attach-icon"></div>
-				                   '<div class="mail-subject"> <a href="mailbox-message.html">";
+							      + "</div>\
+								<div class=\"mail-attach-icon\"></div>\
+				                   <div class=\"mail-subject\"> <a href=\"mailbox-message.html\">";
 							li += item.homework_content
 							      + "</a> </div> </li>" ;
 							$("#tab-2-demo-mail-list").html(li);
@@ -629,8 +629,8 @@
 		$("#tab-5-demo-mail-list>li>div>input[type=checkbox]").each(function(){
 			if($(this).prop("checked") == true){
 				let _li = $(this).parent().parent();
-				let resource_path = (_li.children("a")).id; 
-				let resource_name = (_li.children("a")).innerText;
+				let resource_path = (_li.find("a")).id; 
+				let resource_name = (_li.find("a")).innerText;
 				chosen_src[0][chosen] = resource_name;
 				chosen_src[1][chosen] = resource_path;
 			    chosen++;
@@ -647,7 +647,73 @@
 
 
 	
+	function get_student_homeworks(course_id,homework_id){
+		$.ajax({
+			type:"POST", // 使用post方式
 
+			// 志愿者报名
+			url:"/GetStudentHomeworks",
+			contentType:"application/json",
+
+
+			data:JSON.stringify({
+                "status": "0",
+                "message": "get_student_homework", 
+ 				"course_id": course_id,
+				"homework_id": homework_id,
+            }),
+			
+			dataType:"json",
+			async:false,
+			success: function(result){
+					
+					var num = result.total_num;
+					var page_num = 10;//每页10条记录
+					var page_size = Math.ceil(num/page_num);//页数
+					var homeworkObj = result.value;
+					var current_page = 1 ;
+					
+					document.getElementById("tab-2-demo-mail-list").innerHTML = "";
+					$.each(homeworkObj, function(index, item){
+						if(index<page_num){//静态显示第一页
+							var li = "";
+							li += ' <li class="mail-list-unread mail-attach"> '
+				                    '<div class="mail-control"> '
+				                    '<input id="src-list-'
+								    +index+
+								    '" class="magic-checkbox" type="checkbox">
+				                    '<label for="src-list-
+									+index+
+								    '"></label>
+			                        '</div> '
+				                    '<div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>'
+				                    '<strong class="mail-from"> '
+							
+									'<a href="homework-meaasge.html" target="_self" id=" '
+								    +item.homework_id+
+								    '" onclick="get_homework(this.id)">'
+							
+									+item.homework_title+
+									'</a><br></strong> <div class="mail-time">';
+							li += item.homework_deadline
+							      + "</div>
+				                   '<div class="mail-attach-icon"></div>
+				                   '<div class="mail-subject"> <a href="mailbox-message.html">";
+							li += item.homework_content
+							      + "</a> </div> </li>" ;
+							$("#tab-2-demo-mail-list").html(li);
+							$("#tab-2-page_id").html(current_page);
+							$("#tab-2-page_total").html(page_size);
+						}
+							
+						
+					});
+					
+				
+				
+			}
+		});
+	}
 
 	
 

@@ -7,7 +7,6 @@
 // - ThemeOn.net -
 
 
-
  $(document).on('ready', function() {
 
 
@@ -24,7 +23,7 @@
         // http://hackerwins.github.io/summernote/
         // =================================================================
         $('#demo-mail-compose').summernote({
-            height:500
+            placeholder: '', height: '300px'
         });
 
 

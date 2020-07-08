@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8"> 
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inbox | Nifty - Admin Template</title>
+    <title>Compose Message | Nifty - Admin Template</title>
 
 
     <!--STYLESHEET-->
@@ -31,25 +31,26 @@
 
 
         
-    <!--Magic Checkbox [ OPTIONAL ]-->
-    <link href="plugins/magic-check/css/magic-check.min.css" rel="stylesheet">
+    <!--Summernote [ OPTIONAL ]-->
+    <link href="plugins/summernote/summernote.min.css" rel="stylesheet">
+
+    <!--Dropzone [ OPTIONAL ]-->
+    <link href="plugins/dropzone/dropzone.min.css" rel="stylesheet">
 
 
 
-
-
-    <!--jQuery [ REQUIRED ]-->
-    <script src="js/jquery-2.2.4.min.js"></script>
+    
     <!--JAVASCRIPT-->
     <!--=================================================-->
 
     <!--Pace - Page Load Progress Par [OPTIONAL]-->
     <link href="plugins/pace/pace.min.css" rel="stylesheet">
     <script src="plugins/pace/pace.min.js"></script>
-	
+	<script src="js/myjs.js"></script>
 
 
-    
+    <!--jQuery [ REQUIRED ]-->
+    <script src="js/jquery-2.2.4.min.js"></script>
 
 
     <!--BootstrapJS [ RECOMMENDED ]-->
@@ -58,8 +59,8 @@
 
     <!--NiftyJS [ RECOMMENDED ]-->
     <script src="js/nifty.min.js"></script>
-	<script src="/js/myjs.js"></script>
-	<script src="js/demo/mail.js"></script>
+	<script src="js/demo/form-file-upload.js"></script>
+	
 
 
 
@@ -71,6 +72,15 @@
     <script src="js/demo/nifty-demo.min.js"></script>
 
     
+    <!--Summernote [ OPTIONAL ]-->
+    <script src="plugins/summernote/summernote.min.js"></script>
+
+
+    <!--Mail [ SAMPLE ]-->
+    <script src="js/demo/mail.js"></script>
+
+    <!--Dropzone [ OPTIONAL ]-->
+    <script src="plugins/dropzone/dropzone.min.js"></script>
 
 
     
@@ -565,7 +575,7 @@
 					
 					            <p class="pad-hor mar-top text-main text-bold">Folders</p>
 					            <div class="list-group bg-trans pad-btm bord-btm">
-									<a href="#tab-1" class="list-group-item text-semibold text-main"> 
+									<a href="#tab-1" class="list-group-item text-semibold text-main" onclick="course_announcement()"> 
 										<span class="badge badge-success pull-right">7</span> 
 										<span class="text-main"><em class="demo-pli-inbox-full icon-lg icon-fw"></em> 公告</span> 
 									</a> <a href="#tab-2" class="list-group-item selected"> <em class="demo-pli-file icon-lg icon-fw" onclick="get_course_homeworks()"></em> 作业 </a> 
@@ -609,7 +619,7 @@
 					    </div>
 					    <div class="fluid">
 					        <div class="panel">
-				<div id="tab-1" class="panel-body mypanel">
+				        <div id="tab-1" class="panel-body mypanel">
 					                <h1 class="page-header text-overflow pad-btm">课程公告</h1>
 					
 					                <div class="row">
@@ -689,161 +699,105 @@
 					            </div>
 					        </div>-->
 					            </div>
-				<div id="tab-2" class="panel-body mypanel testing">
-					                <div class="mar-btm pad-btm bord-btm">
-					                    <h1 class="page-header text-overflow" id="headline">
-					                        <span class="label label-normal label-info">作业</span>
-					                        Hi John! How are you ?
+						<div id="tab-2" class="panel-body mypanel testing">
+					                <div class="mar-btm pad-btm clearfix">
+					                    <h1 class="page-header text-overflow">
+					                        作业提交
 					                    </h1>
+										<div id="hw_status"></div>
 					                </div>
-					
-					                <div class="row">
-					                    <div class="col-sm-7">
-					
-					                        <!--Sender Information-->
-					                        <div class="media">
-					                            <span class="media-left">
-					                                <img src="img/profile-photos/8.png" id="teacher_pic" class="img-circle img-sm" alt="Profile Picture">
-					                            </span>
-					                            <div class="media-body">
-					                                <div class="text-bold" id="teacher_name">Lisa D. Smith</div>
-					                                <small class="text-muted" id ="teacher_email">lisa.aqua@themeon.net</small>
-					                            </div>
-					                        </div>
-					                    </div>
-					                    <hr class="hr-sm visible-xs">
-					                    <div class="col-sm-5 clearfix">
-					
-					                        <!--Details Information-->
-					                        <div class="pull-right text-right">
-					                            <p class="mar-no"><small class="text-muted" id="datetime">Monday 12, May 2016</small></p>
-					                            <a href="#">
-					                                <strong>Holiday.zip</strong>
-					                                <i class="demo-psi-paperclip icon-fw"></i>
-					                            </a>
-					                        </div>
-					                    </div>
+					                <!--Input form-->
+					                <!--Attact file button-->
+<!--
+					                <div class="media pad-btm">
+					                    <div class="media-left"></div>
+					                    <div id="demo-attach-file" class="media-body"></div>
 					                </div>
-					                <div class="row pad-ver">
-					                    <div class="col-xs-7">
-					
-					                        <!--Mail toolbar-->
-					                        <button class="btn btn-purple" 
-													id="homework_submit" 
-													>
-												<a href="homework-submit.html" target="_self">作业提交</a></button>
-					                    </div>
-					                    <div class="col-xs-5 clearfix">
-					                        <div class="pull-right">
-					
-					                            <!--Reply & forward buttons-->
-					                            <div class="btn-group btn-group">
-					                                <a class="btn btn-sm btn-default" href="#">
-					                                <i class="demo-psi-left-4"></i>
-					                                </a>
-					                                <a class="btn btn-sm btn-default" href="#">
-					                                <i class="demo-psi-right-4"></i>
-					                                </a>
-					                            </div>
-					                        </div>
-					                    </div>
-					                </div>
-									<div id="homework_ddl">
-										
-									</div>
-					
-					                <!--Message-->
-					                <!--===================================================-->
-					                <div class="pad-ver bord-ver" id="homework_content">
-					                    Hey John,
-					                    <br><br>
-					                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>
-					                    <blockquote class="text-muted">
-					                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					                    </blockquote>
-					                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-					                    <br><br>
-					                    Regards,
-					                    <br><br>
-					                    <strong>Lisa D. Smith</strong><br>
-					                    2834 Street Name<br>
-					                    San Francisco, CA<br>
-					                </div>
-					                <!--===================================================-->
-					                <!--End Message-->
-					
-					                <!-- Attach Files-->
-					                <!--===================================================-->
-					                <div class="pad-ver mar-ver bord-btm">
-					                    <p class="text-main text-bold box-inline"><i class="demo-psi-paperclip icon-fw"></i> 附件 </p>
-					                    <a href="#" class="btn-link">Download all</a> | <a href="#" class="btn-link">View all images</a>
-					
-					                    <ul class="mail-attach-list list-ov">
-					                        <li>
-					                            <a href="#" class="thumbnail">
-					                                <div class="mail-file-img">
-					                                    <img class="image-responsive" src="img/bg-img/bg-img-4.jpg" alt="image">
-					                                </div>
-					                                <div class="caption">
-					                                    <p class="text-primary mar-no" id="attachment_name">Nature.jpg</p>
-					                                    
-					                                </div>
-					                            </a>
-					                        </li>
-					                        <li>
-					                            <a href="#" class="thumbnail">
-					                                <div class="mail-file-img">
-					                                    <img class="image-responsive" src="img/bg-img/bg-img-3.jpg" alt="image">
-					                                </div>
-					                                <div class="caption">
-					                                    <p class="text-primary mar-no" id="attachment_name">Forest.png</p>
-					                                    
-					                                </div>
-					                            </a>
-					                        </li>
-					                        <li>
-					                            <a href="#" class="thumbnail">
-					                                <div class="mail-file-icon">
-					                                    <i class="demo-pli-file-csv"></i>
-					                                </div>
-					                                <div class="caption">
-					                                    <p class="text-primary mar-no" id="attachment_name">Reports.csv</p>
-					                                    
-					                                </div>
-					                            </a>
-					                        </li>
-					                        <li>
-					                            <a href="#" class="thumbnail">
-					                                <div class="mail-file-icon">
-					                                    <i class="demo-pli-file-zip"></i>
-					                                </div>
-					                                <div class="caption">
-					                                    <p class="text-primary mar-no" id="attachment_name">Project.zip</p>
-					                                    <small class="text-muted">Added: May 10, 2016</small>
-					                                </div>
-					                            </a>
-					                        </li>
-					                    </ul>
-					                </div>
-					                <!--===================================================-->
-					                <!-- End Attach Files-->
+-->
 					
 					
-					                <!--Quick reply : Summernote Placeholder -->
-					                <div id="demo-mail-textarea" class="mail-message-reply bg-gray-light">
-					                    <strong>Reply</strong> or <strong>Forward</strong> this message...
-					                </div>
+					                <!--Wysiwyg editor : Summernote placeholder-->
+									<div id="demo-mail-compose"></div>
+                                    <div class="panel">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Bootstrap theme</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                    
+                                            <!--Dropzonejs using Bootstrap theme-->
+                                            <!--===================================================-->
+                                            <p>This is a bootstrap theme of Dropzone.js with a completely different user experience.</p>
+                                    
+                                            <div class="bord-top pad-ver">
+                                                <!-- The fileinput-button span is used to style the file input field as button -->
+                                                <span class="btn btn-success fileinput-button dz-clickable">
+                                                    <i class="fa fa-plus"></i>
+                                                    <span type="file" id="FileUpload" >add file</span>
+                                                    
+                                                </span>
+                                    
+                                                <div class="btn-group pull-right">
+                                                    <button id="dz-upload-btn" class="btn btn-primary" type="submit" disabled onClick="fileChange()">
+                                                        <i class="fa fa-upload-cloud"></i> Upload
+                                                    </button>
+                                                    <button id="dz-remove-btn" class="btn btn-danger cancel" type="reset" disabled>
+                                                        <i class="demo-pli-cross"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                    
+                                    
+                                            <div id="dz-previews">
+                                                <div id="dz-template" class="pad-top bord-top">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                             <!--This is used as the file preview template-->
+                                                            <div class="media-block">
+                                                                <div class="media-left">
+                                                                    <img class="dz-img" data-dz-thumbnail>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <p class="text-main text-bold mar-no text-overflow" data-dz-name></p>
+                                                                    <span class="dz-error text-danger text-sm" data-dz-errormessage></span>
+                                                                    <p class="text-sm" data-dz-size></p>
+                                                                    <div id="dz-total-progress" style="opacity:0">
+                                                                         <div class="progress progress-xs active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                                                            <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="media-right">
+                                                            <button data-dz-remove class="btn btn-xs btn-danger dz-cancel"><i class="demo-pli-cross"></i></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--===================================================-->
+                                            <!--End Dropzonejs using Bootstrap theme-->
+                                    
+                                    
+                                        </div>
+                                    </div>
 					
-					                <!--Send button-->
 					                <div class="pad-ver">
-					                    <button id="demo-mail-send-btn" type="button" class="btn btn-primary hide">
-					                        <span class="demo-psi-mail-send icon-lg icon-fw"></span>
-					                        Send Message
-					                    </button>
-					                </div>
+					
+					                    <!--Send button-->
+					                    <button id="mail-send-btn1" type="button" class="btn btn-primary" onclick="commit_homework()">
 
+					                        <i class="demo-psi-mail-send icon-lg icon-fw"></i> Submit
+					                    </button>
+										<button id="mail-send-btn2" type="button" class="btn btn-primary" onclick="save_as_draft()">
+
+					                        <i class="demo-psi-mail-send icon-lg icon-fw"></i> Save Draft
+					                    </button>
+										<button id="mail-send-btn3" type="button" class="btn btn-primary" onclick="discard_homework()"><em class="demo-psi-mail-send icon-lg icon-fw"></em> Discard </button> 
+					
+					                    <!--Save draft button-->
+					                    <!--Discard button-->					                </div>
 					            </div>
-				<div id="tab-3" class="panel-body mypanel">
+                        <div id="tab-3" class="panel-body mypanel">
                 <h1 class="page-header text-overflow pad-btm">Inbox (15)</h1>
 					
 					                <div class="row">
@@ -955,7 +909,7 @@
 					        </div>
 
 					            </div>
-				<div id="tab-4" class="panel-body mypanel">
+						<div id="tab-4" class="panel-body mypanel">
 					                <h1 class="page-header text-overflow pad-btm">Inbox (14)</h1>
 					
 					                <div class="row">
@@ -1067,7 +1021,7 @@
 					        </div>
 
 					            </div>
-				<div id="tab-5" class="panel-body mypanel">
+						<div id="tab-5" class="panel-body mypanel">
                        <h1 class="page-header text-overflow pad-btm">课程资源</h1>
 				                <div class="row">
 				                  <div class="col-sm-7">
@@ -2356,9 +2310,9 @@
     </div>
     <!--===================================================-->
     <!-- END SETTINGS -->
-	<script src="js/jquery-2.2.4.min.js"></script>
+
 	<script type="text/javascript">
-		$(document).ready(function(){ 
+		;$(document).ready(function(){ 
 			$("a.list-group-item").click(function(e){
 					e.preventDefault();
 					var _this = $(this);
