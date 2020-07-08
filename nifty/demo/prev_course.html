@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Message | Nifty - Admin Template</title>
+    <title>Panels | Nifty - Admin Template</title>
 
 
     <!--STYLESHEET-->
@@ -31,10 +31,6 @@
 
 
         
-    <!--Summernote [ OPTIONAL ]-->
-    <link href="plugins/summernote/summernote.min.css" rel="stylesheet">
-
-
 
 
 
@@ -45,6 +41,7 @@
     <!--Pace - Page Load Progress Par [OPTIONAL]-->
     <link href="plugins/pace/pace.min.css" rel="stylesheet">
     <script src="plugins/pace/pace.min.js"></script>
+	<script src="/js/myjs.js"></script>
 
 
     <!--jQuery [ REQUIRED ]-->
@@ -69,12 +66,8 @@
     <script src="js/demo/nifty-demo.min.js"></script>
 
     
-    <!--Summernote [ OPTIONAL ]-->
-    <script src="plugins/summernote/summernote.min.js"></script>
-
-
-    <!--Mail [ SAMPLE ]-->
-    <script src="js/demo/mail.js"></script>
+    <!--Panel [ SAMPLE ]-->
+    <script src="js/demo/ui-panels.js"></script>
 
 
 
@@ -111,7 +104,7 @@
 
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
-<body>
+<body onload="get_course_panel();">
     <div id="container" class="effect aside-float aside-bright mainnav-lg">
         
         <!--NAVBAR-->
@@ -554,148 +547,67 @@
             <!--===================================================-->
             <div id="content-container">
                 
+                <!--Page Title-->
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <div id="page-title">
+                    <h1 class="page-header text-overflow">Previous Courses</h1>
+
+                    <!--Searchbox-->
+                    <div class="searchbox">
+                        <div class="input-group custom-search-form">
+                            <input type="text" class="form-control" placeholder="Search..">
+                            <span class="input-group-btn">
+                                <button class="text-muted" type="button"><i class="demo-pli-magnifi-glass"></i></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <!--End page title-->
+
+
+                <!--Breadcrumb-->
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <ol class="breadcrumb">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">UI</a></li>
+					<li class="active">Panels</li>
+                </ol>
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <!--End breadcrumb-->
+
+
+        
 
                 <!--Page content-->
                 <!--===================================================-->
                 <div id="page-content">
-                    
-					<div class="fixed-fluid">
-					    <div class="fixed-sm-200 fixed-md-250 pull-sm-left">
-					        <div class="panel">
-					            <div class="pad-all bord-btm">
-					                <a href="mailbox-compose.html" class="btn btn-block btn-success">Compose Mail</a>
-					            </div>
+						<hr class="new-section-sm">
+						<hr class="new-section-sm">
 					
-					            <p class="pad-hor mar-top text-main text-bold">Folders</p>
-					            <div class="list-group bg-trans pad-btm bord-btm">
-					                <a href="#" class="list-group-item text-semibold text-main">
-					                    <span class="badge badge-success pull-right">7</span>
-					                    <span class="text-main"><i class="demo-pli-inbox-full icon-lg icon-fw"></i> Inbox</span>
-					                </a>
-					                <a href="#" class="list-group-item">
-					                    <i class="demo-pli-file icon-lg icon-fw"></i>
-					                    Draft
-					                </a>
-					                <a href="#" class="list-group-item">
-					                    <i class="demo-pli-mail-send icon-lg icon-fw"></i>
-					                    Sent
-					                </a>
-					                <a href="#" class="list-group-item text-semibold">
-					                    <span class="badge badge-danger pull-right">3</span>
-					                    <span class="text-main"><i class="demo-pli-fire-flame-2 icon-lg icon-fw"></i> Spam</span>
-					                </a>
-					                <a href="#" class="list-group-item">
-					                    <i class="demo-pli-recycling icon-lg icon-fw"></i>
-					                    Trash
-					                </a>
-					            </div>
-					
-					            <div class="list-group bg-trans pad-ver">
-					                <a href="#" class="list-group-item"><i class="demo-pli-male-female icon-lg icon-fw"></i> Address Book</a>
-					                <a href="#" class="list-group-item"><i class="demo-pli-folder-with-document icon-lg icon-fw"></i> User Folders</a>
-					            </div>
-					
-					            <!-- Friends -->
-					            <div class="list-group bg-trans pad-ver bord-ver">
-					                <p class="pad-hor text-main text-bold"><span class="pull-right label label-info">New</span>Friends</p>
-					
-					                <!-- Menu list item -->
-					                <a href="#" class="list-group-item list-item-sm">
-					                    <span class="badge badge-purple badge-icon badge-fw pull-left"></span>
-					                    Joey K. Greyson
-					                </a>
-					                <a href="#" class="list-group-item list-item-sm">
-					                    <span class="badge badge-info badge-icon badge-fw pull-left"></span>
-					                    Andrea Branden
-					                </a>
-					                <a href="#" class="list-group-item list-item-sm">
-					                    <span class="badge badge-pink badge-icon badge-fw pull-left"></span>
-					                    Lucy Moon
-					                </a>
-					                <a href="#" class="list-group-item list-item-sm">
-					                    <span class="badge badge-success badge-icon badge-fw pull-left"></span>
-					                    Johny Juan
-					                </a>
-					                <a href="#" class="list-group-item list-item-sm">
-					                    <span class="badge badge-danger badge-icon badge-fw pull-left"></span>
-					                    Susan Sun
-					                </a>
-					            </div>
-					
-					            <p class="pad-hor text-main text-bold">Labels</p>
-					            <ul class="list-inline mar-hor">
-					                <li class="tag tag-sm">
-					                    <a href="#"><i class="demo-pli-tag"></i> Family</a>
-					                </li>
-					                <li class="tag tag-sm">
-					                    <a href="#"><i class="demo-pli-tag"></i> Home</a>
-					                </li>
-					                <li class="tag tag-sm">
-					                    <a href="#"><i class="demo-pli-tag"></i> Work</a>
-					                </li>
-					                <li class="tag tag-sm">
-					                    <a href="#"><i class="demo-pli-tag"></i> Film</a>
-					                </li>
-					                <li class="tag tag-sm">
-					                    <a href="#"><i class="demo-pli-tag"></i> Music</a>
-					                </li>
-					                <li class="tag tag-sm">
-					                    <a href="#"><i class="demo-pli-tag"></i> Photography</a>
-					                </li>
-					            </ul>
-					        </div>
+					<div class="row demo-nifty-panel">
+					    <div class="col-sm-4">
+						<div class="prev_course" id="prev_course">
+					        
+					       
+					       
+							
+						</div>
+					      
 					    </div>
-					    <div class="fluid">
-					
-					        <!-- VIEW MESSAGE -->
-					        <!--===================================================-->
-					        <div class="panel">
-					            <div class="panel-body">
-					                <div class="mar-btm pad-btm bord-btm">
-					                    <h1 class="page-header text-overflow">
-					                        <span class="label label-normal label-info">Family</span>
-					                        Hi John! How are you ?
-					                    </h1>
-					                </div>
-
-<!--Message-->
-					                <!--===================================================-->
-					                <div class="pad-ver bord-ver">
-					                    Hey John,
-					                    <br><br>
-					                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>
-					                    <blockquote class="text-muted">
-					                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					                    </blockquote>
-					                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-					                    <br><br>
-					                    Regards,
-					                    <br><br>
-					                    <strong>Lisa D. Smith</strong><br>
-					                    2834 Street Name<br>
-					                    San Francisco, CA<br>
-					                </div>
-					                <!--===================================================-->
-					                <!--End Message-->
-					
-					                <!-- Attach Files-->
-
-					                <!--===================================================-->					                <!--===================================================-->
-					                <!-- End Attach Files-->
-					
-					
-					                <!--Quick reply : Summernote Placeholder -->
-
-					                <!--Send button-->					            </div>
-					        </div>
-					        <!--===================================================-->
-					        <!-- END VIEW MESSAGE -->
-					
-					    </div>
+						
+						
 					</div>
 					
+					<hr class="new-section-sm">
+					<hr class="new-section-sm">
+					<hr class="new-section-sm">
 					
-                </div>
+					<div class="row demo-nifty-panel"> </div>
+					
+					
+					
+              </div>
                 <!--===================================================-->
                 <!--End page content-->
 
@@ -1119,7 +1031,7 @@
 						            <li class="list-header">Components</li>
 						
 						            <!--Menu list item-->
-						            <li>
+						            <li class="active-sub">
 						                <a href="#">
 						                    <i class="demo-psi-boot-2"></i>
 						                    <span class="menu-title">UI Elements</span>
@@ -1127,9 +1039,9 @@
 						                </a>
 						
 						                <!--Submenu-->
-						                <ul class="collapse">
+						                <ul class="collapse in">
 						                    <li><a href="ui-buttons.html">Buttons</a></li>
-											<li><a href="ui-panels.html">Panels</a></li>
+											<li class="active-link"><a href="ui-panels.html">Panels</a></li>
 											<li><a href="ui-modals.html">Modals</a></li>
 											<li><a href="ui-progress-bars.html">Progress bars</a></li>
 											<li><a href="ui-components.html">Components</a></li>
@@ -1211,7 +1123,7 @@
 						            </li>
 						
 						            <!--Menu list item-->
-						            <li class="active-sub">
+						            <li>
 						                <a href="#">
 						                    <i class="demo-psi-mail"></i>
 						                    <span class="menu-title">Email</span>
@@ -1219,9 +1131,9 @@
 						                </a>
 						
 						                <!--Submenu-->
-						                <ul class="collapse in">
+						                <ul class="collapse">
 						                    <li><a href="mailbox.html">Inbox</a></li>
-											<li class="active-link"><a href="mailbox-message.html">View Message</a></li>
+											<li><a href="mailbox-message.html">View Message</a></li>
 											<li><a href="mailbox-compose.html">Compose Message</a></li>
 											<li><a href="mailbox-templates.html">Email Templates<span class="label label-info pull-right">New</span></a></li>
 											

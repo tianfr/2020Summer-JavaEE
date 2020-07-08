@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Nifty - Admin Template</title>
+    <title>Inbox | Nifty - Admin Template</title>
 
 
     <!--STYLESHEET-->
@@ -31,10 +31,6 @@
 
 
         
-    <!--Morris.js [ OPTIONAL ]-->
-    <link href="plugins/morris-js/morris.min.css" rel="stylesheet">
-
-
     <!--Magic Checkbox [ OPTIONAL ]-->
     <link href="plugins/magic-check/css/magic-check.min.css" rel="stylesheet">
 
@@ -49,7 +45,7 @@
     <!--Pace - Page Load Progress Par [OPTIONAL]-->
     <link href="plugins/pace/pace.min.css" rel="stylesheet">
     <script src="plugins/pace/pace.min.js"></script>
-	<script src="/js/myjs.js"></script>
+	
 
 
     <!--jQuery [ REQUIRED ]-->
@@ -62,7 +58,7 @@
 
     <!--NiftyJS [ RECOMMENDED ]-->
     <script src="js/nifty.min.js"></script>
-
+	<script src="/js/myjs.js"></script>
 
 
 
@@ -74,20 +70,6 @@
     <script src="js/demo/nifty-demo.min.js"></script>
 
     
-    <!--Morris.js [ OPTIONAL ]-->
-    <script src="plugins/morris-js/morris.min.js"></script>
-	<script src="plugins/morris-js/raphael-js/raphael.min.js"></script>
-
-
-    <!--Sparkline [ OPTIONAL ]-->
-    <script src="plugins/sparkline/jquery.sparkline.min.js"></script>
-
-
-    <!--Specify page [ SAMPLE ]-->
-    <script src="js/demo/dashboard.js"></script>
-	<script src="/js/myjs.js"></script>
-
-
 
 
     
@@ -122,8 +104,8 @@
 
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
-<body onload="recent_info();upcoming_issue();db_menu()">
-<div id="container" class="effect aside-float aside-bright mainnav-lg">
+<body>
+    <div id="container" class="effect aside-float aside-bright mainnav-lg">
         
         <!--NAVBAR-->
         <!--===================================================-->
@@ -565,439 +547,994 @@
             <!--===================================================-->
             <div id="content-container">
                 
-                <!--Page Title-->
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <div id="page-title">
-                  <h1 class="page-header text-overflow">Dashboard</h1>
-
-                    <!--Searchbox-->
-                    <div class="searchbox">
-                        <div class="input-group custom-search-form">
-                            <input type="text" class="form-control" placeholder="Search..">
-                            <span class="input-group-btn">
-                                <button class="text-muted" type="button"><i class="demo-pli-magnifi-glass"></i></button>
-                            </span>
-                        </div>
-                  </div>
-                </div>
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <!--End page title-->
 
                 <!--Page content-->
                 <!--===================================================-->
-              <div id="page-content">
+                <div id="page-content">
                     
-					<div class="row">
-<div class="col-lg-5">
-	          <div class="row"> </div>
-					        <div class="row"> </div>
-				      </div>
-				  </div>
-									<div class="row"> 
-						<div class="col-xs-12" id="">
+					<!-- MAIL INBOX -->
+					<!--===================================================-->
+					
+					<div class="fixed-fluid">
+					    <div class="fixed-sm-200 fixed-md-250 pull-sm-left">
 					        <div class="panel">
-					            <div class="panel-heading">
-					                <h3 class="panel-title">Upcoming Issue</h3>
+					            <div class="pad-all bord-btm">
+					                <a href="mailbox-compose.html" class="btn btn-block btn-success">Compose Mail</a>
 					            </div>
+					
+					            <p class="pad-hor mar-top text-main text-bold">Folders</p>
+					            <div class="list-group bg-trans pad-btm bord-btm">
+									<a href="#tab-1" class="list-group-item text-semibold text-main selected" onclick="location='course-dashboard.html'"> 
+										<span class="badge badge-success pull-right">7</span> 
+										<span class="text-main"><em class="demo-pli-inbox-full icon-lg icon-fw"></em> 公告</span> 
+									</a> <a href="#tab-2" class="list-group-item"> <em class="demo-pli-file icon-lg icon-fw"></em> 作业 </a> 
+									<a href="#tab-3" class="list-group-item"> <em class="demo-pli-mail-send icon-lg icon-fw"></em> 讨论版 </a> 
+									<a href="#tab-4" class="list-group-item text-semibold"> 
+										<span class="badge badge-danger pull-right">3</span> <span class="text-main">
+										<em class="demo-pli-fire-flame-2 icon-lg icon-fw"></em> 考试</span></a> 
+									<a href="#tab-5" class="list-group-item"> <em class="demo-pli-recycling icon-lg icon-fw"></em> 资源 </a></div>
+					
+					            <div class="list-group bg-trans pad-ver">
+					                <a href="#" class="list-group-item"><i class="demo-pli-male-female icon-lg icon-fw"></i> Address Book</a>
+					                <a href="#" class="list-group-item"><i class="demo-pli-folder-with-document icon-lg icon-fw"></i> User Folders</a>
+					            </div>
+					
+					            <!-- Friends -->
+					            <div class="list-group bg-trans pad-ver bord-ver">
+					                <p class="pad-hor text-main text-bold"><span class="pull-right label label-info">New</span>Friends</p>
+					
+					                <!-- Menu list item -->
+					                <a href="#" class="list-group-item list-item-sm">
+					                    <span class="badge badge-purple badge-icon badge-fw pull-left"></span>
+					                    Joey K. Greyson
+					                </a>
+					                <a href="#" class="list-group-item list-item-sm">
+					                    <span class="badge badge-info badge-icon badge-fw pull-left"></span>
+					                    Andrea Branden
+					                </a>
+					                <a href="#" class="list-group-item list-item-sm">
+					                    <span class="badge badge-pink badge-icon badge-fw pull-left"></span>
+					                    Lucy Moon
+					                </a>
+					                <a href="#" class="list-group-item list-item-sm">
+					                    <span class="badge badge-success badge-icon badge-fw pull-left"></span>
+					                    Johny Juan
+					                </a>
+					                <a href="#" class="list-group-item list-item-sm">
+					                    <span class="badge badge-danger badge-icon badge-fw pull-left"></span>
+					                    Susan Sun
+					                </a>
+					            </div>
+					
+					            <p class="pad-hor text-main text-bold">Labels</p>
+					            <ul class="list-inline mar-hor">
+					                <li class="tag tag-sm">
+					                    <a href="#"><i class="demo-pli-tag"></i> Family</a>
+					                </li>
+					                <li class="tag tag-sm">
+					                    <a href="#"><i class="demo-pli-tag"></i> Home</a>
+					                </li>
+					                <li class="tag tag-sm">
+					                    <a href="#"><i class="demo-pli-tag"></i> Work</a>
+					                </li>
+					                <li class="tag tag-sm">
+					                    <a href="#"><i class="demo-pli-tag"></i> Film</a>
+					                </li>
+					                <li class="tag tag-sm">
+					                    <a href="#"><i class="demo-pli-tag"></i> Music</a>
+					                </li>
+					                <li class="tag tag-sm">
+					                    <a href="#"><i class="demo-pli-tag"></i> Photography</a>
+					                </li>
+					            </ul>
+					        </div>
+					    </div>
+					    <div class="fluid">
+					        <div class="panel">
+					            <div id="tab-1" class="panel-body testing">
+					                <div class="mar-btm pad-btm bord-btm">
+					                    <h1 class="page-header text-overflow" id="headline">
+					                        <span class="label label-normal label-info">公告</span>
+					                        Hi John! How are you ?
+					                    </h1>
+					                </div>
+					
+					                <div class="row">
+					                    <div class="col-sm-7">
+					
+					                        <!--Sender Information-->
+					                        <div class="media">
+					                            <span class="media-left">
+					                                <img src="img/profile-photos/8.png" id="teacher_pic" class="img-circle img-sm" alt="Profile Picture">
+					                            </span>
+					                            <div class="media-body">
+					                                <div class="text-bold" id="teacher_name">Lisa D. Smith</div>
+					                                <small class="text-muted" id ="teacher_email">lisa.aqua@themeon.net</small>
+					                            </div>
+					                        </div>
+					                    </div>
+					                    <hr class="hr-sm visible-xs">
+					                    <div class="col-sm-5 clearfix">
+					
+					                        <!--Details Information-->
+					                        <div class="pull-right text-right">
+					                            <p class="mar-no"><small class="text-muted" id="datetime">Monday 12, May 2016</small></p>
+					                            <a href="#">
+					                                <strong>Holiday.zip</strong>
+					                                <i class="demo-psi-paperclip icon-fw"></i>
+					                            </a>
+					                        </div>
+					                    </div>
+					                </div>
+					                <div class="row pad-ver">
+					                    <div class="col-xs-7">
+					
+					                        <!--Mail toolbar-->
+					                        <button class="btn btn-sm btn-default"><i class="demo-pli-printer"></i></button>
+					                        <div class="btn-group btn-group">
+					                            <button class="btn btn-sm btn-default"><i class="demo-pli-information"></i></button>
+					                            <button class="btn btn-sm btn-default"><i class="demo-pli-recycling"></i> Remove</button>
+					                        </div>
+					                    </div>
+					                    <div class="col-xs-5 clearfix">
+					                        <div class="pull-right">
+					
+					                            <!--Reply & forward buttons-->
+					                            <div class="btn-group btn-group">
+					                                <a class="btn btn-sm btn-default" href="#">
+					                                <i class="demo-psi-left-4"></i>
+					                                </a>
+					                                <a class="btn btn-sm btn-default" href="#">
+					                                <i class="demo-psi-right-4"></i>
+					                                </a>
+					                            </div>
+					                        </div>
+					                    </div>
+					                </div>
+					
+					                <!--Message-->
+					                <!--===================================================-->
+					                <div class="pad-ver bord-ver" id="annou_content">
+					                    Hey John,
+					                    <br><br>
+					                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>
+					                    <blockquote class="text-muted">
+					                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					                    </blockquote>
+					                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+					                    <br><br>
+					                    Regards,
+					                    <br><br>
+					                    <strong>Lisa D. Smith</strong><br>
+					                    2834 Street Name<br>
+					                    San Francisco, CA<br>
+					                </div>
+					                <!--===================================================-->
+					                <!--End Message-->
+					
+					                <!-- Attach Files-->
+					                <!--===================================================-->
+					                <div class="pad-ver mar-ver bord-btm">
+					                    <p class="text-main text-bold box-inline"><i class="demo-psi-paperclip icon-fw"></i> Attachments <span>(2) - </span></p>
+					                    <a href="#" class="btn-link">Download all</a> | <a href="#" class="btn-link">View all images</a>
+					
+					                    <ul class="mail-attach-list list-ov">
+					                        <li>
+					                            <a href="#" class="thumbnail">
+					                                <div class="mail-file-img">
+					                                    <img class="image-responsive" src="img/bg-img/bg-img-4.jpg" alt="image">
+					                                </div>
+					                                <div class="caption">
+					                                    <p class="text-primary mar-no">Nature.jpg</p>
+					                                    <small class="text-muted">Added: May 01, 2016</small>
+					                                </div>
+					                            </a>
+					                        </li>
+					                        <li>
+					                            <a href="#" class="thumbnail">
+					                                <div class="mail-file-img">
+					                                    <img class="image-responsive" src="img/bg-img/bg-img-3.jpg" alt="image">
+					                                </div>
+					                                <div class="caption">
+					                                    <p class="text-primary mar-no">Forest.png</p>
+					                                    <small class="text-muted">Added: May 07, 2016</small>
+					                                </div>
+					                            </a>
+					                        </li>
+					                        <li>
+					                            <a href="#" class="thumbnail">
+					                                <div class="mail-file-icon">
+					                                    <i class="demo-pli-file-csv"></i>
+					                                </div>
+					                                <div class="caption">
+					                                    <p class="text-primary mar-no">Reports.csv</p>
+					                                    <small class="text-muted">Added: May 10, 2016</small>
+					                                </div>
+					                            </a>
+					                        </li>
+					                        <li>
+					                            <a href="#" class="thumbnail">
+					                                <div class="mail-file-icon">
+					                                    <i class="demo-pli-file-zip"></i>
+					                                </div>
+					                                <div class="caption">
+					                                    <p class="text-primary mar-no">Project.zip</p>
+					                                    <small class="text-muted">Added: May 10, 2016</small>
+					                                </div>
+					                            </a>
+					                        </li>
+					                    </ul>
+					                </div>
+					                <!--===================================================-->
+					                <!-- End Attach Files-->
+					
+					
+					                <!--Quick reply : Summernote Placeholder -->
+					                <div id="demo-mail-textarea" class="mail-message-reply bg-gray-light">
+					                    <strong>Reply</strong> or <strong>Forward</strong> this message...
+					                </div>
+					
+					                <!--Send button-->
+					                <div class="pad-ver">
+					                    <button id="demo-mail-send-btn" type="button" class="btn btn-primary hide">
+					                        <span class="demo-psi-mail-send icon-lg icon-fw"></span>
+					                        Send Message
+					                    </button>
+					                </div>
 
+					            </div>
+								<div id="tab-2" class="panel-body">
+                <h1 class="page-header text-overflow pad-btm">作业列表</h1>
+				                <div class="row">
+				                  <div class="col-sm-7">
+				                    <!-- Mail toolbar -->
+				                    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+				                    <!--Split button dropdowns-->
+				                    <div class="btn-group">
+				                      <div id="demo-checked-all-mail2" class="btn btn-sm btn-default">
+				                        <input id="select-all-mail2" class="magic-checkbox" type="checkbox">
+				                        <label for="select-all-mail2"></label>
+			                          </div>
+				                      <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"><i class="dropdown-caret"></i></button>
+				                      <ul class="dropdown-menu">
+				                        <li><a href="javascript:void(0)" id="demo-select-all-list2">All</a></li>
+				                        <li><a href="javascript:void(0)" id="demo-select-none-list2">None</a></li>
+				                        <li><a href="javascript:void(0)" id="demo-select-toggle-list2">Toggle</a></li>
+				                        <li class="divider"></li>
+				                        <li><a href="javascript:void(0)" id="demo-select-read-list2">Read</a></li>
+				                        <li><a href="javascript:void(0)" id="demo-select-unread-list2">Unread</a></li>
+				                        <li><a href="javascript:void(0)" id="demo-select-starred-list2">Starred</a></li>
+			                          </ul>
+			                        </div>
+				                    <!--Refresh button-->
+				                    <button id="demo-mail-ref-btn2" data-toggle="panel-overlay" data-target="#demo-email-list" class="btn btn-default btn-sm" type="button"> <i class="demo-psi-repeat-2"></i> </button>
+				                    <!--Dropdown button (More Action)-->
+				                    <div class="btn-group">
+				                      <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle" type="button"> More <i class="dropdown-caret"></i> </button>
+				                      <ul class="dropdown-menu">
+				                        <li><a href="#">Mark as read</a></li>
+				                        <li><a href="#">Mark as unread</a></li>
+				                        <li class="divider"></li>
+				                        <li><a href="#">Star</a></li>
+				                        <li><a href="#">Clear Star</a></li>
+			                          </ul>
+			                        </div>
+			                      </div>
+				                  <hr class="hr-sm visible-xs">
+				                  <div class="col-sm-5 clearfix">
+				                    <div class="pull-right">
+				                      <!--Pager buttons-->
+				                      <span class="text-muted"> <strong>1-50</strong> of <strong>160</strong> </span>
+				                      <div class="btn-group btn-group">
+				                        <button class="btn btn-sm btn-default" type="button"> <i class="demo-psi-arrow-left"></i> </button>
+				                        <button class="btn btn-sm btn-default" type="button"> <i class="demo-psi-arrow-right"></i> </button>
+			                          </div>
+			                        </div>
+			                      </div>
+			                    </div>
+				                <hr class="hr-sm">
+				                <!--Mail list group-->
+				                <ul id="demo-mail-list" class="mail-list">
+				                  <!--Mail list item-->
+				                  <li class="mail-list-unread mail-attach">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from">作业一<br>
+			                        </div>
+				                    <div class="mail-time">05:55 PM</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"> <a href="mailbox-message.html">This is an example if there is a really really long text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </a> </div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-starred">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"> 作业二</div>
+				                    <div class="mail-time">10:45 AM</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"> <a href="mailbox-message.html">Tracking Your Order - Shoes Store Online</a> </div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-list-unread mail-starred mail-attach">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from">作业三<br>
+			                        </div>
+				                    <div class="mail-time">07:18 AM</div>
+				                    <div class="mail-attach-icon"><i class="demo-psi-paperclip"></i></div>
+				                    <div class="mail-subject"> <a href="mailbox-message.html">Reset your account password</a> </div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-list-unread">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Server Host</a></div>
+				                    <div class="mail-time">01:51 PM</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"> <a href="mailbox-message.html"> <span class="label label-danger"> Bussines </span> Regarding to your website issues. </a> </div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li>
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Lisa D. Smith</a></div>
+				                    <div class="mail-time">Yesterday</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"> <a href="mailbox-message.html">Hi John! How are you?</a> </div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-starred">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Johny Juan</a></div>
+				                    <div class="mail-time">Yesterday</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"> <a href="mailbox-message.html"> <span class="label label-info"> Partner </span> Repair Status Unregistered User </a> </div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-attach">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Bobby Marz</a></div>
+				                    <div class="mail-time">Oct 10</div>
+				                    <div class="mail-attach-icon"><i class="demo-psi-paperclip"></i></div>
+				                    <div class="mail-subject"><a href="mailbox-message.html">Bugs in your system.</a></div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-list-unread mail-starred">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Lucy Moon</a></div>
+				                    <div class="mail-time">Oct 10</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"><a href="mailbox-message.html">We need to meet up soon</a></div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-list-unread">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Michael Robert</a></div>
+				                    <div class="mail-time">Oct 10</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"><a href="mailbox-message.html">This is an example if there is a really really long text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </a></div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-starred mail-attach">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Shopping Mall</a></div>
+				                    <div class="mail-time">Oct 9</div>
+				                    <div class="mail-attach-icon"><i class="demo-psi-paperclip"></i></div>
+				                    <div class="mail-subject"><a href="mailbox-message.html">Tracking Your Order - Shoes Store Online</a></div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-list-unread mail-starred">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Dropbox</a></div>
+				                    <div class="mail-time">Oct 8</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"><a href="mailbox-message.html">Reset your account password</a></div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-list-unread">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Server Host</a></div>
+				                    <div class="mail-time">Oct 7</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"> <a href="mailbox-message.html"> <span class="label label-danger"> Bussines </span> Regarding to your website issues. </a> </div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-starred">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Lisa D. Smith</a></div>
+				                    <div class="mail-time">Oct 5</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"><a href="mailbox-message.html">Hi John! How are you?</a></div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-starred">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Johny Juan</a></div>
+				                    <div class="mail-time">Oct 5</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"> <a href="mailbox-message.html"> <span class="label label-info"> Partner </span> Repair Status Unregistered User </a> </div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+				                  <li class="mail-attach">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Bobby Marz</a></div>
+				                    <div class="mail-time">Oct 3</div>
+				                    <div class="mail-attach-icon"><i class="demo-psi-paperclip"></i></div>
+				                    <div class="mail-subject"><a href="mailbox-message.html">Bugs in your system.</a></div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+				                  <li class="mail-list-unread mail-starred">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Lucy Moon</a></div>
+				                    <div class="mail-time">Oct 1</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"><a href="mailbox-message.html">We need to meet up soon</a></div>
+			                      </li>
+			                    </ul>
+			                  </div>
 
-                                <!--Data Table-->
-                                <!--===================================================-->
-                                <div class="panel-body">
-                                    <div class="pad-btm form-inline">
-                                        <div class="row">
-                                            <div class="col-sm-6 table-toolbar-left">
-                                                <button class="btn btn-purple"><i class="demo-pli-add icon-fw"></i>Add</button>
-                                                <button class="btn btn-default"><i class="demo-pli-printer"></i></button>
-                                                <div class="btn-group">
-                                                    <button class="btn btn-default"><i class="demo-pli-information"></i></button>
-                                                    <button class="btn btn-default"><i class="demo-pli-recycling"></i></button>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 table-toolbar-right">
-                                                <div class="form-group">
-                                                    <input type="text" autocomplete="off" class="form-control" placeholder="Search" id="demo-input-search2">
-                                                </div>
-                                                <div class="btn-group">
-                                                    <button class="btn btn-default"><i class="demo-pli-download-from-cloud"></i></button>
-                                                    <div class="btn-group">
-                                                        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                                            <i class="demo-pli-gear"></i>
-                                                            <span class="caret"></span>
-                                                        </button>
-                                                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                                            <li><a href="#">Action</a></li>
-                                                            <li><a href="#">Another action</a></li>
-                                                            <li><a href="#">Something else here</a></li>
-                                                            <li class="divider"></li>
-                                                            <li><a href="#">Separated link</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="table-responsive">
-                                        <table class="table table-striped">
-                                            <thead onload="">
-                                            <tr>
-                                                <th>事件id</th>
-                                                <th>Course</th>
-                                                <th>DeadLine</th>
-                                                <th>Content</th>
-                                                <th>Status</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody id="con1">
+								<div id="tab-3" class="panel-body">
+					                <h1 class="page-header text-overflow pad-btm">Inbox (15)</h1>
+					
+					                <div class="row">
+					                    <div class="col-sm-7">
+					
+					                        <!-- Mail toolbar -->
+					                        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+					
+					                        <!--Split button dropdowns-->
+					                        <div class="btn-group">
+					                            <div id="demo-checked-all-mail" class="btn btn-sm btn-default">
+					                                <input id="select-all-mail" class="magic-checkbox" type="checkbox">
+					                                <label for="select-all-mail"></label>
+					                            </div>
+					                            <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"><i class="dropdown-caret"></i></button>
+					                            <ul class="dropdown-menu">
+					                                <li><a href="javascript:void(0)" id="demo-select-all-list">All</a></li>
+					                                <li><a href="javascript:void(0)" id="demo-select-none-list">None</a></li>
+					                                <li><a href="javascript:void(0)" id="demo-select-toggle-list">Toggle</a></li>
+					                                <li class="divider"></li>
+					                                <li><a href="javascript:void(0)" id="demo-select-read-list">Read</a></li>
+					                                <li><a href="javascript:void(0)" id="demo-select-unread-list">Unread</a></li>
+					                                <li><a href="javascript:void(0)" id="demo-select-starred-list">Starred</a></li>
+					                            </ul>
+					                        </div>
+					
+					                        <!--Refresh button-->
+					                        <button id="demo-mail-ref-btn" data-toggle="panel-overlay" data-target="#demo-email-list" class="btn btn-default btn-sm" type="button">
+					                            <i class="demo-psi-repeat-2"></i>
+					                        </button>
+					
+					                        <!--Dropdown button (More Action)-->
+					                        <div class="btn-group">
+					                            <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle" type="button">
+					                                More <i class="dropdown-caret"></i>
+					                            </button>
+					                            <ul class="dropdown-menu">
+					                                <li><a href="#">Mark as read</a></li>
+					                                <li><a href="#">Mark as unread</a></li>
+					                                <li class="divider"></li>
+					                                <li><a href="#">Star</a></li>
+					                                <li><a href="#">Clear Star</a></li>
+					                            </ul>
+					                        </div>
+					                    </div>
+					                    <hr class="hr-sm visible-xs">
+					                    <div class="col-sm-5 clearfix">
+					                        <div class="pull-right">
+					
+					                            <!--Pager buttons-->
+					                            <span class="text-muted">
+					                                <strong>1-50</strong>
+					                                of
+					                                <strong>160</strong>
+					                            </span>
+					                            <div class="btn-group btn-group">
+					                                <button class="btn btn-sm btn-default" type="button">
+					                                    <i class="demo-psi-arrow-left"></i>
+					                                </button>
+					                                <button class="btn btn-sm btn-default" type="button">
+					                                    <i class="demo-psi-arrow-right"></i>
+					                                </button>
+					                            </div>
+					                        </div>
+					                    </div>
+					                </div>
+					                <hr class="hr-sm">
+									<div class="panel">
+					            <div class="panel-heading">
+					                <h3 class="panel-title">Paragraph 1</h3>
+					            </div>
+					            <div class="panel-body1">
+					
+					                <!--Paragraph-->
+					                <!--===================================================-->
+					                <p class="text-main text-semibold">Paragraph Text</p>
+					                <p>Of on affixed civilly moments promise explain
+					                fertile in. Assurance advantage belonging happiness
+					                departure so of. Now improving and one sincerity
+					                intention allowance commanded not. Oh an am frankness
+					                be necessary earnestly advantage estimable extensive.
+					                Five he wife gone ye. Mrs suffering sportsmen earnestly
+					                any. In am do giving to afford parish settle easily
+					                garret.</p>
+					                <!--===================================================-->
+					
+					            </div>
+					        </div>
+									<div class="panel1">
+					            <div class="panel-heading">
+					                <h3 class="panel-title">Paragraph 2</h3>
+					            </div>
+					            <div class="panel-body">
+					
+					                <!--Paragraph-->
+					                <!--===================================================-->
+					                <p class="text-main text-semibold">Paragraph Text</p>
+					                <p>Of on affixed civilly moments promise explain
+					                fertile in. Assurance advantage belonging happiness
+					                departure so of. Now improving and one sincerity
+					                intention allowance commanded not. Oh an am frankness
+					                be necessary earnestly advantage estimable extensive.
+					                Five he wife gone ye. Mrs suffering sportsmen earnestly
+					                any. In am do giving to afford parish settle easily
+					                garret.</p>
+					                <!--===================================================-->
+					
+					            </div>
+					        </div>
 
-                                           <!-- <tr>
+					            </div>
+								<div id="tab-4" class="panel-body">
+					                <h1 class="page-header text-overflow pad-btm">Inbox (14)</h1>
+					
+					                <div class="row">
+					                    <div class="col-sm-7">
+					
+					                        <!-- Mail toolbar -->
+					                        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+					
+					                        <!--Split button dropdowns-->
+					                        <div class="btn-group">
+					                            <div id="demo-checked-all-mail" class="btn btn-sm btn-default">
+					                                <input id="select-all-mail" class="magic-checkbox" type="checkbox">
+					                                <label for="select-all-mail"></label>
+					                            </div>
+					                            <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"><i class="dropdown-caret"></i></button>
+					                            <ul class="dropdown-menu">
+					                                <li><a href="javascript:void(0)" id="demo-select-all-list">All</a></li>
+					                                <li><a href="javascript:void(0)" id="demo-select-none-list">None</a></li>
+					                                <li><a href="javascript:void(0)" id="demo-select-toggle-list">Toggle</a></li>
+					                                <li class="divider"></li>
+					                                <li><a href="javascript:void(0)" id="demo-select-read-list">Read</a></li>
+					                                <li><a href="javascript:void(0)" id="demo-select-unread-list">Unread</a></li>
+					                                <li><a href="javascript:void(0)" id="demo-select-starred-list">Starred</a></li>
+					                            </ul>
+					                        </div>
+					
+					                        <!--Refresh button-->
+					                        <button id="demo-mail-ref-btn" data-toggle="panel-overlay" data-target="#demo-email-list" class="btn btn-default btn-sm" type="button">
+					                            <i class="demo-psi-repeat-2"></i>
+					                        </button>
+					
+					                        <!--Dropdown button (More Action)-->
+					                        <div class="btn-group">
+					                            <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle" type="button">
+					                                More <i class="dropdown-caret"></i>
+					                            </button>
+					                            <ul class="dropdown-menu">
+					                                <li><a href="#">Mark as read</a></li>
+					                                <li><a href="#">Mark as unread</a></li>
+					                                <li class="divider"></li>
+					                                <li><a href="#">Star</a></li>
+					                                <li><a href="#">Clear Star</a></li>
+					                            </ul>
+					                        </div>
+					                    </div>
+					                    <hr class="hr-sm visible-xs">
+					                    <div class="col-sm-5 clearfix">
+					                        <div class="pull-right">
+					
+					                            <!--Pager buttons-->
+					                            <span class="text-muted">
+					                                <strong>1-50</strong>
+					                                of
+					                                <strong>160</strong>
+					                            </span>
+					                            <div class="btn-group btn-group">
+					                                <button class="btn btn-sm btn-default" type="button">
+					                                    <i class="demo-psi-arrow-left"></i>
+					                                </button>
+					                                <button class="btn btn-sm btn-default" type="button">
+					                                    <i class="demo-psi-arrow-right"></i>
+					                                </button>
+					                            </div>
+					                        </div>
+					                    </div>
+					                </div>
+					                <hr class="hr-sm">
+									<div class="panel">
+					            <div class="panel-heading">
+					                <h3 class="panel-title">Paragraph 1</h3>
+					            </div>
+					            <div class="panel-body1">
+					
+					                <!--Paragraph-->
+					                <!--===================================================-->
+					                <p class="text-main text-semibold">Paragraph Text</p>
+					                <p>Of on affixed civilly moments promise explain
+					                fertile in. Assurance advantage belonging happiness
+					                departure so of. Now improving and one sincerity
+					                intention allowance commanded not. Oh an am frankness
+					                be necessary earnestly advantage estimable extensive.
+					                Five he wife gone ye. Mrs suffering sportsmen earnestly
+					                any. In am do giving to afford parish settle easily
+					                garret.</p>
+					                <!--===================================================-->
+					
+					            </div>
+					        </div>
+									<div class="panel">
+					            <div class="panel-heading">
+					                <h3 class="panel-title">Paragraph 2</h3>
+					            </div>
+					            <div class="panel-body1">
+					
+					                <!--Paragraph-->
+					                <!--===================================================-->
+					                <p class="text-main text-semibold">Paragraph Text</p>
+					                <p>Of on affixed civilly moments promise explain
+					                fertile in. Assurance advantage belonging happiness
+					                departure so of. Now improving and one sincerity
+					                intention allowance commanded not. Oh an am frankness
+					                be necessary earnestly advantage estimable extensive.
+					                Five he wife gone ye. Mrs suffering sportsmen earnestly
+					                any. In am do giving to afford parish settle easily
+					                garret.</p>
+					                <!--===================================================-->
+					
+					            </div>
+					        </div>
 
-                                                 <td id="upcoming_issue_id"><a href="#" class="btn-link"></a></td>
-                                                 <td id="upcoming_issue_course"></td>
-                                                 <td id="upcoming_issue_deadline"><span class="text-muted"><i class="fa fa-clock-o"></i></span></td>
-                                                 <td id="upcoming_issue_content"></td>
-
-                                               <td class="text-center" id="upcoming_issue_status">
-
-                                                     <div class="label label-table label-on-schedule"></div>
-                                                 </td>
-                                             </tr>
-                                             <tr>
-                                                 <td><a href="#" class="btn-link"> Order #53432</a></td>
-                                                 <td>Charles S Boyle</td>
-                                                 <td><span class="text-muted"><i class="fa fa-clock-o"></i> Oct 24, 2014</span></td>
-                                                 <td>$245.30</td>
-                                                 <td class="text-center">
-                                                     <div class="label label-table label-info">Shipped</div>
-                                                 </td>
-                                             </tr>-->
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <hr>
-
-<!--
-
-                                    <div class="pull-right">
-                                        <ul class="pagination text-nowrap mar-no">
-                                            <li class="page-pre disabled">
-                                                <a href="#">&lt;</a>
-                                            </li>
-
-                                            <li class="page-number active"> </li>
-                                            <li class="page-number"> </li>
-                                            <li class="page-number"> </li>
-                                            <li> </li>
-                                            <li class="page-number"> </li>
-
-                                            <li class="page-next">
-                                                <a href="#">&gt;</a>
-                                            </li>
-                                        </ul>
-                                    </div>
--->
-                                </div>
-								<div class="panel-footer clearfix">
+					            </div>
+								<div id="tab-5" class="panel-body">
+                       <h1 class="page-header text-overflow pad-btm">课程资源</h1>
+				                <div class="row">
+				                  <div class="col-sm-7">
+				                    <!-- Mail toolbar -->
+				                    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+				                    <!--Split button dropdowns-->
+				                    <div class="btn-group">
+				                      <div id="demo-checked-all-mail2" class="btn btn-sm btn-default">
+				                        <input id="select-all-mail2" class="magic-checkbox" type="checkbox">
+				                        <label for="select-all-mail2"></label>
+			                          </div>
+				                      <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"><i class="dropdown-caret"></i></button>
+				                      <ul class="dropdown-menu">
+				                        <li><a href="javascript:void(0)" id="demo-select-all-list2">All</a></li>
+				                        <li><a href="javascript:void(0)" id="demo-select-none-list2">None</a></li>
+				                        <li><a href="javascript:void(0)" id="demo-select-toggle-list2">Toggle</a></li>
+				                        <li class="divider"></li>
+				                        <li><a href="javascript:void(0)" id="demo-select-read-list2">Read</a></li>
+				                        <li><a href="javascript:void(0)" id="demo-select-unread-list2">Unread</a></li>
+				                        <li><a href="javascript:void(0)" id="demo-select-starred-list2">Starred</a></li>
+			                          </ul>
+			                        </div>
+				                    <!--Refresh button-->
+				                    <button id="demo-mail-ref-btn2" data-toggle="panel-overlay" data-target="#demo-email-list" class="btn btn-default btn-sm" type="button"> <i class="demo-psi-repeat-2"></i> </button>
+				                    <!--Dropdown button (More Action)-->
+				                    <div class="btn-group">
+				                      <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle" type="button"> More <i class="dropdown-caret"></i> </button>
+				                      <ul class="dropdown-menu">
+				                        <li><a href="#">Mark as read</a></li>
+				                        <li><a href="#">Mark as unread</a></li>
+				                        <li class="divider"></li>
+				                        <li><a href="#">Star</a></li>
+				                        <li><a href="#">Clear Star</a></li>
+			                          </ul>
+			                        </div>
+			                      </div>
+				                  <hr class="hr-sm visible-xs">
+				                  <div class="col-sm-5 clearfix">
+				                    <div class="pull-right">
+				                      <!--Pager buttons-->
+				                      <span class="text-muted" > <strong id="page_id">1-50</strong> of <strong id="page_total">160</strong> </span>
+				                      <div class="btn-group btn-group">
+				                        <button class="btn btn-sm btn-default" type="button" onclick="homework_flip_left()"> 
+											<i class="demo-psi-arrow-left"></i> 
+										</button>
+				                        <button class="btn btn-sm btn-default" type="button" onclick="homework_flip_right()"> 
+											<i class="demo-psi-arrow-right"></i> 
+										</button>
+			                          </div>
+			                        </div>
+			                      </div>
+			                    </div>
+				                <hr class="hr-sm">
+				                <!--Mail list group-->
+				                <ul id="demo-mail-list" class="mail-list">
+				                  <!--Mail list item-->
+				                  <li class="mail-list-unread mail-attach">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <strong class="mail-from">作业一<br>
+			                        </strong>
+				                    <div class="mail-time">05:55 PM</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"> <a href="mailbox-message.html">This is an example if there is a really really long text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </a> </div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-starred">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"> 作业二</div>
+				                    <div class="mail-time">10:45 AM</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"> <a href="mailbox-message.html">Tracking Your Order - Shoes Store Online</a> </div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-list-unread mail-starred mail-attach">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from">作业三<br>
+			                        </div>
+				                    <div class="mail-time">07:18 AM</div>
+				                    <div class="mail-attach-icon"><i class="demo-psi-paperclip"></i></div>
+				                    <div class="mail-subject"> <a href="mailbox-message.html">Reset your account password</a> </div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-list-unread">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Server Host</a></div>
+				                    <div class="mail-time">01:51 PM</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"> <a href="mailbox-message.html"> <span class="label label-danger"> Bussines </span> Regarding to your website issues. </a> </div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li>
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Lisa D. Smith</a></div>
+				                    <div class="mail-time">Yesterday</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"> <a href="mailbox-message.html">Hi John! How are you?</a> </div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-starred">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Johny Juan</a></div>
+				                    <div class="mail-time">Yesterday</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"> <a href="mailbox-message.html"> <span class="label label-info"> Partner </span> Repair Status Unregistered User </a> </div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-attach">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Bobby Marz</a></div>
+				                    <div class="mail-time">Oct 10</div>
+				                    <div class="mail-attach-icon"><i class="demo-psi-paperclip"></i></div>
+				                    <div class="mail-subject"><a href="mailbox-message.html">Bugs in your system.</a></div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-list-unread mail-starred">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Lucy Moon</a></div>
+				                    <div class="mail-time">Oct 10</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"><a href="mailbox-message.html">We need to meet up soon</a></div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-list-unread">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Michael Robert</a></div>
+				                    <div class="mail-time">Oct 10</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"><a href="mailbox-message.html">This is an example if there is a really really long text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </a></div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-starred mail-attach">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Shopping Mall</a></div>
+				                    <div class="mail-time">Oct 9</div>
+				                    <div class="mail-attach-icon"><i class="demo-psi-paperclip"></i></div>
+				                    <div class="mail-subject"><a href="mailbox-message.html">Tracking Your Order - Shoes Store Online</a></div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-list-unread mail-starred">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Dropbox</a></div>
+				                    <div class="mail-time">Oct 8</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"><a href="mailbox-message.html">Reset your account password</a></div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-list-unread">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Server Host</a></div>
+				                    <div class="mail-time">Oct 7</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"> <a href="mailbox-message.html"> <span class="label label-danger"> Bussines </span> Regarding to your website issues. </a> </div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-starred">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Lisa D. Smith</a></div>
+				                    <div class="mail-time">Oct 5</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"><a href="mailbox-message.html">Hi John! How are you?</a></div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-starred">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Johny Juan</a></div>
+				                    <div class="mail-time">Oct 5</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"> <a href="mailbox-message.html"> <span class="label label-info"> Partner </span> Repair Status Unregistered User </a> </div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+				                  <li class="mail-attach">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Bobby Marz</a></div>
+				                    <div class="mail-time">Oct 3</div>
+				                    <div class="mail-attach-icon"><i class="demo-psi-paperclip"></i></div>
+				                    <div class="mail-subject"><a href="mailbox-message.html">Bugs in your system.</a></div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+				                  <li class="mail-list-unread mail-starred">
+				                    <div class="mail-control">
+				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="email-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Lucy Moon</a></div>
+				                    <div class="mail-time">Oct 1</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"><a href="mailbox-message.html">We need to meet up soon</a></div>
+			                      </li>
+			                    </ul>
+			                  </div>
+								<!--Mail footer-->
+					            <div class="panel-footer clearfix">
 					                <div class="pull-right">
-					                    <span class="text-muted"><strong id="issues_page_id"></strong> of <strong id="issues_page_total"></strong></span>
+					                    <span class="text-muted"><strong>1-50</strong> of <strong>160</strong></span>
 					                    <div class="btn-group btn-group">
-					                        <button type="button" class="btn btn-default" onclick="issue_flip_left()">
+					                        <button type="button" class="btn btn-default">
 					                            <i class="demo-psi-arrow-left"></i>
 					                        </button>
-					                        <button type="button" class="btn btn-default" onclick="issue_flip_right()">
+					                        <button type="button" class="btn btn-default">
 					                            <i class="demo-psi-arrow-right"></i>
 					                        </button>
 					                    </div>
 					                </div>
 					            </div>
-
-                                <!--===================================================-->
-                                <!--End Data Table-->
-
-					
-					        </div>
-					    </div>
-				  </div>
-					
-
-				  <div class="panel-heading">
-					        <h3 class="panel-title col-md-12">Recent Info</h3>
-					    </div>
-                  <div class="panel">
-
-
-                      <div class="panel-body">
-                          <div class="bootstrap-table">
-                              <div class="fixed-table-toolbar">
-                                  <div class="columns columns-right btn-group pull-right">
-                                      <button class="btn btn-default" type="button" name="paginationSwitch"
-                                              title="Hide/Show pagination"><i class="glyphicon demo-pli-arrow-down"></i>
-                                      </button>
-                                      <button class="btn btn-default" type="button" name="refresh" title="Refresh"><i
-                                              class="glyphicon demo-pli-repeat-2"></i></button>
-                                      <button class="btn btn-default" type="button" name="toggle" title="Toggle"><i
-                                              class="glyphicon demo-pli-layout-grid"></i></button>
-                                      <div class="keep-open btn-group" title="Columns">
-                                          <button type="button" class="btn btn-default dropdown-toggle"
-                                                  data-toggle="dropdown"><i class="glyphicon demo-pli-check"></i> <span
-                                                  class="caret"></span></button>
-                                          <ul class="dropdown-menu" role="menu">
-                                              <li><label><input type="checkbox" data-field="id" value="0"
-                                                                checked="checked"> ID</label></li>
-                                              <li><label><input type="checkbox" data-field="name" value="1"
-                                                                checked="checked"> Name</label></li>
-                                              <li><label><input type="checkbox" data-field="date" value="2"
-                                                                checked="checked"> Order date</label></li>
-                                              <li><label><input type="checkbox" data-field="amount" value="3"
-                                                                checked="checked"> Balance</label></li>
-                                              <li><label><input type="checkbox" data-field="status" value="4"
-                                                                checked="checked"> Status</label></li>
-                                              <li><label><input type="checkbox" data-field="track" value="5"
-                                                                checked="checked"> Tracking Number</label></li>
-                                          </ul>
-                                      </div>
-                                  </div>
-                                  <div class="pull-right search"><input class="form-control" type="text"
-                                                                        placeholder="Search"></div>
-                              </div>
-                              <div class="fixed-table-container" style="padding-bottom: 0px;">
-                                  <div class="fixed-table-header" style="display: none;">
-                                      <table></table>
-                                  </div>
-                                  <div class="fixed-table-body">
-                                      <div class="fixed-table-loading" style="top: 42px; display: none;">Loading, please
-                                          wait...
-                                      </div>
-                                      <table data-toggle="table" data-url="data/bs-table.json" data-search="true"
-                                             data-show-refresh="true" data-show-toggle="true" data-show-columns="true"
-                                             data-sort-name="id" data-page-list="[5, 10, 20]" data-page-size="5"
-                                             data-pagination="true" data-show-pagination-switch="true"
-                                             class="table table-hover">
-                                          <thead>
-                                          <tr>
-                                              <th style="" data-field="id" tabindex="0">
-                                                  <div class="th-inner sortable both">ID</div>
-                                                  <div class="fht-cell"></div>
-                                              </th>
-                                              <th style="" data-field="course" tabindex="0">
-                                                  <div class="th-inner sortable both desc">Course</div>
-                                                  <div class="fht-cell"></div>
-                                              </th>
-                                              <th style="" data-field="content" tabindex="0">
-                                                  <div class="th-inner sortable both">Content</div>
-                                                  <div class="fht-cell"></div>
-                                              </th>
-                                              <th style="" data-field="datetime" tabindex="0">
-                                                  <div class="th-inner sortable both">Publish DateTime</div>
-                                                  <div class="fht-cell"></div>
-                                              </th>
-                                          </tr>
-                                          </thead>
-                                          <tbody id="recent-info-data">
-
-
-                                          </tbody>
-                                      </table>
-                                  </div>
-                                  <div class="fixed-table-footer" style="display: none;">
-                                      <table>
-                                          <tbody>
-                                          <tr></tr>
-                                          </tbody>
-                                      </table>
-                                  </div>
-                                  <div class="fixed-table-pagination" style="display: none;">
-                                      <div class="pull-left pagination-detail"><span class="pagination-info">Showing 1 to 0 of 0 rows</span><span
-                                              class="page-list" style="display: none;"><span class="btn-group dropup"><button
-                                              type="button" class="btn btn-default  dropdown-toggle"
-                                              data-toggle="dropdown"><span class="page-size">5</span> <span
-                                              class="caret"></span></button><ul class="dropdown-menu" role="menu"><li
-                                              class="active"><a href="javascript:void(0)">5</a></li></ul></span> records per page</span>
-                                      </div>
-                                      <div class="pull-right pagination" style="display: none;">
-                                          <ul class="pagination">
-                                              <li class="page-pre"><a href="javascript:void(0)">‹</a></li>
-                                              <li class="page-next"><a href="javascript:void(0)">›</a></li>
-                                          </ul>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="clearfix"></div>
-                      </div>
-                  </div>
-
-					    <div class="panel-body">
-					        <div class="bootstrap-table"><div class="fixed-table-toolbar"><div class="columns columns-right btn-group pull-right"><button class="btn btn-default" type="button" name="paginationSwitch" title="Hide/Show pagination"><i class="glyphicon demo-pli-arrow-down"></i></button><button class="btn btn-default" type="button" name="refresh" title="Refresh"><i class="glyphicon demo-pli-repeat-2"></i></button><button class="btn btn-default" type="button" name="toggle" title="Toggle"><i class="glyphicon demo-pli-layout-grid"></i></button><div class="keep-open btn-group" title="Columns"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="glyphicon demo-pli-check"></i> <span class="caret"></span></button><ul class="dropdown-menu" role="menu"><li><label><input type="checkbox" data-field="id" value="0" checked="checked"> ID</label></li><li><label><input type="checkbox" data-field="name" value="1" checked="checked"> Name</label></li><li><label><input type="checkbox" data-field="date" value="2" checked="checked"> Order date</label></li><li><label><input type="checkbox" data-field="amount" value="3" checked="checked"> Balance</label></li><li><label><input type="checkbox" data-field="status" value="4" checked="checked"> Status</label></li><li><label><input type="checkbox" data-field="track" value="5" checked="checked"> Tracking Number</label></li></ul></div></div><div class="pull-right search"><input class="form-control" type="text" placeholder="Search"></div></div><div class="fixed-table-container" style="padding-bottom: 0px;"><div class="fixed-table-header" style="display: none;"><table></table></div><div class="fixed-table-body"><div class="fixed-table-loading" style="top: 42px; display: none;">Loading, please wait...</div><table data-toggle="table" data-url="data/bs-table.json" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-sort-name="id" data-page-list="[5, 10, 20]" data-page-size="5" data-pagination="true" data-show-pagination-switch="true" class="table table-hover">
-					            <thead><tr><th style="" data-field="id" tabindex="0"><div class="th-inner sortable both">ID</div><div class="fht-cell"></div></th><th style="" data-field="name" tabindex="0"><div class="th-inner sortable both desc">Name</div><div class="fht-cell"></div></th><th style="" data-field="date" tabindex="0"><div class="th-inner sortable both">Order date</div><div class="fht-cell"></div></th><th style="text-align: center; " data-field="amount" tabindex="0"><div class="th-inner sortable both">Balance</div><div class="fht-cell"></div></th><th style="text-align: center; " data-field="status" tabindex="0"><div class="th-inner sortable both">Status</div><div class="fht-cell"></div></th><th style="text-align: center; " data-field="track" tabindex="0"><div class="th-inner sortable both">Tracking Number</div><div class="fht-cell"></div></th></tr></thead>
-					        <tbody id="recent-info-data">
-								
-								
-								</tbody>
-							</table>
-						</div>
-								<div class="fixed-table-footer" style="display: none;"><table><tbody><tr></tr></tbody></table></div><div class="fixed-table-pagination" style="display: none;"><div class="pull-left pagination-detail"><span class="pagination-info">Showing 1 to 0 of 0 rows</span><span class="page-list" style="display: none;"><span class="btn-group dropup"><button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown"><span class="page-size">5</span> <span class="caret"></span></button><ul class="dropdown-menu" role="menu"><li class="active"><a href="javascript:void(0)">5</a></li></ul></span> records per page</span></div><div class="pull-right pagination" style="display: none;"><ul class="pagination"><li class="page-pre"><a href="javascript:void(0)">‹</a></li><li class="page-next"><a href="javascript:void(0)">›</a></li></ul></div></div></div></div><div class="clearfix"></div>
-					    </div>
-					</div>
-
-				  <div class="row">
-
-				      <div class="col-lg-4">
-					        <!--List Todo-->
-					        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-					        <div class="panel panel-trans">
-					            <div class="panel-heading">
-					                <h3 class="panel-title">To do list</h3>
-					            </div>
-					            <div class="pad-ver">
-					                <ul class="list-group bg-trans list-todo mar-no">
-					                    <li class="list-group-item">
-					                        <input id="demo-todolist-1" class="magic-checkbox" type="checkbox">
-					                        <label for="demo-todolist-1"><span>Find an idea. <span class="label label-danger">Important</span></span></label>
-					                    </li>
-					                    <li class="list-group-item">
-					                        <input id="demo-todolist-2" class="magic-checkbox" type="checkbox" checked>
-					                        <label for="demo-todolist-2"><span>Do some work</span></label>
-					                    </li>
-					                    <li class="list-group-item">
-					                        <input id="demo-todolist-3" class="magic-checkbox" type="checkbox">
-					                        <label for="demo-todolist-3"><span>Read the book</span></label>
-					                    </li>
-					                    <li class="list-group-item">
-					                        <input id="demo-todolist-4" class="magic-checkbox" type="checkbox">
-					                        <label for="demo-todolist-4"><span>Upgrade server <span class="label label-warning">Warning</span></span></label>
-					                    </li>
-					                    <li class="list-group-item">
-					                        <input id="demo-todolist-5" class="magic-checkbox" type="checkbox" checked>
-					                        <label for="demo-todolist-5"><span>Redesign my logo <span class="label label-info">2 Mins</span></span></label>
-					                    </li>
-					                </ul>
-					            </div>
-					            <div class="input-group pad-all">
-					                <input type="text" class="form-control" placeholder="New task" autocomplete="off">
-					                <span class="input-group-btn">
-					                    <button type="button" class="btn btn-success"><i class="demo-pli-add"></i></button>
-					                </span>
-					            </div>
-					        </div>
-					        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-					        <!--End todo list-->
-					    </div>
-					    <div class="col-lg-4">
-					        <div class="panel panel-trans">
-					            <div class="panel-heading">
-					                <div class="panel-control">
-					                    <a title="" data-html="true" data-container="body" data-original-title="&lt;p class='h4 text-semibold'&gt;Information&lt;/p&gt;&lt;p style='width:150px'&gt;This is an information bubble to help the user.&lt;/p&gt;" href="#" class="demo-psi-information icon-lg icon-fw unselectable text-info add-tooltip"></a>
-					                </div>
-					                <h3 class="panel-title">Services</h3>
-					            </div>
-					            <div class="bord-btm">
-					                <ul class="list-group bg-trans">
-					                    <li class="list-group-item">
-					                        <div class="pull-right">
-					                            <input id="demo-online-status-checkbox" class="toggle-switch" type="checkbox" checked>
-					                            <label for="demo-online-status-checkbox"></label>
-					                        </div>
-					                        Online status
-					                    </li>
-					                    <li class="list-group-item">
-					                        <div class="pull-right">
-					                            <input id="demo-show-off-contact-checkbox" class="toggle-switch" type="checkbox" checked>
-					                            <label for="demo-show-off-contact-checkbox"></label>
-					                        </div>
-					                        Show offline contact
-					                    </li>
-					                    <li class="list-group-item">
-					                        <div class="pull-right">
-					                            <input id="demo-show-device-checkbox" class="toggle-switch" type="checkbox">
-					                            <label for="demo-show-device-checkbox"></label>
-					                        </div>
-					                        Show my device icon
-					                    </li>
-					                </ul>
-					            </div>
-					            <div class="panel-body">
-					                <div class="pad-btm">
-					                    <p class="text-semibold text-main">Upgrade Progress</p>
-					                    <div class="progress progress-sm">
-					                        <div class="progress-bar progress-bar-purple" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 15%;" role="progressbar">
-					                            <span class="sr-only">15%</span>
-					                        </div>
-					                    </div>
-					                    <small>15% Completed</small>
-					                </div>
-					                <div class="pad-btm">
-					                    <p class="text-semibold text-main">Database</p>
-					                    <div class="progress progress-sm">
-					                        <div class="progress-bar progress-bar-success" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;" role="progressbar">
-					                            <span class="sr-only">70%</span>
-					                        </div>
-					                    </div>
-					                    <small>70% Completed</small>
-					                </div>
-					            </div>
-					        </div>
-					    </div>
-					    <div class='col-lg-4'>
-					        <div class="panel panel-trans">
-					            <div class="pad-all">
-					                <div class="media mar-btm">
-					                    <div class="media-left">
-					                        <img src="img//profile-photos/2.png" class="img-md img-circle" alt="Avatar">
-					                    </div>
-					                    <div class="media-body">
-					                        <p class="text-lg text-main text-semibold mar-no">Ralph West</p>
-					                        <p>Project manager</p>
-					                    </div>
-					                </div>
-					                <blockquote class="bq-sm bq-open bq-close">Lorem ipsum dolor sit amet, consecte tuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</blockquote>
-					            </div>
-					
-					            <div class="bord-top">
-					                <ul class="list-group bg-trans bord-no">
-					                    <li class="list-group-item list-item-sm">
-					                        <div class="media-left">
-					                            <i class="demo-psi-facebook icon-lg"></i>
-					                        </div>
-					                        <div class="media-body">
-					                            <a href="#" class="btn-link text-semibold">Facebook</a>
-					                        </div>
-					                    </li>
-					                    <li class="list-group-item list-item-sm">
-					                        <div class="media-left">
-					                            <i class="demo-psi-twitter icon-lg"></i>
-					                        </div>
-					                        <div class="media-body">
-					                            <a href="#" class="btn-link text-semibold">@RalphWe</a>
-					                            <br>
-					                            Design my themes with <a href="#" class="btn-link text-bold">#Bootstrap</a> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-					                        </div>
-					                    </li>
-					                    <li class="list-group-item list-item-sm">
-					                        <div class="media-left">
-					                            <i class="demo-psi-instagram icon-lg"></i>
-					                        </div>
-					                        <div class="media-body">
-					                            <a href="#" class="btn-link text-semibold">Ralphz</a>
-					                        </div>
-					                    </li>
-					                    <li class="list-group-item list-item-sm">
-					                        <div class="media-body">
-					
-					                        </div>
-					                    </li>
-					                </ul>
-					            </div>
 					        </div>
 					    </div>
 					</div>
-
+					
+					<!--===================================================-->
+					<!-- END OF MAIL INBOX -->
+					
+					
                 </div>
-				
-					
-
-					
-
                 <!--===================================================-->
                 <!--End page content-->
 
@@ -1368,24 +1905,41 @@
 						            <li class="list-header">Navigation</li>
 						
 						            <!--Menu list item-->
-						            <li class="active-link"> 
-										<a href="course-dashboard.html" target="_self"> 
-											<em class="demo-psi-home"></em> 
-											<span class="menu-title"> <strong>Dashboard</strong>
-											</span> 
-										</a> 
-									</li>
+						            <li>
+						                <a href="index.html">
+						                    <i class="demo-psi-home"></i>
+						                    <span class="menu-title">
+												<strong>Dashboard</strong>
+											</span>
+						                </a>
+						            </li>
+						
 						            <!--Menu list item-->
 						            <li>
-						                <a href="prev_course.html" target="_self">
+						                <a href="#">
 						                    <i class="demo-psi-split-vertical-2"></i>
 						                    <span class="menu-title">
-												<strong>Prev</strong>
-												<strong>Courses</strong>
-		</span>
+												<strong>Layouts</strong>
+											</span>
+											<i class="arrow"></i>
 						                </a>
 						
-						                <!--Submenu-->						            </li>
+						                <!--Submenu-->
+						                <ul class="collapse">
+						                    <li><a href="layouts-collapsed-navigation.html">Collapsed Navigation</a></li>
+											<li><a href="layouts-offcanvas-navigation.html">Off-Canvas Navigation</a></li>
+											<li><a href="layouts-offcanvas-slide-in-navigation.html">Slide-in Navigation</a></li>
+											<li><a href="layouts-offcanvas-revealing-navigation.html">Revealing Navigation</a></li>
+											<li class="list-divider"></li>
+											<li><a href="layouts-aside-right-side.html">Aside on the right side</a></li>
+											<li><a href="layouts-aside-left-side.html">Aside on the left side</a></li>
+											<li><a href="layouts-aside-dark-theme.html">Dark version of aside</a></li>
+											<li class="list-divider"></li>
+											<li><a href="layouts-fixed-navbar.html">Fixed Navbar</a></li>
+											<li><a href="layouts-fixed-footer.html">Fixed Footer</a></li>
+											
+						                </ul>
+						            </li>
 						
 						            <!--Menu list item-->
 						            <li>
@@ -1401,11 +1955,17 @@
 						            <li class="list-divider"></li>
 						
 						            <!--Category name-->
-						            <li class="list-header">Courses</li>
-						            <div id="db_index"></div>
-
+						            <li class="list-header">Components</li>
+						
 						            <!--Menu list item-->
-						            <li> <!--Submenu-->
+						            <li>
+						                <a href="#">
+						                    <i class="demo-psi-boot-2"></i>
+						                    <span class="menu-title">UI Elements</span>
+											<i class="arrow"></i>
+						                </a>
+						
+						                <!--Submenu-->
 						                <ul class="collapse">
 						                    <li><a href="ui-buttons.html">Buttons</a></li>
 											<li><a href="ui-panels.html">Panels</a></li>
@@ -1421,6 +1981,26 @@
 						            </li>
 						
 						            <!--Menu list item-->
+						            <li>
+						                <a href="#">
+						                    <i class="demo-psi-pen-5"></i>
+						                    <span class="menu-title">Forms</span>
+											<i class="arrow"></i>
+						                </a>
+						
+						                <!--Submenu-->
+						                <ul class="collapse">
+						                    <li><a href="forms-general.html">General</a></li>
+											<li><a href="forms-components.html">Advanced Components</a></li>
+											<li><a href="forms-validation.html">Validation</a></li>
+											<li><a href="forms-wizard.html">Wizard</a></li>
+											<li><a href="forms-file-upload.html">File Upload</a></li>
+											<li><a href="forms-text-editor.html">Text Editor</a></li>
+											<li><a href="forms-markdown.html">Markdown</a></li>
+											
+						                </ul>
+						            </li>
+						
 						            <!--Menu list item-->
 						            <li>
 						                <a href="#">
@@ -1470,7 +2050,7 @@
 						            </li>
 						
 						            <!--Menu list item-->
-						            <li>
+						            <li class="active-sub">
 						                <a href="#">
 						                    <i class="demo-psi-mail"></i>
 						                    <span class="menu-title">Email</span>
@@ -1478,8 +2058,8 @@
 						                </a>
 						
 						                <!--Submenu-->
-						                <ul class="collapse">
-						                    <li><a href="mailbox.html">Inbox</a></li>
+						                <ul class="collapse in">
+						                    <li class="active-link"><a href="mailbox.html">Inbox</a></li>
 											<li><a href="mailbox-message.html">View Message</a></li>
 											<li><a href="mailbox-compose.html">Compose Message</a></li>
 											<li><a href="mailbox-templates.html">Email Templates<span class="label label-info pull-right">New</span></a></li>
@@ -2136,10 +2716,28 @@
             </div>
         </div>
         <button id="demo-set-btn" class="btn" data-toggle="collapse" data-target="#demo-set-body"><i class="demo-psi-gear icon-lg"></i></button>
-</div>
+    </div>
     <!--===================================================-->
     <!-- END SETTINGS -->
+	<script src="js/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){ 
+			$("a.list-group-item").click(function(e){
+					e.preventDefault();
+					var _this = $(this);
+					var selector = _this.attr("href");
+					var _siblings = _this.siblings(".selected");
+					var id = _siblings.attr("href");
 
+					_siblings.removeClass("selected");
+					$( id ).removeClass("testing");
+
+					_this.addClass("selected");
+					$(selector).addClass("testing");
+
+				});
+			});
+	</script>
 
 </body>
 </html>
