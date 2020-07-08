@@ -1,11 +1,18 @@
 package com.xjtuse.summerproject.controller;
 
 import com.xjtuse.summerproject.controllerEntity.*;
+import com.xjtuse.summerproject.mapper.CourseMapper;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,22 +21,37 @@ public class GetCoursePannelController {
 
     @RequestMapping("/GetCoursePanel")
     public @ResponseBody
-    GetCoursePanelResponse getCoursePanel(@RequestBody GetCoursePanelInfo getCoursePanelInfo) {
+    GetCoursePanelResponse getCoursePanel(@RequestBody GetCoursePanelInfo getCoursePanelInfo) throws IOException {
         GetCoursePanelResponse getCoursePanelResponse = new GetCoursePanelResponse();
-        System.out.println("getCoursePanelInfo = " + getCoursePanelInfo);
         //模拟查数据库
         String courseid = getCoursePanelInfo.getCourse_id();
-        System.out.println("courseid = " + courseid);
+
+
+
+        CourseMapper courseMapper;
+        //1.读取配置文件，生成字节输入流
+        InputStream in = Resources.getResourceAsStream("SqlMapConfig.xml");
+        //2.创建SqlSessionFactory工厂
+        SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
+        //3.使用工厂生产SqlSession对象
+        SqlSession sqlSession = factory.openSession();
+        //4.使用SqlSession创建Mapper接口的代理对象
+        courseMapper = sqlSession.getMapper(CourseMapper.class);
+        List<com.xjtuse.summerproject.entity.CoursePanel> coursePanels = courseMapper.getCoursePanel(courseid);
+        //提交事务
+//        sqlSession.commit();
+        //6.释放资源
+        sqlSession.close();
+        in.close();
+
         getCoursePanelResponse.setId("course_panel");
-        CoursePanel coursePanel1 = new CoursePanel();
-        CoursePanel coursePanel2 = new CoursePanel();
-        coursePanel1.setPanel_id("panel_id1");
-        coursePanel2.setPanel_id("panel_id2");
-        coursePanel1.setPanel_name("panel_name1");
-        coursePanel2.setPanel_name("panel_name2");
         List<CoursePanel> list = new ArrayList<CoursePanel>();
-        list.add(coursePanel1);
-        list.add(coursePanel2);
+        for (com.xjtuse.summerproject.entity.CoursePanel coursePanel : coursePanels) {
+            CoursePanel coursePanel1 = new CoursePanel();
+            coursePanel1.setPanel_id(coursePanel.getDesign_id());
+            coursePanel1.setPanel_name(coursePanel.getDesign_name());
+            list.add(coursePanel1);
+        }
         getCoursePanelResponse.setValue(list);
         System.out.println("getCoursePanelResponse = " + getCoursePanelResponse);
         return getCoursePanelResponse;
