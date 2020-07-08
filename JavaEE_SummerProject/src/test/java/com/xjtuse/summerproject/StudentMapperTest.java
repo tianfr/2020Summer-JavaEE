@@ -185,4 +185,26 @@ public class StudentMapperTest {
 
 
     }
+
+    @Test
+    public void testGetHomeworkDraft() throws Exception{
+        SendHomework sendHomework = new SendHomework();
+        sendHomework.setHomework_id("tch20200101_content_homework001");
+        sendHomework.setCourse_id("demo001");
+        sendHomework.setStudent_id("stu20200203");
+        CourseHomework courseHomework = studentMapper.getHomeworkDraft(sendHomework);
+        System.out.println();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -86,7 +86,7 @@ public interface StudentMapper {
     @Select("SELECT * FROM teachers WHERE teacher_id = #{teacher_id}")
     Teacher getHomeworkTeacher(String teacher_id);
 
-    //6.13接口第一步
+    //6.13.1
     @Insert("INSERT INTO course_${course_id}_homework(homework_id, student_id, content, homework_file_path, homework_file_name, is_draft, insert_date)" +
             "VALUES ( #{homework_id}, #{student_id}, #{homework_content}, #{homework_attachments_path}, #{homework_attachments_name}, #{is_draft}, LOCALTIME ()) " +
             "ON DUPLICATE KEY UPDATE " +
@@ -96,6 +96,10 @@ public interface StudentMapper {
             "is_draft=#{is_draft}, " +
             "insert_date=LOCALTIME ()")
     void insertStudentHomework(SubmitHomework submitHomework);
+
+    //6.13.2
+    @Select("SELECT * FROM course_${course_id}_homework WHERE homework_id = #{homework_id} AND student_id = #{student_id}")
+    CourseHomework getHomeworkDraft(SendHomework sendHomework);
 
 
 

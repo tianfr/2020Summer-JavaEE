@@ -4,13 +4,23 @@ public class SendHomework {
     // A class for pushing para of Homework to get Homework details.
     private String course_id;
     private String homework_id;
+    private String student_id = "None";
 
     @Override
     public String toString() {
         return "SendHomework{" +
                 "course_id='" + course_id + '\'' +
                 ", homework_id='" + homework_id + '\'' +
+                ", student_id='" + student_id + '\'' +
                 '}';
+    }
+
+    public String getStudent_id() {
+        return student_id;
+    }
+
+    public void setStudent_id(String student_id) {
+        this.student_id = student_id;
     }
 
     public String getCourse_id() {
