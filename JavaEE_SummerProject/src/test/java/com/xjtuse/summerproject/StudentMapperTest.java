@@ -15,6 +15,7 @@ import org.junit.Test;
 
 import java.io.InputStream;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 
@@ -198,6 +199,43 @@ public class StudentMapperTest {
         System.out.println();
     }
 
+    @Test
+    public void testGetCourseResourse() throws Exception{
+        CourseResource courseResource = studentMapper.getCourseResource("demo001");
+        System.out.println(courseResource);
+    }
+    @Test
+    public void testInsertIssue() throws Exception{
+        MaxIssueId maxIssueId = new MaxIssueId();
+        maxIssueId.setCourse_id("demo001");
+        maxIssueId.setIssue_type("examination");
+
+        String id_number = studentMapper.getMaxIssueId(maxIssueId);
+        System.out.println(id_number);
+        CourseContent courseContent = new CourseContent();
+        courseContent.updateIssueId(id_number);
+        courseContent.setIssue_attachment_path("file_id1;file_id2;");
+        courseContent.setIssue_attachment_name("name_1;name_2;");
+        courseContent.setIssue_type("examination");
+        courseContent.setIssue_belong("examination");
+        courseContent.setIssue_content("suibianxiesuibianxiesuibianxiesuibianxiesuibianxiesuibianxie");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date(simpleDateFormat.parse("2020/11/5 23:59:59").getTime());
+        courseContent.setIssue_deadline(date);
+        courseContent.setIssue_title("titletitletitle");
+        courseContent.setIssue_table("demo001_examination");
+        courseContent.setCourse_id("demo001");
+
+        studentMapper.insertCourseContent(courseContent);
+    }
+
+    @Test
+    public void testGetPersonAttendedCourses() throws Exception{
+        List<Course> courseList = studentMapper.getStudentAttendedCourses("stu20200202");
+        for (Course course: courseList){
+            System.out.println(course);
+        }
+    }
 
 
 
