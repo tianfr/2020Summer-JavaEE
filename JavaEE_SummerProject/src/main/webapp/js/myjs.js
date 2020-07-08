@@ -1,5 +1,31 @@
 // JavaScript Document
 
+function sign_out() {
+    $.ajax({
+        type: "POST",
+        url: "/Logout",
+        contentType: "application/json",
+        data: JSON.stringify({
+            "status": "0",
+            "message": "logout_message",
+        }),
+        dataType: "json",
+        async: false,
+        success: function (result) {
+            // 请求成功后的操作
+            if (result.success_value == "1") {
+                alert("已退出");
+                location.href = "/login/pages-login.html";
+            } else {
+                alert(result.fail_content);
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert("请求失败，请重新尝试");
+        }
+    })
+}
+
 function sign_in() {
     let user_name = $.trim($("#user_name").val());
     let pass_word = $.trim($("#pass_word").val());
