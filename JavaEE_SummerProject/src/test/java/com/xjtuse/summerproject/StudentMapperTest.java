@@ -54,6 +54,8 @@ public class StudentMapperTest {
         for (Student student : students) {
             System.out.println(student);
         }
+        String s = "";
+        System.out.println("s.split(\";\").length = " + s.split(";").length);
     }
 
     @Test

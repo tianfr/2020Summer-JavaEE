@@ -36,7 +36,7 @@ public class GetCourseHomeworksController {
         SqlSession sqlSession = factory.openSession();
         //4.使用SqlSession创建Mapper接口的代理对象
         StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
-        List<CourseContent> courseContents = studentMapper.getCourseHomeworks(getCourseXXXsInfo.getCourse_id().substring(6));
+        List<CourseContent> courseContents = studentMapper.getCourseHomeworks(getCourseXXXsInfo.getCourse_id());
         //提交事务
 //        sqlSession.commit();
         //6.释放资源

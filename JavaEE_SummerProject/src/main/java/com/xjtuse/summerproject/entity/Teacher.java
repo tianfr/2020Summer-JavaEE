@@ -13,6 +13,7 @@ public class Teacher implements Serializable {
     private String teacher_content;
     private String teacher_username;
     private String teacher_password;
+    private String teacher_avatar;
     private Date insert_date;
 
     @Override
@@ -27,8 +28,17 @@ public class Teacher implements Serializable {
                 ", teacher_content='" + teacher_content + '\'' +
                 ", teacher_username='" + teacher_username + '\'' +
                 ", teacher_password='" + teacher_password + '\'' +
+                ", teacher_avatar='" + teacher_avatar + '\'' +
                 ", insert_date=" + insert_date +
                 '}';
+    }
+
+    public String getTeacher_avatar() {
+        return teacher_avatar;
+    }
+
+    public void setTeacher_avatar(String teacher_avatar) {
+        this.teacher_avatar = teacher_avatar;
     }
 
     public String getTeacher_name() {

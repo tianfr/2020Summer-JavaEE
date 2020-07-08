@@ -244,7 +244,7 @@ function get_course_panel() {
     let urlparam = location.search;
     let course_id = "";
     if (urlparam.substr(1, 4) == "cid=")
-        course_id = urlparam.substr(5, 14);
+        course_id = urlparam.substr(5).split("&")[0];
 
     $.ajax({
         type: "POST", // 使用post方式
@@ -329,12 +329,12 @@ function course_announcement() {
 function get_announcement(){
     let urlparam = location.search;
     let course_id = "";
-    let homework_id = "";
+    let announcement_id = "";
     if (urlparam.substr(1, 4) == "cid=" && urlparam.substr(urlparam.split("&")[0].length, 5) == "&aid=") {
         course_id = urlparam.substr(5).split("&")[0];
-        homework_id = urlparam.substr(urlparam.split("&")[0].length + 5);
+        announcement_id = urlparam.substr(urlparam.split("&")[0].length + 5);
         alert(course_id);
-        alert(homework_id);
+        alert(announcement_id);
     }
 
     $.ajax({

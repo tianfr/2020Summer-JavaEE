@@ -89,7 +89,7 @@ $(document).ready(function() {
     uploadBtn.on('click', function() {
         //Upload all files
         myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED));
-        alert("ok");
+
     });
 
     removeBtn.on('click', function() {
