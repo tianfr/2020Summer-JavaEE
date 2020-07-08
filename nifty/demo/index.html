@@ -49,6 +49,7 @@
     <!--Pace - Page Load Progress Par [OPTIONAL]-->
     <link href="plugins/pace/pace.min.css" rel="stylesheet">
     <script src="plugins/pace/pace.min.js"></script>
+	<script src="/js/myjs.js"></script>
 
 
     <!--jQuery [ REQUIRED ]-->
@@ -648,13 +649,16 @@
                                             </tr>
                                             </thead>
                                             <tbody id="con1">
+
                                            <!-- <tr>
+
                                                  <td id="upcoming_issue_id"><a href="#" class="btn-link"></a></td>
                                                  <td id="upcoming_issue_course"></td>
                                                  <td id="upcoming_issue_deadline"><span class="text-muted"><i class="fa fa-clock-o"></i></span></td>
                                                  <td id="upcoming_issue_content"></td>
 
                                                <td class="text-center" id="upcoming_issue_status">
+
                                                      <div class="label label-table label-on-schedule"></div>
                                                  </td>
                                              </tr>
@@ -671,17 +675,21 @@
                                         </table>
                                     </div>
                                     <hr>
+
 <!--
+
                                     <div class="pull-right">
                                         <ul class="pagination text-nowrap mar-no">
                                             <li class="page-pre disabled">
                                                 <a href="#">&lt;</a>
                                             </li>
+
                                             <li class="page-number active"> </li>
                                             <li class="page-number"> </li>
                                             <li class="page-number"> </li>
                                             <li> </li>
                                             <li class="page-number"> </li>
+
                                             <li class="page-next">
                                                 <a href="#">&gt;</a>
                                             </li>
@@ -702,6 +710,7 @@
 					                    </div>
 					                </div>
 					            </div>
+
                                 <!--===================================================-->
                                 <!--End Data Table-->
 
@@ -714,8 +723,109 @@
 				  <div class="panel-heading">
 					        <h3 class="panel-title col-md-12">Recent Info</h3>
 					    </div>
-					<div class="panel">
-					    
+                  <div class="panel">
+
+
+                      <div class="panel-body">
+                          <div class="bootstrap-table">
+                              <div class="fixed-table-toolbar">
+                                  <div class="columns columns-right btn-group pull-right">
+                                      <button class="btn btn-default" type="button" name="paginationSwitch"
+                                              title="Hide/Show pagination"><i class="glyphicon demo-pli-arrow-down"></i>
+                                      </button>
+                                      <button class="btn btn-default" type="button" name="refresh" title="Refresh"><i
+                                              class="glyphicon demo-pli-repeat-2"></i></button>
+                                      <button class="btn btn-default" type="button" name="toggle" title="Toggle"><i
+                                              class="glyphicon demo-pli-layout-grid"></i></button>
+                                      <div class="keep-open btn-group" title="Columns">
+                                          <button type="button" class="btn btn-default dropdown-toggle"
+                                                  data-toggle="dropdown"><i class="glyphicon demo-pli-check"></i> <span
+                                                  class="caret"></span></button>
+                                          <ul class="dropdown-menu" role="menu">
+                                              <li><label><input type="checkbox" data-field="id" value="0"
+                                                                checked="checked"> ID</label></li>
+                                              <li><label><input type="checkbox" data-field="name" value="1"
+                                                                checked="checked"> Name</label></li>
+                                              <li><label><input type="checkbox" data-field="date" value="2"
+                                                                checked="checked"> Order date</label></li>
+                                              <li><label><input type="checkbox" data-field="amount" value="3"
+                                                                checked="checked"> Balance</label></li>
+                                              <li><label><input type="checkbox" data-field="status" value="4"
+                                                                checked="checked"> Status</label></li>
+                                              <li><label><input type="checkbox" data-field="track" value="5"
+                                                                checked="checked"> Tracking Number</label></li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                                  <div class="pull-right search"><input class="form-control" type="text"
+                                                                        placeholder="Search"></div>
+                              </div>
+                              <div class="fixed-table-container" style="padding-bottom: 0px;">
+                                  <div class="fixed-table-header" style="display: none;">
+                                      <table></table>
+                                  </div>
+                                  <div class="fixed-table-body">
+                                      <div class="fixed-table-loading" style="top: 42px; display: none;">Loading, please
+                                          wait...
+                                      </div>
+                                      <table data-toggle="table" data-url="data/bs-table.json" data-search="true"
+                                             data-show-refresh="true" data-show-toggle="true" data-show-columns="true"
+                                             data-sort-name="id" data-page-list="[5, 10, 20]" data-page-size="5"
+                                             data-pagination="true" data-show-pagination-switch="true"
+                                             class="table table-hover">
+                                          <thead>
+                                          <tr>
+                                              <th style="" data-field="id" tabindex="0">
+                                                  <div class="th-inner sortable both">ID</div>
+                                                  <div class="fht-cell"></div>
+                                              </th>
+                                              <th style="" data-field="course" tabindex="0">
+                                                  <div class="th-inner sortable both desc">Course</div>
+                                                  <div class="fht-cell"></div>
+                                              </th>
+                                              <th style="" data-field="content" tabindex="0">
+                                                  <div class="th-inner sortable both">Content</div>
+                                                  <div class="fht-cell"></div>
+                                              </th>
+                                              <th style="" data-field="datetime" tabindex="0">
+                                                  <div class="th-inner sortable both">Publish DateTime</div>
+                                                  <div class="fht-cell"></div>
+                                              </th>
+                                          </tr>
+                                          </thead>
+                                          <tbody id="recent-info-data">
+
+
+                                          </tbody>
+                                      </table>
+                                  </div>
+                                  <div class="fixed-table-footer" style="display: none;">
+                                      <table>
+                                          <tbody>
+                                          <tr></tr>
+                                          </tbody>
+                                      </table>
+                                  </div>
+                                  <div class="fixed-table-pagination" style="display: none;">
+                                      <div class="pull-left pagination-detail"><span class="pagination-info">Showing 1 to 0 of 0 rows</span><span
+                                              class="page-list" style="display: none;"><span class="btn-group dropup"><button
+                                              type="button" class="btn btn-default  dropdown-toggle"
+                                              data-toggle="dropdown"><span class="page-size">5</span> <span
+                                              class="caret"></span></button><ul class="dropdown-menu" role="menu"><li
+                                              class="active"><a href="javascript:void(0)">5</a></li></ul></span> records per page</span>
+                                      </div>
+                                      <div class="pull-right pagination" style="display: none;">
+                                          <ul class="pagination">
+                                              <li class="page-pre"><a href="javascript:void(0)">‹</a></li>
+                                              <li class="page-next"><a href="javascript:void(0)">›</a></li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                      </div>
+                  </div>
 
 					    <div class="panel-body">
 					        <div class="bootstrap-table"><div class="fixed-table-toolbar"><div class="columns columns-right btn-group pull-right"><button class="btn btn-default" type="button" name="paginationSwitch" title="Hide/Show pagination"><i class="glyphicon demo-pli-arrow-down"></i></button><button class="btn btn-default" type="button" name="refresh" title="Refresh"><i class="glyphicon demo-pli-repeat-2"></i></button><button class="btn btn-default" type="button" name="toggle" title="Toggle"><i class="glyphicon demo-pli-layout-grid"></i></button><div class="keep-open btn-group" title="Columns"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="glyphicon demo-pli-check"></i> <span class="caret"></span></button><ul class="dropdown-menu" role="menu"><li><label><input type="checkbox" data-field="id" value="0" checked="checked"> ID</label></li><li><label><input type="checkbox" data-field="name" value="1" checked="checked"> Name</label></li><li><label><input type="checkbox" data-field="date" value="2" checked="checked"> Order date</label></li><li><label><input type="checkbox" data-field="amount" value="3" checked="checked"> Balance</label></li><li><label><input type="checkbox" data-field="status" value="4" checked="checked"> Status</label></li><li><label><input type="checkbox" data-field="track" value="5" checked="checked"> Tracking Number</label></li></ul></div></div><div class="pull-right search"><input class="form-control" type="text" placeholder="Search"></div></div><div class="fixed-table-container" style="padding-bottom: 0px;"><div class="fixed-table-header" style="display: none;"><table></table></div><div class="fixed-table-body"><div class="fixed-table-loading" style="top: 42px; display: none;">Loading, please wait...</div><table data-toggle="table" data-url="data/bs-table.json" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-sort-name="id" data-page-list="[5, 10, 20]" data-page-size="5" data-pagination="true" data-show-pagination-switch="true" class="table table-hover">
@@ -730,7 +840,6 @@
 					    </div>
 					</div>
 
-					
 				  <div class="row">
 
 				      <div class="col-lg-4">

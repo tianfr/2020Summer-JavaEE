@@ -13,7 +13,7 @@
 			type:"POST", // 使用post方式
 
 			// 志愿者报名
-			url:"/login",
+			url:"/Login",
 			contentType:"application/json",
 
 
@@ -22,7 +22,6 @@
                 "message": "login",
                 "user_name": user_name,
                 "pass_word": pass_word,
-
                 
             }),
 			
@@ -47,7 +46,6 @@
 			}
 		});
 	}
-
 
 
 
