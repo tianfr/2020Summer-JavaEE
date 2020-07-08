@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.sql.Date;
 
 public class CourseContent implements Serializable {
+    private String course_id = "None";
     private String issue_id;
     private String issue_type;
     private String issue_title;
@@ -15,10 +16,17 @@ public class CourseContent implements Serializable {
     private String issue_belong;
     private Date insert_date;
 
+    public void updateIssueId(String issue_id){
+        Integer number = Integer.valueOf(issue_id.substring(issue_id.length()-3, issue_id.length()));
+        this.issue_id = issue_id.substring(0, issue_id.length()-3) + Integer.toString(number + 1);
+        System.out.println(this.issue_id);
+    }
+
     @Override
     public String toString() {
         return "CourseContent{" +
-                "issue_id='" + issue_id + '\'' +
+                "course_id='" + course_id + '\'' +
+                ", issue_id='" + issue_id + '\'' +
                 ", issue_type='" + issue_type + '\'' +
                 ", issue_title='" + issue_title + '\'' +
                 ", issue_content='" + issue_content + '\'' +
@@ -29,6 +37,14 @@ public class CourseContent implements Serializable {
                 ", issue_belong='" + issue_belong + '\'' +
                 ", insert_date=" + insert_date +
                 '}';
+    }
+
+    public String getCourse_id() {
+        return course_id;
+    }
+
+    public void setCourse_id(String course_id) {
+        this.course_id = course_id;
     }
 
     public String getIssue_id() {

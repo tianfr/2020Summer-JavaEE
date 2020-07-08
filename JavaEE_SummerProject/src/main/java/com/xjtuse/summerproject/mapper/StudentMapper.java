@@ -77,16 +77,16 @@ public interface StudentMapper {
     @Select("SELECT * FROM course_${course_id}_content WHERE issue_type = 'homework' AND issue_belong ='homework'")
     List<CourseContent> getCourseHomeworks(String course_id);
 
-    //6.12接口第一步
+    //6.12接口第一步 查找作业详细信息
     @Select("SELECT * FROM course_${course_id}_content WHERE issue_id = #{homework_id}")
     CourseContent getHomework(SendHomework sendHomework);
 
-    //6.12接口第二部
+    //6.12接口第二部 查找发布作业的老师详细信息
     //对于作业的id，前11位是老师的编号
     @Select("SELECT * FROM teachers WHERE teacher_id = #{teacher_id}")
     Teacher getHomeworkTeacher(String teacher_id);
 
-    //6.13.1
+    //6.13.1 提交作业
     @Insert("INSERT INTO course_${course_id}_homework(homework_id, student_id, content, homework_file_path, homework_file_name, is_draft, insert_date)" +
             "VALUES ( #{homework_id}, #{student_id}, #{homework_content}, #{homework_attachments_path}, #{homework_attachments_name}, #{is_draft}, LOCALTIME ()) " +
             "ON DUPLICATE KEY UPDATE " +
@@ -97,11 +97,39 @@ public interface StudentMapper {
             "insert_date=LOCALTIME ()")
     void insertStudentHomework(SubmitHomework submitHomework);
 
-    //6.13.2
+    //6.13.2 查找作业草稿内容
     @Select("SELECT * FROM course_${course_id}_homework WHERE homework_id = #{homework_id} AND student_id = #{student_id}")
     CourseHomework getHomeworkDraft(SendHomework sendHomework);
 
+    //6.15 查找课程resource栏下信息
+    @Select("SELECT resource_id, resource_type, resource_name, resource_path, insert_date FROM course_${course_id}_resource WHERE resource_belong = 'resources'")
+    CourseResource getCourseResource(String course_id);
 
+    //6.16 教师发布新课程content
+    //第一步 获取课程content最大id
+    @Select("SELECT max(issue_id) FROM course_${course_id}_content WHERE issue_type = #{issue_type}")
+    String getMaxIssueId(MaxIssueId maxIssueId);
+
+    //第二部 插入课程信息
+    @Insert("INSERT INTO course_${course_id}_content(issue_id, issue_type, issue_title, issue_content, issue_attachment_name, issue_attachment_path, issue_deadline, issue_table, issue_belong, insert_date) " +
+            "VALUES " +
+            "(" +
+            "#{issue_id}, " +
+            "#{issue_type}, " +
+            "#{issue_title}," +
+            "#{issue_content}, " +
+            "#{issue_attachment_name}, " +
+            "#{issue_attachment_path}, " +
+            "#{issue_deadline}," +
+            "#{issue_table}, " +
+            "#{issue_belong}, " +
+            "LOCALTIME()" +
+            ")")
+    void insertCourseContent(CourseContent courseContent);
+
+    //6.17 获取学生全部全部
+    @Select("SELECT courses.* FROM courses, students_courses WHERE students_courses.student_id = #{student_id} AND students_courses.course_id = courses.course_id ")
+    List<Course> getStudentAttendedCourses(String student_id);
 
     //entity中实体的属性名和数据库列名不一致时的配置样例
 //    @Select("select * from students")
