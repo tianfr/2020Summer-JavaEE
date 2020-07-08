@@ -20,6 +20,8 @@ $(document).ready(function() {
         //uploadMultiple: true,
         //parallelUploads: 25,
         //maxFiles: 25,
+
+        // The setting up of the dropzone
         init: function() {
         var myDropzone = this;
         //  Here's the change from enyo's tutorial...
@@ -31,8 +33,7 @@ $(document).ready(function() {
         //}
         //    );
 
-        },
-
+        }
 
     }
 
@@ -49,10 +50,10 @@ $(document).ready(function() {
     var previewTemplate = previewNode.parentNode.innerHTML;
     previewNode.parentNode.removeChild(previewNode);
 
-    var uploadBtn = $('#dz-upload-btn');
+    var uplodaBtn = $('#dz-upload-btn');
     var removeBtn = $('#dz-remove-btn');
     var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
-        url: "/FileUpload", // Set the url
+        url: "/target-url", // Set the url
         thumbnailWidth: 50,
         thumbnailHeight: 50,
         parallelUploads: 20,
@@ -65,7 +66,7 @@ $(document).ready(function() {
 
     myDropzone.on("addedfile", function(file) {
         // Hookup the button
-        uploadBtn.prop('disabled', false);
+        uplodaBtn.prop('disabled', false);
         removeBtn.prop('disabled', false);
     });
 
@@ -86,15 +87,14 @@ $(document).ready(function() {
 
 
     // Setup the buttons for all transfers
-    uploadBtn.on('click', function() {
+    uplodaBtn.on('click', function() {
         //Upload all files
-        myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED));
-
+        //myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED));
     });
 
     removeBtn.on('click', function() {
         myDropzone.removeAllFiles(true);
-        uploadBtn.prop('disabled', true);
+        uplodaBtn.prop('disabled', true);
         removeBtn.prop('disabled', true);
     });
 

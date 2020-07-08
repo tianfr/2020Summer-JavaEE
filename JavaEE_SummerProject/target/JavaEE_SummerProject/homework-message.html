@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inbox | Nifty - Admin Template</title>
 
@@ -38,7 +38,8 @@
 
 
 
-    
+    <!--jQuery [ REQUIRED ]-->
+    <script src="js/jquery-2.2.4.min.js"></script>
     <!--JAVASCRIPT-->
     <!--=================================================-->
 
@@ -48,8 +49,7 @@
 	
 
 
-    <!--jQuery [ REQUIRED ]-->
-    <script src="js/jquery-2.2.4.min.js"></script>
+    
 
 
     <!--BootstrapJS [ RECOMMENDED ]-->
@@ -59,6 +59,7 @@
     <!--NiftyJS [ RECOMMENDED ]-->
     <script src="js/nifty.min.js"></script>
 	<script src="/js/myjs.js"></script>
+	<script src="js/demo/mail.js"></script>
 
 
 
@@ -104,7 +105,7 @@
 
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
-<body onload="db_menu();get_course_homeworks();get_course_panel();get_homework();">
+<body onload="get_course_panel()">
     <div id="container" class="effect aside-float aside-bright mainnav-lg">
         
         <!--NAVBAR-->
@@ -517,7 +518,7 @@
 
                                 <!-- Dropdown footer -->
                                 <div class="pad-all text-right">
-                                    <a href="login/pages-login.html" class="btn btn-primary">
+                                    <a href="pages-login.html" class="btn btn-primary">
                                         <i class="demo-pli-unlock"></i> Logout
                                     </a>
                                 </div>
@@ -564,15 +565,15 @@
 					
 					            <p class="pad-hor mar-top text-main text-bold">Folders</p>
 					            <div class="list-group bg-trans pad-btm bord-btm">
-									<a href="#tab-1" class="list-group-item text-semibold text-main selected" onclick="tab1Location()">
+									<a href="#tab-1" class="list-group-item text-semibold text-main"> 
 										<span class="badge badge-success pull-right">7</span> 
-										<span class="text-main"><em class="demo-pli-inbox-full icon-lg icon-fw"></em> 公告</span></a>
-                                    <a href="#tab-2" class="list-group-item"> <em class="demo-pli-file icon-lg icon-fw"></em> 作业 </a>
+										<span class="text-main"><em class="demo-pli-inbox-full icon-lg icon-fw"></em> 公告</span> 
+									</a> <a href="#tab-2" class="list-group-item selected"> <em class="demo-pli-file icon-lg icon-fw" onclick="get_course_homeworks()"></em> 作业 </a> 
 									<a href="#tab-3" class="list-group-item"> <em class="demo-pli-mail-send icon-lg icon-fw"></em> 讨论版 </a> 
 									<a href="#tab-4" class="list-group-item text-semibold"> 
 										<span class="badge badge-danger pull-right">3</span> <span class="text-main">
 										<em class="demo-pli-fire-flame-2 icon-lg icon-fw"></em> 考试</span></a> 
-									<a href="#tab-5" class="list-group-item"> <em class="demo-pli-recycling icon-lg icon-fw"></em> 资源 </a></div>
+									<a href="#tab-5" class="list-group-item"> <em class="demo-pli-recycling icon-lg icon-fw" onclick="get_course_resources(course_id)"></em> 资源 </a></div>
 					
 					            <div class="list-group bg-trans pad-ver">
 					                <a href="#" class="list-group-item"><i class="demo-pli-male-female icon-lg icon-fw"></i> Address Book</a>
@@ -580,8 +581,9 @@
 					            </div>
 					
 					            <!-- Friends -->
-					            <div class="list-group bg-trans pad-ver bord-ver" id="coursePanel"></div>
-					
+					            <div class="list-group bg-trans pad-ver bord-ver" id="coursePanel"> </div>
+
+								
 					            <p class="pad-hor text-main text-bold">Labels</p>
 					            <ul class="list-inline mar-hor">
 					                <li class="tag tag-sm">
@@ -607,9 +609,92 @@
 					    </div>
 					    <div class="fluid">
 					        <div class="panel">
-					            <div id="tab-1" class="panel-body testing">
+				<div id="tab-1" class="panel-body mypanel">
+					                <h1 class="page-header text-overflow pad-btm">课程公告</h1>
+					
+					                <div class="row">
+					                    <div class="col-sm-7">
+					
+					                        <!-- Mail toolbar -->
+					                        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+					
+					                        <!--Split button dropdowns-->
+					                        <div class="btn-group">
+					                            <div id="demo-checked-all-mail" class="btn btn-sm btn-default">
+					                                <input id="select-all-mail" class="magic-checkbox" type="checkbox">
+					                                <label for="select-all-mail"></label>
+					                            </div>
+					                            <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"><i class="dropdown-caret"></i></button>
+					                            <ul class="dropdown-menu">
+					                                <li><a href="javascript:void(0)" id="demo-select-all-list">All</a></li>
+					                                <li><a href="javascript:void(0)" id="demo-select-none-list">None</a></li>
+					                                <li><a href="javascript:void(0)" id="demo-select-toggle-list">Toggle</a></li>
+					                                <li class="divider"></li>
+					                                <li><a href="javascript:void(0)" id="demo-select-read-list">Read</a></li>
+					                                <li><a href="javascript:void(0)" id="demo-select-unread-list">Unread</a></li>
+					                                <li><a href="javascript:void(0)" id="demo-select-starred-list">Starred</a></li>
+					                            </ul>
+					                        </div>
+					
+					                        <!--Refresh button-->
+					                        <button id="demo-mail-ref-btn" data-toggle="panel-overlay" data-target="#demo-email-list" class="btn btn-default btn-sm" type="button">
+												<a href="javascript:void(0)" onclick="location.reload()">
+					                            <i class="demo-psi-repeat-2"></i>
+												</a>
+					                        </button>
+					
+					                        <!--Dropdown button (More Action)-->
+					                        <div class="btn-group">
+					                            <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle" type="button">
+					                                More <i class="dropdown-caret"></i>
+					                            </button>
+					                            <ul class="dropdown-menu">
+					                                <li><a href="#">Mark as read</a></li>
+					                                <li><a href="#">Mark as unread</a></li>
+					                                <li class="divider"></li>
+					                                <li><a href="#">Star</a></li>
+					                                <li><a href="#">Clear Star</a></li>
+					                            </ul>
+					                        </div>
+					                    </div>
+					                    <hr class="hr-sm visible-xs">
+					                    <div class="col-sm-5 clearfix">
+					                        <div class="pull-right">
+					
+					                            <!--Pager buttons-->
+					                            <span class="text-muted">
+					                                <strong id="tab1_page_id"></strong>
+					                                of
+					                                <strong id="tab1_page_total"></strong>
+					                            </span>
+					                            <div class="btn-group btn-group">
+					                                <button  id="tab1_flip_left" onclick="announcement_flip_left()"class="btn btn-sm btn-default" type="button">
+					                                    <i class="demo-psi-arrow-left"></i>
+					                                </button>
+					                                <button  id="tab1_flip_right" onclick="announcement_flip_right()"class="btn btn-sm btn-default" type="button">
+					                                    <i class="demo-psi-arrow-right"></i>
+					                                </button>
+					                            </div>
+					                        </div>
+					                    </div>
+					                </div>
+					                <hr class="hr-sm">
+									<div class="notice" id="course_an"></div>
+									<!--<div class="notice">
+					            <div class="panel-heading">
+					              <h3 class="panel-title"> <a href="mailbox-message.html" target="">Paragraph 1</a> </h3>
+					            </div>
+					            <div class="panel-body1">
+					                <div class="show_r3" style="overflow: hidden;text-overflow: ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;">Of on affixed civilly moments promise explain fertile in. Assurance advantage belonging happiness departure so of. Now improving and one sincerity intention allowance commanded not. Oh an am frankness be necessary earnestly advantage estimable extensive. Five he wife gone ye. Mrs suffering sportsmen earnestly any. In am do giving to afford parish settle easily garret.</div>
+					            </div>
+					        </div>-->
+					            </div>
+				<div id="tab-2" class="panel-body mypanel testing">
 					                <div class="mar-btm pad-btm bord-btm">
-					                    <h1 class="page-header text-overflow" id="headline"></h1>
+					                    <h1 class="page-header text-overflow" id="headline">
+					                        <span class="label label-normal label-info">作业</span>
+					                        Hi John! How are you ?
+					                    </h1>
 					                </div>
 					
 					                <div class="row">
@@ -618,11 +703,11 @@
 					                        <!--Sender Information-->
 					                        <div class="media">
 					                            <span class="media-left">
-					                                <img id="teacher_pic" class="img-circle img-sm" alt="Profile Picture">
+					                                <img src="img/profile-photos/8.png" id="teacher_pic" class="img-circle img-sm" alt="Profile Picture">
 					                            </span>
 					                            <div class="media-body">
-					                                <div class="text-bold" id="teacher_name"></div>
-					                                <small class="text-muted" id ="teacher_email"></small>
+					                                <div class="text-bold" id="teacher_name">Lisa D. Smith</div>
+					                                <small class="text-muted" id ="teacher_email">lisa.aqua@themeon.net</small>
 					                            </div>
 					                        </div>
 					                    </div>
@@ -631,7 +716,7 @@
 					
 					                        <!--Details Information-->
 					                        <div class="pull-right text-right">
-					                            <p class="mar-no"><small class="text-muted" id="datetime"></small></p>
+					                            <p class="mar-no"><small class="text-muted" id="datetime">Monday 12, May 2016</small></p>
 					                            <a href="#">
 					                                <strong>Holiday.zip</strong>
 					                                <i class="demo-psi-paperclip icon-fw"></i>
@@ -643,11 +728,10 @@
 					                    <div class="col-xs-7">
 					
 					                        <!--Mail toolbar-->
-					                        <button class="btn btn-sm btn-default"><i class="demo-pli-printer"></i></button>
-					                        <div class="btn-group btn-group">
-					                            <button class="btn btn-sm btn-default"><i class="demo-pli-information"></i></button>
-					                            <button class="btn btn-sm btn-default"><i class="demo-pli-recycling"></i> Remove</button>
-					                        </div>
+					                        <button class="btn btn-purple" 
+													id="homework_submit" 
+													>
+												<a href="homework-submit.html" target="_self">作业提交</a></button>
 					                    </div>
 					                    <div class="col-xs-5 clearfix">
 					                        <div class="pull-right">
@@ -664,23 +748,26 @@
 					                        </div>
 					                    </div>
 					                </div>
+									<div id="homework_ddl">
+										
+									</div>
 					
 					                <!--Message-->
 					                <!--===================================================-->
 					                <div class="pad-ver bord-ver" id="homework_content">
-<!--					                    Hey John,-->
-<!--					                    <br><br>-->
-<!--					                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>-->
-<!--					                    <blockquote class="text-muted">-->
-<!--					                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.-->
-<!--					                    </blockquote>-->
-<!--					                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?-->
-<!--					                    <br><br>-->
-<!--					                    Regards,-->
-<!--					                    <br><br>-->
-<!--					                    <strong>Lisa D. Smith</strong><br>-->
-<!--					                    2834 Street Name<br>-->
-<!--					                    San Francisco, CA<br>-->
+					                    Hey John,
+					                    <br><br>
+					                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>
+					                    <blockquote class="text-muted">
+					                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					                    </blockquote>
+					                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+					                    <br><br>
+					                    Regards,
+					                    <br><br>
+					                    <strong>Lisa D. Smith</strong><br>
+					                    2834 Street Name<br>
+					                    San Francisco, CA<br>
 					                </div>
 					                <!--===================================================-->
 					                <!--End Message-->
@@ -688,7 +775,7 @@
 					                <!-- Attach Files-->
 					                <!--===================================================-->
 					                <div class="pad-ver mar-ver bord-btm">
-					                    <p class="text-main text-bold box-inline"><i class="demo-psi-paperclip icon-fw"></i> Attachments <span>(2) - </span></p>
+					                    <p class="text-main text-bold box-inline"><i class="demo-psi-paperclip icon-fw"></i> 附件 </p>
 					                    <a href="#" class="btn-link">Download all</a> | <a href="#" class="btn-link">View all images</a>
 					
 					                    <ul class="mail-attach-list list-ov">
@@ -698,8 +785,8 @@
 					                                    <img class="image-responsive" src="img/bg-img/bg-img-4.jpg" alt="image">
 					                                </div>
 					                                <div class="caption">
-					                                    <p class="text-primary mar-no">Nature.jpg</p>
-					                                    <small class="text-muted">Added: May 01, 2016</small>
+					                                    <p class="text-primary mar-no" id="attachment_name">Nature.jpg</p>
+					                                    
 					                                </div>
 					                            </a>
 					                        </li>
@@ -709,8 +796,8 @@
 					                                    <img class="image-responsive" src="img/bg-img/bg-img-3.jpg" alt="image">
 					                                </div>
 					                                <div class="caption">
-					                                    <p class="text-primary mar-no">Forest.png</p>
-					                                    <small class="text-muted">Added: May 07, 2016</small>
+					                                    <p class="text-primary mar-no" id="attachment_name">Forest.png</p>
+					                                    
 					                                </div>
 					                            </a>
 					                        </li>
@@ -720,8 +807,8 @@
 					                                    <i class="demo-pli-file-csv"></i>
 					                                </div>
 					                                <div class="caption">
-					                                    <p class="text-primary mar-no">Reports.csv</p>
-					                                    <small class="text-muted">Added: May 10, 2016</small>
+					                                    <p class="text-primary mar-no" id="attachment_name">Reports.csv</p>
+					                                    
 					                                </div>
 					                            </a>
 					                        </li>
@@ -731,7 +818,7 @@
 					                                    <i class="demo-pli-file-zip"></i>
 					                                </div>
 					                                <div class="caption">
-					                                    <p class="text-primary mar-no">Project.zip</p>
+					                                    <p class="text-primary mar-no" id="attachment_name">Project.zip</p>
 					                                    <small class="text-muted">Added: May 10, 2016</small>
 					                                </div>
 					                            </a>
@@ -756,259 +843,8 @@
 					                </div>
 
 					            </div>
-								<div id="tab-2" class="panel-body">
-                <h1 class="page-header text-overflow pad-btm">作业列表</h1>
-				                <div class="row">
-				                  <div class="col-sm-7">
-				                    <!-- Mail toolbar -->
-				                    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-				                    <!--Split button dropdowns-->
-				                    <div class="btn-group">
-				                      <div id="demo-checked-all-mail2" class="btn btn-sm btn-default">
-				                        <input id="select-all-mail2" class="magic-checkbox" type="checkbox">
-				                        <label for="select-all-mail2"></label>
-			                          </div>
-				                      <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"><i class="dropdown-caret"></i></button>
-				                      <ul class="dropdown-menu">
-				                        <li><a href="javascript:void(0)" id="demo-select-all-list2">All</a></li>
-				                        <li><a href="javascript:void(0)" id="demo-select-none-list2">None</a></li>
-				                        <li><a href="javascript:void(0)" id="demo-select-toggle-list2">Toggle</a></li>
-				                        <li class="divider"></li>
-				                        <li><a href="javascript:void(0)" id="demo-select-read-list2">Read</a></li>
-				                        <li><a href="javascript:void(0)" id="demo-select-unread-list2">Unread</a></li>
-				                        <li><a href="javascript:void(0)" id="demo-select-starred-list2">Starred</a></li>
-			                          </ul>
-			                        </div>
-				                    <!--Refresh button-->
-				                    <button id="demo-mail-ref-btn2" data-toggle="panel-overlay" data-target="#demo-email-list" class="btn btn-default btn-sm" type="button"> <i class="demo-psi-repeat-2"></i> </button>
-				                    <!--Dropdown button (More Action)-->
-				                    <div class="btn-group">
-				                      <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle" type="button"> More <i class="dropdown-caret"></i> </button>
-				                      <ul class="dropdown-menu">
-				                        <li><a href="#">Mark as read</a></li>
-				                        <li><a href="#">Mark as unread</a></li>
-				                        <li class="divider"></li>
-				                        <li><a href="#">Star</a></li>
-				                        <li><a href="#">Clear Star</a></li>
-			                          </ul>
-			                        </div>
-			                      </div>
-				                  <hr class="hr-sm visible-xs">
-				                  <div class="col-sm-5 clearfix">
-				                    <div class="pull-right">
-				                      <!--Pager buttons-->
-				                      <span class="text-muted"> <strong>1-50</strong> of <strong>160</strong> </span>
-				                      <div class="btn-group btn-group">
-				                        <button class="btn btn-sm btn-default" type="button"> <i class="demo-psi-arrow-left"></i> </button>
-				                        <button class="btn btn-sm btn-default" type="button"> <i class="demo-psi-arrow-right"></i> </button>
-			                          </div>
-			                        </div>
-			                      </div>
-			                    </div>
-				                <hr class="hr-sm">
-				                <!--Mail list group-->
-				                <ul id="demo-mail-list" class="mail-list">
-				                  <!--Mail list item-->
-				                  <li class="mail-list-unread mail-attach">
-				                    <div class="mail-control">
-				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
-				                      <label for="email-list-1"></label>
-			                        </div>
-				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <div class="mail-from">作业一<br>
-			                        </div>
-				                    <div class="mail-time">05:55 PM</div>
-				                    <div class="mail-attach-icon"></div>
-				                    <div class="mail-subject"> <a href="announcement.html">This is an example if there is a really really long text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </a> </div>
-			                      </li>
-				                  <!--Mail list item-->
-				                  <li class="mail-starred">
-				                    <div class="mail-control">
-				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
-				                      <label for="email-list-1"></label>
-			                        </div>
-				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <div class="mail-from"> 作业二</div>
-				                    <div class="mail-time">10:45 AM</div>
-				                    <div class="mail-attach-icon"></div>
-				                    <div class="mail-subject"> <a href="announcement.html">Tracking Your Order - Shoes Store Online</a> </div>
-			                      </li>
-				                  <!--Mail list item-->
-				                  <li class="mail-list-unread mail-starred mail-attach">
-				                    <div class="mail-control">
-				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
-				                      <label for="email-list-1"></label>
-			                        </div>
-				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <div class="mail-from">作业三<br>
-			                        </div>
-				                    <div class="mail-time">07:18 AM</div>
-				                    <div class="mail-attach-icon"><i class="demo-psi-paperclip"></i></div>
-				                    <div class="mail-subject"> <a href="announcement.html">Reset your account password</a> </div>
-			                      </li>
-				                  <!--Mail list item-->
-				                  <li class="mail-list-unread">
-				                    <div class="mail-control">
-				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
-				                      <label for="email-list-1"></label>
-			                        </div>
-				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <div class="mail-from"><a href="#">Server Host</a></div>
-				                    <div class="mail-time">01:51 PM</div>
-				                    <div class="mail-attach-icon"></div>
-				                    <div class="mail-subject"> <a href="announcement.html"> <span class="label label-danger"> Bussines </span> Regarding to your website issues. </a> </div>
-			                      </li>
-				                  <!--Mail list item-->
-				                  <li>
-				                    <div class="mail-control">
-				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
-				                      <label for="email-list-1"></label>
-			                        </div>
-				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <div class="mail-from"><a href="#">Lisa D. Smith</a></div>
-				                    <div class="mail-time">Yesterday</div>
-				                    <div class="mail-attach-icon"></div>
-				                    <div class="mail-subject"> <a href="announcement.html">Hi John! How are you?</a> </div>
-			                      </li>
-				                  <!--Mail list item-->
-				                  <li class="mail-starred">
-				                    <div class="mail-control">
-				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
-				                      <label for="email-list-1"></label>
-			                        </div>
-				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <div class="mail-from"><a href="#">Johny Juan</a></div>
-				                    <div class="mail-time">Yesterday</div>
-				                    <div class="mail-attach-icon"></div>
-				                    <div class="mail-subject"> <a href="announcement.html"> <span class="label label-info"> Partner </span> Repair Status Unregistered User </a> </div>
-			                      </li>
-				                  <!--Mail list item-->
-				                  <li class="mail-attach">
-				                    <div class="mail-control">
-				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
-				                      <label for="email-list-1"></label>
-			                        </div>
-				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <div class="mail-from"><a href="#">Bobby Marz</a></div>
-				                    <div class="mail-time">Oct 10</div>
-				                    <div class="mail-attach-icon"><i class="demo-psi-paperclip"></i></div>
-				                    <div class="mail-subject"><a href="announcement.html">Bugs in your system.</a></div>
-			                      </li>
-				                  <!--Mail list item-->
-				                  <li class="mail-list-unread mail-starred">
-				                    <div class="mail-control">
-				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
-				                      <label for="email-list-1"></label>
-			                        </div>
-				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <div class="mail-from"><a href="#">Lucy Moon</a></div>
-				                    <div class="mail-time">Oct 10</div>
-				                    <div class="mail-attach-icon"></div>
-				                    <div class="mail-subject"><a href="announcement.html">We need to meet up soon</a></div>
-			                      </li>
-				                  <!--Mail list item-->
-				                  <li class="mail-list-unread">
-				                    <div class="mail-control">
-				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
-				                      <label for="email-list-1"></label>
-			                        </div>
-				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <div class="mail-from"><a href="#">Michael Robert</a></div>
-				                    <div class="mail-time">Oct 10</div>
-				                    <div class="mail-attach-icon"></div>
-				                    <div class="mail-subject"><a href="announcement.html">This is an example if there is a really really long text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </a></div>
-			                      </li>
-				                  <!--Mail list item-->
-				                  <li class="mail-starred mail-attach">
-				                    <div class="mail-control">
-				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
-				                      <label for="email-list-1"></label>
-			                        </div>
-				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <div class="mail-from"><a href="#">Shopping Mall</a></div>
-				                    <div class="mail-time">Oct 9</div>
-				                    <div class="mail-attach-icon"><i class="demo-psi-paperclip"></i></div>
-				                    <div class="mail-subject"><a href="announcement.html">Tracking Your Order - Shoes Store Online</a></div>
-			                      </li>
-				                  <!--Mail list item-->
-				                  <li class="mail-list-unread mail-starred">
-				                    <div class="mail-control">
-				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
-				                      <label for="email-list-1"></label>
-			                        </div>
-				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <div class="mail-from"><a href="#">Dropbox</a></div>
-				                    <div class="mail-time">Oct 8</div>
-				                    <div class="mail-attach-icon"></div>
-				                    <div class="mail-subject"><a href="announcement.html">Reset your account password</a></div>
-			                      </li>
-				                  <!--Mail list item-->
-				                  <li class="mail-list-unread">
-				                    <div class="mail-control">
-				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
-				                      <label for="email-list-1"></label>
-			                        </div>
-				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <div class="mail-from"><a href="#">Server Host</a></div>
-				                    <div class="mail-time">Oct 7</div>
-				                    <div class="mail-attach-icon"></div>
-				                    <div class="mail-subject"> <a href="announcement.html"> <span class="label label-danger"> Bussines </span> Regarding to your website issues. </a> </div>
-			                      </li>
-				                  <!--Mail list item-->
-				                  <li class="mail-starred">
-				                    <div class="mail-control">
-				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
-				                      <label for="email-list-1"></label>
-			                        </div>
-				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <div class="mail-from"><a href="#">Lisa D. Smith</a></div>
-				                    <div class="mail-time">Oct 5</div>
-				                    <div class="mail-attach-icon"></div>
-				                    <div class="mail-subject"><a href="announcement.html">Hi John! How are you?</a></div>
-			                      </li>
-				                  <!--Mail list item-->
-				                  <li class="mail-starred">
-				                    <div class="mail-control">
-				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
-				                      <label for="email-list-1"></label>
-			                        </div>
-				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <div class="mail-from"><a href="#">Johny Juan</a></div>
-				                    <div class="mail-time">Oct 5</div>
-				                    <div class="mail-attach-icon"></div>
-				                    <div class="mail-subject"> <a href="announcement.html"> <span class="label label-info"> Partner </span> Repair Status Unregistered User </a> </div>
-			                      </li>
-				                  <!--Mail list item-->
-				                  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-				                  <li class="mail-attach">
-				                    <div class="mail-control">
-				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
-				                      <label for="email-list-1"></label>
-			                        </div>
-				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <div class="mail-from"><a href="#">Bobby Marz</a></div>
-				                    <div class="mail-time">Oct 3</div>
-				                    <div class="mail-attach-icon"><i class="demo-psi-paperclip"></i></div>
-				                    <div class="mail-subject"><a href="announcement.html">Bugs in your system.</a></div>
-			                      </li>
-				                  <!--Mail list item-->
-				                  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-				                  <li class="mail-list-unread mail-starred">
-				                    <div class="mail-control">
-				                      <input id="email-list-1" class="magic-checkbox" type="checkbox">
-				                      <label for="email-list-1"></label>
-			                        </div>
-				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
-				                    <div class="mail-from"><a href="#">Lucy Moon</a></div>
-				                    <div class="mail-time">Oct 1</div>
-				                    <div class="mail-attach-icon"></div>
-				                    <div class="mail-subject"><a href="announcement.html">We need to meet up soon</a></div>
-			                      </li>
-			                    </ul>
-			                  </div>
-
-								<div id="tab-3" class="panel-body">
-					                <h1 class="page-header text-overflow pad-btm">Inbox (15)</h1>
+				<div id="tab-3" class="panel-body mypanel">
+                <h1 class="page-header text-overflow pad-btm">Inbox (15)</h1>
 					
 					                <div class="row">
 					                    <div class="col-sm-7">
@@ -1018,9 +854,9 @@
 					
 					                        <!--Split button dropdowns-->
 					                        <div class="btn-group">
-					                            <div id="demo-checked-all-mail" class="btn btn-sm btn-default">
-					                                <input id="select-all-mail" class="magic-checkbox" type="checkbox">
-					                                <label for="select-all-mail"></label>
+					                            <div id="demo-checked-all-mail3" class="btn btn-sm btn-default">
+					                                <input id="select-all-mail3" class="magic-checkbox" type="checkbox">
+					                                <label for="select-all-mail3"></label>
 					                            </div>
 					                            <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"><i class="dropdown-caret"></i></button>
 					                            <ul class="dropdown-menu">
@@ -1119,7 +955,7 @@
 					        </div>
 
 					            </div>
-								<div id="tab-4" class="panel-body">
+				<div id="tab-4" class="panel-body mypanel">
 					                <h1 class="page-header text-overflow pad-btm">Inbox (14)</h1>
 					
 					                <div class="row">
@@ -1130,9 +966,9 @@
 					
 					                        <!--Split button dropdowns-->
 					                        <div class="btn-group">
-					                            <div id="demo-checked-all-mail" class="btn btn-sm btn-default">
-					                                <input id="select-all-mail" class="magic-checkbox" type="checkbox">
-					                                <label for="select-all-mail"></label>
+					                            <div id="demo-checked-all-mail4" class="btn btn-sm btn-default">
+					                                <input id="select-all-mail4" class="magic-checkbox" type="checkbox">
+					                                <label for="select-all-mail4"></label>
 					                            </div>
 					                            <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"><i class="dropdown-caret"></i></button>
 					                            <ul class="dropdown-menu">
@@ -1231,118 +1067,126 @@
 					        </div>
 
 					            </div>
-								<div id="tab-5" class="panel-body">
-					                <h1 class="page-header text-overflow pad-btm">Inbox (13)</h1>
-					
-					                <div class="row">
-					                    <div class="col-sm-7">
-					
-					                        <!-- Mail toolbar -->
-					                        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-					
-					                        <!--Split button dropdowns-->
-					                        <div class="btn-group">
-					                            <div id="demo-checked-all-mail" class="btn btn-sm btn-default">
-					                                <input id="select-all-mail" class="magic-checkbox" type="checkbox">
-					                                <label for="select-all-mail"></label>
-					                            </div>
-					                            <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"><i class="dropdown-caret"></i></button>
-					                            <ul class="dropdown-menu">
-					                                <li><a href="javascript:void(0)" id="demo-select-all-list">All</a></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-none-list">None</a></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-toggle-list">Toggle</a></li>
-					                                <li class="divider"></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-read-list">Read</a></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-unread-list">Unread</a></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-starred-list">Starred</a></li>
-					                            </ul>
-					                        </div>
-					
-					                        <!--Refresh button-->
-					                        <button id="demo-mail-ref-btn" data-toggle="panel-overlay" data-target="#demo-email-list" class="btn btn-default btn-sm" type="button">
-					                            <i class="demo-psi-repeat-2"></i>
-					                        </button>
-					
-					                        <!--Dropdown button (More Action)-->
-					                        <div class="btn-group">
-					                            <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle" type="button">
-					                                More <i class="dropdown-caret"></i>
-					                            </button>
-					                            <ul class="dropdown-menu">
-					                                <li><a href="#">Mark as read</a></li>
-					                                <li><a href="#">Mark as unread</a></li>
-					                                <li class="divider"></li>
-					                                <li><a href="#">Star</a></li>
-					                                <li><a href="#">Clear Star</a></li>
-					                            </ul>
-					                        </div>
-					                    </div>
-					                    <hr class="hr-sm visible-xs">
-					                    <div class="col-sm-5 clearfix">
-					                        <div class="pull-right">
-					
-					                            <!--Pager buttons-->
-					                            <span class="text-muted">
-					                                <strong>1-50</strong>
-					                                of
-					                                <strong>160</strong>
-					                            </span>
-					                            <div class="btn-group btn-group">
-					                                <button class="btn btn-sm btn-default" type="button">
-					                                    <i class="demo-psi-arrow-left"></i>
-					                                </button>
-					                                <button class="btn btn-sm btn-default" type="button">
-					                                    <i class="demo-psi-arrow-right"></i>
-					                                </button>
-					                            </div>
-					                        </div>
-					                    </div>
-					                </div>
-					                <hr class="hr-sm">
-									<div class="panel">
-					            <div class="panel-heading">
-					                <h3 class="panel-title">Paragraph 1</h3>
-					            </div>
-					            <div class="panel-body1">
-					
-					                <!--Paragraph-->
-					                <!--===================================================-->
-					                <p class="text-main text-semibold">Paragraph Text</p>
-					                <p>Of on affixed civilly moments promise explain
-					                fertile in. Assurance advantage belonging happiness
-					                departure so of. Now improving and one sincerity
-					                intention allowance commanded not. Oh an am frankness
-					                be necessary earnestly advantage estimable extensive.
-					                Five he wife gone ye. Mrs suffering sportsmen earnestly
-					                any. In am do giving to afford parish settle easily
-					                garret.</p>
-					                <!--===================================================-->
-					
-					            </div>
-					        </div>
-									<div class="panel">
-					            <div class="panel-heading">
-					                <h3 class="panel-title">Paragraph 2</h3>
-					            </div>
-					            <div class="panel-body1">
-					
-					                <!--Paragraph-->
-					                <!--===================================================-->
-					                <p class="text-main text-semibold">Paragraph Text</p>
-					                <p>Of on affixed civilly moments promise explain
-					                fertile in. Assurance advantage belonging happiness
-					                departure so of. Now improving and one sincerity
-					                intention allowance commanded not. Oh an am frankness
-					                be necessary earnestly advantage estimable extensive.
-					                Five he wife gone ye. Mrs suffering sportsmen earnestly
-					                any. In am do giving to afford parish settle easily
-					                garret.</p>
-					                <!--===================================================-->
-					
-					            </div>
-					        </div>
-
-					            </div> 
+				<div id="tab-5" class="panel-body mypanel">
+                       <h1 class="page-header text-overflow pad-btm">课程资源</h1>
+				                <div class="row">
+				                  <div class="col-sm-7">
+				                    <!-- Mail toolbar -->
+				                    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+				                    <!--Split button dropdowns-->
+				                    <div class="btn-group">
+				                      <div id="demo-checked-all-mail5" class="btn btn-sm btn-default" value="0">
+				                        <input id="select-all-mail5" class="magic-checkbox" type="checkbox" >
+				                        <label for="select-all-mail5"></label>
+			                          </div>
+				                      <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"><i class="dropdown-caret"></i></button>
+				                      <ul class="dropdown-menu">
+				                        <li><a href="javascript:void(0)" id="demo-select-all-list2">All</a></li>
+				                        <li><a href="javascript:void(0)" id="demo-select-none-list2">None</a></li>
+				                        <li><a href="javascript:void(0)" id="demo-select-toggle-list2">Toggle</a></li>
+				                        <li class="divider"></li>
+				                        <li><a href="javascript:void(0)" id="demo-select-read-list2">Read</a></li>
+				                        <li><a href="javascript:void(0)" id="demo-select-unread-list2">Unread</a></li>
+				                        <li><a href="javascript:void(0)" id="demo-select-starred-list2">Starred</a></li>
+			                          </ul>
+										<button class="btn btn-mint" onclick="resources_download()">下载</button>
+			                        </div>
+				                    <!--Refresh button-->
+				                    <!--Dropdown button (More Action)-->
+				                    <div class="btn-group">
+<ul class="dropdown-menu">
+                        <li><a href="#">Mark as read</a></li>
+				                        <li><a href="#">Mark as unread</a></li>
+				                        <li class="divider"></li>
+				                        <li><a href="#">Star</a></li>
+				                        <li><a href="#">Clear Star</a></li>
+			                          </ul>
+			                        </div>
+			                      </div>
+				                  <hr class="hr-sm visible-xs">
+				                  <div class="col-sm-5 clearfix">
+				                    <div class="pull-right">
+				                      <!--Pager buttons-->
+				                      <span class="text-muted" > <strong id="tab-5-page_id">1-50</strong> of <strong id="tab-5-page_total">160</strong> </span>
+				                      <div class="btn-group btn-group">
+				                        <button class="btn btn-sm btn-default" type="button" onclick="homework_flip_left()"> 
+											<i class="demo-psi-arrow-left"></i> 
+										</button>
+				                        <button class="btn btn-sm btn-default" type="button" onclick="homework_flip_right()"> 
+											<i class="demo-psi-arrow-right"></i> 
+										</button>
+			                          </div>
+			                        </div>
+			                      </div>
+			                    </div>
+				                <hr class="hr-sm">
+				                <!--Mail list group-->
+				                <ul id="tab-5-demo-mail-list" class="mail-list">
+				                  <!--Mail list item-->
+				                  <li class="mail-list-unread mail-attach">
+				                    <div class="mail-control" value="0">
+				                      <input id="src-list-1" class="magic-checkbox" type="checkbox">
+				                      <label for="src-list-1"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <strong class="mail-from">资源一<br>
+			                        </strong>
+				                    <div class="mail-time">05:55 PM</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"> <a href="mailbox-message.html">This is an example if there is a really really long text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </a> </div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-starred">
+				                    <div class="mail-control" value="0">
+				                      <input id="src-list-2" class="magic-checkbox" type="checkbox">
+				                      <label for="src-list-2"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"> 资源二</div>
+				                    <div class="mail-time">10:45 AM</div>
+				                    <div class="mail-attach-icon"></div>
+				                    <div class="mail-subject"> <a href="mailbox-message.html">Tracking Your Order - Shoes Store Online</a> </div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <li class="mail-list-unread mail-starred mail-attach">
+				                    <div class="mail-control" value="0">
+				                      <input id="src-list-3" class="magic-checkbox" type="checkbox">
+				                      <label for="src-list-3"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from">资源三<br>
+			                        </div>
+				                    <div class="mail-time">07:18 AM</div>
+				                    <div class="mail-attach-icon"><i class="demo-psi-paperclip"></i></div>
+				                    <div class="mail-subject"> <a href="mailbox-message.html">Reset your account password</a> </div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <!--Mail list item-->
+				                  <!--Mail list item-->
+				                  <!--Mail list item-->
+				                  <!--Mail list item-->
+				                  <!--Mail list item-->
+				                  <!--Mail list item-->
+				                  <!--Mail list item-->
+				                  <!--Mail list item-->
+				                  <!--Mail list item-->
+				                  <!--Mail list item-->				                  <!--Mail list item-->
+				                  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+				                  <li class="mail-attach">
+				                    <div class="mail-control" value="0">
+				                      <input id="src-list-4" class="magic-checkbox" type="checkbox">
+				                      <label for="src-list-4"></label>
+			                        </div>
+				                    <div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>
+				                    <div class="mail-from"><a href="#">Bobby Marz</a></div>
+				                    <div class="mail-time">Oct 3</div>
+				                    <div class="mail-attach-icon"><i class="demo-psi-paperclip"></i></div>
+				                    <div class="mail-subject"><a href="mailbox-message.html">Bugs in your system.</a></div>
+			                      </li>
+				                  <!--Mail list item-->
+				                  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			                    </ul>
+			                  </div> 
 				              <!--Mail footer-->
 					            <div class="panel-footer clearfix">
 					                <div class="pull-right">
@@ -1679,8 +1523,8 @@
                                             <span class="pull-right dropdown-toggle">
                                                 <i class="dropdown-caret"></i>
                                             </span>
-                                            <p class="mnp-name" id="header_name"></p>
-                                            <span class="mnp-desc" id="header_email"></span>
+                                            <p class="mnp-name">Aaron Chavez</p>
+                                            <span class="mnp-desc">aaron.cha@themeon.net</span>
                                         </a>
                                     </div>
                                     <div id="profile-nav" class="collapse list-group bg-trans">
@@ -1750,27 +1594,11 @@
 						                <a href="#">
 						                    <i class="demo-psi-split-vertical-2"></i>
 						                    <span class="menu-title">
-												<strong>Layouts</strong>
+												<strong>Prev Courses</strong>
 											</span>
-											<i class="arrow"></i>
 						                </a>
 						
-						                <!--Submenu-->
-						                <ul class="collapse">
-						                    <li><a href="layouts-collapsed-navigation.html">Collapsed Navigation</a></li>
-											<li><a href="layouts-offcanvas-navigation.html">Off-Canvas Navigation</a></li>
-											<li><a href="layouts-offcanvas-slide-in-navigation.html">Slide-in Navigation</a></li>
-											<li><a href="layouts-offcanvas-revealing-navigation.html">Revealing Navigation</a></li>
-											<li class="list-divider"></li>
-											<li><a href="layouts-aside-right-side.html">Aside on the right side</a></li>
-											<li><a href="layouts-aside-left-side.html">Aside on the left side</a></li>
-											<li><a href="layouts-aside-dark-theme.html">Dark version of aside</a></li>
-											<li class="list-divider"></li>
-											<li><a href="layouts-fixed-navbar.html">Fixed Navbar</a></li>
-											<li><a href="layouts-fixed-footer.html">Fixed Footer</a></li>
-											
-						                </ul>
-						            </li>
+						                <!--Submenu-->						            </li>
 						
 						            <!--Menu list item-->
 						            <li>
@@ -1786,17 +1614,55 @@
 						            <li class="list-divider"></li>
 						
 						            <!--Category name-->
-						            <li class="list-header">Components</li>
-                                    <div id="db_index"></div>
+						            <li class="list-header">Courses</li>
+						            <div id="db_index"></div>
 						            <!--Menu list item-->
-<!--						            <li>-->
-<!--						                <a href="#">-->
-<!--						                    <i class="demo-psi-boot-2"></i>-->
-<!--						                    <span class="menu-title">UI Elements</span>-->
-<!--											<i class="arrow"></i>-->
-<!--						                </a>-->
-<!--                                    </li>-->
-
+						            <!--Menu list item-->
+						            <li>
+						                <a href="#">
+						                    <i class="demo-psi-pen-5"></i>
+						                    <span class="menu-title">Forms</span>
+											<i class="arrow"></i>
+						                </a>
+						
+						                <!--Submenu-->
+						                <ul class="collapse">
+						                    <li><a href="forms-general.html">General</a></li>
+											<li><a href="forms-components.html">Advanced Components</a></li>
+											<li><a href="forms-validation.html">Validation</a></li>
+											<li><a href="forms-wizard.html">Wizard</a></li>
+											<li><a href="forms-file-upload.html">File Upload</a></li>
+											<li><a href="forms-text-editor.html">Text Editor</a></li>
+											<li><a href="forms-markdown.html">Markdown</a></li>
+											
+						                </ul>
+						            </li>
+						
+						            <!--Menu list item-->
+						            <li>
+						                <a href="#">
+						                    <i class="demo-psi-receipt-4"></i>
+						                    <span class="menu-title">Tables</span>
+											<i class="arrow"></i>
+						                </a>
+						
+						                <!--Submenu-->
+						                <ul class="collapse">
+						                    <li><a href="tables-static.html">Static Tables</a></li>
+											<li><a href="tables-bootstrap.html">Bootstrap Tables</a></li>
+											<li><a href="tables-datatable.html">Data Tables</a></li>
+											<li><a href="tables-footable.html">Foo Tables</a></li>
+											
+						                </ul>
+						            </li>
+						
+						            <!--Menu list item-->
+						            <li>
+						                <a href="charts.html">
+						                    <i class="demo-psi-bar-chart"></i>
+						                    <span class="menu-title">Charts</span>
+						                </a>
+						            </li>
 						
 						            <li class="list-divider"></li>
 						
@@ -1831,7 +1697,7 @@
 						                <!--Submenu-->
 						                <ul class="collapse in">
 						                    <li class="active-link"><a href="mailbox.html">Inbox</a></li>
-											<li><a href="announcement.html">View Message</a></li>
+											<li><a href="mailbox-message.html">View Message</a></li>
 											<li><a href="mailbox-compose.html">Compose Message</a></li>
 											<li><a href="mailbox-templates.html">Email Templates<span class="label label-info pull-right">New</span></a></li>
 											
@@ -1856,9 +1722,9 @@
 											<li><a href="pages-404.html">404 Error</a></li>
 											<li><a href="pages-500.html">500 Error</a></li>
 											<li class="list-divider"></li>
-											<li><a href="login/pages-login.html">Login</a></li>
-											<li><a href="login/pages-register.html">Register</a></li>
-											<li><a href="login/pages-password-reminder.html">Password Reminder</a></li>
+											<li><a href="pages-login.html">Login</a></li>
+											<li><a href="pages-register.html">Register</a></li>
+											<li><a href="pages-password-reminder.html">Password Reminder</a></li>
 											<li><a href="pages-lock-screen.html">Lock Screen</a></li>
 											
 						                </ul>
@@ -2506,6 +2372,13 @@
 					_this.addClass("selected");
 					$(selector).addClass("testing");
 
+				});
+			
+				$("#select-all-mail5").click(function(){
+					//alert(this.checked);
+					$("#tab-5-demo-mail-list>li>div>input[type=checkbox]").prop("checked",$(this).is(':checked'));
+					
+					
 				});
 			});
 	</script>

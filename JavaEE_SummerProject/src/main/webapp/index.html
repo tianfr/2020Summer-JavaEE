@@ -49,6 +49,7 @@
     <!--Pace - Page Load Progress Par [OPTIONAL]-->
     <link href="plugins/pace/pace.min.css" rel="stylesheet">
     <script src="plugins/pace/pace.min.js"></script>
+	<script src="/js/myjs.js"></script>
 
 
     <!--jQuery [ REQUIRED ]-->
@@ -121,7 +122,7 @@
 
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
-<body onload="db_menu();recent_info();upcoming_issue();">
+<body onload="recent_info();upcoming_issue();db_menu()">
 <div id="container" class="effect aside-float aside-bright mainnav-lg">
         
         <!--NAVBAR-->
@@ -534,7 +535,7 @@
 
                                 <!-- Dropdown footer -->
                                 <div class="pad-all text-right">
-                                    <a href="login/pages-login.html" class="btn btn-primary" onclick="sign_out()">
+                                    <a href="pages-login.html" class="btn btn-primary">
                                         <i class="demo-pli-unlock"></i> Logout
                                     </a>
                                 </div>
@@ -592,12 +593,13 @@
 					        <div class="row"> </div>
 				      </div>
 				  </div>
-									<div class="row">
-					    <div class="col-xs-12">
+									<div class="row"> 
+						<div class="col-xs-12" id="">
 					        <div class="panel">
 					            <div class="panel-heading">
 					                <h3 class="panel-title">Upcoming Issue</h3>
 					            </div>
+
 
                                 <!--Data Table-->
                                 <!--===================================================-->
@@ -647,14 +649,17 @@
                                             </tr>
                                             </thead>
                                             <tbody id="con1">
-                                            <!-- <tr>
+
+                                           <!-- <tr>
+
                                                  <td id="upcoming_issue_id"><a href="#" class="btn-link"></a></td>
                                                  <td id="upcoming_issue_course"></td>
                                                  <td id="upcoming_issue_deadline"><span class="text-muted"><i class="fa fa-clock-o"></i></span></td>
                                                  <td id="upcoming_issue_content"></td>
 
                                                <td class="text-center" id="upcoming_issue_status">
-                                                     <div class="label label-table label-success"></div>
+
+                                                     <div class="label label-table label-on-schedule"></div>
                                                  </td>
                                              </tr>
                                              <tr>
@@ -670,38 +675,49 @@
                                         </table>
                                     </div>
                                     <hr>
+
+<!--
+
                                     <div class="pull-right">
                                         <ul class="pagination text-nowrap mar-no">
                                             <li class="page-pre disabled">
                                                 <a href="#">&lt;</a>
                                             </li>
-                                            <li class="page-number active">
-                                                <span>1</span>
-                                            </li>
-                                            <li class="page-number">
-                                                <a href="#">2</a>
-                                            </li>
-                                            <li class="page-number">
-                                                <a href="#">3</a>
-                                            </li>
-                                            <li>
-                                                <span>...</span>
-                                            </li>
-                                            <li class="page-number">
-                                                <a href="#">9</a>
-                                            </li>
+
+                                            <li class="page-number active"> </li>
+                                            <li class="page-number"> </li>
+                                            <li class="page-number"> </li>
+                                            <li> </li>
+                                            <li class="page-number"> </li>
+
                                             <li class="page-next">
                                                 <a href="#">&gt;</a>
                                             </li>
                                         </ul>
                                     </div>
+-->
                                 </div>
+								<div class="panel-footer clearfix">
+					                <div class="pull-right">
+					                    <span class="text-muted"><strong id="issues_page_id"></strong> of <strong id="issues_page_total"></strong></span>
+					                    <div class="btn-group btn-group">
+					                        <button type="button" class="btn btn-default" onclick="issue_flip_left()">
+					                            <i class="demo-psi-arrow-left"></i>
+					                        </button>
+					                        <button type="button" class="btn btn-default" onclick="issue_flip_right()">
+					                            <i class="demo-psi-arrow-right"></i>
+					                        </button>
+					                    </div>
+					                </div>
+					            </div>
+
                                 <!--===================================================-->
                                 <!--End Data Table-->
+
 					
 					        </div>
 					    </div>
-					</div>
+				  </div>
 					
 
 				  <div class="panel-heading">
@@ -811,6 +827,18 @@
                       </div>
                   </div>
 
+					    <div class="panel-body">
+					        <div class="bootstrap-table"><div class="fixed-table-toolbar"><div class="columns columns-right btn-group pull-right"><button class="btn btn-default" type="button" name="paginationSwitch" title="Hide/Show pagination"><i class="glyphicon demo-pli-arrow-down"></i></button><button class="btn btn-default" type="button" name="refresh" title="Refresh"><i class="glyphicon demo-pli-repeat-2"></i></button><button class="btn btn-default" type="button" name="toggle" title="Toggle"><i class="glyphicon demo-pli-layout-grid"></i></button><div class="keep-open btn-group" title="Columns"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="glyphicon demo-pli-check"></i> <span class="caret"></span></button><ul class="dropdown-menu" role="menu"><li><label><input type="checkbox" data-field="id" value="0" checked="checked"> ID</label></li><li><label><input type="checkbox" data-field="name" value="1" checked="checked"> Name</label></li><li><label><input type="checkbox" data-field="date" value="2" checked="checked"> Order date</label></li><li><label><input type="checkbox" data-field="amount" value="3" checked="checked"> Balance</label></li><li><label><input type="checkbox" data-field="status" value="4" checked="checked"> Status</label></li><li><label><input type="checkbox" data-field="track" value="5" checked="checked"> Tracking Number</label></li></ul></div></div><div class="pull-right search"><input class="form-control" type="text" placeholder="Search"></div></div><div class="fixed-table-container" style="padding-bottom: 0px;"><div class="fixed-table-header" style="display: none;"><table></table></div><div class="fixed-table-body"><div class="fixed-table-loading" style="top: 42px; display: none;">Loading, please wait...</div><table data-toggle="table" data-url="data/bs-table.json" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-sort-name="id" data-page-list="[5, 10, 20]" data-page-size="5" data-pagination="true" data-show-pagination-switch="true" class="table table-hover">
+					            <thead><tr><th style="" data-field="id" tabindex="0"><div class="th-inner sortable both">ID</div><div class="fht-cell"></div></th><th style="" data-field="name" tabindex="0"><div class="th-inner sortable both desc">Name</div><div class="fht-cell"></div></th><th style="" data-field="date" tabindex="0"><div class="th-inner sortable both">Order date</div><div class="fht-cell"></div></th><th style="text-align: center; " data-field="amount" tabindex="0"><div class="th-inner sortable both">Balance</div><div class="fht-cell"></div></th><th style="text-align: center; " data-field="status" tabindex="0"><div class="th-inner sortable both">Status</div><div class="fht-cell"></div></th><th style="text-align: center; " data-field="track" tabindex="0"><div class="th-inner sortable both">Tracking Number</div><div class="fht-cell"></div></th></tr></thead>
+					        <tbody id="recent-info-data">
+								
+								
+								</tbody>
+							</table>
+						</div>
+								<div class="fixed-table-footer" style="display: none;"><table><tbody><tr></tr></tbody></table></div><div class="fixed-table-pagination" style="display: none;"><div class="pull-left pagination-detail"><span class="pagination-info">Showing 1 to 0 of 0 rows</span><span class="page-list" style="display: none;"><span class="btn-group dropup"><button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown"><span class="page-size">5</span> <span class="caret"></span></button><ul class="dropdown-menu" role="menu"><li class="active"><a href="javascript:void(0)">5</a></li></ul></span> records per page</span></div><div class="pull-right pagination" style="display: none;"><ul class="pagination"><li class="page-pre"><a href="javascript:void(0)">‹</a></li><li class="page-next"><a href="javascript:void(0)">›</a></li></ul></div></div></div></div><div class="clearfix"></div>
+					    </div>
+					</div>
 
 				  <div class="row">
 
@@ -1283,8 +1311,8 @@
                                             <span class="pull-right dropdown-toggle">
                                                 <i class="dropdown-caret"></i>
                                             </span>
-                                            <p class="mnp-name" id="header_name"></p>
-                                            <span class="mnp-desc" id="header_email"></span>
+                                            <p class="mnp-name">Aaron Chavez</p>
+                                            <span class="mnp-desc">aaron.cha@themeon.net</span>
                                         </a>
                                     </div>
                                     <div id="profile-nav" class="collapse list-group bg-trans">
@@ -1297,7 +1325,7 @@
                                         <a href="#" class="list-group-item">
                                             <i class="demo-pli-information icon-lg icon-fw"></i> Help
                                         </a>
-                                        <a href="#" class="list-group-item" onclick="sign_out()">
+                                        <a href="#" class="list-group-item">
                                             <i class="demo-pli-unlock icon-lg icon-fw"></i> Logout
                                         </a>
                                     </div>
@@ -1349,31 +1377,15 @@
 									</li>
 						            <!--Menu list item-->
 						            <li>
-						                <a href="#">
+						                <a href="prev_course.html" target="_self">
 						                    <i class="demo-psi-split-vertical-2"></i>
 						                    <span class="menu-title">
 												<strong>Prev</strong>
 												<strong>Courses</strong>
 		</span>
-											<i class="arrow"></i>
 						                </a>
 						
-						                <!--Submenu-->
-						                <ul class="collapse">
-						                    <li><a href="layouts-collapsed-navigation.html">Collapsed Navigation</a></li>
-											<li><a href="layouts-offcanvas-navigation.html">Off-Canvas Navigation</a></li>
-											<li><a href="layouts-offcanvas-slide-in-navigation.html">Slide-in Navigation</a></li>
-											<li><a href="layouts-offcanvas-revealing-navigation.html">Revealing Navigation</a></li>
-											<li class="list-divider"></li>
-											<li><a href="layouts-aside-right-side.html">Aside on the right side</a></li>
-											<li><a href="layouts-aside-left-side.html">Aside on the left side</a></li>
-											<li><a href="layouts-aside-dark-theme.html">Dark version of aside</a></li>
-											<li class="list-divider"></li>
-											<li><a href="layouts-fixed-navbar.html">Fixed Navbar</a></li>
-											<li><a href="layouts-fixed-footer.html">Fixed Footer</a></li>
-											
-						                </ul>
-						            </li>
+						                <!--Submenu-->						            </li>
 						
 						            <!--Menu list item-->
 						            <li>
@@ -1390,19 +1402,50 @@
 						
 						            <!--Category name-->
 						            <li class="list-header">Courses</li>
+						            <div id="db_index"></div>
 
-                                    <div id="db_index"></div>
 						            <!--Menu list item-->
-<!--						            <li>-->
-<!--						                <a href="course-dashboard.html?courseid=course10000001">-->
-<!--						                    <i class="demo-psi-boot-2"></i>-->
-<!--						                    <span class="menu-title">UI Elements</span>-->
-<!--											<i class="arrow"></i>-->
-<!--						                </a>-->
-<!--						            </li>-->
+						            <li> <!--Submenu-->
+						                <ul class="collapse">
+						                    <li><a href="ui-buttons.html">Buttons</a></li>
+											<li><a href="ui-panels.html">Panels</a></li>
+											<li><a href="ui-modals.html">Modals</a></li>
+											<li><a href="ui-progress-bars.html">Progress bars</a></li>
+											<li><a href="ui-components.html">Components</a></li>
+											<li><a href="ui-typography.html">Typography</a></li>
+											<li><a href="ui-list-group.html">List Group</a></li>
+											<li><a href="ui-tabs-accordions.html">Tabs &amp; Accordions</a></li>
+											<li><a href="ui-alerts-tooltips.html">Alerts &amp; Tooltips</a></li>
+											
+						                </ul>
+						            </li>
 						
-
-
+						            <!--Menu list item-->
+						            <!--Menu list item-->
+						            <li>
+						                <a href="#">
+						                    <i class="demo-psi-receipt-4"></i>
+						                    <span class="menu-title">Tables</span>
+											<i class="arrow"></i>
+						                </a>
+						
+						                <!--Submenu-->
+						                <ul class="collapse">
+						                    <li><a href="tables-static.html">Static Tables</a></li>
+											<li><a href="tables-bootstrap.html">Bootstrap Tables</a></li>
+											<li><a href="tables-datatable.html">Data Tables</a></li>
+											<li><a href="tables-footable.html">Foo Tables</a></li>
+											
+						                </ul>
+						            </li>
+						
+						            <!--Menu list item-->
+						            <li>
+						                <a href="charts.html">
+						                    <i class="demo-psi-bar-chart"></i>
+						                    <span class="menu-title">Charts</span>
+						                </a>
+						            </li>
 						
 						            <li class="list-divider"></li>
 						
@@ -1437,7 +1480,7 @@
 						                <!--Submenu-->
 						                <ul class="collapse">
 						                    <li><a href="mailbox.html">Inbox</a></li>
-											<li><a href="announcement.html">View Message</a></li>
+											<li><a href="mailbox-message.html">View Message</a></li>
 											<li><a href="mailbox-compose.html">Compose Message</a></li>
 											<li><a href="mailbox-templates.html">Email Templates<span class="label label-info pull-right">New</span></a></li>
 											
@@ -1462,9 +1505,9 @@
 											<li><a href="pages-404.html">404 Error</a></li>
 											<li><a href="pages-500.html">500 Error</a></li>
 											<li class="list-divider"></li>
-											<li><a href="login/pages-login.html">Login</a></li>
-											<li><a href="login/pages-register.html">Register</a></li>
-											<li><a href="login/pages-password-reminder.html">Password Reminder</a></li>
+											<li><a href="pages-login.html">Login</a></li>
+											<li><a href="pages-register.html">Register</a></li>
+											<li><a href="pages-password-reminder.html">Password Reminder</a></li>
 											<li><a href="pages-lock-screen.html">Lock Screen</a></li>
 											
 						                </ul>
