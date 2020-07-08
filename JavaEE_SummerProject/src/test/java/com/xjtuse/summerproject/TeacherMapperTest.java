@@ -1,5 +1,7 @@
 package com.xjtuse.summerproject;
 
+import com.xjtuse.summerproject.entity.CourseHomework;
+import com.xjtuse.summerproject.entity.SendHomework;
 import com.xjtuse.summerproject.entity.Student;
 import com.xjtuse.summerproject.entity.Teacher;
 import com.xjtuse.summerproject.mapper.StudentMapper;
@@ -58,6 +60,17 @@ public class TeacherMapperTest {
         teacher.setTeacher_username("caodahua");
         teacher.setTeacher_password("123456");
         teacherMapper.updateTeacherPasswordByUsername(teacher);
+    }
+
+    @Test
+    public void testGetStudentHomework() throws Exception{
+        SendHomework sendHomework = new SendHomework();
+        sendHomework.setHomework_id("tch20200101_content_homework101");
+        sendHomework.setCourse_id("demo001");
+        List<CourseHomework> courseHomeworkList = teacherMapper.getStudentHomeworks(sendHomework);
+        for (CourseHomework courseHomework: courseHomeworkList){
+            System.out.println(courseHomework);
+        }
     }
 
 }
