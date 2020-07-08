@@ -783,6 +783,7 @@
 				                        <li><a href="#">Clear Star</a></li>
 			                          </ul>
 			                        </div>
+									  <button class="btn btn-primary">new</button>
 			                      </div>
 				                  <hr class="hr-sm visible-xs">
 				                  <div class="col-sm-5 clearfix">
@@ -1101,7 +1102,7 @@
 				                    <!--Split button dropdowns-->
 				                    <div class="btn-group">
 				                      <div id="demo-checked-all-mail5" class="btn btn-sm btn-default" value="0">
-				                        <input id="select-all-mail5" class="magic-checkbox" type="checkbox" >
+				                        <input id="select-all-mail5" class="magic-checkbox" type="checkbox" onclick="resources_checkall()">
 				                        <label for="select-all-mail5"></label>
 			                          </div>
 				                      <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"><i class="dropdown-caret"></i></button>
@@ -1114,7 +1115,7 @@
 				                        <li><a href="javascript:void(0)" id="demo-select-unread-list2">Unread</a></li>
 				                        <li><a href="javascript:void(0)" id="demo-select-starred-list2">Starred</a></li>
 			                          </ul>
-										<button class="btn btn-mint" onclick="resources_download()">下载</button>
+										<button class="btn btn-mint" disabled="disabled">下载</button>
 			                        </div>
 				                    <!--Refresh button-->
 				                    <!--Dropdown button (More Action)-->
@@ -2435,13 +2436,6 @@
 					_this.addClass("selected");
 					$(selector).addClass("testing");
 
-				});
-			
-				$("#select-all-mail5").click(function(){
-					//alert(this.checked);
-					$("#tab-5-demo-mail-list>li>div>input[type=checkbox]").prop("checked",$(this).is(':checked'));
-					
-					
 				});
 			});
 	</script>
