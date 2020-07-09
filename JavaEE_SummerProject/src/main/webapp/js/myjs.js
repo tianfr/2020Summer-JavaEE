@@ -358,7 +358,7 @@ function get_announcement(){
     let announcement_id = "";
     if (urlparam.substr(1, 4) == "cid=" && urlparam.substr(urlparam.split("&")[0].length, 5) == "&aid=") {
         course_id = urlparam.substr(5).split("&")[0];
-        announcement_id = urlparam.substr(urlparam.split("&")[0].length + 5);
+        announcement_id = urlparam.substr(urlparam.split("&")[0].length + 5, 35);
     }
 
     $.ajax({
@@ -590,7 +590,7 @@ function get_homework(){
     let homework_id = "";
     if (urlparam.substr(1, 4) == "cid=" && urlparam.substr(urlparam.split("&")[0].length, 5) == "&hid=") {
         course_id = urlparam.substr(5).split("&")[0];
-        homework_id = urlparam.substr(urlparam.split("&")[0].length + 5);
+        homework_id = urlparam.substr(urlparam.split("&")[0].length + 5, 31);
     }
     $.ajax({
         type:"POST", // 使用post方式
@@ -663,7 +663,7 @@ function load_homework(){
     let homework_id = "";
     if (urlparam.substr(1, 4) == "cid=" && urlparam.substr(urlparam.split("&")[0].length, 5) == "&hid=") {
         course_id = urlparam.substr(5).split("&")[0];
-        homework_id = urlparam.substr(urlparam.split("&")[0].length + 5);
+        homework_id = urlparam.substr(urlparam.split("&")[0].length + 5, 31);
     }
 
     $.ajax({
@@ -760,7 +760,7 @@ function commit_homework(){
     let homework_id = "";
     if (urlparam.substr(1, 4) == "cid=" && urlparam.substr(urlparam.split("&")[0].length, 5) == "&hid=") {
         course_id = urlparam.substr(5).split("&")[0];
-        homework_id = urlparam.substr(urlparam.split("&")[0].length + 5);
+        homework_id = urlparam.substr(urlparam.split("&")[0].length + 5, 31);
     }
     // let homework_content = document.getElementsByClassName("demo-mail-compose");
     let homework_content = $.trim($("#submit_text").val())
@@ -1013,7 +1013,7 @@ function check_role() {
     let homework_id = "";
     if (urlparam.substr(1, 4) == "cid=" && urlparam.substr(urlparam.split("&")[0].length, 5) == "&hid=") {
         course_id = urlparam.substr(5).split("&")[0];
-        homework_id = urlparam.substr(urlparam.split("&")[0].length + 5);
+        homework_id = urlparam.substr(urlparam.split("&")[0].length + 5, 31);
     }
 
     var an = '<button class="btn btn-primary" type="button" onclick="location = \'new-announcement.html?cid='+ course_id + '\'">new</button>';
@@ -1053,7 +1053,7 @@ function get_student_homeworks(){
     let homework_id = "";
     if (urlparam.substr(1, 4) == "cid=" && urlparam.substr(urlparam.split("&")[0].length, 5) == "&hid=") {
         course_id = urlparam.substr(5).split("&")[0];
-        homework_id = urlparam.substr(urlparam.split("&")[0].length + 5);
+        homework_id = urlparam.substr(urlparam.split("&")[0].length + 5, 31);
     }
 
     $.ajax({
@@ -1077,7 +1077,7 @@ function get_student_homeworks(){
             var num = result.total_num;
             var page_num = 10;//每页10条记录
             var page_size = Math.ceil(num/page_num);//页数
-            var homeworkObj = result.value;
+            var homeworkObj = result.homeworks;
             var current_page = 1 ;
             var li = "";
             // document.getElementById("demo-mail-list").innerHTML = "";
@@ -1113,12 +1113,64 @@ function get_student_homeworks(){
     });
 }
 
+
+function get_student_homework_detail(){
+
+    let urlparam = location.search;
+    let course_id = "";
+    let homework_id = "";
+    let student_id = "";
+    if (urlparam.substr(1, 4) == "cid=" && urlparam.substr(urlparam.split("&")[0].length, 5) == "&hid=") {
+        course_id = urlparam.substr(5).split("&")[0];
+        homework_id = urlparam.substr(urlparam.split("&")[0].length + 5, 31);
+        student_id = urlparam.substr(urlparam.split("&")[0].length + 5 + homework_id.length);
+        alert(course_id);
+        alert(homework_id);
+        alert(student_id);
+    }
+
+    $.ajax({
+        type:"POST", // 使用post方式
+        url:"/GetStudentHomeworkDetail",
+        contentType:"application/json",
+        data: JSON.stringify({
+            "status": "0",
+            "message": "get_student_homework_detail",
+            "course_id": course_id,
+            "homework_id": homework_id,
+            "student_id": student_id,
+        }),
+
+        dataType:"json",
+        async:false,
+        success: function(result){
+            var li="";
+            var attachmentObj = result.homework_attachments;
+            var headline_content = "<span class=\"label label-normal label-info\">作业</span>" + result.homework_title;
+            $("#student_name").html(result.studnet_name);
+            $("#student_email").html(result.student_email);
+            $("#student_pic").attr('src',result.student_avatar);
+            $("#datetime").html(result.submitted_time);
+            $("#homework_content").html(result.homework_content);
+            $.each(attachmentObj, function(index, item){
+                li += '<li> <a href="#" class="thumbnail"><div class="mail-file-img"><a href=" ' +
+                    item.file_path+
+                    ' " target="_self">' +
+                    item.file_name +
+                    '</a></div><div class="caption">' +
+                    '</div></a></li>'
+            });
+            $("#mail-attach-list").html(li);
+        }
+    });
+}
+
 function tab1Location() {
     let course_id = "";
     let urlparam = location.search;
     if (urlparam.substr(1, 4) == "cid=")
         course_id = urlparam.substr(5).split("&")[0];
-    location = "course-dashboard.html?cid=" +course_id;
+    location = "course-dashboard.html?cid=" + course_id;
 }
 
 

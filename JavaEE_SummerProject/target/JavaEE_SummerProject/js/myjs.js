@@ -220,7 +220,7 @@ function recent_info() {
                 var info_data = "";
                 $.each(dataObj, function (index, item) {
                     var rec_info = "";
-                    rec_info += "<td>" + item.id + "</td>";
+                    rec_info += ('<td><a href="'+item.info_id_path+'" target="_self">'+item.value+"</a></td>");
                     rec_info += "<td>" + item.course + "</td>";
                     rec_info += "<td>" + item.value + "</td>";
                     rec_info += "<td>" + item.datetime + "</td>";
@@ -340,7 +340,7 @@ function course_announcement() {
                     "</a>" +
                     "</h3>" +
                     "</div> " +
-                    "<div class=\"panel-body1\">" +
+                    "<div class=\"panel-body\">" +
                     "<div class=\"show-r3\" style=\"overflow: hidden;text-overflow: ellipsis;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;\">" +
                     item.announcement_content +
                     "</div>" +
@@ -377,7 +377,8 @@ function get_announcement(){
         dataType:"json",
         async:false,
         success: function(result){
-            $("#headline").html("<span class=\"label label-normal label-info\">公告</span>"+result.annoyncement_title);
+            // alert(result.announcement_title);
+            $("#headline").html(("<span class=\"label label-normal label-info\">公告</span>"+result.announcement_title));
             $("#teacher_name").html(result.author);
             $("#teacher_email").html(result.author_email);
             $("#teacher_pic").attr('src',result.author_avatar);
@@ -729,8 +730,10 @@ function get_prev_course() {
             if (result.id == "prev_courses") {
                 var dataObj = result.value;
                 var prev_course = "";
+                var color_array = ["info", "success", "primary", "mint", "pink", "purple", "warning"];
+                var color_number = 0;
                 $.each(dataObj, function (index, item) {
-                        prev_course  += '<div class= "panel panel-colorful panel-primary" >';
+                        prev_course  += '<div class= "panel panel-colorful panel-' + color_array[color_number] + '" >';
                         prev_course  += '<div class="panel-heading">';
                         prev_course  += '<h3 class="panel-title">' + item.course_title + '</h3>';
                         prev_course  += '</div>';
@@ -740,6 +743,8 @@ function get_prev_course() {
                         prev_course  += '<p>' + item.course_hierarchy+'</p>';
                         prev_course  += '</div>';
                         prev_course  += '</div>';
+                        color_number += 1;
+                        color_number = color_number % 7;
                 },)
                 $("#prev_course").html(prev_course);
             }
@@ -1067,12 +1072,12 @@ function get_student_homeworks(){
         }),
 
         dataType:"json",
-        async:false,
+
         success: function(result){
             var num = result.total_num;
             var page_num = 10;//每页10条记录
             var page_size = Math.ceil(num/page_num);//页数
-            var homeworkObj = result.value;
+            var homeworkObj = result.homeworks;
             var current_page = 1 ;
             var li = "";
             // document.getElementById("demo-mail-list").innerHTML = "";

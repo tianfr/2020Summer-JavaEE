@@ -47,4 +47,5 @@ public interface TeacherMapper {
     @Select("SELECT * from course_${course_id}_homework WHERE homework_id = #{homework_id}")
     List<CourseHomework> getSubmittedHomework(SendHomework sendHomework);
 
+
 }

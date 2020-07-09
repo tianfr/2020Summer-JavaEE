@@ -8,7 +8,7 @@ public class CourseHomework {
     private String homework_id;
     private String student_id;
     private String content;
-    private String homewrok_file_path;
+    private String homework_file_path;
     private String homework_file_name;
     private String is_draft;
     private Date insert_date;
@@ -19,7 +19,7 @@ public class CourseHomework {
                 "homework_id='" + homework_id + '\'' +
                 ", student_id='" + student_id + '\'' +
                 ", content='" + content + '\'' +
-                ", homewrok_file_path='" + homewrok_file_path + '\'' +
+                ", homework_file_path='" + homework_file_path + '\'' +
                 ", homework_file_name='" + homework_file_name + '\'' +
                 ", is_draft='" + is_draft + '\'' +
                 ", insert_date=" + insert_date +
@@ -50,12 +50,12 @@ public class CourseHomework {
         this.content = content;
     }
 
-    public String getHomewrok_file_path() {
-        return homewrok_file_path;
+    public String getHomework_file_path() {
+        return homework_file_path;
     }
 
-    public void setHomewrok_file_path(String homewrok_file_path) {
-        this.homewrok_file_path = homewrok_file_path;
+    public void setHomework_file_path(String homework_file_path) {
+        this.homework_file_path = homework_file_path;
     }
 
     public String getHomework_file_name() {
