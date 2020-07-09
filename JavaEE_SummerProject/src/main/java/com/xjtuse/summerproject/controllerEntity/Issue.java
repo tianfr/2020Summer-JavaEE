@@ -8,7 +8,7 @@ public class Issue implements Serializable {
     private String value;
     private String issue_id_path;
     private String course;
-    private Date deadline;
+    private String deadline;
     private String content;
     private String status;
 
@@ -19,7 +19,7 @@ public class Issue implements Serializable {
                 ", value='" + value + '\'' +
                 ", issue_id_path='" + issue_id_path + '\'' +
                 ", course='" + course + '\'' +
-                ", deadline=" + deadline +
+                ", deadline='" + deadline + '\'' +
                 ", content='" + content + '\'' +
                 ", status='" + status + '\'' +
                 '}';
@@ -57,11 +57,11 @@ public class Issue implements Serializable {
         this.course = course;
     }
 
-    public Date getDeadline() {
+    public String getDeadline() {
         return deadline;
     }
 
-    public void setDeadline(Date deadline) {
+    public void setDeadline(String deadline) {
         this.deadline = deadline;
     }
 
