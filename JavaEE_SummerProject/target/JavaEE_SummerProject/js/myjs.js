@@ -359,8 +359,6 @@ function get_announcement(){
     if (urlparam.substr(1, 4) == "cid=" && urlparam.substr(urlparam.split("&")[0].length, 5) == "&aid=") {
         course_id = urlparam.substr(5).split("&")[0];
         announcement_id = urlparam.substr(urlparam.split("&")[0].length + 5);
-        alert(course_id);
-        alert(announcement_id);
     }
 
     $.ajax({
@@ -456,7 +454,6 @@ function get_course_homeworks(){
 
 function homework_flip_left(){
     let current_page = document.getElementById("tab2_page_id").getAttribute("value");
-    alert(current_page)
     let urlparam = location.search;
     let course_id = "";
     if (urlparam.substr(1, 4) == "cid=")
@@ -522,7 +519,6 @@ function homework_flip_left(){
 
 function homework_flip_right(){
     let current_page = document.getElementById("tab2_page_id").getAttribute("value");
-    alert(current_page);
     let urlparam = location.search;
     let course_id = "";
     if (urlparam.substr(1, 4) == "cid=")
@@ -763,7 +759,6 @@ function commit_homework(){
     }
     // let homework_content = document.getElementsByClassName("demo-mail-compose");
     let homework_content = $.trim($("#submit_text").val())
-    alert(homework_content);
     $.ajax({
         type:"POST", // 使用post方式
         url:"/SubmitHomework",
