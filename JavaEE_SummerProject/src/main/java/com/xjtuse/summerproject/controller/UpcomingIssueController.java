@@ -18,6 +18,8 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +27,7 @@ import java.util.List;
 public class UpcomingIssueController {
     @RequestMapping("/UpcomingIssue")
     public @ResponseBody
-    UpcomingIssueResponse upcomingIssue(@RequestBody Info info, HttpSession session) throws IOException {
+    UpcomingIssueResponse upcomingIssue(@RequestBody Info info, HttpSession session) throws IOException, ParseException {
         UpcomingIssueResponse upcomingIssueResponse = new UpcomingIssueResponse();
         upcomingIssueResponse.setTotal_num(0);
         System.out.println("Info = " + info);
@@ -45,17 +47,25 @@ public class UpcomingIssueController {
                 Issue issue = new Issue();
                 issue.setId(courseContent.getIssue_id());
                 issue.setContent(courseContent.getIssue_content());
-                issue.setDeadline(courseContent.getIssue_deadline());
+                issue.setDeadline(courseContent.getIssue_deadline().toString());
+//                System.out.println(courseContent.getIssue_deadline().toString());
                 issue.setValue(courseContent.getIssue_id());
                 issue.setIssue_id_path("test.html");
                 if(true) {  //not submitted
                     Date date = new Date(System.currentTimeMillis());
-                    if(courseContent.getIssue_deadline().compareTo(date) < 0) {
+                    int minusDate = getDayDiffer(courseContent.getIssue_deadline(), date);
+                    if(minusDate <= 0) {
+
+                        if (-minusDate <= 2){
+
+                            issue.setStatus("on_schedule_yellow");
+                        }
+                        else issue.setStatus("on_schedule");
+                    }
+                    else{
                         issue.setStatus("expired");
                     }
-                    else {
-                        issue.setStatus("on_schedule");
-                    }
+
                 }
                 else {
                     issue.setStatus("submitted");
@@ -72,4 +82,12 @@ public class UpcomingIssueController {
         upcomingIssueResponse.setValue(list);
         return upcomingIssueResponse;
     }
+    public static int getDayDiffer(Date startDate, Date endDate) throws ParseException {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        long startDateTime = dateFormat.parse(dateFormat.format(startDate)).getTime();
+        long endDateTime = dateFormat.parse(dateFormat.format(endDate)).getTime();
+        System.out.println((int) ((endDateTime - startDateTime) / (1000 * 3600 * 24)));
+        return (int) ((endDateTime - startDateTime) / (1000 * 3600 * 24));
+    }
+
 }

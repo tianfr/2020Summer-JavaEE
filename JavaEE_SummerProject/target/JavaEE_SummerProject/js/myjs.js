@@ -253,7 +253,7 @@ function upcoming_issue() {
                 con1 += "<tr>" +
                     '<td><a href="'+item.issue_id_path+'" target="_self">'+item.value+"</a></td>" +
                     "<td>"+item.course+"</td>" +
-                    "<td>"+item.datetime+"</td>" +
+                    "<td>"+item.deadline+"</td>" +
                     "<td>"+item.content+"</td>" +
                     '<td ><div class="label label-table label-'
                     +item.status+'">'+item.status+

@@ -25,31 +25,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43adc165-a0c1-45b6-b342-859af66343f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/GetRoleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/new-announcement.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/new-homework.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/new-resource.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/student-homework.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/DashboardMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/DashboardMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/mapper/TeacherMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/mapper/TeacherMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/announcement.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/announcement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/course-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/course-dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/homework-message.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/homework-message.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/homework-submit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/homework-submit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/UpcomingIssueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controller/UpcomingIssueController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controllerEntity/Issue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/controllerEntity/Issue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/mapper/CourseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/summerproject/mapper/CourseMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/nifty.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/nifty.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/myjs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controller/DashBoardMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/controller/DashBoardMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/mapper/TeacherMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/mapper/TeacherMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/announcement.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/announcement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/course-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/course-dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/homework-message.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/homework-message.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/homework-submit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/homework-submit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/mapper/CourseMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/WEB-INF/classes/com/xjtuse/summerproject/mapper/CourseMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/JavaEE_SummerProject/js/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/JavaEE_SummerProject/js/myjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controller/DashBoardMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/controller/DashBoardMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/mapper/TeacherMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/mapper/TeacherMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/mapper/CourseMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/summerproject/mapper/CourseMapper.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +66,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="D:/Program Files/maven" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../Program Files/maven" />
         <option name="userSettingsFile" value="D:\Program Files\maven\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -111,7 +96,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/css" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -121,12 +106,12 @@
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\2020Summer-JavaEE\JavaEE_SummerProject\src\main\webapp" />
       <recent name="E:\2020Summer-JavaEE\JavaEE_SummerProject\src\main\webapp\css" />
+      <recent name="E:\2020Summer-JavaEE\JavaEE_SummerProject\src\main\webapp" />
       <recent name="E:\2020Summer-JavaEE\JavaEE_SummerProject\src\main\webapp\js" />
       <recent name="E:\2020Summer-JavaEE\JavaEE_SummerProject\src\main\webapp\js\demo" />
       <recent name="E:\2020Summer-JavaEE\JavaEE_SummerProject\src\main\java\com\xjtuse\summerproject" />
@@ -342,8 +327,8 @@
       <item itemvalue="JUnit.StudentMapperTest.testGetAnnouncement" />
       <item itemvalue="JUnit.StudentMapperTest.testFindAll" />
       <item itemvalue="JUnit.StudentMapperTest.testGetHomework" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.36" />
       <item itemvalue="JUnit.CourseMapperTest.testUpdateHomework" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.36" />
     </list>
     <recent_temporary>
       <list>
@@ -401,7 +386,8 @@
       <workItem from="1594190773418" duration="2624000" />
       <workItem from="1594193673907" duration="2754000" />
       <workItem from="1594219298891" duration="6646000" />
-      <workItem from="1594261581835" duration="27416000" />
+      <workItem from="1594261581835" duration="18626000" />
+      <workItem from="1594284356420" duration="6195000" />
     </task>
     <servers />
   </component>
@@ -424,6 +410,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="618" y="255" key="#Custom_Plugin_Repositories" timestamp="1594291266583">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="618" y="255" key="#Custom_Plugin_Repositories/0.0.1536.824@0.0.1536.824" timestamp="1594291266583" />
     <state x="249" y="0" key="#Project_Structure" timestamp="1593742989961">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -432,14 +422,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="0" width="651" height="824" key="#Tomcat_8.0.24/0.0.1536.824@0.0.1536.824" timestamp="1593715905680" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594196011978">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594291138008">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1594196011978" />
-    <state x="902" y="116" key="#com.intellij.ide.util.MemberChooser" timestamp="1594271669038">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1594291138008" />
+    <state x="902" y="116" key="#com.intellij.ide.util.MemberChooser" timestamp="1594288087010">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="902" y="116" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1594271669038" />
+    <state x="902" y="116" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1594288087010" />
     <state x="491" y="59" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1594194658052">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -488,70 +478,70 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1024" height="187" key="GridCell.Tab.-1.right/0.0.1536.824@0.0.1536.824" timestamp="1594281182219" />
-    <state width="1493" height="158" key="GridCell.Tab.0.bottom" timestamp="1594292514163">
+    <state width="1024" height="203" key="GridCell.Tab.0.bottom" timestamp="1594290291899">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="158" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594292514163" />
-    <state width="1493" height="158" key="GridCell.Tab.0.center" timestamp="1594292514162">
+    <state width="1024" height="203" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594290291899" />
+    <state width="1024" height="203" key="GridCell.Tab.0.center" timestamp="1594290291898">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="158" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594292514162" />
-    <state width="1493" height="158" key="GridCell.Tab.0.left" timestamp="1594292514162">
+    <state width="1024" height="203" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594290291898" />
+    <state width="1024" height="203" key="GridCell.Tab.0.left" timestamp="1594290291898">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="158" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594292514162" />
-    <state width="1493" height="158" key="GridCell.Tab.0.right" timestamp="1594292514163">
+    <state width="1024" height="203" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594290291898" />
+    <state width="1024" height="203" key="GridCell.Tab.0.right" timestamp="1594290291898">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="158" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594292514163" />
-    <state width="1024" height="187" key="GridCell.Tab.1.bottom" timestamp="1594292514159">
+    <state width="1024" height="203" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594290291898" />
+    <state width="1024" height="203" key="GridCell.Tab.1.bottom" timestamp="1594290291759">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594292514159" />
-    <state width="1024" height="187" key="GridCell.Tab.1.center" timestamp="1594292514158">
+    <state width="1024" height="203" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594290291759" />
+    <state width="1024" height="203" key="GridCell.Tab.1.center" timestamp="1594290291759">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1594292514158" />
-    <state width="1024" height="187" key="GridCell.Tab.1.left" timestamp="1594292514158">
+    <state width="1024" height="203" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1594290291759" />
+    <state width="1024" height="203" key="GridCell.Tab.1.left" timestamp="1594290291759">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1594292514158" />
-    <state width="1024" height="187" key="GridCell.Tab.1.right" timestamp="1594292514158">
+    <state width="1024" height="203" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1594290291759" />
+    <state width="1024" height="203" key="GridCell.Tab.1.right" timestamp="1594290291759">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594292514158" />
-    <state width="1024" height="187" key="GridCell.Tab.2.bottom" timestamp="1594286848098">
+    <state width="1024" height="203" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594290291759" />
+    <state width="1024" height="203" key="GridCell.Tab.2.bottom" timestamp="1594290291760">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594286848098" />
-    <state width="1024" height="187" key="GridCell.Tab.2.center" timestamp="1594286848097">
+    <state width="1024" height="203" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594290291760" />
+    <state width="1024" height="203" key="GridCell.Tab.2.center" timestamp="1594290291760">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1594286848097" />
-    <state width="1024" height="187" key="GridCell.Tab.2.left" timestamp="1594286848097">
+    <state width="1024" height="203" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1594290291760" />
+    <state width="1024" height="203" key="GridCell.Tab.2.left" timestamp="1594290291760">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1594286848097" />
-    <state width="1024" height="187" key="GridCell.Tab.2.right" timestamp="1594286848097">
+    <state width="1024" height="203" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1594290291760" />
+    <state width="1024" height="203" key="GridCell.Tab.2.right" timestamp="1594290291760">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1594286848097" />
-    <state width="1024" height="187" key="GridCell.Tab.3.bottom" timestamp="1594286848098">
+    <state width="1024" height="203" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1594290291760" />
+    <state width="1024" height="187" key="GridCell.Tab.3.bottom" timestamp="1594283711206">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594286848098" />
-    <state width="1024" height="187" key="GridCell.Tab.3.center" timestamp="1594286848098">
+    <state width="1024" height="187" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594283711206" />
+    <state width="1024" height="187" key="GridCell.Tab.3.center" timestamp="1594283711205">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1594286848098" />
-    <state width="1024" height="187" key="GridCell.Tab.3.left" timestamp="1594286848098">
+    <state width="1024" height="187" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1594283711205" />
+    <state width="1024" height="187" key="GridCell.Tab.3.left" timestamp="1594283711205">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1594286848098" />
-    <state width="1024" height="187" key="GridCell.Tab.3.right" timestamp="1594286848098">
+    <state width="1024" height="187" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1594283711205" />
+    <state width="1024" height="187" key="GridCell.Tab.3.right" timestamp="1594283711206">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="187" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1594286848098" />
+    <state width="1024" height="187" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1594283711206" />
     <state width="1024" height="210" key="GridCell.Tab.4.bottom" timestamp="1593632185412">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -572,10 +562,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1593716076833" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1594281096872">
+    <state x="323" y="49" key="SettingsEditor" timestamp="1594291748589">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594281096872" />
+    <state x="323" y="49" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594291748589" />
     <state x="499" y="172" key="extract.method.dialog" timestamp="1593760826460">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
