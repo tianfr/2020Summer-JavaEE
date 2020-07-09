@@ -9,6 +9,18 @@ import java.util.List;
 
 public interface TeacherMapper {
 
+    //查询课程
+    @Select("select *  from courses where courses.course_id IN ( \n" +
+            "        SELECT \n" +
+            "            teachers_courses.course_id \n" +
+            "        FROM \n" +
+            "            teachers_courses \n" +
+            "        WHERE \n" +
+            "            teacher_id = #{teacher_id} \n" +
+            "    )")
+    List<Course> findAllCourseById(String teacher_id);
+
+
     @Select("select * from teachers where teacher_username=#{teacher_username}")
     Teacher findByUsername(String teacher_username);
 

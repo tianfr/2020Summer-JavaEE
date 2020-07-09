@@ -1,8 +1,6 @@
 package com.xjtuse.summerproject.controller;
 
 import com.xjtuse.summerproject.controllerEntity.*;
-import com.xjtuse.summerproject.entity.Student;
-import com.xjtuse.summerproject.entity.Teacher;
 import com.xjtuse.summerproject.mapper.StudentMapper;
 import com.xjtuse.summerproject.mapper.TeacherMapper;
 import org.apache.ibatis.io.Resources;
@@ -31,7 +29,14 @@ public class DashboardMenuController {
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
         SqlSession sqlSession = factory.openSession();
         StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
-        List<com.xjtuse.summerproject.entity.Course> courses = studentMapper.findAllCourseById((String) session.getAttribute("id"));
+        TeacherMapper teacherMapper = sqlSession.getMapper(TeacherMapper.class);
+        List<com.xjtuse.summerproject.entity.Course> courses;
+        if(session.getAttribute("role") == "student") {
+            courses = studentMapper.findAllCourseById((String) session.getAttribute("id"));
+        }
+        else {
+            courses = teacherMapper.findAllCourseById((String) session.getAttribute("id"));
+        }
         sqlSession.close();
         in.close();
         dashboardMenuResponse.setAvater("This is an avatar_path");

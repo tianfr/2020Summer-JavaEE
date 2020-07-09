@@ -594,8 +594,6 @@ function get_homework(){
     if (urlparam.substr(1, 4) == "cid=" && urlparam.substr(urlparam.split("&")[0].length, 5) == "&hid=") {
         course_id = urlparam.substr(5).split("&")[0];
         homework_id = urlparam.substr(urlparam.split("&")[0].length + 5);
-        alert(course_id);
-        alert(homework_id);
     }
     $.ajax({
         type:"POST", // 使用post方式
@@ -669,8 +667,6 @@ function load_homework(){
     if (urlparam.substr(1, 4) == "cid=" && urlparam.substr(urlparam.split("&")[0].length, 5) == "&hid=") {
         course_id = urlparam.substr(5).split("&")[0];
         homework_id = urlparam.substr(urlparam.split("&")[0].length + 5);
-        alert(course_id);
-        alert(homework_id);
     }
 
     $.ajax({
@@ -1010,6 +1006,45 @@ function resources_download(){
 
 }
 
+
+function check_role() {
+    let urlparam = location.search;
+    let course_id = "";
+    let homework_id = "";
+    if (urlparam.substr(1, 4) == "cid=" && urlparam.substr(urlparam.split("&")[0].length, 5) == "&hid=") {
+        course_id = urlparam.substr(5).split("&")[0];
+        homework_id = urlparam.substr(urlparam.split("&")[0].length + 5);
+    }
+
+    var an = '<button class="btn btn-primary" type="button" onclick="location = \'new-announcement.html?cid='+ course_id + '\'">new</button>';
+    var ho = '<button class="btn btn-primary" type="button" onclick="location = \'new-homework.html?cid='+ course_id + '\'">new</button>';
+    var re = '<button class="btn btn-primary" type="button" onclick="location = \'new-resource.html?cid='+ course_id + '\'">new</button>';
+    var ho_bu = '<button class="btn btn-primary" type="button" onclick="location = \'student-homework.html?cid='+ course_id + '&hid=' + homework_id + '\'"><a href="#" target="_self">查看已提交作业</a></button>'
+    $.ajax({
+        type: "POST", // 使用post方式
+
+        // 获取course数据
+        url: "/GetRole",
+        contentType: "application/json",
+
+
+        data: JSON.stringify({
+            "status": "0",
+            "message": "get_role",
+        }),
+
+        dataType: "json",
+        async: false,
+        success: function (result) {
+            if(result.role == "teacher") {
+                $("#announcement_head").html(an);
+                $("#homework_head").html(ho);
+                $("#resource_head").html(re);
+                $("#homework_button").html(ho_bu);
+            }
+        }
+    });
+}
 
 
 function tab1Location() {
