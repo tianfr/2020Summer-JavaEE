@@ -756,6 +756,260 @@ function get_prev_course() {
 }
 
 
+function commit_homework(){
+
+    let urlparam = location.search;
+    let course_id = "";
+    let homework_id = "";
+    if (urlparam.substr(1, 4) == "cid=" && urlparam.substr(urlparam.split("&")[0].length, 5) == "&hid=") {
+        course_id = urlparam.substr(5).split("&")[0];
+        homework_id = urlparam.substr(urlparam.split("&")[0].length + 5);
+    }
+    // let homework_content = document.getElementsByClassName("demo-mail-compose");
+    let homework_content = $.trim($("#submit_text").val())
+    alert(homework_content);
+    $.ajax({
+        type:"POST", // 使用post方式
+        url:"/SubmitHomework",
+        contentType:"application/json",
+        data: JSON.stringify({
+            "status": "0",
+            "message": "submit_homework",
+            "course_id": course_id,
+            "homework_id": homework_id,
+            "homework_content": homework_content
+        }),
+
+        dataType:"json",
+        success: function(result){
+            alert("上传成功");
+        }
+    });
+}
+
+function get_course_resources(){
+    let urlparam = location.search;
+    let course_id = "";
+    if (urlparam.substr(1, 4) == "cid=")
+        course_id = urlparam.substr(5).split("&")[0];
+    $.ajax({
+        type:"POST", // 使用post方式
+        url:"/GetCourseResources",
+        contentType:"application/json",
+        data:JSON.stringify({
+            "status": "0",
+            "message": "get_course_resources",
+            "course_id": course_id,
+        }),
+
+        dataType:"json",
+        async:false,
+        success: function(result){
+            if(result.id == "course_resources"){
+                var num = result.total_num;
+                var resourcesObj = result.value;
+                var page_num = 10;//每页10条记录
+                var page_size = Math.ceil(num/page_num);//页数
+                var current_page = 1 ;
+
+//                document.getElementById("tab-5-demo-mail-list").innerHTML = "";
+                var li = "";
+                $.each(resourcesObj, function(index, item){
+                    if(index<page_num){//静态显示第一页
+                        li +=
+                            "<li class=\"mail-list-unread mail-attach\">" +
+                                "<div class=\"mail-control\">" +
+                                    "<input id=\"src-list-" +index+  "\"class=\"magic-checkbox\" type=\"checkbox\">" +
+                                    "<label for=\"src-list- "+index+ "\"></label>" +
+                                "</div>" +
+                                "<div class=\"mail-star\">" +
+                                    "<a href=\"#\"><i class=\"demo-psi-star\"></i></a>" +
+                                "</div>" +
+                                '<strong class="mail-from">' +
+                                '<a href="'+item.resource_path + item.resource_name+'" target="_self" id="' + item.resource_path+ '">'+ item.resource_name + '</a>' +
+                                '<br>' +
+                                '</strong>' +
+                                '<div class="mail-time">' + item.resource_upload_time + '</div>' +
+                                '<div class="mail-attach-icon"></div>' +
+                            '</li>';
+                    }
+                });
+                $("#tab-5-demo-mail-list").html(li);
+                $("#tab-5-page_id").html(current_page);
+                $("#tab-5-page_total").html(page_size);
+            }
+        }
+    });
+}
+
+
+
+// function resources_flip_left(){
+//     var current_page = document.getElementById("tab-5-page_id");
+//
+//     $.ajax({
+//         type:"POST", // 使用post方式
+//
+//         // 志愿者报名
+//         url:"/GetCourseResources",
+//         contentType:"application/json",
+//
+//
+//         data:JSON.stringify({
+//             "status": "0",
+//             "message": "get_course_resources",
+//             "course_id": course_id,
+//         }),
+//
+//         dataType:"json",
+//         async:false,
+//         success: function(result){
+//             if(result.id == "course_resources"){
+//                 var num = result.total_num;
+//                 var page_num = 10;//每页16条记录
+//                 var page_size = Math.ceil(num/page_num);//页数
+//                 var resourcesObj = result.value;
+//                 if(current_page>1){
+//                     current_page--;
+//                     document.getElementById("tab-5-demo-mail-list").innerHTML = "";
+//                     var li = "";
+//                     $.each(resourcesObj, function(index, item){
+//                         if(current_page-1*page_num<=index
+//                             &&index<current_page*page_num){
+//
+//                             li +=' <li class="mail-list-unread mail-attach">
+//                             '<div class="mail-control">'
+//                             '<input id="src-list-'
+//                             +index+
+//                             '" class="magic-checkbox" type="checkbox">
+//                             '<label for="src-list-
+//                             +index+
+//                             "></label></div>
+//                             '<div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>'
+//                             '<strong class="mail-from"> '
+//
+//                             '<a href="src-download.html" target="_self" id=" '
+//                             +item.resource_path+
+//                             '" onclick="get_resources(this.id)">'
+//                             +item.resource_name+
+//                             '</a><br></strong>'
+//                             '<div class="mail-time">';
+//                             li += item.resource_upload_time
+//                                 + "</div>
+//                             '<div class="mail-attach-icon"></div>
+//                             '<div class="mail-subject"> <a href="mailbox-message.html">";
+//                             li += item.resource_size+item.resource_type
+//                                 + "</a> </div> </li>" ;
+//
+//                         }
+//                     });
+//                     $("#tab-5-demo-mail-list").html(li);
+//                     $("#tab-5-page_id").html(current_page);
+//                     $("#tab-5-page_total").html(page_size);
+//                 }
+//             }
+//         }
+//     });
+// }
+//
+//
+//
+//
+// function resources_flip_right(){
+//     var current_page = document.getElementById("tab-5-page_id");
+//
+//     $.ajax({
+//         type:"POST", // 使用post方式
+//
+//         // 志愿者报名
+//         url:"/GetCourseResources",
+//         contentType:"application/json",
+//
+//
+//         data:JSON.stringify({
+//             "status": "0",
+//             "message": "get_course_resources",
+//             "course_id": course_id,
+//         }),
+//
+//         dataType:"json",
+//         async:false,
+//         success: function(result){
+//             if(result.id == "course_resources"){
+//                 var num = result.total_num;
+//                 var page_num = 10;//每页10条记录
+//                 var page_size = Math.ceil(num/page_num);//页数
+//                 var resourcesObj = result.value;
+//                 if(current_page<=page_size){
+//                     current_page++;
+//                     document.getElementById("tab-5-demo-mail-list").innerHTML = "";
+//                     var li = "";
+//                     $.each(resourcesObj, function(index, item){
+//                         if(current_page-1*page_num<=index
+//                             &&index<current_page*page_num){
+//
+//                             li +=' <li class="mail-list-unread mail-attach">
+//                             '<div class="mail-control">'
+//                             '<input id="src-list-'
+//                             +index+
+//                             '" class="magic-checkbox" type="checkbox">
+//                             '<label for="src-list-
+//                             +index+
+//                             '"></label></div>
+//                             '<div class="mail-star"><a href="#"><i class="demo-psi-star"></i></a></div>'
+//                             '<strong class="mail-from"> '
+//
+//                             '<a href="src-download.html" target="_self" id=" '
+//                             +item.resource_path+
+//                             '" onclick="get_resources(this.id)">'
+//                             +item.resource_name+
+//                             '</a><br></strong>'
+//                             '<div class="mail-time">';
+//                             li += item.resource_upload_time
+//                                 + "</div>
+//                             '<div class="mail-attach-icon"></div>
+//                             '<div class="mail-subject"> <a href="mailbox-message.html">";
+//                             li += item.resource_size+item.resource_type
+//                                 + "</a> </div> </li>" ;
+//
+//                         }
+//                     });
+//                     $("#tab-5-demo-mail-list").html(li);
+//                     $("#tab-5-page_id").html(current_page);
+//                     $("#tab-5-page_total").html(page_size);
+//
+//                 }
+//             }
+//         }
+//
+//     });
+// }
+//
+
+
+function resources_download(){
+    var chosen = 0;
+    var chosen_src = new Array();
+    chosen_src[0] = new Array();//0维存放文件名
+    chosen_src[1] = new Array();//一维存放文件路径
+    $("#tab-5-demo-mail-list>li>div>input[type=checkbox]").each(function(){
+        if($(this).prop("checked") == true){
+            let _li = $(this).parent().parent();
+            let resource_path = (_li.find("a")).id;
+            let resource_name = (_li.find("a")).innerText;
+            chosen_src[0][chosen] = resource_name;
+            chosen_src[1][chosen] = resource_path;
+            chosen++;
+        }
+    });
+    if(chosen == 0)
+        alert("请选择下载项");
+    else{
+        FilesDownload(chosen_src);
+    }
+
+}
+
 
 
 function tab1Location() {
@@ -764,4 +1018,12 @@ function tab1Location() {
     if (urlparam.substr(1, 4) == "cid=")
         course_id = urlparam.substr(5).split("&")[0];
     location = "course-dashboard.html?cid=" +course_id;
+}
+
+
+
+
+function homework_submit_location() {
+    let urlparam = location.search;
+    location = "homework-submit.html" + urlparam;
 }

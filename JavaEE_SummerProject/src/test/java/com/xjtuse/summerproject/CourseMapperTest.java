@@ -2,6 +2,7 @@ package com.xjtuse.summerproject;
 
 import com.xjtuse.summerproject.controllerEntity.Course;
 import com.xjtuse.summerproject.controllerEntity.Issue;
+import com.xjtuse.summerproject.controllerEntity.UpdateHomeworkInfo;
 import com.xjtuse.summerproject.entity.CourseContent;
 import com.xjtuse.summerproject.entity.CoursePanel;
 import com.xjtuse.summerproject.entity.Temp;
@@ -63,5 +64,17 @@ public class CourseMapperTest {
         for (CoursePanel coursePanel: coursePanelList){
             System.out.println(coursePanel);
         }
+    }
+
+    @Test
+    public void testUpdateHomework() throws Exception{
+        UpdateHomeworkInfo updateHomeworkInfo = new UpdateHomeworkInfo();
+        updateHomeworkInfo.setContent("123");
+        updateHomeworkInfo.setCourse_id("20201172");
+        updateHomeworkInfo.setHomework_file_name("22222");
+        updateHomeworkInfo.setHomework_file_path("11111");
+        updateHomeworkInfo.setInsert_date("2020-7-20");
+        updateHomeworkInfo.setStudent_id("stu20200101");
+        courseMapper.updateHomework(updateHomeworkInfo);
     }
 }
