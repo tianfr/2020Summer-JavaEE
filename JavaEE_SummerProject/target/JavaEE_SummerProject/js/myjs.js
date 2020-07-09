@@ -1042,6 +1042,72 @@ function check_role() {
 }
 
 
+function get_student_homeworks(){
+    let urlparam = location.search;
+    let course_id = "";
+    let homework_id = "";
+    if (urlparam.substr(1, 4) == "cid=" && urlparam.substr(urlparam.split("&")[0].length, 5) == "&hid=") {
+        course_id = urlparam.substr(5).split("&")[0];
+        homework_id = urlparam.substr(urlparam.split("&")[0].length + 5);
+    }
+
+    $.ajax({
+        type:"POST", // 使用post方式
+
+        // 志愿者报名
+        url:"/GetStudentHomeworks",
+        contentType:"application/json",
+
+
+        data:JSON.stringify({
+            "status": "0",
+            "message": "get_course_homeworks",
+            "course_id": course_id,
+            "homework_id": homework_id,
+        }),
+
+        dataType:"json",
+        async:false,
+        success: function(result){
+            var num = result.total_num;
+            var page_num = 10;//每页10条记录
+            var page_size = Math.ceil(num/page_num);//页数
+            var homeworkObj = result.value;
+            var current_page = 1 ;
+            var li = "";
+            // document.getElementById("demo-mail-list").innerHTML = "";
+            $.each(homeworkObj, function(index, item){
+                if(index<page_num){//静态显示第一页
+                    li +=
+                        "<li class=\"mail-list-unread mail-attach\">" +
+                        "<div class=\"mail-control\">" +
+                        "<input id=\"email-list-" +
+                        item.index +
+                        "\" class=\"magic-checkbox\" type=\"checkbox\">" +
+                        "<label for=\"email-list-"+item.index+
+                        "\"></label>" +
+                        "</div>" +
+                        "<div class=\"mail-star\"><a href=\"#\"><i class=\"demo-psi-star\"></i></a></div>" +
+                        "<strong class=\"mail-from\">" +
+                        "<a href=\"homework-detail-message.html?cid=" + course_id + "&hid=" + item.homework_id + "&sid=" + item.student_id + "\" target=\"_self\" "  + ">" +
+                        item.homework_title +
+                        "</a><br>" +
+                        "</strong>" +
+                        "<div class=\"mail-attach-icon\"></div>" +
+                        "<div class=\"mail-subject\">" +
+                        "<a href=\"homework-detail-message.html?cid=" + course_id + "&hid=" + item.homework_id + "&sid=" + item.student_id + "\">" + item.homework_content + "</a> " +
+                        "</div>"+
+                        "</li>";
+                }
+            });
+            $("#demo-mail-list").html(li);
+            $("#tab2_page_id").html(current_page);
+            $("#tab2_page_total").html(page_size);
+            document.getElementById("tab2_page_id").setAttribute("value", current_page);
+        }
+    });
+}
+
 function tab1Location() {
     let course_id = "";
     let urlparam = location.search;
