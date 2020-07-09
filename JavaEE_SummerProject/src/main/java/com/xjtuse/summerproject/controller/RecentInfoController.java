@@ -8,6 +8,7 @@ import com.xjtuse.summerproject.entity.Course;
 import com.xjtuse.summerproject.entity.CourseContent;
 import com.xjtuse.summerproject.mapper.CourseMapper;
 import com.xjtuse.summerproject.mapper.StudentMapper;
+import com.xjtuse.summerproject.mapper.TeacherMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -37,9 +38,22 @@ public class RecentInfoController {
         InputStream in = Resources.getResourceAsStream("SqlMapConfig.xml");
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
         SqlSession sqlSession = factory.openSession();
-        StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
+
+        String onlineRole = (String) session.getAttribute("role");
+        String onId = (String) session.getAttribute("id");
+        List<Course> courses = null;
+        if (onlineRole == "student"){
+            StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
+            courses = studentMapper.findAllCourseById(onId);
+        }
+        else {
+            TeacherMapper teacherMapper = sqlSession.getMapper(TeacherMapper.class);
+            courses = teacherMapper.findAllCourseById(onId);
+        }
+
+//        StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
         CourseMapper courseMapper = sqlSession.getMapper(CourseMapper.class);
-        List<Course> courses = studentMapper.findAllCourseById((String) session.getAttribute("id"));
+//        List<Course> courses = studentMapper.findAllCourseById((String) session.getAttribute("id"));
         //  sqlSession.commit();
         List<RecentInfo> list = new ArrayList<RecentInfo>();
         for(Course course : courses) {
@@ -49,7 +63,23 @@ public class RecentInfoController {
                 RecentInfo recentInfo = new RecentInfo();
                 recentInfo.setId(courseContent.getIssue_id());
                 recentInfo.setValue(courseContent.getIssue_id());
-                recentInfo.setInfo_id_path("test.html");
+                String tmp_id_path = "";//""course-dashboard.html?cid=" + course.getCourse_id();
+                switch (courseContent.getIssue_type()){
+                    case "announcement":
+                        tmp_id_path +=  ("announcement.html?cid=" + course.getCourse_id() + "&aid=" + courseContent.getIssue_id());
+                        break;
+                    case "homework":
+                        tmp_id_path +=  ("homework-message.html?cid=" + course.getCourse_id() + "&hid=" + courseContent.getIssue_id());
+                        break;
+                    case "discussion":
+                        tmp_id_path +=  ("discussion.html?cid=" + course.getCourse_id() + "&did=" + courseContent.getIssue_id());
+                        break;
+                    case "examination":
+                        tmp_id_path +=  ("examination.html?cid=" + course.getCourse_id() + "&eid=" + courseContent.getIssue_id());
+                        break;
+                    default: tmp_id_path +=  ("&errorid=" + courseContent.getIssue_id()+"type:"+courseContent.getIssue_type());
+                }
+                recentInfo.setInfo_id_path(tmp_id_path);
                 recentInfo.setCourse(course.getCourse_name());
                 recentInfo.setDatetime(courseContent.getInsert_date().toString());
                 recentInfo.setContent(courseContent.getIssue_content());
