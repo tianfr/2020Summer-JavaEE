@@ -104,7 +104,7 @@
 
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
-<body onload="db_menu();get_course_homeworks();get_course_panel();get_homework();">
+<body onload="db_menu();get_course_homeworks();get_course_panel();get_homework();check_role();">
     <div id="container" class="effect aside-float aside-bright mainnav-lg">
         
         <!--NAVBAR-->
@@ -640,7 +640,7 @@
 					                    </div>
 					                </div>
 					                <div class="row pad-ver">
-					                    <div class="col-xs-7">
+					                    <div id="homework_button" class="col-xs-7">
                                             <button class="btn btn-purple" id="homework_submit" >
                                                 <a href="#" target="_self" onclick="homework_submit_location()">作业提交</a></button>
 					                    </div>
@@ -1742,29 +1742,12 @@
 						
 						            <!--Menu list item-->
 						            <li>
-						                <a href="#">
-						                    <i class="demo-psi-split-vertical-2"></i>
-						                    <span class="menu-title">
-												<strong>Layouts</strong>
-											</span>
-											<i class="arrow"></i>
-						                </a>
-						
-						                <!--Submenu-->
-						                <ul class="collapse">
-						                    <li><a href="layouts-collapsed-navigation.html">Collapsed Navigation</a></li>
-											<li><a href="layouts-offcanvas-navigation.html">Off-Canvas Navigation</a></li>
-											<li><a href="layouts-offcanvas-slide-in-navigation.html">Slide-in Navigation</a></li>
-											<li><a href="layouts-offcanvas-revealing-navigation.html">Revealing Navigation</a></li>
-											<li class="list-divider"></li>
-											<li><a href="layouts-aside-right-side.html">Aside on the right side</a></li>
-											<li><a href="layouts-aside-left-side.html">Aside on the left side</a></li>
-											<li><a href="layouts-aside-dark-theme.html">Dark version of aside</a></li>
-											<li class="list-divider"></li>
-											<li><a href="layouts-fixed-navbar.html">Fixed Navbar</a></li>
-											<li><a href="layouts-fixed-footer.html">Fixed Footer</a></li>
-											
-						                </ul>
+                                        <a href="prev_course.html">
+                                            <i class="demo-psi-split-vertical-2"></i>
+                                            <span class="menu-title">
+												<strong>Prev Courses</strong>
+		                                    </span>
+                                        </a>
 						            </li>
 						
 

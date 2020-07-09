@@ -92,7 +92,7 @@
 
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
-<body onload="db_menu();course_announcement();get_course_homeworks();get_course_panel();get_course_resources();">
+<body onload="db_menu();course_announcement();get_course_homeworks();get_course_panel();get_course_resources();check_role();">
 <div id="container" class="effect aside-float aside-bright mainnav-lg">
 
     <!--NAVBAR-->
@@ -611,59 +611,59 @@
                                 <h1 class="page-header text-overflow pad-btm">课程公告</h1>
 
                                 <div class="row">
-                                    <div class="col-sm-7">
+                                    <div id="announcement_head" class="col-sm-7">
 
                                         <!-- Mail toolbar -->
                                         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
                                         <!--Split button dropdowns-->
-                                        <div class="btn-group">
-                                            <div id="demo-checked-all-mail" class="btn btn-sm btn-default">
-                                                <input id="select-all-mail" class="magic-checkbox" type="checkbox">
-                                                <label for="select-all-mail"></label>
-                                            </div>
-                                            <button data-toggle="dropdown"
-                                                    class="btn btn-sm btn-default dropdown-toggle"><i
-                                                    class="dropdown-caret"></i></button>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="javascript:void(0)" id="demo-select-all-list">All</a></li>
-                                                <li><a href="javascript:void(0)" id="demo-select-none-list">None</a>
-                                                </li>
-                                                <li><a href="javascript:void(0)" id="demo-select-toggle-list">Toggle</a>
-                                                </li>
-                                                <li class="divider"></li>
-                                                <li><a href="javascript:void(0)" id="demo-select-read-list">Read</a>
-                                                </li>
-                                                <li><a href="javascript:void(0)" id="demo-select-unread-list">Unread</a>
-                                                </li>
-                                                <li><a href="javascript:void(0)"
-                                                       id="demo-select-starred-list">Starred</a></li>
-                                            </ul>
-                                        </div>
+<!--                                        <div class="btn-group">-->
+<!--                                            <div id="demo-checked-all-mail" class="btn btn-sm btn-default">-->
+<!--                                                <input id="select-all-mail" class="magic-checkbox" type="checkbox">-->
+<!--                                                <label for="select-all-mail"></label>-->
+<!--                                            </div>-->
+<!--                                            <button data-toggle="dropdown"-->
+<!--                                                    class="btn btn-sm btn-default dropdown-toggle"><i-->
+<!--                                                    class="dropdown-caret"></i></button>-->
+<!--                                            <ul class="dropdown-menu">-->
+<!--                                                <li><a href="javascript:void(0)" id="demo-select-all-list">All</a></li>-->
+<!--                                                <li><a href="javascript:void(0)" id="demo-select-none-list">None</a>-->
+<!--                                                </li>-->
+<!--                                                <li><a href="javascript:void(0)" id="demo-select-toggle-list">Toggle</a>-->
+<!--                                                </li>-->
+<!--                                                <li class="divider"></li>-->
+<!--                                                <li><a href="javascript:void(0)" id="demo-select-read-list">Read</a>-->
+<!--                                                </li>-->
+<!--                                                <li><a href="javascript:void(0)" id="demo-select-unread-list">Unread</a>-->
+<!--                                                </li>-->
+<!--                                                <li><a href="javascript:void(0)"-->
+<!--                                                       id="demo-select-starred-list">Starred</a></li>-->
+<!--                                            </ul>-->
+<!--                                        </div>-->
 
                                         <!--Refresh button-->
-                                        <button id="demo-mail-ref-btn" data-toggle="panel-overlay"
-                                                data-target="#demo-email-list" class="btn btn-default btn-sm"
-                                                type="button">
-                                            <a href="javascript:void(0)" onclick="location.reload()">
-                                                <i class="demo-psi-repeat-2"></i>
-                                            </a>
-                                        </button>
+<!--                                        <button id="demo-mail-ref-btn" data-toggle="panel-overlay"-->
+<!--                                                data-target="#demo-email-list" class="btn btn-default btn-sm"-->
+<!--                                                type="button">-->
+<!--                                            <a href="javascript:void(0)" onclick="location.reload()">-->
+<!--                                                <i class="demo-psi-repeat-2"></i>-->
+<!--                                            </a>-->
+<!--                                        </button>-->
 
-                                        <!--Dropdown button (More Action)-->
-                                        <div class="btn-group">
-                                            <button data-toggle="dropdown"
-                                                    class="btn btn-sm btn-default dropdown-toggle" type="button">
-                                                More <i class="dropdown-caret"></i>
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="#">Mark as read</a></li>
-                                                <li><a href="#">Mark as unread</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#">Star</a></li>
-                                                <li><a href="#">Clear Star</a></li>
-                                            </ul>
-                                        </div>
+<!--                                        &lt;!&ndash;Dropdown button (More Action)&ndash;&gt;-->
+<!--                                        <div class="btn-group">-->
+<!--                                            <button data-toggle="dropdown"-->
+<!--                                                    class="btn btn-sm btn-default dropdown-toggle" type="button">-->
+<!--                                                More <i class="dropdown-caret"></i>-->
+<!--                                            </button>-->
+<!--                                            <ul class="dropdown-menu">-->
+<!--                                                <li><a href="#">Mark as read</a></li>-->
+<!--                                                <li><a href="#">Mark as unread</a></li>-->
+<!--                                                <li class="divider"></li>-->
+<!--                                                <li><a href="#">Star</a></li>-->
+<!--                                                <li><a href="#">Clear Star</a></li>-->
+<!--                                            </ul>-->
+<!--                                        </div>-->
                                     </div>
                                     <hr class="hr-sm visible-xs">
                                     <div class="col-sm-5 clearfix">
@@ -693,50 +693,50 @@
                             <div id="tab-2" class="panel-mybody">
                                 <h1 class="page-header text-overflow pad-btm">作业列表</h1>
                                 <div class="row">
-                                    <div class="col-sm-7">
+                                    <div  id="homework_head" class="col-sm-7">
                                         <!-- Mail toolbar -->
                                         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
                                         <!--Split button dropdowns-->
-                                        <div class="btn-group">
-                                            <div id="demo-checked-all-mail2" class="btn btn-sm btn-default">
-                                                <input id="select-all-mail2" class="magic-checkbox" type="checkbox">
-                                                <label for="select-all-mail2"></label>
-                                            </div>
-                                            <button data-toggle="dropdown"
-                                                    class="btn btn-sm btn-default dropdown-toggle"><i
-                                                    class="dropdown-caret"></i></button>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="javascript:void(0)" id="demo-select-all-list2">All</a></li>
-                                                <li><a href="javascript:void(0)" id="demo-select-none-list2">None</a>
-                                                </li>
-                                                <li><a href="javascript:void(0)"
-                                                       id="demo-select-toggle-list2">Toggle</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="javascript:void(0)" id="demo-select-read-list2">Read</a>
-                                                </li>
-                                                <li><a href="javascript:void(0)"
-                                                       id="demo-select-unread-list2">Unread</a></li>
-                                                <li><a href="javascript:void(0)"
-                                                       id="demo-select-starred-list2">Starred</a></li>
-                                            </ul>
-                                        </div>
-                                        <!--Refresh button-->
-                                        <button id="demo-mail-ref-btn2" data-toggle="panel-overlay"
-                                                data-target="#demo-email-list" class="btn btn-default btn-sm"
-                                                type="button"><i class="demo-psi-repeat-2"></i></button>
-                                        <!--Dropdown button (More Action)-->
-                                        <div class="btn-group">
-                                            <button data-toggle="dropdown"
-                                                    class="btn btn-sm btn-default dropdown-toggle" type="button"> More
-                                                <i class="dropdown-caret"></i></button>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="#">Mark as read</a></li>
-                                                <li><a href="#">Mark as unread</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#">Star</a></li>
-                                                <li><a href="#">Clear Star</a></li>
-                                            </ul>
-                                        </div>
+<!--                                        <div class="btn-group">-->
+<!--                                            <div id="demo-checked-all-mail2" class="btn btn-sm btn-default">-->
+<!--                                                <input id="select-all-mail2" class="magic-checkbox" type="checkbox">-->
+<!--                                                <label for="select-all-mail2"></label>-->
+<!--                                            </div>-->
+<!--                                            <button data-toggle="dropdown"-->
+<!--                                                    class="btn btn-sm btn-default dropdown-toggle"><i-->
+<!--                                                    class="dropdown-caret"></i></button>-->
+<!--                                            <ul class="dropdown-menu">-->
+<!--                                                <li><a href="javascript:void(0)" id="demo-select-all-list2">All</a></li>-->
+<!--                                                <li><a href="javascript:void(0)" id="demo-select-none-list2">None</a>-->
+<!--                                                </li>-->
+<!--                                                <li><a href="javascript:void(0)"-->
+<!--                                                       id="demo-select-toggle-list2">Toggle</a></li>-->
+<!--                                                <li class="divider"></li>-->
+<!--                                                <li><a href="javascript:void(0)" id="demo-select-read-list2">Read</a>-->
+<!--                                                </li>-->
+<!--                                                <li><a href="javascript:void(0)"-->
+<!--                                                       id="demo-select-unread-list2">Unread</a></li>-->
+<!--                                                <li><a href="javascript:void(0)"-->
+<!--                                                       id="demo-select-starred-list2">Starred</a></li>-->
+<!--                                            </ul>-->
+<!--                                        </div>-->
+<!--                                        &lt;!&ndash;Refresh button&ndash;&gt;-->
+<!--                                        <button id="demo-mail-ref-btn2" data-toggle="panel-overlay"-->
+<!--                                                data-target="#demo-email-list" class="btn btn-default btn-sm"-->
+<!--                                                type="button"><i class="demo-psi-repeat-2"></i></button>-->
+<!--                                        &lt;!&ndash;Dropdown button (More Action)&ndash;&gt;-->
+<!--                                        <div class="btn-group">-->
+<!--                                            <button data-toggle="dropdown"-->
+<!--                                                    class="btn btn-sm btn-default dropdown-toggle" type="button"> More-->
+<!--                                                <i class="dropdown-caret"></i></button>-->
+<!--                                            <ul class="dropdown-menu">-->
+<!--                                                <li><a href="#">Mark as read</a></li>-->
+<!--                                                <li><a href="#">Mark as unread</a></li>-->
+<!--                                                <li class="divider"></li>-->
+<!--                                                <li><a href="#">Star</a></li>-->
+<!--                                                <li><a href="#">Clear Star</a></li>-->
+<!--                                            </ul>-->
+<!--                                        </div>-->
                                     </div>
                                     <hr class="hr-sm visible-xs">
                                     <div class="col-sm-5 clearfix">
@@ -1228,57 +1228,57 @@
                                 <h1 class="page-header text-overflow pad-btm">课程资源</h1>
 
                                 <div class="row">
-                                    <div class="col-sm-7">
+                                    <div id="resource_head" class="col-sm-7">
 
                                         <!-- Mail toolbar -->
                                         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
                                         <!--Split button dropdowns-->
-                                        <div class="btn-group">
-                                            <div id="demo-checked-all-mail" class="btn btn-sm btn-default">
-                                                <input id="select-all-mail" class="magic-checkbox" type="checkbox">
-                                                <label for="select-all-mail"></label>
-                                            </div>
-                                            <button data-toggle="dropdown"
-                                                    class="btn btn-sm btn-default dropdown-toggle"><i
-                                                    class="dropdown-caret"></i></button>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="javascript:void(0)" id="demo-select-all-list">All</a></li>
-                                                <li><a href="javascript:void(0)" id="demo-select-none-list">None</a>
-                                                </li>
-                                                <li><a href="javascript:void(0)" id="demo-select-toggle-list">Toggle</a>
-                                                </li>
-                                                <li class="divider"></li>
-                                                <li><a href="javascript:void(0)" id="demo-select-read-list">Read</a>
-                                                </li>
-                                                <li><a href="javascript:void(0)" id="demo-select-unread-list">Unread</a>
-                                                </li>
-                                                <li><a href="javascript:void(0)"
-                                                       id="demo-select-starred-list">Starred</a></li>
-                                            </ul>
-                                        </div>
+<!--                                        <div class="btn-group">-->
+<!--                                            <div id="demo-checked-all-mail" class="btn btn-sm btn-default">-->
+<!--                                                <input id="select-all-mail" class="magic-checkbox" type="checkbox">-->
+<!--                                                <label for="select-all-mail"></label>-->
+<!--                                            </div>-->
+<!--                                            <button data-toggle="dropdown"-->
+<!--                                                    class="btn btn-sm btn-default dropdown-toggle"><i-->
+<!--                                                    class="dropdown-caret"></i></button>-->
+<!--                                            <ul class="dropdown-menu">-->
+<!--                                                <li><a href="javascript:void(0)" id="demo-select-all-list">All</a></li>-->
+<!--                                                <li><a href="javascript:void(0)" id="demo-select-none-list">None</a>-->
+<!--                                                </li>-->
+<!--                                                <li><a href="javascript:void(0)" id="demo-select-toggle-list">Toggle</a>-->
+<!--                                                </li>-->
+<!--                                                <li class="divider"></li>-->
+<!--                                                <li><a href="javascript:void(0)" id="demo-select-read-list">Read</a>-->
+<!--                                                </li>-->
+<!--                                                <li><a href="javascript:void(0)" id="demo-select-unread-list">Unread</a>-->
+<!--                                                </li>-->
+<!--                                                <li><a href="javascript:void(0)"-->
+<!--                                                       id="demo-select-starred-list">Starred</a></li>-->
+<!--                                            </ul>-->
+<!--                                        </div>-->
 
-                                        <!--Refresh button-->
-                                        <button id="demo-mail-ref-btn" data-toggle="panel-overlay"
-                                                data-target="#demo-email-list" class="btn btn-default btn-sm"
-                                                type="button">
-                                            <i class="demo-psi-repeat-2"></i>
-                                        </button>
+<!--                                        &lt;!&ndash;Refresh button&ndash;&gt;-->
+<!--                                        <button id="demo-mail-ref-btn" data-toggle="panel-overlay"-->
+<!--                                                data-target="#demo-email-list" class="btn btn-default btn-sm"-->
+<!--                                                type="button">-->
+<!--                                            <i class="demo-psi-repeat-2"></i>-->
+<!--                                        </button>-->
 
-                                        <!--Dropdown button (More Action)-->
-                                        <div class="btn-group">
-                                            <button data-toggle="dropdown"
-                                                    class="btn btn-sm btn-default dropdown-toggle" type="button">
-                                                More <i class="dropdown-caret"></i>
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="#">Mark as read</a></li>
-                                                <li><a href="#">Mark as unread</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#">Star</a></li>
-                                                <li><a href="#">Clear Star</a></li>
-                                            </ul>
-                                        </div>
+<!--                                        &lt;!&ndash;Dropdown button (More Action)&ndash;&gt;-->
+<!--                                        <div class="btn-group">-->
+<!--                                            <button data-toggle="dropdown"-->
+<!--                                                    class="btn btn-sm btn-default dropdown-toggle" type="button">-->
+<!--                                                More <i class="dropdown-caret"></i>-->
+<!--                                            </button>-->
+<!--                                            <ul class="dropdown-menu">-->
+<!--                                                <li><a href="#">Mark as read</a></li>-->
+<!--                                                <li><a href="#">Mark as unread</a></li>-->
+<!--                                                <li class="divider"></li>-->
+<!--                                                <li><a href="#">Star</a></li>-->
+<!--                                                <li><a href="#">Clear Star</a></li>-->
+<!--                                            </ul>-->
+<!--                                        </div>-->
                                     </div>
                                     <hr class="hr-sm visible-xs">
                                     <div class="col-sm-5 clearfix">
@@ -1772,11 +1772,11 @@
 
                                 <!--Menu list item-->
                                 <li>
-                                    <a href="#">
+                                    <a href="prev_course.html">
                                         <i class="demo-psi-split-vertical-2"></i>
                                         <span class="menu-title">
 												<strong>Prev Courses</strong>
-                                        </span>
+		                                    </span>
                                     </a>
                                 </li>
 
