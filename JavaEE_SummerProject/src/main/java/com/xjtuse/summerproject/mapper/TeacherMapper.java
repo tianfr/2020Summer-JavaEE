@@ -1,5 +1,6 @@
 package com.xjtuse.summerproject.mapper;
 
+import com.xjtuse.summerproject.controllerEntity.GetStudentHomeworkDetailInfo;
 import com.xjtuse.summerproject.entity.*;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
@@ -47,5 +48,6 @@ public interface TeacherMapper {
     @Select("SELECT * from course_${course_id}_homework WHERE homework_id = #{homework_id}")
     List<CourseHomework> getSubmittedHomework(SendHomework sendHomework);
 
-
+    @Select("select * from course_${course_id}_homework WHERE homework_id = #{homework_id} and student_id = #{student_id}")
+    CourseHomework getHomeworkDetail(GetStudentHomeworkDetailInfo info);
 }

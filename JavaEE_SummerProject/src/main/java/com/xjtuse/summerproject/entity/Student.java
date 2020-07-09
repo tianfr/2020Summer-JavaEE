@@ -13,6 +13,31 @@ public class Student implements Serializable {
     private String student_username;
     private String student_password;
     private Date insert_date;
+    private String student_avatar;
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "student_id='" + student_id + '\'' +
+                ", student_name='" + student_name + '\'' +
+                ", student_age='" + student_age + '\'' +
+                ", student_gender='" + student_gender + '\'' +
+                ", student_class='" + student_class + '\'' +
+                ", student_email='" + student_email + '\'' +
+                ", student_username='" + student_username + '\'' +
+                ", student_password='" + student_password + '\'' +
+                ", insert_date=" + insert_date +
+                ", student_avatar='" + student_avatar + '\'' +
+                '}';
+    }
+
+    public String getStudent_avatar() {
+        return student_avatar;
+    }
+
+    public void setStudent_avatar(String student_avatar) {
+        this.student_avatar = student_avatar;
+    }
 
     public String getStudent_id() {
         return student_id;
@@ -86,18 +111,4 @@ public class Student implements Serializable {
         this.insert_date = insert_date;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "student_id='" + student_id + '\'' +
-                ", student_name='" + student_name + '\'' +
-                ", student_age='" + student_age + '\'' +
-                ", student_gender='" + student_gender + '\'' +
-                ", student_class='" + student_class + '\'' +
-                ", student_email='" + student_email + '\'' +
-                ", student_username='" + student_username + '\'' +
-                ", student_password='" + student_password + '\'' +
-                ", insert_date=" + insert_date +
-                '}';
-    }
 }

@@ -104,7 +104,7 @@
 
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
-<body onload="db_menu();get_course_homeworks();get_course_panel();get_student_homeworks_detail();">
+<body onload="db_menu();get_course_homeworks();get_course_panel();get_homework();check_role();get_course_resources();get_student_homework_detail()">
     <div id="container" class="effect aside-float aside-bright mainnav-lg">
         
         <!--NAVBAR-->
@@ -609,16 +609,16 @@
 					        <div class="panel">
 					            <div id="tab-1" class="panel-mybody testing">
 					                <div class="mar-btm pad-btm bord-btm">
-					                    <h1 class="page-header text-overflow" id="headline"></h1>
+					                    <h1 class="page-header text-overflow" id="headline">作业</h1>
 					                </div>
 					
 					                <div class="row">
 					                    <div class="col-sm-7">
-					
+
 					                        <!--Sender Information-->
 					                        <div class="media">
 					                            <span class="media-left">
-					                                <img id="student_pic" class="img-circle img-sm" alt="Profile Picture">
+					                                <img id="student_pic" class="img-circle img-sm" alt="Profile Picture" />
 					                            </span>
 					                            <div class="media-body">
 					                                <div class="text-bold" id="student_name"></div>
@@ -626,38 +626,34 @@
 					                            </div>
 					                        </div>
 					                    </div>
-					                    <hr class="hr-sm visible-xs">
+<!--					                    <hr class="hr-sm visible-xs">-->
 					                    <div class="col-sm-5 clearfix">
-					
+
 					                        <!--Details Information-->
 					                        <div class="pull-right text-right">
 					                            <p class="mar-no"><small class="text-muted" id="datetime"></small></p>
-					                            <a href="#">
-					                                <strong>Holiday.zip</strong>
-					                                <i class="demo-psi-paperclip icon-fw"></i>
-					                            </a>
 					                        </div>
 					                    </div>
 					                </div>
-					                <div class="row pad-ver">
-					                    <div class="col-xs-7">
-                                            <button class="btn btn-primary" type="button" id="homework_submit" >
-                                                <a href="student-homework.html" target="_self">查看已提交作业</a></button>
-					                    </div>
-					                    <div class="col-xs-5 clearfix">
-					                        <div class="pull-right">
-					
-					                            <!--Reply & forward buttons-->
-					                            <div class="btn-group btn-group">
-					                                <a class="btn btn-sm btn-default" href="#">
-					                                <i class="demo-psi-left-4"></i>
-					                                </a>
-					                                <a class="btn btn-sm btn-default" href="#">
-					                                <i class="demo-psi-right-4"></i>
-					                                </a>
-					                            </div>
-					                        </div>
-					                    </div>
+					                <div id="homework_content" class="row pad-ver">
+<!--					                    <div id="homework_button" class="col-xs-7">-->
+<!--                                            <button class="btn btn-purple" id="homework_submit" >-->
+<!--                                                <a href="#" target="_self" onclick="homework_submit_location()">作业提交</a></button>-->
+<!--					                    </div>-->
+<!--					                    <div class="col-xs-5 clearfix">-->
+<!--					                        <div class="pull-right">-->
+<!--					-->
+<!--					                            &lt;!&ndash;Reply & forward buttons&ndash;&gt;-->
+<!--					                            <div class="btn-group btn-group">-->
+<!--					                                <a class="btn btn-sm btn-default" href="#">-->
+<!--					                                <i class="demo-psi-left-4"></i>-->
+<!--					                                </a>-->
+<!--					                                <a class="btn btn-sm btn-default" href="#">-->
+<!--					                                <i class="demo-psi-right-4"></i>-->
+<!--					                                </a>-->
+<!--					                            </div>-->
+<!--					                        </div>-->
+<!--					                    </div>-->
 					                </div>
 					
 					                <!--Message-->
@@ -683,65 +679,65 @@
 					                <!-- Attach Files-->
 					                <!--===================================================-->
 					                <div class="pad-ver mar-ver bord-btm">
-					                    <p class="text-main text-bold box-inline"><i class="demo-psi-paperclip icon-fw"></i> Attachments <span>(2) - </span></p>
-					                    <a href="#" class="btn-link">Download all</a> | <a href="#" class="btn-link">View all images</a>
+					                    <p class="text-main text-bold box-inline"><i class="demo-psi-paperclip icon-fw"></i> 附件 </p>
+<!--					                    <a href="#" class="btn-link">Download all</a> | <a href="#" class="btn-link">View all images</a>-->
 					
-					                    <ul class="mail-attach-list list-ov">
-					                        <li>
-					                            <a href="#" class="thumbnail">
-					                                <div class="mail-file-img">
-					                                    <img class="image-responsive" src="img/bg-img/bg-img-4.jpg" alt="image">
-					                                </div>
-					                                <div class="caption">
-					                                    <p class="text-primary mar-no">Nature.jpg</p>
-					                                    <small class="text-muted">Added: May 01, 2016</small>
-					                                </div>
-					                            </a>
-					                        </li>
-					                        <li>
-					                            <a href="#" class="thumbnail">
-					                                <div class="mail-file-img">
-					                                    <img class="image-responsive" src="img/bg-img/bg-img-3.jpg" alt="image">
-					                                </div>
-					                                <div class="caption">
-					                                    <p class="text-primary mar-no">Forest.png</p>
-					                                    <small class="text-muted">Added: May 07, 2016</small>
-					                                </div>
-					                            </a>
-					                        </li>
-					                        <li>
-					                            <a href="#" class="thumbnail">
-					                                <div class="mail-file-icon">
-					                                    <i class="demo-pli-file-csv"></i>
-					                                </div>
-					                                <div class="caption">
-					                                    <p class="text-primary mar-no">Reports.csv</p>
-					                                    <small class="text-muted">Added: May 10, 2016</small>
-					                                </div>
-					                            </a>
-					                        </li>
-					                        <li>
-					                            <a href="#" class="thumbnail">
-					                                <div class="mail-file-icon">
-					                                    <i class="demo-pli-file-zip"></i>
-					                                </div>
-					                                <div class="caption">
-					                                    <p class="text-primary mar-no">Project.zip</p>
-					                                    <small class="text-muted">Added: May 10, 2016</small>
-					                                </div>
-					                            </a>
-					                        </li>
+					                    <ul id="mail-attach-list" class="mail-attach-list list-ov">
+<!--					                        <li>-->
+<!--					                            <a href="#" class="thumbnail">-->
+<!--					                                <div class="mail-file-img">-->
+<!--					                                    <img class="image-responsive" src="img/bg-img/bg-img-4.jpg" alt="image">-->
+<!--					                                </div>-->
+<!--					                                <div class="caption">-->
+<!--					                                    <p class="text-primary mar-no">Nature.jpg</p>-->
+<!--					                                    <small class="text-muted">Added: May 01, 2016</small>-->
+<!--					                                </div>-->
+<!--					                            </a>-->
+<!--					                        </li>-->
+<!--					                        <li>-->
+<!--					                            <a href="#" class="thumbnail">-->
+<!--					                                <div class="mail-file-img">-->
+<!--					                                    <img class="image-responsive" src="img/bg-img/bg-img-3.jpg" alt="image">-->
+<!--					                                </div>-->
+<!--					                                <div class="caption">-->
+<!--					                                    <p class="text-primary mar-no">Forest.png</p>-->
+<!--					                                    <small class="text-muted">Added: May 07, 2016</small>-->
+<!--					                                </div>-->
+<!--					                            </a>-->
+<!--					                        </li>-->
+<!--					                        <li>-->
+<!--					                            <a href="#" class="thumbnail">-->
+<!--					                                <div class="mail-file-icon">-->
+<!--					                                    <i class="demo-pli-file-csv"></i>-->
+<!--					                                </div>-->
+<!--					                                <div class="caption">-->
+<!--					                                    <p class="text-primary mar-no">Reports.csv</p>-->
+<!--					                                    <small class="text-muted">Added: May 10, 2016</small>-->
+<!--					                                </div>-->
+<!--					                            </a>-->
+<!--					                        </li>-->
+<!--					                        <li>-->
+<!--					                            <a href="#" class="thumbnail">-->
+<!--					                                <div class="mail-file-icon">-->
+<!--					                                    <i class="demo-pli-file-zip"></i>-->
+<!--					                                </div>-->
+<!--					                                <div class="caption">-->
+<!--					                                    <p class="text-primary mar-no">Project.zip</p>-->
+<!--					                                    <small class="text-muted">Added: May 10, 2016</small>-->
+<!--					                                </div>-->
+<!--					                            </a>-->
+<!--					                        </li>-->
 					                    </ul>
 					                </div>
 					                <!--===================================================-->
 					                <!-- End Attach Files-->
-					
-					
+
+
 					                <!--Quick reply : Summernote Placeholder -->
 					                <div id="demo-mail-textarea" class="mail-message-reply bg-gray-light">
 					                    <strong>Reply</strong> or <strong>Forward</strong> this message...
 					                </div>
-					
+
 					                <!--Send button-->
 					                <div class="pad-ver">
 					                    <button id="demo-mail-send-btn" type="button" class="btn btn-primary hide">
@@ -1742,29 +1738,12 @@
 						
 						            <!--Menu list item-->
 						            <li>
-						                <a href="#">
-						                    <i class="demo-psi-split-vertical-2"></i>
-						                    <span class="menu-title">
-												<strong>Layouts</strong>
-											</span>
-											<i class="arrow"></i>
-						                </a>
-						
-						                <!--Submenu-->
-						                <ul class="collapse">
-						                    <li><a href="layouts-collapsed-navigation.html">Collapsed Navigation</a></li>
-											<li><a href="layouts-offcanvas-navigation.html">Off-Canvas Navigation</a></li>
-											<li><a href="layouts-offcanvas-slide-in-navigation.html">Slide-in Navigation</a></li>
-											<li><a href="layouts-offcanvas-revealing-navigation.html">Revealing Navigation</a></li>
-											<li class="list-divider"></li>
-											<li><a href="layouts-aside-right-side.html">Aside on the right side</a></li>
-											<li><a href="layouts-aside-left-side.html">Aside on the left side</a></li>
-											<li><a href="layouts-aside-dark-theme.html">Dark version of aside</a></li>
-											<li class="list-divider"></li>
-											<li><a href="layouts-fixed-navbar.html">Fixed Navbar</a></li>
-											<li><a href="layouts-fixed-footer.html">Fixed Footer</a></li>
-											
-						                </ul>
+                                        <a href="prev_course.html">
+                                            <i class="demo-psi-split-vertical-2"></i>
+                                            <span class="menu-title">
+												<strong>Prev Courses</strong>
+		                                    </span>
+                                        </a>
 						            </li>
 						
 
