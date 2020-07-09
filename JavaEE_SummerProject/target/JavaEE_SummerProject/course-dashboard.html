@@ -92,7 +92,7 @@
 
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
-<body onload="db_menu();course_announcement();get_course_homeworks();get_course_panel();get_course_resources();check_role();">
+<body onload="db_menu();get_course_panel();course_announcement();get_course_homeworks();get_course_resources();check_role();">
 <div id="container" class="effect aside-float aside-bright mainnav-lg">
 
     <!--NAVBAR-->
@@ -458,7 +458,7 @@
                                     <!--<img class="img-circle img-user media-object" src="img/profile-photos/1.png" alt="Profile Picture">-->
                                     <i class="demo-pli-male ic-user"></i>
                                 </span>
-                            <div class="username hidden-xs">Aaron Chavez</div>
+                            <div id="header_name2" class="username hidden-xs">Aaron Chavez</div>
                         </a>
 
 
@@ -1704,8 +1704,8 @@
                                             <span class="pull-right dropdown-toggle">
                                                 <i class="dropdown-caret"></i>
                                             </span>
-                                        <p class="mnp-name">Aaron Chavez</p>
-                                        <span class="mnp-desc">aaron.cha@themeon.net</span>
+                                        <p class="mnp-name" id="header_name"></p>
+                                        <span class="mnp-desc" id="header_email"></span>
                                     </a>
                                 </div>
                                 <div id="profile-nav" class="collapse list-group bg-trans">

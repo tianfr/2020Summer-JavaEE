@@ -16,10 +16,9 @@ public class TestSendEmail {
 		mailInfo.setMailServerPort("25");
 		mailInfo.setValidate(true);
 		mailInfo.setUserName("940141567@qq.com");
-		mailInfo.setPassword("qmpumzqiinbbbbib");// 邮箱密授权码！！！
+		mailInfo.setPassword("unkaebhmsythbffb");// 邮箱密授权码！！！
 		mailInfo.setFromAddress("940141567@qq.com");
-
-		mailInfo.setToAddress("3085140354@qq.com");
+		mailInfo.setToAddress("940141567@qq.com");
 
 		mailInfo.setSubject("找回密码");
 		String link = "http://localhost:8080/forgetPassword/resetPassword?key=47ebc437ad9b444400693443d1609c3bf5221568a680766ac900978672e6fdfc";

@@ -32,29 +32,25 @@ public class UpcomingIssueController {
         UpcomingIssueResponse upcomingIssueResponse = new UpcomingIssueResponse();
         upcomingIssueResponse.setTotal_num(0);
         System.out.println("Info = " + info);
-
         InputStream in = Resources.getResourceAsStream("SqlMapConfig.xml");
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
         SqlSession sqlSession = factory.openSession();
-
-
-
         CourseMapper courseMapper = sqlSession.getMapper(CourseMapper.class);
         String onlineRole = (String) session.getAttribute("role");
         String onId = (String) session.getAttribute("id");
-        List<Course> courses = null;
-        if (onlineRole == "student"){
+        List<Course> courseList = new ArrayList<Course>();
+        if (onlineRole.equals("student")){
             StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
-            courses = studentMapper.findAllCourseById(onId);
+            courseList = studentMapper.findAllCourseById(onId);
         }
         else {
             TeacherMapper teacherMapper = sqlSession.getMapper(TeacherMapper.class);
-            courses = teacherMapper.findAllCourseById(onId);
+            courseList = teacherMapper.findAllCourseById(onId);
         }
 
         //  sqlSession.commit();
         List<Issue> list = new ArrayList<Issue>();
-        for(Course course : courses) {
+        for(Course course : courseList) {
             List<CourseContent> courseContents = courseMapper.findUpcomingIssue(course.getCourse_content_table());
             for(CourseContent courseContent : courseContents) {
                 System.out.println("courseContent = " + courseContent);

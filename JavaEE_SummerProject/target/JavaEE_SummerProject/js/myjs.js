@@ -103,7 +103,7 @@ function find_pw() {
     $.ajax({
         type: "POST", // 使用post方式
 
-        url: "/PasswordReminder",
+        url: "PasswordReminder",
         contentType: "application/json",
 
 
@@ -188,6 +188,7 @@ function db_menu(){
         async:false,
         success: function(result){
             $("#header_name").html(result.user_name);
+            $("#header_name2").html(result.user_name);
             $("#header_email").html(result.email);
             var dataObj = result.value,con="";
             $.each(dataObj,function(index,item){
@@ -236,7 +237,7 @@ function upcoming_issue() {
     $.ajax({
         type: "POST", // 使用post方式
 
-        url: "/UpcomingIssue",
+        url: "UpcomingIssue",
         contentType: "application/json",
 
 
@@ -305,20 +306,16 @@ function course_announcement() {
     let urlparam = location.search;
     let course_id = "";
     if (urlparam.substr(1, 4) == "cid=")
-        course_id = urlparam.substr(5, 14);
-
+        course_id = urlparam.substr(5).split("&")[0];
+    // alert(course_id);
     $.ajax({
         type: "POST", // 使用post方式
-
         url: "/GetCourseAnnouncements",
         contentType: "application/json",
-
-
         data: JSON.stringify({
             "status": "0",
             "message": "get_course_announcement",
             "course_id": course_id,
-
         }),
 
         dataType: "json",
@@ -371,7 +368,7 @@ function get_announcement(){
             "status": "0",
             "message": "get_announcement",
             "course_id": course_id,
-            "announcement_id": announcement_id //注意：这个变量在get_course_announcement中出现过。
+            "announcement_id": announcement_id, //注意：这个变量在get_course_announcement中出现过。
         }),
 
         dataType:"json",
@@ -1054,6 +1051,7 @@ function get_student_homeworks(){
     if (urlparam.substr(1, 4) == "cid=" && urlparam.substr(urlparam.split("&")[0].length, 5) == "&hid=") {
         course_id = urlparam.substr(5).split("&")[0];
         homework_id = urlparam.substr(urlparam.split("&")[0].length + 5, 31);
+        // alert(homework_id);
     }
 
     $.ajax({
@@ -1094,7 +1092,7 @@ function get_student_homeworks(){
                         "</div>" +
                         "<div class=\"mail-star\"><a href=\"#\"><i class=\"demo-psi-star\"></i></a></div>" +
                         "<strong class=\"mail-from\">" +
-                        "<a href=\"homework-detail-message.html?cid=" + course_id + "&hid=" + item.homework_id + "&sid=" + item.student_id + "\" target=\"_self\" "  + ">" +
+                        "<a href=\"homework-detail-message.html?cid=" + course_id + "&hid=" + homework_id + "&sid=" + item.student_id + "\" target=\"_self\" "  + ">" +
                         item.homework_title +
                         "</a><br>" +
                         "</strong>" +
@@ -1123,10 +1121,10 @@ function get_student_homework_detail(){
     if (urlparam.substr(1, 4) == "cid=" && urlparam.substr(urlparam.split("&")[0].length, 5) == "&hid=") {
         course_id = urlparam.substr(5).split("&")[0];
         homework_id = urlparam.substr(urlparam.split("&")[0].length + 5, 31);
-        student_id = urlparam.substr(urlparam.split("&")[0].length + 5 + homework_id.length);
-        alert(course_id);
-        alert(homework_id);
-        alert(student_id);
+        student_id = urlparam.substr(urlparam.split("&")[0].length + 5 + homework_id.length + 5);
+        // alert(course_id);
+        // alert(homework_id);
+        // alert(student_id);
     }
 
     $.ajax({
@@ -1153,12 +1151,10 @@ function get_student_homework_detail(){
             $("#datetime").html(result.submitted_time);
             $("#homework_content").html(result.homework_content);
             $.each(attachmentObj, function(index, item){
-                li += '<li> <a href="#" class="thumbnail"><div class="mail-file-img"><a href=" ' +
-                    item.file_path+
-                    ' " target="_self">' +
-                    item.file_name +
-                    '</a></div><div class="caption">' +
-                    '</div></a></li>'
+                li +=
+                    '<li>' +
+                        '<a href="'+item.file_path+'"  download="' + item.file_name + '">' + item.file_name + '</a>' +
+                    '</li>'
             });
             $("#mail-attach-list").html(li);
         }

@@ -31,7 +31,7 @@ public class FileUploadController {
         filename = uuid + "_" + filename;
         //完成文件上传
         file.transferTo(new File(path, filename));
-        session.setAttribute("homework_file_path", path+"/"+filename);
+        session.setAttribute("homework_file_path", "/homework/"+filename);
         session.setAttribute("homework_file_name", filename.split("_")[1]);
         return "success";
     }

@@ -1,5 +1,6 @@
 package com.xjtuse.summerproject;
 
+import com.xjtuse.summerproject.controllerEntity.GetStudentHomeworkDetailInfo;
 import com.xjtuse.summerproject.entity.*;
 import com.xjtuse.summerproject.mapper.StudentMapper;
 import com.xjtuse.summerproject.mapper.TeacherMapper;
@@ -89,4 +90,14 @@ public class TeacherMapperTest {
         }
     }
 
+
+    @Test
+    public void testGethomework() throws Exception{
+        GetStudentHomeworkDetailInfo getStudentHomeworkDetailInfo = new GetStudentHomeworkDetailInfo();
+        getStudentHomeworkDetailInfo.setCourse_id("demo001");
+        getStudentHomeworkDetailInfo.setStudent_id("stu20200306");
+        getStudentHomeworkDetailInfo.setHomework_id("tch20200101_content_homework101");
+        CourseHomework courseHomework = teacherMapper.getHomeworkDetail(getStudentHomeworkDetailInfo);
+        System.out.println("courseHomework = " + courseHomework);
+    }
 }

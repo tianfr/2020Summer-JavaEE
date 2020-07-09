@@ -25,9 +25,6 @@ public class GetCoursePannelController {
         GetCoursePanelResponse getCoursePanelResponse = new GetCoursePanelResponse();
         //模拟查数据库
         String courseid = getCoursePanelInfo.getCourse_id();
-
-
-
         CourseMapper courseMapper;
         //1.读取配置文件，生成字节输入流
         InputStream in = Resources.getResourceAsStream("SqlMapConfig.xml");

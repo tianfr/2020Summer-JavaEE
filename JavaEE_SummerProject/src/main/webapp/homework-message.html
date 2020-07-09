@@ -104,7 +104,7 @@
 
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
-<body onload="db_menu();get_course_homeworks();get_course_panel();get_homework();check_role();get_course_resources();">
+<body onload="db_menu();get_homework();get_course_panel();get_course_homeworks();get_course_resources();check_role();">
     <div id="container" class="effect aside-float aside-bright mainnav-lg">
         
         <!--NAVBAR-->
@@ -467,7 +467,7 @@
                                     <!--<img class="img-circle img-user media-object" src="img/profile-photos/1.png" alt="Profile Picture">-->
                                     <i class="demo-pli-male ic-user"></i>
                                 </span>
-                                <div class="username hidden-xs">Aaron Chavez</div>
+                                <div id="header_name2" class="username hidden-xs">Aaron Chavez</div>
                             </a>
 
 
@@ -1003,7 +1003,7 @@
 			                  </div>
 
 								<div id="tab-3" class="panel-mybody">
-					                <h1 class="page-header text-overflow pad-btm">Inbox (15)</h1>
+					                <h1 class="page-header text-overflow pad-btm">讨论板</h1>
 					
 					                <div class="row">
 					                    <div class="col-sm-7">
@@ -1115,7 +1115,7 @@
 
 					            </div>
 								<div id="tab-4" class="panel-mybody">
-					                <h1 class="page-header text-overflow pad-btm">Inbox (14)</h1>
+					                <h1 class="page-header text-overflow pad-btm">考试</h1>
 					
 					                <div class="row">
 					                    <div class="col-sm-7">
@@ -1226,132 +1226,143 @@
 					        </div>
 
 					            </div>
-								<div id="tab-5" class="panel-mybody">
-					                <h1 class="page-header text-overflow pad-btm">Inbox (13)</h1>
-					
-					                <div class="row">
-					                    <div class="col-sm-7">
-					
-					                        <!-- Mail toolbar -->
-					                        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-					
-					                        <!--Split button dropdowns-->
-					                        <div class="btn-group">
-					                            <div id="demo-checked-all-mail" class="btn btn-sm btn-default">
-					                                <input id="select-all-mail" class="magic-checkbox" type="checkbox">
-					                                <label for="select-all-mail"></label>
-					                            </div>
-					                            <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle"><i class="dropdown-caret"></i></button>
-					                            <ul class="dropdown-menu">
-					                                <li><a href="javascript:void(0)" id="demo-select-all-list">All</a></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-none-list">None</a></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-toggle-list">Toggle</a></li>
-					                                <li class="divider"></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-read-list">Read</a></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-unread-list">Unread</a></li>
-					                                <li><a href="javascript:void(0)" id="demo-select-starred-list">Starred</a></li>
-					                            </ul>
-					                        </div>
-					
-					                        <!--Refresh button-->
-					                        <button id="demo-mail-ref-btn" data-toggle="panel-overlay" data-target="#demo-email-list" class="btn btn-default btn-sm" type="button">
-					                            <i class="demo-psi-repeat-2"></i>
-					                        </button>
-					
-					                        <!--Dropdown button (More Action)-->
-					                        <div class="btn-group">
-					                            <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle" type="button">
-					                                More <i class="dropdown-caret"></i>
-					                            </button>
-					                            <ul class="dropdown-menu">
-					                                <li><a href="#">Mark as read</a></li>
-					                                <li><a href="#">Mark as unread</a></li>
-					                                <li class="divider"></li>
-					                                <li><a href="#">Star</a></li>
-					                                <li><a href="#">Clear Star</a></li>
-					                            </ul>
-					                        </div>
-					                    </div>
-					                    <hr class="hr-sm visible-xs">
-					                    <div class="col-sm-5 clearfix">
-					                        <div class="pull-right">
-					
-					                            <!--Pager buttons-->
-					                            <span class="text-muted">
+                                <div id="tab-5" class="panel-mybody">
+                                    <h1 class="page-header text-overflow pad-btm">课程资源</h1>
+
+                                    <div class="row">
+                                        <div id="resource_head" class="col-sm-7">
+
+                                            <!-- Mail toolbar -->
+                                            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                                            <!--Split button dropdowns-->
+                                            <!--                                        <div class="btn-group">-->
+                                            <!--                                            <div id="demo-checked-all-mail" class="btn btn-sm btn-default">-->
+                                            <!--                                                <input id="select-all-mail" class="magic-checkbox" type="checkbox">-->
+                                            <!--                                                <label for="select-all-mail"></label>-->
+                                            <!--                                            </div>-->
+                                            <!--                                            <button data-toggle="dropdown"-->
+                                            <!--                                                    class="btn btn-sm btn-default dropdown-toggle"><i-->
+                                            <!--                                                    class="dropdown-caret"></i></button>-->
+                                            <!--                                            <ul class="dropdown-menu">-->
+                                            <!--                                                <li><a href="javascript:void(0)" id="demo-select-all-list">All</a></li>-->
+                                            <!--                                                <li><a href="javascript:void(0)" id="demo-select-none-list">None</a>-->
+                                            <!--                                                </li>-->
+                                            <!--                                                <li><a href="javascript:void(0)" id="demo-select-toggle-list">Toggle</a>-->
+                                            <!--                                                </li>-->
+                                            <!--                                                <li class="divider"></li>-->
+                                            <!--                                                <li><a href="javascript:void(0)" id="demo-select-read-list">Read</a>-->
+                                            <!--                                                </li>-->
+                                            <!--                                                <li><a href="javascript:void(0)" id="demo-select-unread-list">Unread</a>-->
+                                            <!--                                                </li>-->
+                                            <!--                                                <li><a href="javascript:void(0)"-->
+                                            <!--                                                       id="demo-select-starred-list">Starred</a></li>-->
+                                            <!--                                            </ul>-->
+                                            <!--                                        </div>-->
+
+                                            <!--                                        &lt;!&ndash;Refresh button&ndash;&gt;-->
+                                            <!--                                        <button id="demo-mail-ref-btn" data-toggle="panel-overlay"-->
+                                            <!--                                                data-target="#demo-email-list" class="btn btn-default btn-sm"-->
+                                            <!--                                                type="button">-->
+                                            <!--                                            <i class="demo-psi-repeat-2"></i>-->
+                                            <!--                                        </button>-->
+
+                                            <!--                                        &lt;!&ndash;Dropdown button (More Action)&ndash;&gt;-->
+                                            <!--                                        <div class="btn-group">-->
+                                            <!--                                            <button data-toggle="dropdown"-->
+                                            <!--                                                    class="btn btn-sm btn-default dropdown-toggle" type="button">-->
+                                            <!--                                                More <i class="dropdown-caret"></i>-->
+                                            <!--                                            </button>-->
+                                            <!--                                            <ul class="dropdown-menu">-->
+                                            <!--                                                <li><a href="#">Mark as read</a></li>-->
+                                            <!--                                                <li><a href="#">Mark as unread</a></li>-->
+                                            <!--                                                <li class="divider"></li>-->
+                                            <!--                                                <li><a href="#">Star</a></li>-->
+                                            <!--                                                <li><a href="#">Clear Star</a></li>-->
+                                            <!--                                            </ul>-->
+                                            <!--                                        </div>-->
+                                        </div>
+                                        <hr class="hr-sm visible-xs">
+                                        <div class="col-sm-5 clearfix">
+                                            <div class="pull-right">
+
+                                                <!--Pager buttons-->
+                                                <span class="text-muted">
 					                                <strong>1-50</strong>
 					                                of
 					                                <strong>160</strong>
 					                            </span>
-					                            <div class="btn-group btn-group">
-					                                <button class="btn btn-sm btn-default" type="button">
-					                                    <i class="demo-psi-arrow-left"></i>
-					                                </button>
-					                                <button class="btn btn-sm btn-default" type="button">
-					                                    <i class="demo-psi-arrow-right"></i>
-					                                </button>
-					                            </div>
-					                        </div>
-					                    </div>
-					                </div>
-					                <hr class="hr-sm">
-									<div class="panel">
-					            <div class="panel-heading">
-					                <h3 class="panel-title">Paragraph 1</h3>
-					            </div>
-					            <div class="panel-body1">
-					
-					                <!--Paragraph-->
-					                <!--===================================================-->
-					                <p class="text-main text-semibold">Paragraph Text</p>
-					                <p>Of on affixed civilly moments promise explain
-					                fertile in. Assurance advantage belonging happiness
-					                departure so of. Now improving and one sincerity
-					                intention allowance commanded not. Oh an am frankness
-					                be necessary earnestly advantage estimable extensive.
-					                Five he wife gone ye. Mrs suffering sportsmen earnestly
-					                any. In am do giving to afford parish settle easily
-					                garret.</p>
-					                <!--===================================================-->
-					
-					            </div>
-					        </div>
-									<div class="panel">
-					            <div class="panel-heading">
-					                <h3 class="panel-title">Paragraph 2</h3>
-					            </div>
-					            <div class="panel-body1">
-					
-					                <!--Paragraph-->
-					                <!--===================================================-->
-					                <p class="text-main text-semibold">Paragraph Text</p>
-					                <p>Of on affixed civilly moments promise explain
-					                fertile in. Assurance advantage belonging happiness
-					                departure so of. Now improving and one sincerity
-					                intention allowance commanded not. Oh an am frankness
-					                be necessary earnestly advantage estimable extensive.
-					                Five he wife gone ye. Mrs suffering sportsmen earnestly
-					                any. In am do giving to afford parish settle easily
-					                garret.</p>
-					                <!--===================================================-->
-					
-					            </div>
-					        </div>
+                                                <div class="btn-group btn-group">
+                                                    <button class="btn btn-sm btn-default" type="button">
+                                                        <i class="demo-psi-arrow-left"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-default" type="button">
+                                                        <i class="demo-psi-arrow-right"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="hr-sm">
+                                    <div id="tab-5-demo-mail-list"></div>
+                                    <!--                                <div class="panel">-->
+                                    <!--                                    <div class="panel-heading">-->
+                                    <!--                                        <h3 class="panel-title">Paragraph 1</h3>-->
+                                    <!--                                    </div>-->
+                                    <!--                                    <div class="panel-body">-->
 
-					            </div> 
-				              <!--Mail footer-->
-					            <div class="panel-footer clearfix">
-					                <div class="pull-right">
-					                    <span class="text-muted"><strong>1-50</strong> of <strong>160</strong></span>
-					                    <div class="btn-group btn-group">
-					                        <button type="button" class="btn btn-default">
-					                            <i class="demo-psi-arrow-left"></i>
-					                        </button>
-					                        <button type="button" class="btn btn-default">
-					                            <i class="demo-psi-arrow-right"></i>
-					                        </button>
-					                    </div>
-					                </div>
-					            </div>
+                                    <!--                                        &lt;!&ndash;Paragraph&ndash;&gt;-->
+                                    <!--                                        &lt;!&ndash;===================================================&ndash;&gt;-->
+                                    <!--                                        <p class="text-main text-semibold">Paragraph Text</p>-->
+                                    <!--                                        <p>Of on affixed civilly moments promise explain-->
+                                    <!--                                            fertile in. Assurance advantage belonging happiness-->
+                                    <!--                                            departure so of. Now improving and one sincerity-->
+                                    <!--                                            intention allowance commanded not. Oh an am frankness-->
+                                    <!--                                            be necessary earnestly advantage estimable extensive.-->
+                                    <!--                                            Five he wife gone ye. Mrs suffering sportsmen earnestly-->
+                                    <!--                                            any. In am do giving to afford parish settle easily-->
+                                    <!--                                            garret.</p>-->
+                                    <!--                                        &lt;!&ndash;===================================================&ndash;&gt;-->
+
+                                    <!--                                    </div>-->
+                                    <!--                                </div>-->
+                                    <!--                                <div class="panel">-->
+                                    <!--                                    <div class="panel-heading">-->
+                                    <!--                                        <h3 class="panel-title">Paragraph 2</h3>-->
+                                    <!--                                    </div>-->
+                                    <!--                                    <div class="panel-body">-->
+
+                                    <!--                                        &lt;!&ndash;Paragraph&ndash;&gt;-->
+                                    <!--                                        &lt;!&ndash;===================================================&ndash;&gt;-->
+                                    <!--                                        <p class="text-main text-semibold">Paragraph Text</p>-->
+                                    <!--                                        <p>Of on affixed civilly moments promise explain-->
+                                    <!--                                            fertile in. Assurance advantage belonging happiness-->
+                                    <!--                                            departure so of. Now improving and one sincerity-->
+                                    <!--                                            intention allowance commanded not. Oh an am frankness-->
+                                    <!--                                            be necessary earnestly advantage estimable extensive.-->
+                                    <!--                                            Five he wife gone ye. Mrs suffering sportsmen earnestly-->
+                                    <!--                                            any. In am do giving to afford parish settle easily-->
+                                    <!--                                            garret.</p>-->
+                                    <!--                                        &lt;!&ndash;===================================================&ndash;&gt;-->
+
+                                    <!--                                    </div>-->
+                                    <!--                                </div>-->
+
+                                </div>
+                                <!--Mail footer-->
+                                <div class="panel-footer clearfix">
+                                    <div class="pull-right">
+                                        <span class="text-muted"><strong>1-50</strong> of <strong>160</strong></span>
+                                        <div class="btn-group btn-group">
+                                            <button type="button" class="btn btn-default">
+                                                <i class="demo-psi-arrow-left"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-default">
+                                                <i class="demo-psi-arrow-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
 					        </div>
 					    </div>
 					</div>
@@ -1769,199 +1780,200 @@
 						            <li class="list-divider"></li>
 						
 						            <!--Category name-->
-						            <li class="list-header">More</li>
-						
-						            <!--Menu list item-->
-						            <li>
-						                <a href="#">
-						                    <i class="demo-psi-repair"></i>
-						                    <span class="menu-title">Miscellaneous</span>
-											<i class="arrow"></i>
-						                </a>
-						
-						                <!--Submenu-->
-						                <ul class="collapse">
-						                    <li><a href="misc-timeline.html">Timeline</a></li>
-											<li><a href="misc-calendar.html">Calendar</a></li>
-											<li><a href="misc-maps.html">Google Maps</a></li>
-											
-						                </ul>
-						            </li>
-						
-						            <!--Menu list item-->
-						            <li>
-						                <a href="#">
-						                    <i class="demo-psi-mail"></i>
-						                    <span class="menu-title">Email</span>
-											<i class="arrow"></i>
-						                </a>
-						
-						                <!--Submenu-->
-						                <ul>
-						                    <li class="active-link"><a href="mailbox.html">Inbox</a></li>
-											<li><a href="announcement.html">View Message</a></li>
-											<li><a href="mailbox-compose.html">Compose Message</a></li>
-											<li><a href="mailbox-templates.html">Email Templates<span class="label label-info pull-right">New</span></a></li>
-											
-						                </ul>
-						            </li>
-						
-						            <!--Menu list item-->
-						            <li>
-						                <a href="#">
-						                    <i class="demo-psi-file-html"></i>
-						                    <span class="menu-title">Pages</span>
-											<i class="arrow"></i>
-						                </a>
-						
-						                <!--Submenu-->
-						                <ul class="collapse">
-						                    <li><a href="pages-blank.html">Blank Page</a></li>
-											<li><a href="pages-profile.html">Profile</a></li>
-											<li><a href="pages-search-results.html">Search Results</a></li>
-											<li><a href="pages-faq.html">FAQ</a></li>
-											<li class="list-divider"></li>
-											<li><a href="pages-404.html">404 Error</a></li>
-											<li><a href="pages-500.html">500 Error</a></li>
-											<li class="list-divider"></li>
-											<li><a href="login/pages-login.html">Login</a></li>
-											<li><a href="login/pages-register.html">Register</a></li>
-											<li><a href="login/pages-password-reminder.html">Password Reminder</a></li>
-											<li><a href="pages-lock-screen.html">Lock Screen</a></li>
-											
-						                </ul>
-						            </li>
+<!--						            <li class="list-header">More</li>-->
+<!--						-->
+<!--						            &lt;!&ndash;Menu list item&ndash;&gt;-->
+<!--						            <li>-->
+<!--						                <a href="#">-->
+<!--						                    <i class="demo-psi-repair"></i>-->
+<!--						                    <span class="menu-title">Miscellaneous</span>-->
+<!--											<i class="arrow"></i>-->
+<!--						                </a>-->
+<!--						-->
+<!--						                &lt;!&ndash;Submenu&ndash;&gt;-->
+<!--						                <ul class="collapse">-->
+<!--						                    <li><a href="misc-timeline.html">Timeline</a></li>-->
+<!--											<li><a href="misc-calendar.html">Calendar</a></li>-->
+<!--											<li><a href="misc-maps.html">Google Maps</a></li>-->
+<!--											-->
+<!--						                </ul>-->
+<!--						            </li>-->
+<!--						-->
+<!--						            &lt;!&ndash;Menu list item&ndash;&gt;-->
+<!--						            <li>-->
+<!--						                <a href="#">-->
+<!--						                    <i class="demo-psi-mail"></i>-->
+<!--						                    <span class="menu-title">Email</span>-->
+<!--											<i class="arrow"></i>-->
+<!--						                </a>-->
+<!--						-->
+<!--						                &lt;!&ndash;Submenu&ndash;&gt;-->
+<!--						                <ul>-->
+<!--						                    <li class="active-link"><a href="mailbox.html">Inbox</a></li>-->
+<!--											<li><a href="announcement.html">View Message</a></li>-->
+<!--											<li><a href="mailbox-compose.html">Compose Message</a></li>-->
+<!--											<li><a href="mailbox-templates.html">Email Templates<span class="label label-info pull-right">New</span></a></li>-->
+<!--											-->
+<!--						                </ul>-->
+<!--						            </li>-->
+<!--						-->
+<!--						            &lt;!&ndash;Menu list item&ndash;&gt;-->
+<!--						            <li>-->
+<!--						                <a href="#">-->
+<!--						                    <i class="demo-psi-file-html"></i>-->
+<!--						                    <span class="menu-title">Pages</span>-->
+<!--											<i class="arrow"></i>-->
+<!--						                </a>-->
+<!--						-->
+<!--						                &lt;!&ndash;Submenu&ndash;&gt;-->
+<!--						                <ul class="collapse">-->
+<!--						                    <li><a href="pages-blank.html">Blank Page</a></li>-->
+<!--											<li><a href="pages-profile.html">Profile</a></li>-->
+<!--											<li><a href="pages-search-results.html">Search Results</a></li>-->
+<!--											<li><a href="pages-faq.html">FAQ</a></li>-->
+<!--											<li class="list-divider"></li>-->
+<!--											<li><a href="pages-404.html">404 Error</a></li>-->
+<!--											<li><a href="pages-500.html">500 Error</a></li>-->
+<!--											<li class="list-divider"></li>-->
+<!--											<li><a href="login/pages-login.html">Login</a></li>-->
+<!--											<li><a href="login/pages-register.html">Register</a></li>-->
+<!--											<li><a href="login/pages-password-reminder.html">Password Reminder</a></li>-->
+<!--											<li><a href="pages-lock-screen.html">Lock Screen</a></li>-->
+<!--											-->
+<!--						                </ul>-->
+<!--						            </li>-->
 
 
-                                    <!--Menu list item-->
-                                    <li>
-                                        <a href="#">
-                                            <i class="demo-psi-tactic"></i>
-                                            <span class="menu-title">Menu Level</span>
-                                            <i class="arrow"></i>
-                                        </a>
+<!--                                    &lt;!&ndash;Menu list item&ndash;&gt;-->
+<!--                                    <li>-->
+<!--                                        <a href="#">-->
+<!--                                            <i class="demo-psi-tactic"></i>-->
+<!--                                            <span class="menu-title">Menu Level</span>-->
+<!--                                            <i class="arrow"></i>-->
+<!--                                        </a>-->
 
-                                        <!--Submenu-->
-                                        <ul class="collapse">
-                                            <li><a href="#">Second Level Item</a></li>
-                                            <li><a href="#">Second Level Item</a></li>
-                                            <li><a href="#">Second Level Item</a></li>
-                                            <li class="list-divider"></li>
-                                            <li>
-                                                <a href="#">Third Level<i class="arrow"></i></a>
+<!--                                        &lt;!&ndash;Submenu&ndash;&gt;-->
+<!--                                        <ul class="collapse">-->
+<!--                                            <li><a href="#">Second Level Item</a></li>-->
+<!--                                            <li><a href="#">Second Level Item</a></li>-->
+<!--                                            <li><a href="#">Second Level Item</a></li>-->
+<!--                                            <li class="list-divider"></li>-->
+<!--                                            <li>-->
+<!--                                                <a href="#">Third Level<i class="arrow"></i></a>-->
 
-                                                <!--Submenu-->
-                                                <ul class="collapse">
-                                                    <li><a href="#">Third Level Item</a></li>
-                                                    <li><a href="#">Third Level Item</a></li>
-                                                    <li><a href="#">Third Level Item</a></li>
-                                                    <li><a href="#">Third Level Item</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">Third Level<i class="arrow"></i></a>
+<!--                                                &lt;!&ndash;Submenu&ndash;&gt;-->
+<!--                                                <ul class="collapse">-->
+<!--                                                    <li><a href="#">Third Level Item</a></li>-->
+<!--                                                    <li><a href="#">Third Level Item</a></li>-->
+<!--                                                    <li><a href="#">Third Level Item</a></li>-->
+<!--                                                    <li><a href="#">Third Level Item</a></li>-->
+<!--                                                </ul>-->
+<!--                                            </li>-->
+<!--                                            <li>-->
+<!--                                                <a href="#">Third Level<i class="arrow"></i></a>-->
 
-                                                <!--Submenu-->
-                                                <ul class="collapse">
-                                                    <li><a href="#">Third Level Item</a></li>
-                                                    <li><a href="#">Third Level Item</a></li>
-                                                    <li><a href="#">Third Level Item</a></li>
-                                                    <li class="list-divider"></li>
-                                                    <li><a href="#">Third Level Item</a></li>
-                                                    <li><a href="#">Third Level Item</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
+<!--                                                &lt;!&ndash;Submenu&ndash;&gt;-->
+<!--                                                <ul class="collapse">-->
+<!--                                                    <li><a href="#">Third Level Item</a></li>-->
+<!--                                                    <li><a href="#">Third Level Item</a></li>-->
+<!--                                                    <li><a href="#">Third Level Item</a></li>-->
+<!--                                                    <li class="list-divider"></li>-->
+<!--                                                    <li><a href="#">Third Level Item</a></li>-->
+<!--                                                    <li><a href="#">Third Level Item</a></li>-->
+<!--                                                </ul>-->
+<!--                                            </li>-->
+<!--                                        </ul>-->
+<!--                                    </li>-->
 
-						
-						            <li class="list-divider"></li>
-						
-						            <!--Category name-->
-						            <li class="list-header">Extras</li>
-						
-						            <!--Menu list item-->
-						            <li>
-						                <a href="#">
-						                    <i class="demo-psi-happy"></i>
-						                    <span class="menu-title">Icons Pack</span>
-											<i class="arrow"></i>
-						                </a>
-						
-						                <!--Submenu-->
-						                <ul class="collapse">
-						                    <li><a href="icons-ionicons.html">Ion Icons</a></li>
-											<li><a href="icons-themify.html">Themify</a></li>
-											<li><a href="icons-font-awesome.html">Font Awesome</a></li>
-											
-						                </ul>
-						            </li>
-						
-						            <!--Menu list item-->
-						            <li>
-						                <a href="#">
-						                    <i class="demo-psi-medal-2"></i>
-						                    <span class="menu-title">
-												PREMIUM ICONS
-												<span class="label label-danger pull-right">BEST</span>
-											</span>
-						                </a>
-						
-						                <!--Submenu-->
-						                <ul class="collapse">
-						                    <li><a href="premium-line-icons.html">Line Icons Pack</a></li>
-											<li><a href="premium-solid-icons.html">Solid Icons Pack</a></li>
-											
-						                </ul>
-						            </li>
-						
-						            <!--Menu list item-->
-						            <li>
-						                <a href="helper-classes.html">
-						                    <i class="demo-psi-inbox-full"></i>
-						                    <span class="menu-title">Helper Classes</span>
-						                </a>
-						            </li>                                </ul>
+<!--						-->
+<!--						            <li class="list-divider"></li>-->
+<!--						-->
+<!--						            &lt;!&ndash;Category name&ndash;&gt;-->
+<!--						            <li class="list-header">Extras</li>-->
+<!--						-->
+<!--						            &lt;!&ndash;Menu list item&ndash;&gt;-->
+<!--						            <li>-->
+<!--						                <a href="#">-->
+<!--						                    <i class="demo-psi-happy"></i>-->
+<!--						                    <span class="menu-title">Icons Pack</span>-->
+<!--											<i class="arrow"></i>-->
+<!--						                </a>-->
+<!--						-->
+<!--						                &lt;!&ndash;Submenu&ndash;&gt;-->
+<!--						                <ul class="collapse">-->
+<!--						                    <li><a href="icons-ionicons.html">Ion Icons</a></li>-->
+<!--											<li><a href="icons-themify.html">Themify</a></li>-->
+<!--											<li><a href="icons-font-awesome.html">Font Awesome</a></li>-->
+<!--											-->
+<!--						                </ul>-->
+<!--						            </li>-->
+<!--						-->
+<!--						            &lt;!&ndash;Menu list item&ndash;&gt;-->
+<!--						            <li>-->
+<!--						                <a href="#">-->
+<!--						                    <i class="demo-psi-medal-2"></i>-->
+<!--						                    <span class="menu-title">-->
+<!--												PREMIUM ICONS-->
+<!--												<span class="label label-danger pull-right">BEST</span>-->
+<!--											</span>-->
+<!--						                </a>-->
+<!--						-->
+<!--						                &lt;!&ndash;Submenu&ndash;&gt;-->
+<!--						                <ul class="collapse">-->
+<!--						                    <li><a href="premium-line-icons.html">Line Icons Pack</a></li>-->
+<!--											<li><a href="premium-solid-icons.html">Solid Icons Pack</a></li>-->
+<!--											-->
+<!--						                </ul>-->
+<!--						            </li>-->
+<!--						-->
+<!--						            &lt;!&ndash;Menu list item&ndash;&gt;-->
+<!--						            <li>-->
+<!--						                <a href="helper-classes.html">-->
+<!--						                    <i class="demo-psi-inbox-full"></i>-->
+<!--						                    <span class="menu-title">Helper Classes</span>-->
+<!--						                </a>-->
+<!--						            </li>                             -->
+                                </ul>
 
 
                                 <!--Widget-->
                                 <!--================================-->
-                                <div class="mainnav-widget">
+<!--                                <div class="mainnav-widget">-->
 
-                                    <!-- Show the button on collapsed navigation -->
-                                    <div class="show-small">
-                                        <a href="#" data-toggle="menu-widget" data-target="#demo-wg-server">
-                                            <i class="demo-pli-monitor-2"></i>
-                                        </a>
-                                    </div>
+<!--                                    &lt;!&ndash; Show the button on collapsed navigation &ndash;&gt;-->
+<!--                                    <div class="show-small">-->
+<!--                                        <a href="#" data-toggle="menu-widget" data-target="#demo-wg-server">-->
+<!--                                            <i class="demo-pli-monitor-2"></i>-->
+<!--                                        </a>-->
+<!--                                    </div>-->
 
-                                    <!-- Hide the content on collapsed navigation -->
-                                    <div id="demo-wg-server" class="hide-small mainnav-widget-content">
-                                        <ul class="list-group">
-                                            <li class="list-header pad-no pad-ver">Server Status</li>
-                                            <li class="mar-btm">
-                                                <span class="label label-primary pull-right">15%</span>
-                                                <p>CPU Usage</p>
-                                                <div class="progress progress-sm">
-                                                    <div class="progress-bar progress-bar-primary" style="width: 15%;">
-                                                        <span class="sr-only">15%</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="mar-btm">
-                                                <span class="label label-purple pull-right">75%</span>
-                                                <p>Bandwidth</p>
-                                                <div class="progress progress-sm">
-                                                    <div class="progress-bar progress-bar-purple" style="width: 75%;">
-                                                        <span class="sr-only">75%</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="pad-ver"><a href="#" class="btn btn-success btn-bock">View Details</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!--================================-->
+<!--                                    &lt;!&ndash; Hide the content on collapsed navigation &ndash;&gt;-->
+<!--                                    <div id="demo-wg-server" class="hide-small mainnav-widget-content">-->
+<!--                                        <ul class="list-group">-->
+<!--                                            <li class="list-header pad-no pad-ver">Server Status</li>-->
+<!--                                            <li class="mar-btm">-->
+<!--                                                <span class="label label-primary pull-right">15%</span>-->
+<!--                                                <p>CPU Usage</p>-->
+<!--                                                <div class="progress progress-sm">-->
+<!--                                                    <div class="progress-bar progress-bar-primary" style="width: 15%;">-->
+<!--                                                        <span class="sr-only">15%</span>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </li>-->
+<!--                                            <li class="mar-btm">-->
+<!--                                                <span class="label label-purple pull-right">75%</span>-->
+<!--                                                <p>Bandwidth</p>-->
+<!--                                                <div class="progress progress-sm">-->
+<!--                                                    <div class="progress-bar progress-bar-purple" style="width: 75%;">-->
+<!--                                                        <span class="sr-only">75%</span>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </li>-->
+<!--                                            <li class="pad-ver"><a href="#" class="btn btn-success btn-bock">View Details</a></li>-->
+<!--                                        </ul>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash;================================&ndash;&gt;-->
                                 <!--End widget-->
 
                             </div>

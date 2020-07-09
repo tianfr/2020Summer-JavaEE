@@ -4,6 +4,7 @@ import com.xjtuse.summerproject.controllerEntity.Course;
 import com.xjtuse.summerproject.controllerEntity.Issue;
 import com.xjtuse.summerproject.controllerEntity.UpdateHomeworkInfo;
 import com.xjtuse.summerproject.entity.CourseContent;
+import com.xjtuse.summerproject.entity.CourseHomework;
 import com.xjtuse.summerproject.entity.CoursePanel;
 import com.xjtuse.summerproject.entity.Temp;
 import com.xjtuse.summerproject.mapper.CourseMapper;
@@ -77,4 +78,6 @@ public class CourseMapperTest {
         updateHomeworkInfo.setStudent_id("stu20200101");
         courseMapper.updateHomework(updateHomeworkInfo);
     }
+
+
 }
