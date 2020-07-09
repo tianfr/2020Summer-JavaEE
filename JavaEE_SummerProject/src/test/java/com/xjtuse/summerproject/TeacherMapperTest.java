@@ -78,4 +78,15 @@ public class TeacherMapperTest {
         }
     }
 
+    @Test
+    public void testGetSubmittedhomework() throws Exception{
+        SendHomework sendHomework = new SendHomework();
+        sendHomework.setCourse_id("demo001");
+        sendHomework.setHomework_id("tch20200101_content_homework101");
+        List<CourseHomework> courseHomeworkList = teacherMapper.getSubmittedHomework(sendHomework);
+        for (CourseHomework courseHomework: courseHomeworkList){
+            System.out.println(courseHomework);
+        }
+    }
+
 }

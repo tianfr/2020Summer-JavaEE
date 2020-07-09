@@ -31,4 +31,8 @@ public interface TeacherMapper {
             "teachers_courses.teacher_id=#{teacher_id} AND teachers_courses.course_id = courses.course_id")
     List<Course> getprevCourses(String teacher_id);
 
+    //老师根据课程号和作业号查询已提交作业
+    @Select("SELECT * from course_${course_id}_homework WHERE homework_id = #{homework_id}")
+    List<CourseHomework> getSubmittedHomework(SendHomework sendHomework);
+
 }
