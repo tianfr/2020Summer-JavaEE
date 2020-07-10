@@ -8,17 +8,23 @@
 __田丰瑞、曹大华、李朝龙、张一卓、巩怡霖、向苡霄__
 
 ## Environment
+### JavaEE 环境
+
 maven 5.0.12
 Tomcat 8.5.0
 jre 1.6.0
 Intellj IDEA
 
+### 数据库环境
 
+MySQL 5.1.0
+
+## 代码量
 
 历时两周多，代码量50w+
 
 
 
-cdhnb！cdhnb！cdbnb！
+**cdhnb！cdhnb！cdbnb！**
 
 本项目以思源学堂为项目对标，设计了一个全新的教学系统辅助平台**思源课堂**。
