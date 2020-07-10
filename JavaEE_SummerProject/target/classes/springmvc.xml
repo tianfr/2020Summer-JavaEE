@@ -36,6 +36,9 @@
             <!-- 拦截所有请求，不包括二级以上项目 -->
             <mvc:mapping path="/*"/>
             <mvc:exclude-mapping path="/Login"/>
+            <mvc:exclude-mapping path="/Register"/>
+            <mvc:exclude-mapping path="/PasswordReminder"/>
+            <mvc:exclude-mapping path="/PasswordReset"/>
             <mvc:exclude-mapping path="/css/**"/>
             <!-- 配置不拦截 -->
 <!--            <mvc:exclude-mapping path="/login/**"/>-->

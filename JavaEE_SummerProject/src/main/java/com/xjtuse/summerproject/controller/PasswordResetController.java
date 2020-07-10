@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.InputStream;
+import java.util.Date;
 
 @Controller
 public class PasswordResetController {
@@ -31,7 +32,14 @@ public class PasswordResetController {
         String p = com.xjtuse.summerproject.encrytion.DESUtil.decrypt(seed, passwordResetInfo.getKey());
         System.out.println("-----------解密后的key参数---------------------");
         System.out.println(p);
+        String time = p.split("@")[0];
         String username = p.split("@")[1];
+        long timenow = new Date().getTime();
+        if(timenow - Long.valueOf(time) < 0 || timenow - Long.valueOf(time) > 1800000) {
+            responseInfo.setSuccess_value("0");
+            responseInfo.setFail_content("该链接已失效");
+            return responseInfo;
+        }
         System.out.println("username = " + username);
         InputStream in = Resources.getResourceAsStream("SqlMapConfig.xml");
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
@@ -43,7 +51,7 @@ public class PasswordResetController {
         tch.setTeacher_username(username);
         tch.setTeacher_password(passwordResetInfo.getPassword());
         stu.setStudent_username(username);
-        stu.setStudent_password(username);
+        stu.setStudent_password(passwordResetInfo.getPassword());
         studentMapper.updateStudentPasswordByUsername(stu);
         teacherMapper.updateTeacherPasswordByUsername(tch);
         sqlSession.commit();

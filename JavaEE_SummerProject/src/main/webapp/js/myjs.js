@@ -103,7 +103,7 @@ function find_pw() {
     $.ajax({
         type: "POST", // 使用post方式
 
-        url: "PasswordReminder",
+        url: "/PasswordReminder",
         contentType: "application/json",
 
 

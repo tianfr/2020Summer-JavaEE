@@ -70,7 +70,7 @@ public class PasswordReminderController {
                 mailInfo.setToAddress(passwordReminderInfo.getEmail());
                 mailInfo.setSubject("找回密码");
                 String content = "<a href='#'>" + passwordReminderInfo.getEmail() + "</a>，您好：<br>\r\n"+
-                        "请在两小时内 ，请访问如下链接，进行密码重置<br>" + "<a href=" + link + ">" + link +"</a>"+
+                        "请在30分钟内 ，请访问如下链接，进行密码重置<br>" + "<a href=" + link + ">" + link +"</a>"+
                         "如果您还有任何的疑问，请与我们联系。邮箱地址: <a href='#'>" + "940141567@qq.com" + "</a><br>\r\n" + "请不要直接回复本邮件。<br>";
                 mailInfo.setContent(content);
                 //发邮件
